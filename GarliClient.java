@@ -43,14 +43,20 @@ public class GarliSubmit extends GSBLClient {
      */
     private static String jobname;
 
-    private static String resourceID; // keeps track of jobID
+    /**
+    * Keeps track of JobID
+    */
+    private static String resourceID;
 
 
 	/**
      * The main method. Reads in arguments from a properties file, creates a client, and executes it.
      */
 	public static void main(String [] args) {
-		
+
+
+		/* Checks to see how many command line arguments are included.
+           Two are needed (job properties file and a job name) */
 		if (args.length != 2) {
 			System.err.println("Requires 2 arguments: properties file, and job name.");
             System.exit(1);
@@ -72,6 +78,7 @@ public class GarliSubmit extends GSBLClient {
         System.out.println("Creating GARLI job.");
 
 
+        /* Aquires new Service Instance and initializes resourceID */
         GARLISubmitClient client = null;
         try {
             client = new GARLISubmitClient(factoryURI, myBean);
@@ -100,11 +107,12 @@ public class GarliSubmit extends GSBLClient {
     }
 
 
-    void execute() throws Exception { 
+    void execute() throws Exception { // ADD COMMENTS
+
         // get a unique resource id
         resourceID = getResourceID();
 
-        // on the service side, store the directory the client submitted from as well as the hostname
+        // store the directory the client submitted from as well as the hostname
         Properties env = new Properties();
         env.load(Runtime.getRuntime().exec("env").getInputStream());
         String cwd = (String)env.get("PWD");
@@ -121,6 +129,8 @@ public class GarliSubmit extends GSBLClient {
             reps = replicates.toString();
             replica = replicates.intValue();
         }
+
+        /* Cretaes working directory - /export/grid_files/ */
         ((GARLIPortType)instancePortType).createWorkingDir(resourceID + "@--" + cwd + "@--" + hostname + "@--" + reps);
 
         ArrayList<String> sharedFiles = new ArrayList<String>();
@@ -140,13 +150,14 @@ public class GarliSubmit extends GSBLClient {
 
         if(configFile == "" || configFile == null) { // we will build a configuration file from the args passed in
             buildConfig = true;
-            } else if((confFileNames = parseDirectory(configFile, replica)) == null) { // single job or homogeneous batch
+        } else if((confFileNames = parseDirectory(configFile, replica)) == null) { // single job or homogeneous batch
 
         } else { // heterogeneous job batch
             perJobArguments.add("configFile");
             perJobFiles.add(confFileNames);
         }
 
+        /* Check if we need to validate conifg file */
         boolean doValidate = true;
         if(myBean.getNovalidate() != null) {
             if((myBean.getNovalidate()).booleanValue() == true) {
@@ -154,6 +165,8 @@ public class GarliSubmit extends GSBLClient {
             }
         }
 
+        /* Builds, validates, and parses config file (parse puts input/output files into a vector, 
+           but first it creates output files) */
         GARLIParser gp = null;
         try {
             gp = new GARLIParser(myBean, "", buildConfig, doValidate, true);
@@ -161,6 +174,7 @@ public class GarliSubmit extends GSBLClient {
             System.out.println("Unknown exception occurred while invoking the GARLI parser " + e);
         } 
 
+        /* Specifies memory restriction in garliconf file */
         String avail_mem = gp.getAvailMem();
         if (avail_mem == null) {
             log.error("Please specify \"available memory\" in the GARLI config file\n");
@@ -177,6 +191,7 @@ public class GarliSubmit extends GSBLClient {
             myBean.setActualmemory(actual_memory);
         }
 
+        /* Sets configuration file name to bean */
         myBean.setConfigFile(gp.getConfigFileName()); // now this should no longer be set to a directory
 
         sharedFiles.addAll(gp.getInputFiles()); // gp.getInputFiles() currently only returns shared files
@@ -187,12 +202,14 @@ public class GarliSubmit extends GSBLClient {
             // END PROTECT: beanSetup
             // ----- ----- ----- END YOUR CODE ----- ----- ----- //
 
-
+      
         myPerJobArguments = new String[perJobArguments.size()];
         myBean.setPerJobArguments(perJobArguments.toArray(myPerJobArguments));
 
+        /* Sets the working directory for specific job */
         String workingDir = getWorkingDirBase() + resourceID + "/";
 
+        /* Sets bean's sharedFiles with shared files used by all instances submitted */
         allSharedFiles = new String[sharedFiles.size()];
         myBean.setSharedFiles(sharedFiles.toArray(allSharedFiles));
 
@@ -212,6 +229,7 @@ public class GarliSubmit extends GSBLClient {
             allPerJobFiles[i] = filenames;
         }
 
+        /* Sets bean's perjob files */
         myBean.setPerJobFiles(allPerJobFiles);
 
         // check for scheduler override
@@ -226,10 +244,18 @@ public class GarliSubmit extends GSBLClient {
         myBean.setAppName(new String("GARLI"));
         myBean.setOwner(System.getProperty("user.name"));
         myBean.setJobName(jobname);
+        myBean.setWorkingDir(workingDir);
+
+
+        /* MUST PUT SYMLINK IN BEAN FOR garliconf FROM CURRENT SPOT TO WORKING DIRECTORY  
+         myBean.getConfigFile()
+        */
+
+
 
         System.out.println("Submitting job.");
 
-                // instancePortType object comes from super-class
+        // instancePortType object comes from super-class
         ((GARLIPortType)instancePortType).runService(myBean);
         System.out.println("Job submitted with ID: " + resourceID);
 
