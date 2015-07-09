@@ -117,8 +117,13 @@ public class GarliSubmit extends GSBLClient {
 			reps = replicates.toString();
 			replica = replicates.intValue();
 		}
+<<<<<<< HEAD
  
 		 /* If replicates > 1, then also will created a output and populate it with sub-job folders */
+=======
+
+		/* Cretaes working directory - /export/grid_files/ */
+>>>>>>> 23a42d61b36c5ce3254b25af1a3d94c28d4ff35c
 		((GARLIPortType)instancePortType).createWorkingDir(resourceID + "@--" + cwd + "@--" + hostname + "@--" + reps);
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
@@ -154,10 +159,17 @@ public class GarliSubmit extends GSBLClient {
 		}
 
 		/* Builds, validates, and parses config file (parse puts input/output files into a vector, 
+<<<<<<< HEAD
          * but first parse() creates the output files). */
 		GARLIParser gp = null;
 		try {
 			gp = new GARLIParser(myBean, cwd, buildConfig, doValidate, true);
+=======
+           but first it creates output files). */
+		GARLIParser gp = null;
+		try {
+			gp = new GARLIParser(myBean, "", buildConfig, doValidate, true);
+>>>>>>> 23a42d61b36c5ce3254b25af1a3d94c28d4ff35c
 		} catch (Exception e) {
 			System.out.println("Unknown exception occurred while invoking the GARLI parser " + e);
 		} 
@@ -193,8 +205,13 @@ public class GarliSubmit extends GSBLClient {
 		myPerJobArguments = new String[perJobArguments.size()];
 		myBean.setPerJobArguments(perJobArguments.toArray(myPerJobArguments));
 
+<<<<<<< HEAD
 		/* Sets the working directory for specific job. /export/work/drupal/user_files/admin/job#/jobID/ */
 		String workingDir = cwd + resourceID + "/";
+=======
+		/* Sets the working directory for specific job. */
+		String workingDir = getWorkingDirBase() + resourceID + "/";
+>>>>>>> 23a42d61b36c5ce3254b25af1a3d94c28d4ff35c
 
 		/* Sets bean's sharedFiles with shared files used by all instances submitted. */
 		allSharedFiles = new String[sharedFiles.size()];
@@ -232,8 +249,13 @@ public class GarliSubmit extends GSBLClient {
 		myBean.setJobName(jobname);
 		myBean.setWorkingDir(workingDir);
 
+<<<<<<< HEAD
 
 
+=======
+		/* MUST PUT SYMLINK IN BEAN FOR garliconf FROM CURRENT SPOT TO WORKING DIRECTORY  
+           myBean.getConfigFile() */
+>>>>>>> 23a42d61b36c5ce3254b25af1a3d94c28d4ff35c
 
 		System.out.println("Submitting job.");
 
