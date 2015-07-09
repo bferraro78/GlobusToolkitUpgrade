@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<project name="GSBL" default="build" basedir=".">
+
+        <target name="build">
+		<delete file="GSBL.jar"/>
+		<javac srcdir="edu/umd/umiacs/cummings/GSBL/" destdir="classes"/>
+		<jar destfile="GSBL.jar" basedir="classes"/>
+	</target>
+</project>
