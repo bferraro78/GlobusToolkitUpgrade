@@ -23,7 +23,7 @@ public class GSBLJob {
 	private String myScheduler = "";
 
 	/**
-	 * The factory type (like Condor, BOINC, etc)
+	 * The factory type (like Condor, BOINC, etc).
 	 */
 	private String myResource = "";
 
@@ -90,31 +90,31 @@ public class GSBLJob {
 	 * the subclasses.
 	 * 
 	 * @param executable
-	 *            the full path to the program executable.
+	 *            The full path to the program executable.
 	 * @param arguments
-	 *            the arguments to the executable.
+	 *            The arguments to the executable.
 	 * @param scheduler
-	 *            the ManagedJobFactoryService this job is being assigned to
+	 *            The ManagedJobFactoryService this job is being assigned to.
 	 * @param resource
-	 *            one of BOINC, Condor, etc
+	 *            One of BOINC, Condor, etc.
 	 * @param arch_os
-	 *            if resource == "Condor", this variable determines architecture
-	 *            and operating system job is being assigned to
+	 *            If resource == "Condor", this variable determines architecture
+	 *            and operating system job is being assigned to.
 	 * @param workingDir
-	 *            used to determine the location of our staging directory.
+	 *            Used to determine the location of our staging directory.
 	 * @param runtime_estimate
-	 *            used in scheduling
+	 *            Used in scheduling.
 	 * @param shared_files
 	 * @param perjob_files
 	 * @param output_files
-	 *            an array of relative filnames to stage back to the server.
+	 *            An array of relative filnames to stage back to the server.
 	 *            They will be staged to the job's working directory.
 	 * @param requirements
-	 *            used by Condor and our old matchmaking system. Could be used
+	 *            Used by Condor and our old matchmaking system. Could be used
 	 *            again in the future.
 	 * @param extraRSL
-	 *            some jobs have special requirements, like reading stdin, for
-	 *            example
+	 *            Some jobs have special requirements, like reading stdin, for
+	 *            example.
 	 */
 	public GSBLJob(String executable, String arguments, String scheduler,
 			String resource, String arch_os, String workingDir,
@@ -126,25 +126,25 @@ public class GSBLJob {
 				runtime_estimate, shared_files, perjob_files, output_files,
 				workingDir, requirements, extraRSL);
 
-		// write the RSL to our working directory (something like
-		// /export/grid_files/[resource_id]/)
+		// Write the RSL to our working directory (something like
+		// "/export/grid_files/[resource_id]/").
 		r.writeXML();
 
 		// write any mappings to our working directory (something like
-		// /export/grid_files/[resource_id]/)
+		// "/export/grid_files/[resource_id]/").
 		r.writeMappingsToAdd();
 
 		// Instantiate the GramJob.
 		myJob = new GramJob(r.getXML());
 
-		// fill in the number of cpus and job replicates
+		// Fill in the number of cpus and job replicates.
 		cpus = r.getCPUs();
 		replicates = r.getReplicates();
 
-		// if matchmaking, i.e., scheduling, is being invoked, fill in the
-		// values appropriately
+		// If matchmaking, i.e., scheduling, is being invoked, fill in the
+		// values appropriately.
 		if (scheduler.equals("matchmaking")) {
-			myScheduler = r.getScheduler(); // the new values
+			myScheduler = r.getScheduler();  // The new values.
 			myResource = r.getResource();
 			myArch_os = r.getArch_os();
 		} else {
@@ -165,28 +165,30 @@ public class GSBLJob {
 			myExecutable = executable;
 		}
 
-		// check for null arguments.
+		// Check for null arguments.
 		if (arguments == null) {
 			myArguments = "";
 		} else {
 			myArguments = arguments;
 		}
 
-		// set the working directory
+		// Set the working directory.
 		myWorkingDir = workingDir;
 		if (log.isDebugEnabled()) {
 			log.debug("GSBLJob using working dir of '" + myWorkingDir + "'.");
 		}
 
-		// set the unique ID from the working directory
+		// Set the unique ID from the working directory.
 		unique_id = myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
 		unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
 
-		// Save the input and output files array. Java arrays are really
-		// references,
-		// so we need to copy the arrays element-wise into new arrays to prevent
-		// other people from being able to change out internal values.
-		// updated to use shared_files
+		/*
+		 * Save the input and output files array. Java arrays are really
+		 * references, so we need to copy the arrays element-wise into new
+		 * arrays to prevent other people from being able to change our internal
+		 * values.
+		 */
+		// Updated to use "shared_files".
 		if (shared_files != null) {
 			String[] shared_files_array = new String[shared_files.size()];
 			myInput_files = shared_files.toArray(shared_files_array);
@@ -208,7 +210,7 @@ public class GSBLJob {
 				myInput_files[i] = "../" + myInput_files[i];
 			}
 		}
-		if (myOutput_files != null && myOutput_files.length > 0) {
+		if ((myOutput_files != null) && (myOutput_files.length > 0)) {
 			System.arraycopy(output_files, 0, myOutput_files, 0,
 					output_files.length);
 		}
@@ -220,10 +222,10 @@ public class GSBLJob {
 	 * Constructor used to instantiate an existing job.
 	 * 
 	 * @param jobEPR
-	 *            endpoint reference of a Globus GramJob
+	 *            Endpoint reference of a Globus GramJob.
 	 * @param rwd
-	 *            remote working directory, i.e., staging directory on the
-	 *            server
+	 *            Remote working directory, i.e., staging directory on the
+	 *            server.
 	 */
 	public GSBLJob(String rwd) {
 		myJob = new GramJob();
@@ -232,12 +234,12 @@ public class GSBLJob {
 			// myJob.setSecurityTypeFromEndpoint(jobEPR);
 			myWorkingDir = rwd;
 
-			// set the unique ID from the working directory
+			// Set the unique ID from the working directory.
 			unique_id = myWorkingDir
 					.substring(0, myWorkingDir.lastIndexOf("/"));
 			unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
 
-			// set the number of replicates by querying the database
+			// Set the number of replicates by querying the database.
 			String result = GSBLUtils.selectDBStringField("job", "replicates",
 					"unique_id", unique_id);
 			if (result != null) {
@@ -261,7 +263,7 @@ public class GSBLJob {
 	/**
 	 * Get the scheduler.
 	 * 
-	 * @return myScheduler
+	 * @return myScheduler.
 	 */
 	public String getScheduler() {
 		return myScheduler;
@@ -270,7 +272,7 @@ public class GSBLJob {
 	/**
 	 * Get the resource.
 	 * 
-	 * @return myResource
+	 * @return myResource.
 	 */
 	public String getResource() {
 		return myResource;
@@ -279,7 +281,7 @@ public class GSBLJob {
 	/**
 	 * Get the arch_os.
 	 * 
-	 * @return myArch_os
+	 * @return myArch_os.
 	 */
 	public String getArch_os() {
 		return myArch_os;
@@ -288,7 +290,7 @@ public class GSBLJob {
 	/**
 	 * Get the cpus.
 	 * 
-	 * @return cpus
+	 * @return cpus.
 	 */
 	public String getCPUs() {
 		return cpus;
@@ -297,7 +299,7 @@ public class GSBLJob {
 	/**
 	 * Get the replicates.
 	 * 
-	 * @return replicates
+	 * @return replicates.
 	 */
 	public String getReplicates() {
 		return replicates;
@@ -327,7 +329,7 @@ public class GSBLJob {
 	 * "/export/grid_files/18485851/foo".
 	 * 
 	 * @param filename
-	 *            the relative filename to map.
+	 *            The relative filename to map.
 	 * @return an absolute filename as a String.
 	 */
 	public String getFilename(String filename) {
