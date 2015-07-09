@@ -1,0 +1,294 @@
+Running GARLI-PART Version 2.0.1019 (29 Mar 2011)
+->Single processor version<-
+
+##############################################################
+ This is GARLI 2.0, the first "official" release including 
+          partitioned models.  It is a merging of
+   official release 1.0 and beta version GARLI-PART 0.97
+  Briefly, it includes models for nucleotides, amino acids,
+ codons, and morphology-like characters, any of which can be 
+  mixed together and applied to different subsets of data.
+
+    General program usage is extensively documented here:
+            http://www.nescent.org/wg/garli/
+      see this page for details on partitioned usage:
+  http://www.nescent.org/wg/garli/Partition_testing_version
+   and this page for details on Mkv mophology model usage:
+    http://www.nescent.org/wg/garli/Mkv_morphology_model
+         PLEASE LET ME KNOW OF ANY PROBLEMS AT:
+                garli.support@gmail.com
+##############################################################
+Compiled Jun 15 2011 14:04:14 using GNU gcc compiler version 4.1.2
+Using NCL version 2.1.10
+
+#######################################################
+Reading config file garli.conf
+###################################################
+READING OF DATA
+Attempting to read data file in Nexus format (using NCL):
+	murphy29.rag1rag2.nex ...
+Reading DATA block... successful
+Reading SETS block... successful
+
+###################################################
+PARTITIONING OF DATA AND MODELS
+
+CHECK: DIFFERENT MODEL TYPES AND MODEL PARAMETERS APPLY
+	TO EACH DATA SUBSET (no linkage)
+
+GARLI data subset 1
+	CHARACTERS block #1 ("Untitled DATA Block 1")
+	CHARPARTITION subset #1 ("chunk1")
+	Data read as Nucleotide data,
+	modeled as Nucleotide data
+	Summary of data:
+	  29 sequences.
+	  404 constant characters.
+	  221 parsimony-informative characters.
+	  75 uninformative variable characters.
+	  700 total characters.
+	  299 unique patterns in compressed data matrix.
+	Pattern processing required < 1 second
+
+GARLI data subset 2
+	CHARACTERS block #1 ("Untitled DATA Block 1")
+	CHARPARTITION subset #2 ("chunk2")
+	Data read as Nucleotide data,
+	modeled as Nucleotide data
+	Summary of data:
+	  29 sequences.
+	  240 constant characters.
+	  181 parsimony-informative characters.
+	  79 uninformative variable characters.
+	  500 total characters.
+	  263 unique patterns in compressed data matrix.
+	Pattern processing required < 1 second
+
+GARLI data subset 3
+	CHARACTERS block #1 ("Untitled DATA Block 1")
+	CHARPARTITION subset #3 ("chunk3")
+	Data read as Nucleotide data,
+	modeled as Nucleotide data
+	Summary of data:
+	  29 sequences.
+	  3 constant characters.
+	  2 parsimony-informative characters.
+	  0 uninformative variable characters.
+	  5 total characters.
+	  5 unique patterns in compressed data matrix.
+	Pattern processing required < 1 second
+
+
+###################################################
+NOTE: Unlike many programs, the amount of system memory that Garli will
+use can be controlled by the user.
+(This comes from the availablememory setting in the configuration file.
+Availablememory should NOT be set to more than the actual amount of 
+physical memory that your computer has installed)
+
+For this dataset:
+ Mem level		availablememory setting
+  great			    >= 14 MB
+  good			approx 13 MB to 9 MB
+  low			approx 8 MB to 4 MB
+  very low		approx 3 MB to 4 MB
+the minimum required availablememory is 4 MB
+
+You specified that Garli should use at most 512.0 MB of memory.
+
+Garli will actually use approx. 19.2 MB of memory
+**Your memory level is: great (you don't need to change anything)**
+
+#######################################################
+STARTING RUN
+MODEL REPORT - Parameters are at their INITIAL values (not yet optimized)
+Model 1
+  Number of states = 4 (nucleotide data)
+  Nucleotide Relative Rate Matrix:     6 rates 
+    AC = 1.000, AG = 4.000, AT = 1.000, CG = 1.000, CT = 4.000, GT = 1.000
+  Equilibrium State Frequencies: estimated
+    (ACGT) 0.2472 0.2375 0.2799 0.2355 
+  Rate Heterogeneity Model:
+    4 discrete gamma distributed rate categories, alpha param estimated
+      0.5000
+    Substitution rate categories under this model:
+      rate	proportion
+      0.0334	0.2500
+      0.2519	0.2500
+      0.8203	0.2500
+      2.8944	0.2500
+
+Model 2
+  Number of states = 4 (nucleotide data)
+  Nucleotide Relative Rate Matrix:     2 rates (transition and transversion) K param = 4.0000 (ti/tv = 1.9795)
+  Equilibrium State Frequencies: estimated
+    (ACGT) 0.2822 0.2142 0.2317 0.2720 
+  Rate Heterogeneity Model:
+    no rate heterogeneity
+
+Model 3
+  Number of states = 4 (nucleotide data)
+  Nucleotide Relative Rate Matrix:     2 rates (transition and transversion) K param = 4.0000 (ti/tv = 1.6579)
+  Equilibrium State Frequencies: estimated
+    (ACGT) 0.3241 0.0345 0.2690 0.3724 
+  Rate Heterogeneity Model:
+    4 discrete gamma distributed rate categories, alpha param estimated
+      0.5000
+    Substitution rate categories under this model:
+      rate	proportion
+      0.0334	0.2500
+      0.2519	0.2500
+      0.8203	0.2500
+      2.8944	0.2500
+
+Subset rate multipliers:
+    1.00  1.00  1.00
+Starting with seed=202562
+
+creating random starting tree...
+Initial ln Likelihood: -13640.3483
+optimizing: starting branch lengths, alpha shape, rel rates, eq freqs, subset rates...
+pass 1:+ 2392.919 (branch=2231.31 scale=  1.30 alpha= 70.69 freqs= 31.86 rel rates= 41.85 subset rates= 15.91)
+pass 2:+  296.438 (branch= 284.40 scale=  1.88 alpha=  0.99 freqs=  2.41 rel rates=  5.29 subset rates=  1.46)
+pass 3:+    6.601 (branch=   0.15 scale=  2.13 alpha=  0.82 freqs=  1.08 rel rates=  1.39 subset rates=  1.04)
+pass 4:+    2.414 (branch=   0.00 scale=  1.53 alpha=  0.02 freqs=  0.22 rel rates=  0.01 subset rates=  0.63)
+pass 5:+    3.378 (branch=   0.52 scale=  0.69 alpha=  0.03 freqs=  0.18 rel rates=  1.28 subset rates=  0.68)
+pass 6:+    3.022 (branch=   0.01 scale=  1.04 alpha=  0.03 freqs=  0.79 rel rates=  0.55 subset rates=  0.60)
+pass 7:+    1.468 (branch=   0.00 scale=  0.72 alpha=  0.03 freqs=  0.70 rel rates=  0.01 subset rates=  0.00)
+pass 8:+    0.189 (branch=   0.00 scale=  0.00 alpha=  0.03 freqs=  0.14 rel rates=  0.01 subset rates=  0.00)
+lnL after optimization: -10933.9200
+gen      current_lnL    precision  last_tree_imp  
+0        -10933.9200      0.500           0 
+Optimization precision reduced 
+   Optimizing parameters...    improved    2.202 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.085 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.035 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.036 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.020 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.017 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.008 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.138 lnL
+   Optimizing branchlengths... improved    0.000 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.151 lnL
+   Optimizing branchlengths... improved    0.060 lnL
+Optimization precision reduced 
+   Optimizing parameters...    improved    0.074 lnL
+   Optimizing branchlengths... improved    0.011 lnL
+Reached termination condition!
+last topological improvement at gen 8112
+Improvement over last 500 gen = 0.01275
+Current score = -9966.1767
+Performing final optimizations...
+pass 1 : -9966.1589   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0109  rel rates= 0.0069  subset rates= 0.0000)
+pass 2 : -9966.1481   (branch= 0.0061  alpha= 0.0044  eq freqs= 0.0001  rel rates= 0.0001  subset rates= 0.0000)
+pass 3 : -9966.1367   (branch= 0.0051  alpha= 0.0000  eq freqs= 0.0020  rel rates= 0.0043  subset rates= 0.0000)
+pass 4 : -9966.1192   (branch= 0.0112  alpha= 0.0000  eq freqs= 0.0018  rel rates= 0.0032  subset rates= 0.0014)
+pass 5 : -9966.1082   (branch= 0.0073  alpha= 0.0000  eq freqs= 0.0019  rel rates= 0.0018  subset rates= 0.0000)
+pass 6 : -9966.1037   (branch= 0.0026  alpha= 0.0000  eq freqs= 0.0005  rel rates= 0.0007  subset rates= 0.0007)
+pass 7 : -9966.0997   (branch= 0.0029  alpha= 0.0000  eq freqs= 0.0001  rel rates= 0.0010  subset rates= 0.0000)
+pass 8 : -9966.0976   (branch= 0.0012  alpha= 0.0000  eq freqs= 0.0002  rel rates= 0.0007  subset rates= 0.0000)
+pass 9 : -9966.0967   (branch= 0.0002  alpha= 0.0000  eq freqs= 0.0001  rel rates= 0.0005  subset rates= 0.0001)
+pass 10: -9966.0945   (branch= 0.0017  alpha= 0.0000  eq freqs= 0.0001  rel rates= 0.0004  subset rates= 0.0000)
+pass 11: -9966.0938   (branch= 0.0002  alpha= 0.0000  eq freqs= 0.0001  rel rates= 0.0004  subset rates= 0.0000)
+pass 12: -9966.0934   (branch= 0.0001  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0003  subset rates= 0.0000)
+pass 13: -9966.0931   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0003  subset rates= 0.0000)
+pass 14: -9966.0929   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0002  subset rates= 0.0000)
+pass 15: -9966.0927   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0002  subset rates= 0.0000)
+pass 16: -9966.0925   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0001  subset rates= 0.0000)
+pass 17: -9966.0924   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0001  subset rates= 0.0000)
+pass 18: -9966.0923   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0001  subset rates= 0.0000)
+pass 19: -9966.0923   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0001  subset rates= 0.0000)
+pass 20: -9966.0922   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0001  subset rates= 0.0000)
+ optimization up to ...
+pass 25: -9966.0921   (branch= 0.0000  alpha= 0.0000  eq freqs= 0.0000  rel rates= 0.0001  subset rates= 0.0000)
+Looking for minimum length branches...
+Final score = -9966.0921
+Time used = 0 hours, 3 minutes and 1 seconds
+
+MODEL REPORT - Parameter values are FINAL
+Model 1
+  Number of states = 4 (nucleotide data)
+  Nucleotide Relative Rate Matrix:     6 rates 
+    AC = 3.170, AG = 6.944, AT = 0.894, CG = 1.249, CT = 12.154, GT = 1.000
+  Equilibrium State Frequencies: estimated
+    (ACGT) 0.2134 0.2536 0.2962 0.2367 
+  Rate Heterogeneity Model:
+    4 discrete gamma distributed rate categories, alpha param estimated
+      0.2807
+    Substitution rate categories under this model:
+      rate	proportion
+      0.0039	0.2500
+      0.0896	0.2500
+      0.5619	0.2500
+      3.3447	0.2500
+
+Model 2
+  Number of states = 4 (nucleotide data)
+  Nucleotide Relative Rate Matrix:     2 rates (transition and transversion) K param = 5.4938 (ti/tv = 2.7462)
+  Equilibrium State Frequencies: estimated
+    (ACGT) 0.2574 0.2611 0.2289 0.2526 
+  Rate Heterogeneity Model:
+    no rate heterogeneity
+
+Model 3
+  Number of states = 4 (nucleotide data)
+  Nucleotide Relative Rate Matrix:     2 rates (transition and transversion) K param = 24.8510 (ti/tv = 11.8899)
+  Equilibrium State Frequencies: estimated
+    (ACGT) 0.2356 0.1835 0.2473 0.3337 
+  Rate Heterogeneity Model:
+    4 discrete gamma distributed rate categories, alpha param estimated
+      0.0500
+    Substitution rate categories under this model:
+      rate	proportion
+      0.0000	0.2500
+      0.0000	0.2500
+      0.0053	0.2500
+      3.9947	0.2500
+
+Subset rate multipliers:
+    1.19  0.73  0.77
+NOTE: Collapsing of minimum length branches was requested (collapsebranches = 1)
+    No branches were short enough to be collapsed.
+
+
+#######################################################
+
+Completed 1 replicate search(es) (of 1).
+Results:
+Replicate 1 : -9966.0921       
+
+Parameter estimates:
+
+Partition model subset 1:
+         r(AC)  r(AG)  r(AT)  r(CG)  r(CT)  r(GT) pi(A) pi(C) pi(G) pi(T) alpha
+rep 1:    3.17  6.944 0.8942  1.249  12.15      1 0.213 0.254 0.296 0.237 0.281
+
+Partition model subset 2:
+         r(AC)  r(AG)  r(AT)  r(CG)  r(CT)  r(GT) pi(A) pi(C) pi(G) pi(T)
+rep 1:       1  5.494      1      1  5.494      1 0.257 0.261 0.229 0.253
+
+Partition model subset 3:
+         r(AC)  r(AG)  r(AT)  r(CG)  r(CT)  r(GT) pi(A) pi(C) pi(G) pi(T) alpha
+rep 1:       1  24.85      1      1  24.85      1 0.236 0.183 0.247 0.334 0.050
+
+Treelengths and subset rate multipliers:
+          TL   R(1)  R(2)  R(3)
+rep 1:  2.132 1.193 0.732 0.770
+
+Saving final tree from best search rep (#1) to garli.best.tre
+#######################################################

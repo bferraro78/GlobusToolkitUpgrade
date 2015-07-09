@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+<!-- TODO: Update program name and version -->                                                                                                  
+<program name="HMMPfam" version="1.0"
+        xmlns="http://cummings.umiacs.umd.edu/GSBL/service_description"
+        xmlns:tns="http://cummings.umiacs.umd.edu/GSBL/service_description"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cummings.umiacs.umd.edu/GSBL/service_description http://cummings.umiacs.umd.edu/GSBL/service_description.xsd">
+	<!-- TODO: Update argument list -->
+	<arguments>
+        <!-- jobname -->
+                <argument key="jobname">
+                        <flag>jobname</flag>
+                        <type>java.lang.String</type>
+                        <description>The arbitrary name to assign this job or batch of jobs.</description>
+                        <takes>jobname</takes>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>false</optionalValue>
+                </argument>
+	<!-- replicates -->
+	        <argument key="replicates">
+        	        <flag>replicates</flag>
+		        <type>java.lang.Integer</type>
+                        <description>The number of times to execute this job.</description>
+                        <takes>replicates</takes>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>false</optionalValue>
+                </argument>
+	<!-- input files-->
+		<argument key="hmmFile">
+			<flag>arg0</flag>
+			<type>java.lang.String</type>
+			<description>The HMM Pfam file</description>
+			<takes>pfam_file(s)</takes>
+			<optionalFlag>false</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="seqFastaFile">
+			<flag>arg1</flag>
+			<type>java.lang.String</type>
+			<description>The sequence file. Can be gzip</description>
+			<takes>seq_file(s)</takes>
+			<optionalFlag>false</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+                <argument key="output">
+                        <flag>arg2</flag>
+                        <type>java.lang.String</type>
+                        <description>Redirect stdout to this filename.</description>
+                        <takes>output_file</takes>
+                        <optionalFlag>false</optionalFlag>
+                        <optionalValue>false</optionalValue>
+                </argument>
+
+	<!--expert flags -->
+		<argument key="acc">
+			<flag>acc</flag>
+			<type>none</type>
+			<description>Report HMM accessions instead of names in the output</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<argument key="compat">
+			<flag>compat</flag>
+			<type>none</type>
+			<description>Use the output format of HMMER 2.1.1</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<argument key="cpu">
+			<flag>cpu</flag>
+			<type>java.lang.Integer</type>
+			<takes>n</takes>
+			<description>Sets the maximum number of CPUs used to n</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="cutGA">
+			<flag>cut_ga</flag>
+			<type>none</type>
+			<description>Use gathering threshold to score cutoffs</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<argument key="cutNC">
+			<flag>cut_nc</flag>
+			<type>none</type>
+			<description>Use noise cutoff to score cutoffs</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<argument key="cutTC">
+			<flag>cut_tc</flag>
+			<type>none</type>
+			<description>Use trusted cutoff to score cutoffs</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<argument key="domE">
+			<flag>domE</flag>
+			<type>java.lang.Integer</type>
+			<takes>x</takes>
+			<description>Set the E-value cutoff for the per-domain ranked hit list to x.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="domT">
+			<flag>domT</flag>
+			<type>java.lang.Integer</type>
+			<takes>x</takes>
+			<description>Set the bit score cutoff for the per-domain ranked hit list to x.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="forward">
+			<flag>forward</flag>
+			<type>none</type>
+			<description>Use the Forward algorithm instead of the Viterbi algorithm to determine the per-sequence scores</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<argument key="informat">
+			<flag>informat</flag>
+			<type>java.lang.String</type>
+			<takes>s</takes>
+			<description>Assert that the input sequence file is in format s.  Valid format strings include: FASTA, GENBANK, EMBL, GCG, PIR, STOCKHOLM, SELEX, MSF, CLUSTAL, and PHYLIP.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="null2">
+			<flag>null2</flag>
+			<type>none</type>
+			<description>Turn off the post hoc second null model</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		<!--
+		<argument key="pvm">
+			<flag>pvm</flag>
+			<type>none</type>
+			<description>Run on a Parallel Virtual Machine (PVM)</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		-->
+		<argument key="xnu">
+			<flag>xnu</flag>
+			<type>none</type>
+			<description>Turn on XNU filtering of target protein sequences.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+	<!--regular flags-->
+		<argument key="alignment">
+			<flag>A</flag>
+			<type>java.lang.Integer</type>
+			<takes>n</takes>
+			<description>Limits the alignment output to the n best scoring domains</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="setEValue">
+			<flag>E</flag>
+			<type>java.lang.Integer</type>
+			<takes>x</takes>
+			<description>Set the E-value cutoff for the per-sequence ranked hit list to x</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="bitScore">
+			<flag>T</flag>
+			<type>java.lang.Integer</type>
+			<takes>x</takes>
+			<description>Set the bit score cutoff for the per-sequence ranked hit list to x</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="calcEValue">
+			<flag>Z</flag>
+			<type>java.lang.Integer</type>
+			<takes>n</takes>
+			<description>Calculate the E-value scores as if we had a sequence database of n sequences</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		<argument key="suppress">
+			<flag>suppress</flag>
+			<type>none</type>
+			<description>Suppress negative hits from the output.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+
+	</arguments>
+</program>

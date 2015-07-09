@@ -1,0 +1,39 @@
+        Marxan v 2.1.0 
+
+   Marine Reserve Design via Annealing
+
+   Coded by Ian Ball, modified by Matthew Watts
+   Written by Ian Ball and Hugh Possingham
+
+ian.ball@aad.gov.au
+h.possingham@uq.edu.au
+m.watts@uq.edu.au
+
+   Marxan website
+
+http://www.ecology.uq.edu.au/marxan.htm
+
+
+Entering in the data files 
+   There are 9017 Planning units.
+  9017 Planning Unit names read in 
+  371 species read in 
+  0 boundaries entered 
+42992 conservation values counted, 3345307 big matrix size, 1.28514% density of matrix 
+Time passed so far is 0 secs 
+
+Pre-processing Section. 
+16 species cannot meet targets.
+
+Run 1   Creating the initial reserve 
+
+  Init:Value 3550.0 Cost 0.0 PUs 0 Boundary 0.0 Missing 371 Shortfall 371.00 Penalty 3550.0
+  Heuristic:Value -528.0 Cost 112.0 PUs 112 Boundary 0.0 Missing 16 Shortfall 16.00 Penalty -640.0
+  Iterative Improvement:Value 132.0 Cost 112.0 PUs 112 Boundary 0.0 Missing 18 Shortfall 18.00 Penalty 20.0
+  Best:Value 132.0 Cost 112.0 PUs 112 Boundary 0.0 Missing 18 Shortfall 18.00 Penalty 20.0
+Time passed so far is 0 secs 
+
+Best solution is run 1
+Time passed so far is 0 secs 
+
+              The End 

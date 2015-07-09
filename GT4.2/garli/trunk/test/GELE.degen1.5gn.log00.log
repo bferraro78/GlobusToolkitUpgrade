@@ -1,0 +1,90 @@
+Bootstrap rep 1 (of 1) Search rep 1 (of 15)
+random seed = 42
+gen	best_like	time	optPrecision
+0	-65583.75066	13	0.5
+Score after final optimization: -59376.20502
+Final	-59376.20502	1591	0.01
+Bootstrap rep 1 (of 1) Search rep 2 (of 15)
+random seed = 955382883
+gen	best_like	time	optPrecision
+0	-65486.68495	1604	0.5
+Score after final optimization: -59411.66948
+Final	-59411.66948	3374	0.01
+Bootstrap rep 1 (of 1) Search rep 3 (of 15)
+random seed = 1638666337
+gen	best_like	time	optPrecision
+0	-65553.11737	3389	0.5
+Score after final optimization: -59379.94603
+Final	-59379.94603	6325	0.01
+Bootstrap rep 1 (of 1) Search rep 4 (of 15)
+random seed = 14250762
+gen	best_like	time	optPrecision
+0	-65462.35423	6337	0.5
+Score after final optimization: -59384.1735
+Final	-59384.1735	8156	0.01
+Bootstrap rep 1 (of 1) Search rep 5 (of 15)
+random seed = 1176372041
+gen	best_like	time	optPrecision
+0	-65493.99515	8170	0.5
+Score after final optimization: -59362.8668
+Final	-59362.8668	9831	0.01
+Bootstrap rep 1 (of 1) Search rep 6 (of 15)
+random seed = 1691758417
+gen	best_like	time	optPrecision
+0	-65258.97632	9846	0.5
+Score after final optimization: -59368.92664
+Final	-59368.92664	12114	0.01
+Bootstrap rep 1 (of 1) Search rep 7 (of 15)
+random seed = 69698220
+gen	best_like	time	optPrecision
+0	-65532.72426	12126	0.5
+Score after final optimization: -59364.27515
+Final	-59364.27515	14161	0.01
+Bootstrap rep 1 (of 1) Search rep 8 (of 15)
+random seed = 1907625697
+gen	best_like	time	optPrecision
+0	-65523.7545	14174	0.5
+Score after final optimization: -59374.47111
+Final	-59374.47111	15514	0.01
+Bootstrap rep 1 (of 1) Search rep 9 (of 15)
+random seed = 717175453
+gen	best_like	time	optPrecision
+0	-65367.76359	15525	0.5
+Score after final optimization: -59401.03773
+Final	-59401.03773	17015	0.01
+Bootstrap rep 1 (of 1) Search rep 10 (of 15)
+random seed = 1576917152
+gen	best_like	time	optPrecision
+0	-65585.40986	17026	0.5
+Score after final optimization: -59375.10909
+Final	-59375.10909	19369	0.01
+Bootstrap rep 1 (of 1) Search rep 11 (of 15)
+random seed = 1416599480
+gen	best_like	time	optPrecision
+0	-65428.12778	19381	0.5
+Score after final optimization: -59369.73263
+Final	-59369.73263	22386	0.01
+Bootstrap rep 1 (of 1) Search rep 12 (of 15)
+random seed = 382593210
+gen	best_like	time	optPrecision
+0	-65545.95863	22399	0.5
+Score after final optimization: -59389.62466
+Final	-59389.62466	23737	0.01
+Bootstrap rep 1 (of 1) Search rep 13 (of 15)
+random seed = 1817781487
+gen	best_like	time	optPrecision
+0	-65545.95356	23749	0.5
+Score after final optimization: -59366.37235
+Final	-59366.37235	25933	0.01
+Bootstrap rep 1 (of 1) Search rep 14 (of 15)
+random seed = 82634734
+gen	best_like	time	optPrecision
+0	-65579.3027	25946	0.5
+Score after final optimization: -59381.02203
+Final	-59381.02203	28594	0.01
+Bootstrap rep 1 (of 1) Search rep 15 (of 15)
+random seed = 1264998078
+gen	best_like	time	optPrecision
+0	-65374.8293	28608	0.5
+Score after final optimization: -59359.40552
+Final	-59359.40552	30334	0.01

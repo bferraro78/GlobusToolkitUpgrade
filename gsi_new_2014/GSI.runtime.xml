@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<service name="GSI"
+        xmlns="http://cummings.umiacs.umd.edu/GSBL/service_runtime"
+        xmlns:tns="http://cummings.umiacs.umd.edu/GSBL/service_runtime"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cummings.umiacs.umd.edu/GSBL/service_runtime http://cummings.umiacs.umd.edu/GSBL/service_runtime.xsd">
+	<argument_description>/export/work/globus-4.2.0/service_configurations/GSI.description.xml</argument_description>
+	<!-- <executable>one_proc_driver_CLFSCONDOR.r</executable> -->
+	<executable>one_proc_driver_2014.r</executable>
+	<scheduler>https://lysine.umiacs.umd.edu:8443/wsrf/services/ManagedJobFactoryService</scheduler>
+	<resource>Fork</resource>
+        <arch_os>INTEL_LINUX</arch_os>
+</service>

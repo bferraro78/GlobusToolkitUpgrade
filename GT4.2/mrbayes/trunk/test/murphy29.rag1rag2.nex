@@ -1,0 +1,55 @@
+ 395 401 409 410 415 423-434 441-472 
+	                              478-483 490-496 504-516;
+	charset rna                 =    1 -  516    ;
+	charset dna                 =  517 - 1398    ;
+	charset protein             = 1399 - 1692    ;
+	charset morphology          = 1693 - 1742    ;
+	charset D2                  =    1 -  516    ;
+	charset EF1a                =  517 -  936    ;
+	charset EF1a1st             =  517 -  936 \ 3;
+	charset EF1a2nd             =  518 -  936 \ 3;
+	charset EF1a3rd             =  519 -  936 \ 3;
+	charset CO1                 =  937 - 1398    ;
+	charset CO11st              =  937 - 1398 \ 3;
+	charset CO12nd              =  938 - 1398 \ 3;
+	charset CO13rd              =  939 - 1398 \ 3;
+	charset CO1aa               = 1399 - 1552    ;
+	charset EF1aa               = 1553 - 1692    ;
+	charset Morpho              = 1693 - 1742    ;
+	
+	[Define partitions]
+	partition by_gene_and_pos    = 10:rna,EF1a1st,EF1a2nd,EF1a3rd,CO11st,CO12nd,CO13rd,CO1aa,EF1aa,Morpho;
+	partition by_gene            = 6:rna,EF1a,CO1,CO1aa,EF1aa,Morpho;
+	partition by_gene_and_struct = 7:stems,loops,EF1a,CO1,CO1aa,EF1aa,Morpho;
+	
+	[Exclude the ambiguously aligned characters]
+	exclude ambiguously_aligned;
+	
+	[Select the partition to be used]
+	set partition = by_gene_and_struct;
+
+	[Since we will be using a codon model for partition 4, select the relevant genetic code]
+	lset applyto=(4)   code=metmt;
+	
+	[Apply the doublet model to the first partition (RNA stem regions)]
+	lset applyto=(1)   nucmodel=doublet;
+	
+	[Use a standard 4by4 nucleotide model for the second partition (loops)]
+	lset applyto=(2)   nucmodel=4by4;
+	
+	[Use a codon model for partitions 3 and 4 (Ef1a and CO1)]
+	lset applyto=(3,4) nucmodel=codon;
+	
+	[Use a GTR model for all nucleotide partitions]
+	lset nst=6;
+	
+	[Allow rates to vary across all partitions]
+	prset ratepr=variable;
+
+	[Used model averaging across fixed rate models for all amino-acid partitions]
+	prset aamodelpr=mixed;
+	
+	[Set some mcmc parameters. You will have to run this analysis longer to get
+         convergence; these settings will only start a short sample run when you type mcmc.]
+	mcmcp ngen=10000 nchains=1 printfreq=10;
+end;
