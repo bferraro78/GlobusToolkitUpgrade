@@ -1,4 +1,3 @@
-
 /**
  * @author Adam Bazinet
  */
@@ -87,12 +86,13 @@ public class GSBLService {
 		String hostname = chunks[2];
 		int reps = Integer.parseInt(chunks[3]);
 
-		String myWorkingDir = cwd + unique_id + "/"; //workingDirBase + unique_id + "/";
+		String myWorkingDir = cwd + "/"; //workingDirBase + unique_id + "/";
 
 		try {
 
 			// construct the full working directory
-			/* No longer need to create /export/grid_files/jobID because cwd already exists */
+			/* No longer need to create /export/grid_files/jobID because cwd=(/export/work/drupal/user_files/admin/job#/) already exists */
+			
 			/* File myFile = new File(myWorkingDir);
 			 * if (!myFile.exists()) {
 			 *	myFile.mkdir();
