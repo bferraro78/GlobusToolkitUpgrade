@@ -119,7 +119,8 @@ public class GARLIService extends GSBLService {
 	public boolean runService(GARLIArguments myBean) {
 		this.myBean = myBean;
 
-		// Create symlinks. (MIGHT NOT NEED b/c no symlinks are set in GarliClient.java)
+		// Create symlinks.
+		// (Might not need because no symlinks are set in "GarliClient.java".)
 		if ((myBean.getSymlinks() != null)
 				&& !myBean.getSymlinks().equals("")) {
 			makeSymlinks(myBean.getSymlinks());
@@ -175,7 +176,7 @@ public class GARLIService extends GSBLService {
 		int reps = 1;
 		Integer replicates = myBean.getReplicates();
 		try {
-			if((replicates != null) && (replicates.intValue() > 1)) {
+			if ((replicates != null) && (replicates.intValue() > 1)) {
 				reps = replicates.intValue();
 			}
 		} catch (Exception e) {
@@ -224,7 +225,7 @@ public class GARLIService extends GSBLService {
 		}
 
 		// Produce a runtime estimate.
-		if(doValidate) {
+		if (doValidate) {
 			if (myBean.getUniquepatterns() != null) {
 				unique_patterns = myBean.getUniquepatterns();
 			}
@@ -264,27 +265,31 @@ public class GARLIService extends GSBLService {
 			ArrayList<String> distinctRateMatrix =
 					GSBLUtils.returnDistinctGarliValues("ratematrix");
 			if ((ratematrix == null)
-					|| (!distinctRateMatrix.contains(ratematrix))) {  /* Either
+					|| !distinctRateMatrix.contains(ratematrix)) {  /* Either
 					not supplied or we haven't seen it before ... use default
 					value. */
 				if (datatype.equals("nucleotide")) {
 					ratematrix = "6rate";
 				} else if (datatype.equals("aminoacid")) {
 					ratematrix = "dayhoff";  /* I'm picking this default since
-						GARLI doesn't give one. */
+							GARLI doesn't give one. */
 				} else {  // Must be a codon model.
 					ratematrix = "2rate";
 				}
 			}
 
 			String statefrequencies = myBean.getStatefrequencies();
-			ArrayList<String> distinctStateFrequencies = GSBLUtils.returnDistinctGarliValues("statefrequencies");
-			if ((statefrequencies == null) || (!distinctStateFrequencies.contains(statefrequencies))) {  // Either not supplied or we haven't seen it before ... use default value.
+			ArrayList<String> distinctStateFrequencies =
+					GSBLUtils.returnDistinctGarliValues("statefrequencies");
+			if ((statefrequencies == null)
+					|| (!distinctStateFrequencies.contains(statefrequencies))) {
+					/* Either not supplied or we haven't seen it before ... use
+					default value. */
 				if (datatype.equals("nucleotide")) {
 					statefrequencies = "estimate";
 				} else if (datatype.equals("aminoacid")) {
 					statefrequencies = "dayhoff";  /* I'm picking this default
-						since GARLI doesn't give one. */
+							since GARLI doesn't give one. */
 				} else {  // Must be a codon model.
 					statefrequencies = "empirical";
 				}
@@ -304,7 +309,8 @@ public class GARLIService extends GSBLService {
 			String numratecats = (myBean.getNumratecats()).toString();
 			if (numratecats == null) {  /* Number of rate categories was not
 					supplied, use default value. */
-				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
+				if (datatype.equals("nucleotide")
+						|| datatype.equals("aminoacid")) {
 					numratecats = "4";
 				} else {  // Must be a codon model.
 					numratecats = "1";
@@ -358,8 +364,9 @@ public class GARLIService extends GSBLService {
 						Integer.parseInt(runtime_estimate_recent);
 			}
 
-			// Scale runtime estimate linearly based on searchreps and
-				bootstrapreps.
+			/* Scale runtime estimate linearly based on searchreps and
+			 * bootstrapreps.
+			 */
 			searchreps = Integer.valueOf(gp.getSearchreps());
 			bootstrapreps = Integer.valueOf(gp.getBootstrapreplicates());
 
@@ -372,7 +379,8 @@ public class GARLIService extends GSBLService {
 		}
 
 		/* Redo argument string - remove all arguments except for config file
-		 * name. */
+		 * name.
+		 */
 		argumentString = "\"" + myBean.getConfigFile() + "\"";
 
 		// Prepend replicates to the argument string.
@@ -403,7 +411,7 @@ public class GARLIService extends GSBLService {
 				String end = argumentString.substring(last+1);
 				argumentString = beginning + " " + csv + " " + end;
 			}
-		}	
+		}
 
 		log.debug("argument string after hetero batch mucking is: "
 				+ argumentString);
@@ -436,7 +444,7 @@ public class GARLIService extends GSBLService {
 
 			if (scheduler.equals("matchmaking")) {
 				scheduler = job.getScheduler();  /* These values could have
-					changed! */
+						changed! */
 				resource = job.getResource();
 				arch_os = job.getArch_os();
 			}
