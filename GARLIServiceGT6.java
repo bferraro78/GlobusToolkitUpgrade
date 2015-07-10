@@ -119,7 +119,7 @@ public class GARLIService extends GSBLService {
 	public boolean runService(GARLIArguments myBean) {
 		this.myBean = myBean;
 
-		// Create symlinks.
+		// Create symlinks. (MIGHT NOT NEED b/c no symlinks are set in GarliClient.java)
 		if ((myBean.getSymlinks() != null)
 				&& !myBean.getSymlinks().equals("")) {
 			makeSymlinks(myBean.getSymlinks());

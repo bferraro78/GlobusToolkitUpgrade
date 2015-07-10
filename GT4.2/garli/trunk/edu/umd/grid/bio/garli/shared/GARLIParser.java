@@ -135,7 +135,7 @@ public class GARLIParser {
     /**
      * Constructor
      * @param myBean       argument bean
-     * @param workingDir   the working directory to use
+     * @param workingDir   the working directory to use cwd - /export/work/drupal/user_files/admin/job*
      * @param buildConfig  build a config file from command line arguments
      * @param doValidate   validate the data file; get memory to be used
      * @param doParse      parse the config file (true/false)
@@ -848,7 +848,7 @@ public class GARLIParser {
         this.unique_patterns = chunks[2];
         this.num_taxa = chunks[3];
         this.actual_mem = chunks[4];
-        if(chunks[5].toLowerCase().equals("true")){
+        if(chunks[5].toLowerCase().equals("true")) {
             this.valid_dataf = true;
         } else {
         	this.valid_dataf = false;
@@ -983,12 +983,13 @@ public class GARLIParser {
 
 		    // Check to see if the datafile specified exists; only perform this action on the client
 		    File testDataFile = new File(fullDataFileName);
-		    if(myWorkingDir.equals("")) {
-			if(!testDataFile.exists()) {
-			    log.error("Data file " + testDataFile.toString() + " does not exist!");
-			    System.exit(1);
-			}
-		    }
+		    /* No more client/server side  */
+		    //if(myWorkingDir.equals("")) {
+				if(!testDataFile.exists()) {
+			    	log.error("Data file " + testDataFile.toString() + " does not exist!");
+			    	System.exit(1);
+				}
+		    //}
 		    
 		    // add the data file
 		    inputFiles.add(fullDataFileName);
@@ -1095,8 +1096,8 @@ public class GARLIParser {
 		    }
 		}
 
-		// v0.951 settings
-                if (garliVar.equalsIgnoreCase("streefname")) {
+			// v0.951 settings
+            if (garliVar.equalsIgnoreCase("streefname")) {
 
 		    streefname = garliVarVal;
 
@@ -1113,12 +1114,12 @@ public class GARLIParser {
 			
 			// Check to see if the treefile specified exists; only perform this action on the client
 			File testTreeFile = new File(fullTreeFileName);
-			if(myWorkingDir.equals("")) {
+			//if(myWorkingDir.equals("")) {
 			    if(!testTreeFile.exists()) {
-				log.error("Tree file " + testTreeFile.toString() + " does not exist!");
-				System.exit(1);
+					log.error("Tree file " + testTreeFile.toString() + " does not exist!");
+					System.exit(1);
 			    }
-			}
+			//}
 			inputFiles.add(fullTreeFileName);
 		    }
 		}
@@ -1128,19 +1129,19 @@ public class GARLIParser {
 		    String [] splitPath = fullConstraintFileName.split("/");
 
 		    if(splitPath.length > 1) {
-			log.error("We are not currently supporting paths to constraint files; please fix your garli.conf file and try again.");
-			System.exit(1);
+				log.error("We are not currently supporting paths to constraint files; please fix your garli.conf file and try again.");
+				System.exit(1);
 		    }
 
 
 		    // Check to see if the constraint file specified exists; only perform this action on the client
 		    File testConstraintFile = new File(fullConstraintFileName);
-		    if(myWorkingDir.equals("")) {
+		    //if(myWorkingDir.equals("")) {
 			if(!testConstraintFile.exists()) {
 			    log.error("Constraint file " + testConstraintFile.toString() + " does not exist!");
 			    System.exit(1);
 			}
-		    }
+		    //}
 		    inputFiles.add(fullConstraintFileName);
 		}
 		if (garliVar.equalsIgnoreCase("writecheckpoints") && garliVarVal.equals("1")) {
