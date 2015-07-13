@@ -2086,6 +2086,9 @@ public class GARLIArguments implements java.io.Serializable {
 		if (getJobName() != null) {
 			_hashCode += getJobName().hashCode();
 		}
+		if (getJobID() != null) {
+			_hashCode += getJobID().hashCode();
+		}
 		if (getWorkingDir() != null) {
 			_hashCode += getWorkingDir().hashCode();
 		}
