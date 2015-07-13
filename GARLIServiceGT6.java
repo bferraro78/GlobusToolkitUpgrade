@@ -152,6 +152,7 @@ public class GARLIService extends GSBLService {
 			String[] chunks = filenames.split(":");
 			perJobFiles.add(chunks);
 		}
+		
 		String myWorkingDir = myBean.getWorkingDir();
 		setArguments(myBean, myWorkingDir);	
 
@@ -167,7 +168,7 @@ public class GARLIService extends GSBLService {
 		String argumentString = null;
 		try {
 			BeanToArguments BTA =
-					new BeanToArguments(runtimeConfig.getArgumentDescription());
+					new BeanToArguments(argumentDescription);
 			argumentString = BTA.getArgumentStringFromBean(myBean);
 		} catch (Exception e) {
 			log.error("Exception: " + e);
