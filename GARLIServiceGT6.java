@@ -241,10 +241,18 @@ public class GARLIService extends GSBLService {
 			// NEW WAY IS ACCESSING JOBID THRU BEAN
 			String unique_id = myBean.getjobID();
 
+<<<<<<< HEAD
 				/* Get the unique ID from the working directory. -- OLD WAY -- 
 					myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
 					unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
 				*/
+=======
+			/* Get the unique ID from the working directory. -- OLD WAY -- */
+			/* 
+			myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
+			unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
+			*/
+>>>>>>> a10ad43c27f9fe4ae9b295e0f6d35188164f953a
 
 			// Formulate working directory for command.
 			String workingDir = runtime_estimates_location + executable + "/";

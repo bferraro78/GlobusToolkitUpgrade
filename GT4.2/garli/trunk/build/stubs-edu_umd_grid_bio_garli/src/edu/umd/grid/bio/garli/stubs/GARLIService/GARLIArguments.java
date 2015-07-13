@@ -145,6 +145,7 @@ public class GARLIArguments implements java.io.Serializable {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public GARLIArguments(
            java.lang.Integer replicates,
            java.lang.String ratematrix,
@@ -2535,6 +2536,8 @@ public class GARLIArguments implements java.io.Serializable {
             _javaType, _xmlType, typeDesc);
     }
 =======
+=======
+>>>>>>> a10ad43c27f9fe4ae9b295e0f6d35188164f953a
 =======
 >>>>>>> a10ad43c27f9fe4ae9b295e0f6d35188164f953a
 	public GARLIArguments(
@@ -4933,6 +4936,9 @@ public class GARLIArguments implements java.io.Serializable {
 				_javaType, _xmlType, typeDesc);
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a10ad43c27f9fe4ae9b295e0f6d35188164f953a
+=======
 >>>>>>> a10ad43c27f9fe4ae9b295e0f6d35188164f953a
 =======
 >>>>>>> a10ad43c27f9fe4ae9b295e0f6d35188164f953a
