@@ -104,7 +104,7 @@ public class GarliSubmit extends GSBLClient {
 
 	void execute() throws Exception {  // ADD COMMENTS.
 		// Get a unique job id.
-		jobID = getjobID();
+		jobID = getJobID();
 
 		/* Store the directory the client submitted from as well as the
 		 * hostname. */
@@ -248,7 +248,7 @@ public class GarliSubmit extends GSBLClient {
 		myBean.setAppName(new String("GARLI"));
 		myBean.setOwner(System.getProperty("user.name"));
 		myBean.setJobName(jobname);
-		myBean.setjobID(jobID); // added jobID to bean so we can access jobID on service side
+		myBean.setJobID(jobID); // added jobID to bean so we can access jobID on service side
 		myBean.setWorkingDir(workingDir);
 
 		System.out.println("Submitting job.");

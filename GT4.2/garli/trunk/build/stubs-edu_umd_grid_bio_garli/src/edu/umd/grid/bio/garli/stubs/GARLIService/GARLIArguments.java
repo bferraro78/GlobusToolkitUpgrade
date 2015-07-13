@@ -1604,7 +1604,7 @@ public class GARLIArguments implements java.io.Serializable {
 	 * 
 	 * @return jobID
 	 */
-	public java.lang.String getjobID() {
+	public java.lang.String getJobID() {
 		return jobID;
 	}
 
@@ -1614,7 +1614,7 @@ public class GARLIArguments implements java.io.Serializable {
 	 * 
 	 * @param jobID
 	 */
-	public void setjobID(java.lang.String jobID) {
+	public void setJobID(java.lang.String jobID) {
 		this.jobID = jobID;
 	}
 
