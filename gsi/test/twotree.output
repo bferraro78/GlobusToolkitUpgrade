@@ -1,0 +1,12 @@
+"treenum" "class" "gsi" "pval"
+1 "class1" 0.4000000 0.94
+1 "class2" 0.3333333 0.47
+1 "class3" 1.0000000 0.15
+2 "class1" 0.4000000 0.94
+2 "class2" 0.3333333 0.47
+2 "class3" 0.2500000 0.88
+Ensemble Statistics
+"class" "egsi" "epval"
+"class1" 0.4000000 0.94
+"class2" 0.3333333 0.47
+"class3" 0.6250000 0.15

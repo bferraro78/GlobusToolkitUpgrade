@@ -1,0 +1,9 @@
+http\://www.umd.edu/namespaces/grid/bio/MARXANService=edu.umd.grid.bio.marxan.stubs.MARXANService
+http\://www.umd.edu/namespaces/grid/bio/MARXANService/bindings=edu.umd.grid.bio.marxan.stubs.MARXANService.bindings
+http\://www.umd.edu/namespaces/grid/bio/MARXANService/service=edu.umd.grid.bio.marxan.stubs.MARXAN.service
+
+http\://www.umd.edu/namespaces/grid/bio/MARXANFactoryService=edu.umd.grid.bio.marxan.stubs.MARXANFactoryService
+http\://www.umd.edu/namespaces/grid/bio/MARXANFactoryService/bindings=edu.umd.grid.bio.marxan.stubs.MARXANFactoryService.bindings
+http\://www.umd.edu/namespaces/grid/bio/MARXANFactoryService/service=edu.umd.grid.bio.marxan.stubs.MARXANFactory.service
+
+

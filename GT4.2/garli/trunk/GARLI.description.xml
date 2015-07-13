@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<program name="GARLI" version="0.96b8"
+    xmlns="http://cummings.umiacs.umd.edu/GSBL/service_description"
+	xmlns:tns="http://cummings.umiacs.umd.edu/GSBL/service_description"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://cummings.umiacs.umd.edu/GSBL/service_description http://cummings.umiacs.umd.edu/GSBL/service_description.xsd">
+	
+	<arguments>
+		<argument key="jobname">
+			<flag>jobname</flag>
+			<type>java.lang.String</type>
+			<description>The arbitrary name to assign this job or batch of jobs.</description>
+			<takes>jobname</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="replicates">
+			<flag>replicates</flag>
+			<type>java.lang.Integer</type>
+			<description>The number of times to execute this job.</description>
+			<takes>replicates</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+		<argument key="profilingjob">
+			<flag>profilingjob</flag>
+			<type>java.lang.Integer</type>
+			<description>Whether this is a profiling job or not.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+		<argument key="configFile">
+			<flag>conf</flag>
+			<type>java.lang.String</type>
+			<description>The configuration file that holds all of the GARLI parameters</description>
+			<takes>conf_file(s)</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="analysistype">
+			<flag>analysistype</flag>
+			<type>java.lang.String</type>
+			<description>Analysis type</description>
+			<takes>analysistype</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+                <argument key="novalidate">
+                        <flag>novalidate</flag>
+			<type>none</type>
+			<description>Skip GARLI's validation of job input files.</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+                <argument key="uniquepatterns">
+                        <flag>uniquepatterns</flag>
+                        <type>java.lang.String</type>
+                        <description>FOR INTERNAL USE ONLY</description>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>true</optionalValue>
+                </argument>
+
+                <argument key="numtaxa">
+                        <flag>numtaxa</flag>
+                        <type>java.lang.String</type>
+                        <description>FOR INTERNAL USE ONLY</description>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>true</optionalValue>
+                </argument>
+
+                <argument key="actualmemory">
+                        <flag>actualmemory</flag>
+                        <type>java.lang.String</type>
+                        <description>FOR INTERNAL USE ONLY</description>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>true</optionalValue>
+                </argument>
+		
+		<argument key="datafname">
+			<flag>datafname</flag>
+			<type>java.lang.String</type>
+			<description>File containing sequence dataset</description>
+			<takes>datafname</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="datatype">
+			<flag>datatype</flag>
+			<type>java.lang.String</type>
+			<description>Data type</description>
+			<takes>datatype</takes>
+                        <optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+                <argument key="ofprefix">
+                        <flag>ofprefix</flag>
+                        <type>java.lang.String</type>
+                        <description>Output file prefix</description>
+                        <takes>ofprefix</takes>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>false</optionalValue>
+                </argument>
+		
+		<argument key="ratematrix">
+			<flag>ratematrix</flag>
+			<type>java.lang.String</type>
+			<description>Rate matrix</description>
+			<takes>ratematrix</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="statefrequencies">
+			<flag>statefrequencies</flag>
+			<type>java.lang.String</type>
+			<description>Base frequencies</description>
+			<takes>statefrequencies</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="invariantsites">
+			<flag>invariantsites</flag>
+			<type>java.lang.String</type>
+			<description>Proportion of invariant sites</description>
+			<takes>invariantsites</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="ratehetmodel">
+			<flag>ratehetmodel</flag>
+			<type>java.lang.String</type>
+			<description>The model of rate heterogeneity</description>
+			<takes>ratehetmodel</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="numratecats">
+			<flag>numratecats</flag>
+			<type>java.lang.Integer</type>
+			<description>Number of rate categories</description>
+			<takes>numratecats</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="geneticcode">
+			<flag>geneticcode</flag>
+			<type>java.lang.String</type>
+			<description>Genetic code</description>
+			<takes>geneticcode</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="streefname">
+			<flag>streefname</flag>
+			<type>java.lang.String</type>
+			<description>Starting tree type (none, random, stepwise, or upload)</description>
+			<takes>streefname</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="streefname_userdata">
+			<flag>streefname_userdata</flag>
+			<type>java.lang.String</type>
+			<description>Starting tree file</description>
+			<takes>streefname_userdata</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="attachmentspertaxon">
+			<flag>attachmentspertaxon</flag>
+			<type>java.lang.Integer</type>
+			<description>The number of attachment branches evaluated for each taxon</description>
+			<takes>attachmentspertaxon</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="outgroup">
+			<flag>outgroup</flag>
+			<type>java.lang.String</type>
+			<description>Outgroup taxa numbers, separated by spaces</description>
+			<takes>outgroup</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+                <argument key="outputsitelikelihoods">
+                        <flag>outputsitelikelihoods</flag>
+			<type>none</type>
+			<description>Output site likelihoods</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+                <argument key="collapsebranches">
+                        <flag>collapsebranches</flag>
+			<type>none</type>
+			<description>Collapse zero-length branches into polytomies</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		
+		<argument key="constraintfile">
+			<flag>constraintfile</flag>
+			<type>java.lang.String</type>
+			<description>Constraint file</description>
+			<takes>constraintfile</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="refinestart">
+			<flag>refinestart</flag>
+			<type>none</type>
+			<description>Perform initial rough optimization</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		
+		<argument key="selectionintensity">
+			<flag>selectionintensity</flag>
+			<type>java.lang.Double</type>
+			<description>Selection intensity</description>
+			<takes>selectionintensity</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="nindivs">
+			<flag>nindivs</flag>
+			<type>java.lang.Integer</type>
+			<description>Number of individuals</description>
+			<takes>nindivs</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="startoptprec">
+			<flag>startoptprec</flag>
+			<type>java.lang.Double</type>
+			<description>Starting precision</description>
+			<takes>startoptprec</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="minoptprec">
+			<flag>minoptprec</flag>
+			<type>java.lang.Double</type>
+			<description>Minimum precision</description>
+			<takes>minoptprec</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="numberofprecreductions">
+			<flag>numberofprecreductions</flag>
+			<type>java.lang.Integer</type>
+			<description>Number of precision reductions</description>
+			<takes>numberofprecreductions</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+                <argument key="treerejectionthreshold">
+                        <flag>treerejectionthreshold</flag>
+                        <type>java.lang.Integer</type>
+                        <description>Tree rejection threshold</description>
+                        <takes>treerejectionthreshold</takes>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>false</optionalValue>
+                </argument>
+		
+		<argument key="modweight">
+			<flag>modweight</flag>
+			<type>java.lang.Double</type>
+			<description>Model mutations</description>
+			<takes>modweight</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="brlenweight">
+			<flag>brlenweight</flag>
+			<type>java.lang.Double</type>
+			<description>Branch-length mutations</description>
+			<takes>brlenweight</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="topoweight">
+			<flag>topoweight</flag>
+			<type>java.lang.Double</type>
+			<description>All topology mutations</description>
+			<takes>topoweight</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="randnniweight">
+			<flag>randnniweight</flag>
+			<type>java.lang.Double</type>
+			<description>NNI mutations</description>
+			<takes>randnniweight</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="randsprweight">
+			<flag>randsprweight</flag>
+			<type>java.lang.Double</type>
+			<description>SPR mutations</description>
+			<takes>randsprweight</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="limsprweight">
+			<flag>limsprweight</flag>
+			<type>java.lang.Double</type>
+			<description>Limited SPR mutations</description>
+			<takes>limsprweight</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="limsprrange">
+			<flag>limsprrange</flag>
+			<type>java.lang.Integer</type>
+			<description>Max limited SPR branch movement</description>
+			<takes>limsprrange</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="meanbrlenmuts">
+			<flag>meanbrlenmuts</flag>
+			<type>java.lang.Integer</type>
+			<description>Mean # of branch lengths to change per mutation</description>
+			<takes>meanbrlenmuts</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="gammashapebrlen">
+			<flag>gammashapebrlen</flag>
+			<type>java.lang.Integer</type>
+			<description>Magnitude of branch-length mutations</description>
+			<takes>gammashapebrlen</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="gammashapemodel">
+			<flag>gammashapemodel</flag>
+			<type>java.lang.Integer</type>
+			<description>Magnitude of model argument mutations</description>
+			<takes>gammashapemodel</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="uniqueswapbias">
+			<flag>uniqueswapbias</flag>
+			<type>java.lang.Double</type>
+			<description>Unique swap bias</description>
+			<takes>uniqueswapbias</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="distanceswapbias">
+			<flag>distanceswapbias</flag>
+			<type>java.lang.Double</type>
+			<description>Relative weight assigned to branch swaps based on locality</description>
+			<takes>distanceswapbias</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="outputphyliptree">
+			<flag>outputphyliptree</flag>
+			<type>none</type>
+			<description>Write trees to file in Phylip format as well as Nexus format</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+		
+		<argument key="resampleproportion">
+			<flag>resampleproportion</flag>
+			<type>java.lang.Double</type>
+			<description>Relative size of resampled data matrix</description>
+			<takes>resampleproportion</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+		
+		<argument key="inferinternalstateprobs">
+			<flag>inferinternalstateprobs</flag>
+			<type>none</type>
+			<description>Infer ancestral states</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+		<argument key="linkmodels">
+			<flag>linkmodels</flag>
+			<type>none</type>
+			<description>Link models</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+		<argument key="subsetspecificrates">
+			<flag>subsetspecificrates</flag>
+			<type>none</type>
+			<description>Set a rate for each partition</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
+		</argument>
+
+		<argument key="partitionsdata">
+			<flag>partitionsdata</flag>
+			<type>java.lang.String</type>
+			<description>Partition Data</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+		<argument key="modelsdata">
+			<flag>modelsdata</flag>
+			<type>java.lang.String</type>
+			<description>Model configurations</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+                <argument key="optimizeinputonly">
+                        <flag>optimizeinputonly</flag>
+                        <type>none</type>
+                        <description>Only optimize model and branch lengths</description>
+                        <optionalFlag>true</optionalFlag>
+                        <optionalValue>true</optionalValue>
+                </argument>
+
+		<argument key="searchreps">
+			<flag>searchreps</flag>
+			<type>java.lang.Integer</type>
+			<description>Number of search reps (for bootstrap runs)</description>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>false</optionalValue>
+		</argument>
+
+	</arguments>
+</program>

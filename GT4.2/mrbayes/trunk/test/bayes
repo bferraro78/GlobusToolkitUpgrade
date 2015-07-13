@@ -1,0 +1,6 @@
+set autoclose=yes nowarn=yes
+execute murphy29.rag1rag2.nex
+lset nst=6 rates=gamma
+mcmc ngen=10000 savebrlens=yes file=murphy29.rag1rag2.nex1
+mcmc file=murphy29.rag1rag2.nex2
+quit

@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+#Standard analysis
+#
+#To run this test script, you must first copy sample.infile, short.paramfile, 
+#  and this file into the main Migrate directory
+#
+#Output files: short.outfile, mathfile-set, short.logfile
+#
+#Approx time: < 1 min
+
+my $output = `./Migrate_submit short.paramfile sample.infile`;
+print "stdout:\n";
+print $output;

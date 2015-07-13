@@ -1,0 +1,9 @@
+http\://www.umd.edu/namespaces/grid/bio/MigrateService=edu.umd.grid.bio.migrate.stubs.MigrateService
+http\://www.umd.edu/namespaces/grid/bio/MigrateService/bindings=edu.umd.grid.bio.migrate.stubs.MigrateService.bindings
+http\://www.umd.edu/namespaces/grid/bio/MigrateService/service=edu.umd.grid.bio.migrate.stubs.Migrate.service
+
+http\://www.umd.edu/namespaces/grid/bio/MigrateFactoryService=edu.umd.grid.bio.migrate.stubs.MigrateFactoryService
+http\://www.umd.edu/namespaces/grid/bio/MigrateFactoryService/bindings=edu.umd.grid.bio.migrate.stubs.MigrateFactoryService.bindings
+http\://www.umd.edu/namespaces/grid/bio/MigrateFactoryService/service=edu.umd.grid.bio.migrate.stubs.MigrateFactory.service
+
+

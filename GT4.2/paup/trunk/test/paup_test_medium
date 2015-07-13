@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+#Typical analysis
+#
+#To run this test script, you must first copy sampleNJ.paup, your_data.nex, 
+#  and this file into the main ssearch34 directory
+#
+#Output files: nj.trees, your_trees.tree, paup_test_medium.log
+#
+#Approx time: 2 min
+
+my $output = `./PAUP_submit sampleNJ.paup`;
+print "stdout:\n";
+print $output;

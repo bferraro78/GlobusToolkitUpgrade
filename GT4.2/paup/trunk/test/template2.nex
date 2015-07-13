@@ -1,0 +1,24 @@
+#NEXUS
+
+begin paup;
+set autoclose nowarntree nowarnreset flush defaultmode;
+log start file=paup_test_short.log append=no;
+execute gene_seqs.nxs;
+set criterion=likelihood;
+nj;
+lset nst=6 rmat=estimate basefreq=estimate rates=gamma ncat=4
+shape=estimate pinvar=estimate;
+lscores;
+lset nst=6 rmat=previous basefreq=previous rates=gamma ncat=4
+shape=previous pinvar=previous;
+hs addseq=rand nreps=10 swap=tbr;
+lset nst=6 rmat=estimate basefreq=estimate rates=gamma ncat=4
+shape=estimate pinvar=estimate;
+lscores;
+lset nst=6 rmat=previous basefreq=previous rates=gamma ncat=4
+shape=previous pinvar=previous;
+hs addseq=rand nreps=10 swap=tbr;
+savetrees brlens format=phylip file=paup_test_short_tree.phy;
+log stop;
+quit;
+end;

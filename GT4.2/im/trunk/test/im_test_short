@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+# NOTE: THIS FILE PROBABLY NEEDS UPDATING TO WORK WITH LATEST VERSION OF THE SERVICE
+
+# To run this test, you must first copy this file and HVRI.UG.WEA.txt to
+# the main working directory.
+#
+# -s sets the random seed, so as to assure consistent result files.
+#
+# Approx runtime: < 1 min
+
+my $output = `./IM_submit -i HVRI.UG.WEA.txt -o HVRI.UG.WEA.out.txt -b 100 -l 1000 --m1 20 --m2 20 -p 38 --q1 60 -t 150 -s 323345`;
+print "stdout:\n";
+print $output;

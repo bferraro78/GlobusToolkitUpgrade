@@ -1,0 +1,77 @@
+#!/usr/bin/perl
+
+use strict;
+use Cwd;
+use GSBL::Client ':all';
+
+use FindBin qw($RealBin);
+use lib "$RealBin/../lib";
+
+my %option_desc = ( 
+
+
+	arg1 => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "outputFile",
+		 TAKES => qq{output_file},
+		 DESC => qq{The output file contains a list of output files from MARXAN.},
+	},
+
+	replicates => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "replicates",
+		 TAKES => qq{replicates},
+		 DESC => qq{The number of times to execute this job.},
+	},
+
+	arg0 => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "inputFile",
+		 TAKES => qq{input_file},
+		 DESC => qq{The input file contains a list of input files to MARXAN.},
+	},
+
+	jobname => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "jobname",
+		 TAKES => qq{jobname},
+		 DESC => qq{The arbitrary name to assign this job or batch of jobs.},
+	},
+
+
+);
+
+my $properties = process_options(\%option_desc, "MARXAN");
+
+my $pid = $$;
+my $jobname = "not initialized";
+
+if($properties =~ /jobname \@-- (.*) \@-- java.lang.String/) { # override job name
+    $jobname = $1;
+    my @properties_chunks = split(/\n/, $properties);
+    my $new_properties = "";
+    foreach my $chunk(@properties_chunks) {
+	if(!($chunk =~ /jobname.*java.lang.String/)) {
+	    $new_properties .= $chunk . "\n";
+	}
+    }
+    $properties = $new_properties;
+} else {
+    my $wd = getcwd;
+    $wd =~ /.*\/(.*)/;
+    $wd = $1;
+    $jobname = $wd;
+}
+
+open(PROPERTIES_OUT, ">MARXAN.properties.$pid") || die "Cannot write properties file: $!";
+print PROPERTIES_OUT $properties;
+close(PROPERTIES_OUT);
+
+system("java -DGLOBUS_LOCATION=\$GLOBUS_LOCATION -classpath $RealBin:$RealBin/build/classes/:$RealBin/build/stubs/classes/:\$CLASSPATH edu.umd.grid.bio.marxan.clients.MARXANSubmitClient https://valine.umiacs.umd.edu:8443/wsrf/services/edu/umd/grid/bio/marxan/MARXANFactoryService MARXAN.properties.$pid $jobname");
+
+unlink("MARXAN.properties.$$");
+
