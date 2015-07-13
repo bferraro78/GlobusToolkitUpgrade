@@ -370,14 +370,15 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String workingDir, String arguments, String scheduler,
+			String job_id, String arguments, String scheduler,
 			String resource, String arch_os, String cpus, String replicates,
 			String runtime_estimate, String runtime_estimate_recent,
 			String searchreps, String bootstrapreps) {
 
-		// Get job id from working directory.
+		// Changed parameter "workingDir" to "job_id".
+		/* // Get job id from working directory.
 		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1);
+		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
 
 		log.debug("job id is: " + job_id);
 
@@ -465,13 +466,14 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String workingDir, String arguments, String scheduler,
+			String job_id, String arguments, String scheduler,
 			String resource, String arch_os, String cpus, String replicates,
 			String runtime_estimate, String searchreps, String bootstrapreps) {
 
-		// Get job id from working directory.
+		// Changed parameter "workingDir" to "job_id".
+		/* // Get job id from working directory.
 		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1);
+		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
 
 		log.debug("job id is: " + job_id);
 
@@ -558,13 +560,14 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String workingDir, String arguments, String scheduler,
+			String job_id, String arguments, String scheduler,
 			String resource, String arch_os, String cpus, String replicates,
 			String runtime_estimate) {
 
-		// Get job id from working directory.
+		// Changed parameter "workingDir" to "job_id".
+		/* // Get job id from working directory.
 		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1);
+		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
 
 		log.debug("job id is: " + job_id);
 
@@ -649,12 +652,13 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String workingDir, String arguments, String scheduler,
+			String job_id, String arguments, String scheduler,
 			String resource, String arch_os, String cpus, String replicates) {
 
-		// Get job id from working directory.
+		// Changed parameter "workingDir" to "job_id".
+		/* // Get job id from working directory.
 		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1);
+		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
 
 		log.debug("job id is: " + job_id);
 
@@ -738,12 +742,13 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String workingDir, String arguments, String scheduler,
+			String job_id, String arguments, String scheduler,
 			String resource, String arch_os) {
 
-		// Get job id from working directory.
+		// Changed parameter "workingDir" to "job_id".
+		/* // Get job id from working directory.
 		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1);
+		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
 
 		log.debug("job id is: " + job_id);
 

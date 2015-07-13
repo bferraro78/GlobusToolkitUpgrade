@@ -127,11 +127,11 @@ public class GSBLJob {
 				workingDir, requirements, extraRSL);
 
 		// Write the RSL to our working directory (something like
-		// "/export/grid_files/[resource_id]/").
+		// "/export/grid_files/[job_id]/").
 		r.writeXML();
 
 		// write any mappings to our working directory (something like
-		// "/export/grid_files/[resource_id]/").
+		// "/export/grid_files/[job_id]/").
 		r.writeMappingsToAdd();
 
 		// Instantiate the GramJob.

@@ -460,7 +460,7 @@ public class GARLIService extends GSBLService {
 
 			// Add this job entry to the database.
 			addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
-					myWorkingDir, argumentString, scheduler, resource, arch_os,
+					unique_id, argumentString, scheduler, resource, arch_os,
 					job.getCPUs(), job.getReplicates(),
 					(new Integer(runtime_estimate_seconds).toString()),
 					(new Integer(runtime_estimate_seconds_recent).toString()),
