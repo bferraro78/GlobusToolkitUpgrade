@@ -138,6 +138,8 @@ public class GARLIArguments  implements java.io.Serializable {
 
     private java.lang.String workingDir;
 
+    private java.land.String jobID; // jobID added
+
     public GARLIArguments() {
     }
 
@@ -206,6 +208,7 @@ public class GARLIArguments  implements java.io.Serializable {
            java.lang.String schedulerOverride,
            java.lang.String appName,
            java.lang.String jobName,
+           java.land.String jobID,
            java.lang.String workingDir) {
            this.replicates = replicates;
            this.ratematrix = ratematrix;
@@ -271,6 +274,7 @@ public class GARLIArguments  implements java.io.Serializable {
            this.schedulerOverride = schedulerOverride;
            this.appName = appName;
            this.jobName = jobName;
+           this.jobID = jobID; // JobID added
            this.workingDir = workingDir;
     }
 
@@ -1593,6 +1597,27 @@ public class GARLIArguments  implements java.io.Serializable {
     public void setJobName(java.lang.String jobName) {
         this.jobName = jobName;
     }
+
+    /**
+     * Sets the jobID value for this GARLIArguments.
+     * 
+     * @param jobID
+     */
+    public void setjobID(java.lang.String jobID) {
+        this.jobID = jobID;
+    }
+
+    /**
+     * Gets the jobID value for this GARLIArguments.
+     * 
+     * @param jobID
+     */
+    public void getjobID() {
+        return jobID;
+    }
+
+
+
 
 
     /**

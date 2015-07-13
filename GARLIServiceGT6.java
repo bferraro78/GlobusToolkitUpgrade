@@ -152,7 +152,7 @@ public class GARLIService extends GSBLService {
 			String[] chunks = filenames.split(":");
 			perJobFiles.add(chunks);
 		}
-		
+
 		String myWorkingDir = myBean.getWorkingDir();
 		setArguments(myBean, myWorkingDir);	
 
@@ -237,10 +237,15 @@ public class GARLIService extends GSBLService {
 				actual_mem = myBean.getActualmemory();
 			}
 
-			// Get the unique ID from the working directory.
-			String unique_id =
-					myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
+		
+			// NEW WAY IS ACCESSING JOBID THRU BEAN
+			String unique_id = myBean.getjobID();
+
+			/* Get the unique ID from the working directory. -- OLD WAY -- */
+			/* 
+			myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
 			unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
+			*/
 
 			// Formulate working directory for command.
 			String workingDir = runtime_estimates_location + executable + "/";
