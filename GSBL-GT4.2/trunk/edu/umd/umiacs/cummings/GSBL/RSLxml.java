@@ -532,6 +532,7 @@ public class RSLxml {
 		document += "<stderr>${GLOBUS_SCRATCH_DIR}/" + stagingDir
 				+ "/stderr</stderr>\n";
 
+
 		// add count element for multiple, mpi, and multiple mpi
 		if (reps > 1 && job_type.equals("single")) {
 			document += "<count>" + replicates + "</count>\n";

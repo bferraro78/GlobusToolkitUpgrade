@@ -208,7 +208,7 @@ public class GarliSubmit extends GSBLClient {
 		myBean.setPerJobArguments(perJobArguments.toArray(myPerJobArguments));
 
 		/* Sets the working directory for specific job as
-		 * "/export/work/drupal/user_files/admin/job#/" */
+		 * /export/work/drupal/user_files/admin/job#/ */
 		String workingDir = cwd + "/";
 
 		/* Sets bean's "sharedFiles" with shared files used by all instances

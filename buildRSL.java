@@ -27,17 +27,17 @@ public class buildRSL {
 	static Log log = LogFactory.getLog(RSLxml.class.getName());
 
 	/**
-	 * The XML string.
+	 * The RSL string.
 	 */
 	private String document = "";
 
 	/**
-	 * The GLOBUS_LOCATION.
+	 * The GLOBUS_LOCATION. // not needed in GT6
 	 */
 	private static String globusLocation = "";
 
 	/**
-	 * For RLS queries.
+	 * For RLS queries. // might not be needed??
 	 */
 	private RLSManager rlsmanager = null;
 
@@ -137,12 +137,14 @@ public class buildRSL {
 
 		globusLocation = ""; //(String) env.get("GLOBUS_LOCATION");
 
-		// determine the local hostname
+
+		/* determine the local hostname
 		try {
 			rftServiceHost = InetAddress.getLocalHost().getHostName();
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
+		*/
 
 		executable = myExecutable;
 
@@ -284,22 +286,26 @@ public class buildRSL {
 		log.debug("runtime estimate is: "
 				+ (new Integer(runtime_estimate_seconds)).toString());
 
-		workingDir = myWorkingDir;
+		workingDir = myWorkingDir; /* /export/work/drupal/user_files/admin/job#/ */
+
+		/*
 		workingDirBase = workingDir.substring(0, workingDir.length() - 1);
 		workingDirBase = workingDirBase.substring(0,
 				workingDirBase.lastIndexOf("/"));
-		stagingDir = workingDir.substring(0, workingDir.length() - 1);
-		stagingDir = stagingDir.substring(stagingDir.lastIndexOf("/") + 1);
-		cacheDir = workingDirBase + "/cache/";
+		*/
+
+		//stagingDir = workingDir.substring(0, workingDir.length() - 1);
+		//stagingDir = stagingDir.substring(stagingDir.lastIndexOf("/") + 1);
+
+		//cacheDir = workingDirBase + "/cache/";
 
 		extraRSL = myExtraRSL;
 		if (extraRSL != null && extraRSL != "") {
 
 			// check to see if we have nested environment tags into the extra
 			// RSL. they should be in the following form:
-			// <environment><name> ... </name><value> ...
-			// </value></environment><environment><name> ... </name><value> ...
-			// </value></environment>
+			// <environment><name> ... </name><value> ... </value></environment>
+			// <environment><name> ... </name><value> ... </value></environment>
 			String startEnv = "<environment>";
 			String lastEnv = "</environment>";
 			int firstEnvIndex = extraRSL.indexOf(startEnv);
@@ -328,5 +334,187 @@ public class buildRSL {
 			}
 		}
 
-		createXML();
+		createRSL();
 	}
+
+
+	public void createRSL() {
+		
+		// if matchmaking is set, perform scheduling
+		if (scheduler.equals("matchmaking")) {
+			try {
+				Runtime r = Runtime.getRuntime();
+				log.debug("Attempting to schedule job...\n");
+				// if(reps >= 10) { // let resource information update, so sleep
+				// for two and a half minutes
+				try {
+					Thread.sleep(150000);
+				} catch (Exception e) {
+					log.error("Exception: " + e);
+				}
+				// }
+
+				String command = globusLocation + "/get_resource.pl "
+						+ executable + " " + job_type + " ";
+				if (max_memory.equals("")) {
+					command = command + "0 ";
+				} else {
+					command = command + max_memory + " ";
+				}
+
+				if (runtime_estimate_seconds == -1) {
+					command = command + "-1";
+				} else {
+					command = command
+							+ (new Integer(runtime_estimate_seconds))
+									.toString();
+				}
+
+				Process proc = r.exec(command);
+				String line = null;
+				String resource_arch_os_scheduler = null;
+				InputStream stdout = proc.getInputStream();
+				InputStreamReader isr = new InputStreamReader(stdout);
+				BufferedReader br = new BufferedReader(isr);
+				while ((line = br.readLine()) != null) {
+					resource_arch_os_scheduler = line;
+				}
+				br.close();
+
+				// assign resource, arch, os, and scheduler
+				String[] chunks = resource_arch_os_scheduler.split(" ", 3);
+				log.debug("resource is: " + chunks[0]);
+				resource = chunks[0];
+				log.debug("arch_os is: " + chunks[1]);
+				arch_os = chunks[1];
+				log.debug("scheduler is: " + chunks[2]);
+				scheduler = chunks[2];
+			} catch (Exception e) {
+				log.error("Exception: " + e);
+			}
+		}
+
+		// break apart architecture and operating system
+		architecture = arch_os.substring(0, arch_os.lastIndexOf("_"));
+		os = arch_os.substring(arch_os.lastIndexOf("_") + 1);
+
+		// add a hook for windows executables
+		if (os.equals("WIN")) {
+			if (executable.indexOf(".r") != -1) {
+				executable = "setR.bat";
+			} else if (!resource.equals("BOINC")) {
+				executable = executable + ".exe";
+			}
+		}
+
+		if (executable.indexOf(".r") != -1
+				&& scheduler
+						.equals("https://128.8.10.61:8443/wsrf/services/ManagedJobFactoryService")
+				&& os.equals("OSX")) {
+			executable = "one_proc_driver_GRIDIRON.r";
+		}	
+
+		// ex.) asparagine.umiacs.umd.edu
+		String hostname = (String)env.get("HOSTNAME");
+		// ex.) asparagine
+		String host = hostname.substring(0, indexOf("."));
+		
+		document += header + host; // "globusrun -r asparagine "
+
+		// add executable
+		document += " '&(executable=/fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)  ";
+
+		// add stdout
+		document += "(stdout=" + workingDir + "/results) ";
+
+		// add stderr
+		document += "(stderr=" + workingDir + "/stderr) ";
+
+		// Stages in sharedFiles
+		if (sharedFiles != null && sharedFiles.size() > 0) {
+			document += "(file_stage_in =";
+			for (int i = 0; i < sharedFiles.size(); i++) {
+					document += " (" + "gsiftp://" + hostname + workingDir + "/" + sharedFiles.get(i) + " " + workingDir + "/" + sharedFiles.get(i) + ")";
+			}
+			
+			stagein = true;
+		}
+
+		// Stages in PerjobFiles
+		if (perJobFiles != null && perJobFiles.size() > 0) {
+
+			if (stagein == false) {
+				document += "(file_stage_in =";
+			}
+
+			for (int i = 0; i < perJobFiles.size(); i++) {
+				String[] tempcouples = perJobFiles.get(i);
+				for (int j = 0; j < tempcouples.length; j++) {
+					document =+ " (" + "gsiftp://" + hostname + workingDir + "/" + tempcouples.get(j) + " " + workingDir + "/" + tempcouples.get(j) + ")";
+				}
+
+				if (i < perJobFiles.size() - 1) { // add the ',' job
+													// delimiter
+					document += ",";
+				}
+
+			}
+			stagein = true;
+		}
+
+		if (stagein == true) {
+			document += ")"; // end file stage in
+		}
+
+
+		// STAGE OUT FILES
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
