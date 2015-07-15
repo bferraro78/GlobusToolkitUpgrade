@@ -340,7 +340,11 @@ public class buildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
+		String outputdir = "";
+		String hostname = (String)env.get("HOSTNAME"); // ex.) asparagine.umiacs.umd.edu
+		String host = hostname.substring(0, indexOf(".")); // ex.) asparagine
 		boolean stageIn = false;
+
 
 		// If matchmaking is set, perform scheduling.
 		if (scheduler.equals("matchmaking")) {
@@ -412,21 +416,21 @@ public class buildRSL {
 			executable = "one_proc_driver_GRIDIRON.r";
 		}
 
-		// ex.) asparagine.umiacs.umd.edu
-		String hostname = (String)env.get("HOSTNAME");
-		// ex.) asparagine
-		String host = hostname.substring(0, indexOf("."));
 
 		doc.append(header).append(host);  // "globusrun -r asparagine"
 
 		// Add executable.
 		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
-		
+
+		/* Sets the stdout/stderr in RSL. If batch job, put stdout/stderr  */
+		if (reps > 1) {
+			outputdir = "/" + unique_id + ".output";
+		} 
+
 		// Add stdout.
-		doc.append(" (stdout = ").append(workingDir).append("/stdout)");
-		
+		doc.append(" (stdout = ").append(workingDir).append(outputdir).append("/stdout)");
 		// Add stderr.
-		doc.append(" (stderr = ").append(workingDir).append("/stderr)");
+		doc.append(" (stderr = ").append(workingDir).append(outputdir).append("/stderr)");
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
@@ -469,7 +473,6 @@ public class buildRSL {
 
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
-
 			doc.append(" (file:///").append(workingDir).append("/")
 					.append(unique_id).append(".output/ ").append("gsiftp://")
 					.append(hostname).append("/").append(workingDir)
@@ -499,5 +502,5 @@ public class buildRSL {
 		doc.append(")"); // End file stage out.
 		
 		document = doc.toString();
-	}
+	} // end createRSL
 }
