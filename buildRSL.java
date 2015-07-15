@@ -48,6 +48,7 @@ public class buildRSL {
 	private String[] arguments;
 	private String scheduler;
 	private String resource;
+	private String unique_id; // job's unique_id, recently added
 	private String arch_os;
 	private String architecture;
 	private String os;
@@ -119,7 +120,7 @@ public class buildRSL {
 			String myResource, String myArchOs, int myRuntimeEstimate,
 			ArrayList<String> sharedlist, ArrayList<String[]> perjoblist,
 			String[] myOutput_files, String myWorkingDir,
-			String myRequirements, String myExtraRSL) {
+			String myRequirements, String myExtraRSL, String myUnique_id) {
 
 		// Initialize RLS manager.
 		rlsmanager = new RLSManager();
@@ -275,6 +276,7 @@ public class buildRSL {
 		}
 
 		arguments = tempArguments;
+		unique_id = myUnique_id;
 		scheduler = myScheduler;
 		resource = myResource;
 		arch_os = myArchOs;
@@ -286,15 +288,12 @@ public class buildRSL {
 		log.debug("runtime estimate is: "
 				+ (new Integer(runtime_estimate_seconds)).toString());
 
-		workingDir = myWorkingDir;  // /export/work/drupal/user_files/admin/job#
+		workingDir = myWorkingDir;  /* /export/work/drupal/user_files/admin/job# */
 
 		/*
 		workingDirBase = workingDir.substring(0, (workingDir.length() - 1));
 		workingDirBase =
 				workingDirBase.substring(0, workingDirBase.lastIndexOf("/"));
-
-		stagingDir = workingDir.substring(0, (workingDir.length() - 1));
-		stagingDir = stagingDir.substring(stagingDir.lastIndexOf("/") + 1);
 
 		cacheDir = workingDirBase + "/cache/";
 		*/
@@ -470,11 +469,13 @@ public class buildRSL {
 
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
-			// NEED TO GET UNIQUE/JOB ID.
+
 			doc.append(" (file:///").append(workingDir).append("/")
 					.append(unique_id).append(".output/ ").append("gsiftp://")
 					.append(hostname).append("/").append(workingDir)
 					.append(unique_id).append(".output/)";
+
+
 		} else {
 			// Add file staging directives for stdout and stderr.
 			doc.append(" (file:///").append(workingDir)

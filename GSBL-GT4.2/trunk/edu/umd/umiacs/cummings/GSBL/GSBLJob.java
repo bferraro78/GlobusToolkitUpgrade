@@ -120,11 +120,11 @@ public class GSBLJob {
 			String resource, String arch_os, String workingDir,
 			int runtime_estimate, ArrayList<String> shared_files,
 			ArrayList<String[]> perjob_files, String[] output_files,
-			String requirements, String extraRSL) throws Exception {
+			String requirements, String extraRSL, String unique_id) throws Exception {
 
-		r = new RSLxml(executable, arguments, scheduler, resource, arch_os,
+		r = new buildRSL(executable, arguments, scheduler, resource, arch_os,
 				runtime_estimate, shared_files, perjob_files, output_files,
-				workingDir, requirements, extraRSL);
+				workingDir, requirements, extraRSL, unique_id);
 
 		// Write the RSL to our working directory (something like
 		// "/export/grid_files/[job_id]/").
@@ -178,9 +178,8 @@ public class GSBLJob {
 			log.debug("GSBLJob using working dir of '" + myWorkingDir + "'.");
 		}
 
-		// Set the unique ID from the working directory.
-		unique_id = myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
-		unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
+		// Set unique_id from parameter
+		this.unique_id = unique_id;
 
 		/*
 		 * Save the input and output files array. Java arrays are really

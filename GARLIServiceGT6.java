@@ -445,7 +445,7 @@ public class GARLIService extends GSBLService {
 			GSBLJob job = new GSBLJob(executable, argumentString, scheduler,
 					resource, arch_os, myWorkingDir,
 					runtime_estimate_seconds_recent, sharedFiles, perJobFiles,
-					output_files, requirements, extraRSL);
+					output_files, requirements, extraRSL, unique_id);
 
 			if (scheduler.equals("matchmaking")) {
 				scheduler = job.getScheduler();  /* These values could have
