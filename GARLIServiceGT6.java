@@ -87,7 +87,8 @@ public class GARLIService extends GSBLService {
 		try {
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
-			String globusLocation = "";  // (String) env.get("GLOBUS_LOCATION");
+			// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
+			String globusLocation = (String) env.get("GLOBUS_LOCATION");
 			runtimeConfig = new GSBLRuntimeConfiguration(globusLocation
 					+ "/service_configurations/GARLI.runtime.xml");
 			runtime_estimates_location = globusLocation + "/runtime_estimates/";
