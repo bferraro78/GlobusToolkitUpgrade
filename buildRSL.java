@@ -341,7 +341,6 @@ public class buildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
-		String outputdir = "";
 		String hostname = (String)env.get("HOSTNAME"); // ex.) asparagine.umiacs.umd.edu
 		String host = hostname.substring(0, indexOf(".")); // ex.) asparagine
 		boolean stageIn = false;
@@ -411,27 +410,38 @@ public class buildRSL {
 			}
 		}
 
-		if ((executable.indexOf(".r") != -1) && scheduler
-				.equals("https://128.8.10.61:8443/wsrf/services/ManagedJobFactoryService")
-				&& os.equals("OSX")) {
-			executable = "one_proc_driver_GRIDIRON.r";
-		}
-
-
 		doc.append(header).append(host);  // "globusrun -r asparagine"
 
 		// Add executable.
 		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
-		/* Sets the stdout/stderr in RSL. If batch job, put stdout/stderr  */
-		if (reps > 1) {
-			outputdir = "/" + unique_id + ".output";
-		} 
+		// Add arguments tag to RSL from arguments string
+		if (arguments.length != 0) {
+			doc.append("(arguments = ");
+			for (int i = 0; i < arguments.length; i++) {
+				if (!arguments[i].equals("")) {
+					doc.append("\"").append(arguments[i]).append("\""); 
+					if (i != arguments.length-1) {
+						doc.append(" ");
+					} 
+				}
+			}
+			doc.append(")");
+		}
 
+		// Add remote resource directory
+		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
+		if (reps > 1) {
+			doc.append("/").append(unique_id).append(".output");
+		}
+		doc.append(")");
+
+		/* Sets the stdout/stderr in RSL to remote resource directory. */
 		// Add stdout.
-		doc.append(" (stdout = ").append(workingDir).append(outputdir).append("/stdout)");
+		doc.append(" (stdout = ${GLOBUS_SCRATCH_DIR}/").append(unique_id).append("/stdout)");
 		// Add stderr.
-		doc.append(" (stderr = ").append(workingDir).append(outputdir).append("/stderr)");
+		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id).append("/stderr)");
+
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
@@ -441,12 +451,12 @@ public class buildRSL {
 			for (int i = 0; i < sharedFiles.size(); i++) {
 				doc.append(" (gsiftp://".append(hostname).append("/")
 						.append(workingDir).append("/")
-						.append(sharedFiles.get(i)).append(" ")
-						.append(workingDir).append("/")
-						.append(sharedFiles.get(i)).append(")");
+						.append(sharedFiles.get(i)).append(" file:///${GLOBUS_SCRATCH_DIR}/")
+						.append(unique_id).append("/").append(sharedFiles.get(i)).append(")");
 			}
 		}
 
+		/*
 		// Stages in perJobFiles.
 		if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
 			if (stageIn == false) {  // No sharedFiles.
@@ -458,50 +468,53 @@ public class buildRSL {
 				for (int j = 0; j < tempcouples.length; j++) {
 					doc.append(" (gsiftp://").append(hostname).append("/")
 							.append(workingDir).append("/")
-							.append(tempcouples[j]).append(" ")
-							.append(workingDir).append("/")
+							.append(tempcouples[j]).append(" file:///${GLOBUS_SCRATCH_DIR}/")
 							.append(tempcouples[j]).append(")");
 				}
 			}
 		}
+		*/
 
 		if (stageIn == true) {
 			doc.append(")");  // End file stage in.
 		}
 
-		// Stages outputFiles.
-		doc.append(" (file_stage_out =");
-
+		/* Begin Stage Out */
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
-			doc.append(" (file:///").append(workingDir).append("/")
-					.append(unique_id).append(".output/ ").append("gsiftp://")
-					.append(hostname).append("/").append(workingDir)
-					.append(unique_id).append(".output/)";
 
-
+			if ((output_files != null) && (output_files.length > 0)) {
+				doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/") // Stages outputFiles.
+				.append(unique_id).append("/").append(unique_id).append(".output/")
+						.append(" gsiftp://").append(hostname).append("/").append(workingDir)
+						.append(unique_id).append(".output/))");
+			}
 		} else {
 			// Add file staging directives for stdout and stderr.
-			doc.append(" (file:///").append(workingDir)
+			doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/").append(unique_id)
 					.append("/stdout gsiftp://").append(hostname)
-					.append("/").append(workingDir).append("/stdout) (file:///")
-					.append(workingDir).append("/stderr gsiftp://")
+					.append("/").append(workingDir).append("/stdout) (file:///${GLOBUS_SCRATCH_DIR}")
+					.append(unique_id).append("/stderr gsiftp://")
 					.append(hostname).append("/").append(workingDir)
 					.append("/stderr)");
 			
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					doc.append(" (file:///").append(workingDir).append("/")
+					doc.append(" (file:///${GLOBUS_SCRATCH_DIR}").append(unique_id).append("/")
 							.append(output_files[i]).append(" gsiftp://")
 							.append(hostname).append("/").append(workingDir)
 							.append("/").append(output_files[i]).append(")");
 				}
 			}
+			doc.append(")"); // End file stage out.
 		}
 		
-		doc.append(")"); // End file stage out.
 		
+		
+
+
+
 		document = doc.toString();
 	} // end createRSL
 }

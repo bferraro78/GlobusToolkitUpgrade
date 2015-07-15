@@ -349,36 +349,36 @@ public class GSBLJobManager {
 						this.jobCompleted = true;
 						this.jobFailed = true;
 
-					} else if (jobState.equals("Unknown")) {  // Begin JTK.
-						Boolean jobFinished = false;
-						File dir = new File("/export/grid_files/" + unique_id + "/");
+					// } else if (jobState.equals("Unknown")) {  // Begin JTK.
+					// 	Boolean jobFinished = false;
+					// 	File dir = new File("/export/grid_files/" + unique_id + "/");
                         
-                        if (managedJob.getReplicates() == 1) {
-                            FileFilter fileFilter = new WildcardFileFilter("*.tre");
-                            File[] files = dir.listFiles(fileFilter);
+     //                    if (managedJob.getReplicates() == 1) {
+     //                        FileFilter fileFilter = new WildcardFileFilter("*.tre");
+     //                        File[] files = dir.listFiles(fileFilter);
                             
-                            if (files.length > 0) {
-                                if (files[0].length() > 0) {
-                                	jobFinished = true;
-                                }
-                            }
-                    	} else {  //Batch job.
-                            File batchFile = new File(dir + unique_id
-                                    + ".tar.gz");
-                            if (batchFile.exists()) {
-                                jobFinished = true;
-                            }
-                        }
+     //                        if (files.length > 0) {
+     //                            if (files[0].length() > 0) {
+     //                            	jobFinished = true;
+     //                            }
+     //                        }
+     //                	} else {  //Batch job.
+     //                        File batchFile = new File(dir + unique_id
+     //                                + ".tar.gz");
+     //                        if (batchFile.exists()) {
+     //                            jobFinished = true;
+     //                        }
+     //                    }
                         
-                        if (jobFinished) {
-                            log.debug("updating job status: 4 for " + myWorkingDir);
-                            // update the status of this job in the database (4 =
-                            // finished)
-                            GSBLService.updateDBStatus("4", myWorkingDir,
-                                    update_interval, update_max);
-                            this.jobCompleted = true;
-                            this.jobFailed = false;
-                        }  // End JTK.
+     //                    if (jobFinished) {
+     //                        log.debug("updating job status: 4 for " + myWorkingDir);
+     //                        // update the status of this job in the database (4 =
+     //                        // finished)
+     //                        GSBLService.updateDBStatus("4", myWorkingDir,
+     //                                update_interval, update_max);
+     //                        this.jobCompleted = true;
+     //                        this.jobFailed = false;
+     //                    }  // End JTK.
 
 					} else {
 						log.debug("jobState for " + myWorkingDir + " is: "
