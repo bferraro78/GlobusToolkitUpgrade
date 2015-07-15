@@ -338,13 +338,11 @@ public class buildRSL {
 		createRSL();
 	}
 
-
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
 		String hostname = (String)env.get("HOSTNAME"); // ex.) asparagine.umiacs.umd.edu
 		String host = hostname.substring(0, indexOf(".")); // ex.) asparagine
 		boolean stageIn = false;
-
 
 		// If matchmaking is set, perform scheduling.
 		if (scheduler.equals("matchmaking")) {
@@ -415,21 +413,21 @@ public class buildRSL {
 		// Add executable.
 		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
-		// Add arguments tag to RSL from arguments string
+		// Add arguments tag to RSL from arguments string.
 		if (arguments.length != 0) {
 			doc.append("(arguments = ");
 			for (int i = 0; i < arguments.length; i++) {
 				if (!arguments[i].equals("")) {
-					doc.append("\"").append(arguments[i]).append("\""); 
-					if (i != arguments.length-1) {
+					doc.append("\"").append(arguments[i]).append("\"");
+					if (i != (arguments.length - 1)) {
 						doc.append(" ");
-					} 
+					}
 				}
 			}
 			doc.append(")");
 		}
 
-		// Add remote resource directory
+		// Add remote resource directory.
 		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
 		if (reps > 1) {
 			doc.append("/").append(unique_id).append(".output");
@@ -438,21 +436,24 @@ public class buildRSL {
 
 		/* Sets the stdout/stderr in RSL to remote resource directory. */
 		// Add stdout.
-		doc.append(" (stdout = ${GLOBUS_SCRATCH_DIR}/").append(unique_id).append("/stdout)");
+		doc.append(" (stdout = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
+				.append("/stdout)");
 		// Add stderr.
-		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id).append("/stderr)");
-
+		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
+				.append("/stderr)");
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 			doc.append(" (file_stage_in =");
 			stageIn = true;
-			
+
 			for (int i = 0; i < sharedFiles.size(); i++) {
 				doc.append(" (gsiftp://".append(hostname).append("/")
 						.append(workingDir).append("/")
-						.append(sharedFiles.get(i)).append(" file:///${GLOBUS_SCRATCH_DIR}/")
-						.append(unique_id).append("/").append(sharedFiles.get(i)).append(")");
+						.append(sharedFiles.get(i))
+						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
+						.append(unique_id).append("/")
+						.append(sharedFiles.get(i)).append(")");
 			}
 		}
 
@@ -468,8 +469,10 @@ public class buildRSL {
 				for (int j = 0; j < tempcouples.length; j++) {
 					doc.append(" (gsiftp://").append(hostname).append("/")
 							.append(workingDir).append("/")
-							.append(tempcouples[j]).append(" file:///${GLOBUS_SCRATCH_DIR}/")
-							.append(tempcouples[j]).append(")");
+							.append(tempcouples[j])
+							.append(" file:///${GLOBUS_SCRATCH_DIR}/")
+							.append(unique_id).append(tempcouples[j])
+							.append(")");
 				}
 			}
 		}
@@ -479,29 +482,31 @@ public class buildRSL {
 			doc.append(")");  // End file stage in.
 		}
 
-		/* Begin Stage Out */
+		/* Begin file stage out. */
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
-
 			if ((output_files != null) && (output_files.length > 0)) {
 				doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/") // Stages outputFiles.
-				.append(unique_id).append("/").append(unique_id).append(".output/")
-						.append(" gsiftp://").append(hostname).append("/").append(workingDir)
+						.append(unique_id).append("/").append(unique_id)
+						.append(".output/").append(" gsiftp://")
+						.append(hostname).append("/").append(workingDir)
 						.append(unique_id).append(".output/))");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
-			doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-					.append("/stdout gsiftp://").append(hostname)
-					.append("/").append(workingDir).append("/stdout) (file:///${GLOBUS_SCRATCH_DIR}")
+			doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
+					.append(unique_id).append("/stdout gsiftp://")
+					.append(hostname).append("/").append(workingDir)
+					.append("/stdout) (file:///${GLOBUS_SCRATCH_DIR}")
 					.append(unique_id).append("/stderr gsiftp://")
 					.append(hostname).append("/").append(workingDir)
 					.append("/stderr)");
-			
+
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					doc.append(" (file:///${GLOBUS_SCRATCH_DIR}").append(unique_id).append("/")
+					doc.append(" (file:///${GLOBUS_SCRATCH_DIR}")
+							.append(unique_id).append("/")
 							.append(output_files[i]).append(" gsiftp://")
 							.append(hostname).append("/").append(workingDir)
 							.append("/").append(output_files[i]).append(")");
@@ -509,12 +514,46 @@ public class buildRSL {
 			}
 			doc.append(")"); // End file stage out.
 		}
-		
-		
-		
 
+		// File cleanup.
+		doc.append(" (file_clean_up = file:///${GLOBUS_SCRATCH_DIR}/")
+				.append(unique_id);
 
+		// If the resource is Condor, add appropriate extensions.
+		if (resource.equals("Condor")) {
+			doc.append(" (condor_submit =");
+			// Adding memory maximum for what used to be only GARLI.
+			if (!max_memory.equals("")) {  // Setting min memory to max??
+				doc.append(" (min_memory = ").append(max_memory).append(")");
+			}
+			doc.append(" (should_transfer_files YES)");
+			doc.append(" (when_to_transfer_output ON_EXIT)");
+
+			// Handle sharedFiles.
+			if (sharedFiles != null && sharedFiles.size() > 0) {
+				doc.append(" (transfer_input_files ");
+				for (int i = 0; i < sharedFiles.size(); i++) {
+					doc.append("${GLOBUS_SCRATCH_DIR}/"
+							.append(sharedFiles.get(i));
+					if (i != (sharedFiles.size() - 1)) {
+						doc.append(",");
+					}
+				}
+				/* Add hack to transfer one_proc_driver_CLFSCONDOR.r if we're
+				 * running on a WINDOWS machine under Condor... . */
+				if (executable.equals("setR.bat")) {
+					doc.append(",${GLOBUS_SCRATCH_DIR}/cache/one_proc_driver_CLFSCONDOR.r");
+				}
+				doc.append(")");  // End transfer input files.
+			}
+
+			doc.append(" (stream_output False)");
+			doc.append(" (stream_error False)");
+			doc.append(")");  // End condor_submit.
+		}
+
+		doc.append("'");  // End RSL.
 
 		document = doc.toString();
-	} // end createRSL
+	}  // End createRSL.
 }
