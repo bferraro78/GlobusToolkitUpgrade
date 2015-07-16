@@ -35,7 +35,7 @@ public class buildRSL {
 	/**
 	 * The GLOBUS_LOCATION.
 	 */
-	private static String globusLocation = "";  // Not needed in GT6.
+	private static String globusLocation = "";
 
 	/**
 	 * For RLS queries.
@@ -46,7 +46,6 @@ public class buildRSL {
 	 * Job submission variables.
 	 */
 	private String executable;
-	private Properties env; 
 	private String[] arguments;
 	private String scheduler;
 	private String resource;
@@ -92,8 +91,9 @@ public class buildRSL {
 	 * RSL header.
 	 */
 	private String header = "globusrun -r ";
-
 	
+	private Properties env = new Properties();
+
 	public static void main(String[] args) {
 		String myExecutable = "a.out";
 		String myArguments = "--replicates \"10\" garli.conf";
@@ -114,8 +114,6 @@ public class buildRSL {
 				myOutput_files, myWorkingDir, myRequirements, myExtraRSL,
 				myUnique_id);
 	}
-
-
 
 	/**
 	 * Create an RSL document using the parameters provided.
@@ -149,17 +147,16 @@ public class buildRSL {
 			String myRequirements, String myExtraRSL, String myUnique_id) {
 
 		// Initialize RLS manager.
-	//	rlsmanager = new RLSManager();
+		//rlsmanager = new RLSManager();
 
 		// Initialize mappings-to-add.
 		mappingsToAdd = new ArrayList<String>();
 
 		// Determine the globus location.
-		env = new Properties();
 		try {
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 		} catch (Exception e) {
-		//	log.error("Exception: " + e);
+			//log.error("Exception: " + e);
 		}
 
 		// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
@@ -181,7 +178,7 @@ public class buildRSL {
 			replicates = myArguments.substring((myArguments
 					.indexOf("replicates") + 11), myArguments.indexOf(" ",
 							(myArguments.indexOf("replicates") + 11)));
-		//	log.debug("Number of replicates is: " + replicates);
+			//log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
@@ -194,7 +191,7 @@ public class buildRSL {
 			replicates = myArguments.substring((myArguments
 					.indexOf("replicates") + 11), myArguments.indexOf(" ",
 							(myArguments.indexOf("replicates") + 11)));
-		//	log.debug("Number of replicates is: " + replicates);
+			//log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
@@ -205,7 +202,7 @@ public class buildRSL {
 		if (myArguments.matches(".*--mpi \"[0-9]+\" .*")) {
 			cpus = myArguments.substring((myArguments.indexOf("mpi") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mpi") + 4)));
-		//	log.debug("This is an MPI job!  Number of processors: " + cpus);
+			//log.debug("This is an MPI job!  Number of processors: " + cpus);
 			if (cpus.length() < 3) {
 				// This was probably an empty value
 				cpus = "8";  // Default to 8 cpus.
@@ -222,8 +219,8 @@ public class buildRSL {
 		if (myArguments.matches(".*--mem \"[0-9]+\" .*")) {
 			max_memory = myArguments.substring((myArguments.indexOf("mem") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mem") + 4)));
-		//	log.debug("Maximum memory has been specified! memory: "
-				//	+ max_memory);
+			/*log.debug("Maximum memory has been specified! memory: "
+					+ max_memory);*/
 			// Strip the quotes off the mem value.
 			max_memory = max_memory.substring(1, (max_memory.length() - 1));
 			max_mem = new Integer(max_memory);
@@ -312,8 +309,8 @@ public class buildRSL {
 		output_files = myOutput_files;
 
 		runtime_estimate_seconds = myRuntimeEstimate;
-		//log.debug("runtime estimate is: "
-			//	+ (new Integer(runtime_estimate_seconds)).toString());
+		/*log.debug("runtime estimate is: "
+				+ (new Integer(runtime_estimate_seconds)).toString());*/
 
 		workingDir = myWorkingDir;  /* /export/work/drupal/user_files/admin/job# */
 
@@ -366,7 +363,7 @@ public class buildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
-		String hostname = "arginine.umiacs.umd.edu"; //(String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		String hostname = "arginine.umiacs.umd.edu";  //(String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
 		String host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
@@ -374,12 +371,12 @@ public class buildRSL {
 		if (scheduler.equals("matchmaking")) {
 			try {
 				Runtime r = Runtime.getRuntime();
-			//	log.debug("Attempting to schedule job...\n");
+				//log.debug("Attempting to schedule job...\n");
 
 				try {
 					Thread.sleep(150000);
 				} catch (Exception e) {
-				//	log.error("Exception: " + e);
+					//log.error("Exception: " + e);
 				}
 
 				String command = (globusLocation + "/get_resource.pl "
@@ -410,14 +407,14 @@ public class buildRSL {
 
 				// Assign resource, arch, os, and scheduler.
 				String[] chunks = resource_arch_os_scheduler.split(" ", 3);
-			//	log.debug("resource is: " + chunks[0]);
+				//log.debug("resource is: " + chunks[0]);
 				resource = chunks[0];
-			//	log.debug("arch_os is: " + chunks[1]);
+				//log.debug("arch_os is: " + chunks[1]);
 				arch_os = chunks[1];
-			//	log.debug("scheduler is: " + chunks[2]);
+				//log.debug("scheduler is: " + chunks[2]);
 				scheduler = chunks[2];
 			} catch (Exception e) {
-			//	log.error("Exception: " + e);
+				//log.error("Exception: " + e);
 			}
 		}
 
@@ -450,6 +447,13 @@ public class buildRSL {
 		// Add executable.
 		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64) ");
 
+		// Add remote resource directory.
+		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
+		if (reps > 1) {
+			doc.append("/").append(unique_id).append(".output");
+		}
+		doc.append(")");
+
 		// Add arguments tag to RSL from arguments string.
 		if (arguments.length != 0) {
 			doc.append("(arguments = ");
@@ -464,12 +468,15 @@ public class buildRSL {
 			doc.append(")");
 		}
 
-		// Add remote resource directory.
-		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
-		if (reps > 1) {
-			doc.append("/").append(unique_id).append(".output");
+		// If environment variables need to be set, insert here.
+		if ((environment != null) && (environment != "")) {
+			doc.append(" ").append(environment);
 		}
-		doc.append(")");
+
+		// If stdin is defined, insert here.
+		if ((stdin != null) && (stdin != "")) {
+			doc.append(" ").append(stdin);
+		}
 
 		/* Sets the stdout/stderr in RSL to remote resource directory. */
 		// Add stdout.
@@ -479,6 +486,20 @@ public class buildRSL {
 		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
 				.append("/stderr)");
 
+		// Add count element for multiple, mpi, and multiple mpi.
+		if ((reps > 1) && job_type.equals("single")) {
+			doc.append(" (count = ").append(replicates).append(")");
+		} else if (job_type.equals("mpi")) {
+			doc.append(" (count = ").append(cpus).append(")");
+		}
+		
+		if (job_type.equals("mpi")) {  /* If job_type equals mpi, specify this
+				explicitly. */
+			doc.append(" (jobType = mpi)");
+		} else if (reps == 1) {  /* Specify single job explicitly (holding off
+				on multiple because I don't know about Condor implications). */
+			doc.append("(jobType = single)");
+		}
 
 		// If the resource is Condor, add appropriate extensions.
 		if (resource.equals("Condor")) {
@@ -524,8 +545,6 @@ public class buildRSL {
 		} else if (resource.equals("BOINC")) {
 			
 		}
-
-
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
@@ -603,8 +622,6 @@ public class buildRSL {
 		// File cleanup.
 		doc.append(" (file_clean_up = file:///${GLOBUS_SCRATCH_DIR}/")
 				.append(unique_id).append(")");
-
-		
 
 		doc.append("'");  // End RSL.
 
