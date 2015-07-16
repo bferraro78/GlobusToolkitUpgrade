@@ -126,16 +126,15 @@ public class GSBLJob {
 				runtime_estimate, shared_files, perjob_files, output_files,
 				workingDir, requirements, extraRSL, unique_id);
 
-		// Write the RSL to our working directory (something like
-		// "/export/grid_files/[job_id]/").
-		r.writeXML();
+		// Write the RSL string
+		r.writeRSL();
 
 		// write any mappings to our working directory (something like
 		// "/export/grid_files/[job_id]/").
-		r.writeMappingsToAdd();
+	//	r.writeMappingsToAdd(); 
 
 		// Instantiate the GramJob.
-		myJob = new GramJob(r.getXML());
+	//	myJob = new GramJob(r.getXML());
 
 		// Fill in the number of cpus and job replicates.
 		cpus = r.getCPUs();
