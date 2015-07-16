@@ -48,7 +48,7 @@ public class buildRSL {
 	private String[] arguments;
 	private String scheduler;
 	private String resource;
-	private String unique_id; // job's unique_id, recently added
+	private String unique_id;  // Job's unique_id, recently added.
 	private String arch_os;
 	private String architecture;
 	private String os;
@@ -114,7 +114,7 @@ public class buildRSL {
 	 * 				implemented).
 	 * @param myExtraRSL
 	 * 				Extra RSL to be included in the job description. Must be
-	 * 				preformatted XML.
+	 * 				preformatted RSL.
 	 */
 	public buildRSL(String myExecutable, String myArguments, String myScheduler,
 			String myResource, String myArchOs, int myRuntimeEstimate,
@@ -304,32 +304,32 @@ public class buildRSL {
 
 			/* Check to see if we have nested environment tags into the extra
 			 * RSL. they should be in the following form:
-			 * <environment><name> ... </name><value> ... </value></environment>
+			 * (environment = ... )
 			 */
-			String startEnv = "<environment>";
-			String lastEnv = "</environment>";
+			String startEnv = "(environment = ";
+			String lastEnv = ")";
 			int firstEnvIndex = extraRSL.indexOf(startEnv);
-			int lastEnvIndex = extraRSL.lastIndexOf(lastEnv);
+			int lastEnvIndex = extraRSL.indexOf(lastEnv, firstEnvIndex);
 
 			if ((firstEnvIndex != -1) && (lastEnvIndex != -1)) {
 				environment = extraRSL.substring(firstEnvIndex,
-						(lastEnvIndex + lastEnv.length()));
+						(lastEnvIndex + lastEnvIndex);
 			} else {
 				environment = "";
 			}
 
 			/* Check to see if stdin is included for this job. It should be in
 			 * the following form:
-			 * <stdin>file:/// ... </stdin>
+			 * (stdin = file:/// ... )
 			 */
-			String startStdin = "<stdin>";
-			String lastStdin = "</stdin>";
+			String startStdin = "(stdin = ";
+			String lastStdin = ")";
 			int firstStdinIndex = extraRSL.indexOf(startStdin);
-			int lastStdinIndex = extraRSL.indexOf(lastStdin);
+			int lastStdinIndex = extraRSL.indexOf(lastStdin, firstStdinIndex);
 
 			if ((firstStdinIndex != -1) && (lastStdinIndex != -1)) {
-				stdin = extraRSL.substring(firstStdinIndex, lastStdinIndex
-						+ lastStdin.length());
+				stdin = extraRSL.substring(firstStdinIndex,
+						(lastStdinIndex + lastStdin.length()));
 			} else {
 				stdin = "";
 			}
@@ -340,8 +340,8 @@ public class buildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
-		String hostname = (String)env.get("HOSTNAME"); // ex.) asparagine.umiacs.umd.edu
-		String host = hostname.substring(0, indexOf(".")); // ex.) asparagine
+		String hostname = (String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		String host = hostname.substring(0, indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
 		// If matchmaking is set, perform scheduling.
@@ -409,6 +409,17 @@ public class buildRSL {
 		}
 
 		doc.append(header).append(host);  // "globusrun -r asparagine"
+		
+		// Add job manager.
+		if (resource.equals("Condor")) {
+			doc.append("/jobmanager-condor");
+		} else if (resource.equals("PBS")) {
+			doc.append("/jobmanager-pbs");
+		} else if (resource.equals("SGE")) {
+			doc.append("/jobmanager-sge");
+		} else if (resource.equals("BOINC")) {
+			doc.append("/jobmanager-boinc");  // Does this exist?
+		}
 
 		// Add executable.
 		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
@@ -521,11 +532,16 @@ public class buildRSL {
 
 		// If the resource is Condor, add appropriate extensions.
 		if (resource.equals("Condor")) {
-			doc.append(" (condor_submit =");
 			// Adding memory maximum for what used to be only GARLI.
-			if (!max_memory.equals("")) {  // Setting min memory to max??
+			if (!max_memory.equals("")) {
 				doc.append(" (min_memory = ").append(max_memory).append(")");
 			}
+			doc.append(" (condor_submit =");
+			
+			if (!max_memory.equals("")) {
+				doc.append(" (request_memory = ").append(max_memory).append(")");
+			}
+			
 			doc.append(" (should_transfer_files YES)");
 			doc.append(" (when_to_transfer_output ON_EXIT)");
 
@@ -550,6 +566,14 @@ public class buildRSL {
 			doc.append(" (stream_output False)");
 			doc.append(" (stream_error False)");
 			doc.append(")");  // End condor_submit.
+		} else if ((resource.equals("PBS") || resource.equals("SGE"))
+				&& job_type.equals("single")) {
+			
+		} else if ((resource.equals("PBS") || resource.equals("SGE"))
+				&& job_type.equals("mpi")) {
+			
+		} else if (resource.equals("BOINC")) {
+			
 		}
 
 		doc.append("'");  // End RSL.
