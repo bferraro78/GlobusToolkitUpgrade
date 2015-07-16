@@ -448,6 +448,7 @@ public class GARLIService extends GSBLService {
 					runtime_estimate_seconds_recent, sharedFiles, perJobFiles,
 					output_files, requirements, extraRSL, unique_id);
 
+
 			if (scheduler.equals("matchmaking")) {
 				scheduler = job.getScheduler();  /* These values could have
 						changed! */
@@ -455,6 +456,8 @@ public class GARLIService extends GSBLService {
 				arch_os = job.getArch_os();
 			}
 
+			// COMMENTED OUT FOR TESTING PURPOSES
+			/* 
 			GSBLJobManager myJob = new GSBLJobManager(job, scheduler, resource);
 			// This is a non-blocking call.
 			myJob.submit();
@@ -467,6 +470,7 @@ public class GARLIService extends GSBLService {
 					(new Integer(runtime_estimate_seconds_recent).toString()),
 					(new Integer(searchreps).toString()),
 					(new Integer(bootstrapreps).toString()));
+			*/
 		} catch (Exception e) {
 			log.error("Could not create GSBL job " + e);
 		}
