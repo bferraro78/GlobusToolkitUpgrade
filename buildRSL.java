@@ -3,8 +3,8 @@ package edu.umd.umiacs.cummings.GSBL;
 import java.lang.Runtime;
 import java.lang.Integer;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
 
 // For determining host name.
 import java.net.InetAddress;
@@ -24,7 +24,7 @@ public class buildRSL {
 	/**
 	 * Logger.
 	 */
-	static Log log = LogFactory.getLog(RSLxml.class.getName());
+	//static Log log = LogFactory.getLog(RSLxml.class.getName());
 
 	/**
 	 * The RSL string.
@@ -39,12 +39,13 @@ public class buildRSL {
 	/**
 	 * For RLS queries.
 	 */
-	private RLSManager rlsmanager = null;  // Might not be needed?
+	//private RLSManager rlsmanager = null;  // Might not be needed?
 
 	/**
 	 * Job submission variables.
 	 */
 	private String executable;
+	private Properties env; 
 	private String[] arguments;
 	private String scheduler;
 	private String resource;
@@ -123,21 +124,21 @@ public class buildRSL {
 			String myRequirements, String myExtraRSL, String myUnique_id) {
 
 		// Initialize RLS manager.
-		rlsmanager = new RLSManager();
+	//	rlsmanager = new RLSManager();
 
 		// Initialize mappings-to-add.
 		mappingsToAdd = new ArrayList<String>();
 
 		// Determine the globus location.
-		Properties env = new Properties();
+		env = new Properties();
 		try {
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 		} catch (Exception e) {
-			log.error("Exception: " + e);
+		//	log.error("Exception: " + e);
 		}
 
 		// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
-		globusLocation = (String) env.get("GLOBUS_LOCATION");
+		//globusLocation = (String) env.get("GLOBUS_LOCATION");
 
 		/*
 		// Determine the local hostname.
@@ -155,7 +156,7 @@ public class buildRSL {
 			replicates = myArguments.substring((myArguments
 					.indexOf("replicates") + 11), myArguments.indexOf(" ",
 							(myArguments.indexOf("replicates") + 11)));
-			log.debug("Number of replicates is: " + replicates);
+		//	log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
@@ -168,7 +169,7 @@ public class buildRSL {
 			replicates = myArguments.substring((myArguments
 					.indexOf("replicates") + 11), myArguments.indexOf(" ",
 							(myArguments.indexOf("replicates") + 11)));
-			log.debug("Number of replicates is: " + replicates);
+		//	log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
@@ -179,7 +180,7 @@ public class buildRSL {
 		if (myArguments.matches(".*--mpi \"[0-9]+\" .*")) {
 			cpus = myArguments.substring((myArguments.indexOf("mpi") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mpi") + 4)));
-			log.debug("This is an MPI job!  Number of processors: " + cpus);
+		//	log.debug("This is an MPI job!  Number of processors: " + cpus);
 			if (cpus.length() < 3) {
 				// This was probably an empty value
 				cpus = "8";  // Default to 8 cpus.
@@ -196,8 +197,8 @@ public class buildRSL {
 		if (myArguments.matches(".*--mem \"[0-9]+\" .*")) {
 			max_memory = myArguments.substring((myArguments.indexOf("mem") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mem") + 4)));
-			log.debug("Maximum memory has been specified! memory: "
-					+ max_memory);
+		//	log.debug("Maximum memory has been specified! memory: "
+				//	+ max_memory);
 			// Strip the quotes off the mem value.
 			max_memory = max_memory.substring(1, (max_memory.length() - 1));
 			max_mem = new Integer(max_memory);
@@ -230,7 +231,7 @@ public class buildRSL {
 			if (tempArguments[i].indexOf("\"") >= 0) {
 				tempArguments[i] = (tempArguments[i].substring(0,
 						tempArguments[i].indexOf("\"")) + tempArguments[i]
-						.substring(tempArguments[i].indexOf("\"") + 1);
+						.substring(tempArguments[i].indexOf("\"") + 1));
 				i--;
 			}
 		}
@@ -286,8 +287,8 @@ public class buildRSL {
 		output_files = myOutput_files;
 
 		runtime_estimate_seconds = myRuntimeEstimate;
-		log.debug("runtime estimate is: "
-				+ (new Integer(runtime_estimate_seconds)).toString());
+		//log.debug("runtime estimate is: "
+			//	+ (new Integer(runtime_estimate_seconds)).toString());
 
 		workingDir = myWorkingDir;  /* /export/work/drupal/user_files/admin/job# */
 
@@ -313,7 +314,7 @@ public class buildRSL {
 
 			if ((firstEnvIndex != -1) && (lastEnvIndex != -1)) {
 				environment = extraRSL.substring(firstEnvIndex,
-						(lastEnvIndex + lastEnvIndex);
+						(lastEnvIndex + lastEnvIndex));
 			} else {
 				environment = "";
 			}
@@ -341,19 +342,19 @@ public class buildRSL {
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
 		String hostname = (String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
-		String host = hostname.substring(0, indexOf("."));  // ex.) asparagine
+		String host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
 		// If matchmaking is set, perform scheduling.
 		if (scheduler.equals("matchmaking")) {
 			try {
 				Runtime r = Runtime.getRuntime();
-				log.debug("Attempting to schedule job...\n");
+			//	log.debug("Attempting to schedule job...\n");
 
 				try {
 					Thread.sleep(150000);
 				} catch (Exception e) {
-					log.error("Exception: " + e);
+				//	log.error("Exception: " + e);
 				}
 
 				String command = (globusLocation + "/get_resource.pl "
@@ -384,14 +385,14 @@ public class buildRSL {
 
 				// Assign resource, arch, os, and scheduler.
 				String[] chunks = resource_arch_os_scheduler.split(" ", 3);
-				log.debug("resource is: " + chunks[0]);
+			//	log.debug("resource is: " + chunks[0]);
 				resource = chunks[0];
-				log.debug("arch_os is: " + chunks[1]);
+			//	log.debug("arch_os is: " + chunks[1]);
 				arch_os = chunks[1];
-				log.debug("scheduler is: " + chunks[2]);
+			//	log.debug("scheduler is: " + chunks[2]);
 				scheduler = chunks[2];
 			} catch (Exception e) {
-				log.error("Exception: " + e);
+			//	log.error("Exception: " + e);
 			}
 		}
 
@@ -418,7 +419,7 @@ public class buildRSL {
 		} else if (resource.equals("SGE")) {
 			doc.append("/jobmanager-sge");
 		} else if (resource.equals("BOINC")) {
-			doc.append("/jobmanager-boinc");  // Does this exist?
+			doc.append("/jobmanager-boinc");  // Does this exist? idk
 		}
 
 		// Add executable.
@@ -459,7 +460,7 @@ public class buildRSL {
 			stageIn = true;
 
 			for (int i = 0; i < sharedFiles.size(); i++) {
-				doc.append(" (gsiftp://".append(hostname).append("/")
+				doc.append(" (gsiftp://").append(hostname).append("/")
 						.append(workingDir).append("/")
 						.append(sharedFiles.get(i))
 						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
@@ -549,7 +550,7 @@ public class buildRSL {
 			if (sharedFiles != null && sharedFiles.size() > 0) {
 				doc.append(" (transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
-					doc.append("${GLOBUS_SCRATCH_DIR}/"
+					doc.append("${GLOBUS_SCRATCH_DIR}/")
 							.append(sharedFiles.get(i));
 					if (i != (sharedFiles.size() - 1)) {
 						doc.append(",");
@@ -579,5 +580,9 @@ public class buildRSL {
 		doc.append("'");  // End RSL.
 
 		document = doc.toString();
-	}  // End createRSL.
+	}  // End createRSL.	
 }
+
+
+
+

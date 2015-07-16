@@ -1,6 +1,0 @@
-random seed = 42
-gen	best_like	time	optPrecision
-0	-13937.74536	4	0.5
-10000	-13932.51514	892	0.01
-Score after final optimization: -13930.58826
-Final	-13930.58826	952	0.01
