@@ -10,8 +10,9 @@ import java.lang.Integer;
 import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Properties;
-
 import java.io.*;
+
+import test.buildRSL;
 
 /**
  * Create an RSL for globusrun command.
@@ -580,7 +581,28 @@ public class buildRSL {
 		doc.append("'");  // End RSL.
 
 		document = doc.toString();
-	}  // End createRSL.	
+	}  // End createRSL.
+	
+	public static void main(String[] args) {
+		String myExecutable = "a.out";
+		String myArguments = "";
+		String myScheduler;
+		String myResource;
+		String myArchOs;
+		int myRuntimeEstimate;
+		ArrayList<String> sharedlist;
+		ArrayList<String[]> perjoblist;
+		String[] myOutput_files;
+		String myWorkingDir;
+		String myRequirements;
+		String myExtraRSL = "";
+		String myUnique_id = "1234567890.1234567890";
+
+		buildRSL r = new buildRSL(myExecutable, myArguments, myScheduler,
+				myResource, myArchOs, myRuntimeEstimate, sharedlist, perjoblist,
+				myOutput_files, myWorkingDir, myRequirements, myExtraRSL,
+				myUnique_id);
+	}
 }
 
 
