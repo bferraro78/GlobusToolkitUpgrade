@@ -1,4 +1,4 @@
-package edu.umd.umiacs.cummings.GSBL;
+//package edu.umd.umiacs.cummings.GSBL;
 
 import java.lang.Runtime;
 import java.lang.Integer;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 import java.io.*;
 
-import test.buildRSL;
+//import test.buildRSL;
 
 /**
  * Create an RSL for globusrun command.
@@ -92,6 +92,30 @@ public class buildRSL {
 	 * RSL header.
 	 */
 	private String header = "globusrun -r ";
+
+	
+	public static void main(String[] args) {
+		String myExecutable = "a.out";
+		String myArguments = "--replicates \"10\" garli.conf";
+		String myScheduler = "";
+		String myResource = "Condor";
+		String myArchOs = "INTEL_OSX";
+		int myRuntimeEstimate = 50;
+		ArrayList<String> sharedlist = new ArrayList<String>() {{ add("file1"); add("file2"); add("File3"); }};
+		ArrayList<String[]> perjoblist = new ArrayList<String[]>();
+		String[] myOutput_files = {"outputFile1", "outputFile2"};
+		String myWorkingDir = "myWorkingDir/export/gridstuff";
+		String myRequirements = "";
+		String myExtraRSL = "";
+		String myUnique_id = "1234567890.1234567890";
+
+		buildRSL r = new buildRSL(myExecutable, myArguments, myScheduler,
+				myResource, myArchOs, myRuntimeEstimate, sharedlist, perjoblist,
+				myOutput_files, myWorkingDir, myRequirements, myExtraRSL,
+				myUnique_id);
+	}
+
+
 
 	/**
 	 * Create an RSL document using the parameters provided.
@@ -342,7 +366,7 @@ public class buildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
-		String hostname = (String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		String hostname = "arginine.umiacs.umd.edu"; //(String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
 		String host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
@@ -424,7 +448,7 @@ public class buildRSL {
 		}
 
 		// Add executable.
-		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
+		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64) ");
 
 		// Add arguments tag to RSL from arguments string.
 		if (arguments.length != 0) {
@@ -454,6 +478,54 @@ public class buildRSL {
 		// Add stderr.
 		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
 				.append("/stderr)");
+
+
+		// If the resource is Condor, add appropriate extensions.
+		if (resource.equals("Condor")) {
+			// Adding memory maximum for what used to be only GARLI.
+			if (!max_memory.equals("")) {
+				doc.append(" (min_memory = ").append(max_memory).append(")");
+			}
+			doc.append(" (condor_submit =");
+			
+			if (!max_memory.equals("")) {
+				doc.append(" (request_memory = ").append(max_memory).append(")");
+			}
+			
+			doc.append(" (should_transfer_files YES)");
+			doc.append(" (when_to_transfer_output ON_EXIT)");
+
+			// Handle sharedFiles.
+			if (sharedFiles != null && sharedFiles.size() > 0) {
+				doc.append(" (transfer_input_files ");
+				for (int i = 0; i < sharedFiles.size(); i++) {
+					doc.append(sharedFiles.get(i));
+					if (i != (sharedFiles.size() - 1)) {
+						doc.append(",");
+					}
+				}
+				/* Add hack to transfer one_proc_driver_CLFSCONDOR.r if we're
+				 * running on a WINDOWS machine under Condor... . */
+				if (executable.equals("setR.bat")) {
+					doc.append(",${GLOBUS_SCRATCH_DIR}/cache/one_proc_driver_CLFSCONDOR.r");
+				}
+				doc.append(")");  // End transfer input files.
+			}
+
+			doc.append(" (stream_output False)");
+			doc.append(" (stream_error False)");
+			doc.append(")");  // End condor_submit.
+		} else if ((resource.equals("PBS") || resource.equals("SGE"))
+				&& job_type.equals("single")) {
+			
+		} else if ((resource.equals("PBS") || resource.equals("SGE"))
+				&& job_type.equals("mpi")) {
+			
+		} else if (resource.equals("BOINC")) {
+			
+		}
+
+
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
@@ -530,79 +602,17 @@ public class buildRSL {
 
 		// File cleanup.
 		doc.append(" (file_clean_up = file:///${GLOBUS_SCRATCH_DIR}/")
-				.append(unique_id);
+				.append(unique_id).append(")");
 
-		// If the resource is Condor, add appropriate extensions.
-		if (resource.equals("Condor")) {
-			// Adding memory maximum for what used to be only GARLI.
-			if (!max_memory.equals("")) {
-				doc.append(" (min_memory = ").append(max_memory).append(")");
-			}
-			doc.append(" (condor_submit =");
-			
-			if (!max_memory.equals("")) {
-				doc.append(" (request_memory = ").append(max_memory).append(")");
-			}
-			
-			doc.append(" (should_transfer_files YES)");
-			doc.append(" (when_to_transfer_output ON_EXIT)");
-
-			// Handle sharedFiles.
-			if (sharedFiles != null && sharedFiles.size() > 0) {
-				doc.append(" (transfer_input_files ");
-				for (int i = 0; i < sharedFiles.size(); i++) {
-					doc.append("${GLOBUS_SCRATCH_DIR}/")
-							.append(sharedFiles.get(i));
-					if (i != (sharedFiles.size() - 1)) {
-						doc.append(",");
-					}
-				}
-				/* Add hack to transfer one_proc_driver_CLFSCONDOR.r if we're
-				 * running on a WINDOWS machine under Condor... . */
-				if (executable.equals("setR.bat")) {
-					doc.append(",${GLOBUS_SCRATCH_DIR}/cache/one_proc_driver_CLFSCONDOR.r");
-				}
-				doc.append(")");  // End transfer input files.
-			}
-
-			doc.append(" (stream_output False)");
-			doc.append(" (stream_error False)");
-			doc.append(")");  // End condor_submit.
-		} else if ((resource.equals("PBS") || resource.equals("SGE"))
-				&& job_type.equals("single")) {
-			
-		} else if ((resource.equals("PBS") || resource.equals("SGE"))
-				&& job_type.equals("mpi")) {
-			
-		} else if (resource.equals("BOINC")) {
-			
-		}
+		
 
 		doc.append("'");  // End RSL.
 
 		document = doc.toString();
-	}  // End createRSL.
-	
-	public static void main(String[] args) {
-		String myExecutable = "a.out";
-		String myArguments = "";
-		String myScheduler;
-		String myResource;
-		String myArchOs;
-		int myRuntimeEstimate;
-		ArrayList<String> sharedlist;
-		ArrayList<String[]> perjoblist;
-		String[] myOutput_files;
-		String myWorkingDir;
-		String myRequirements;
-		String myExtraRSL = "";
-		String myUnique_id = "1234567890.1234567890";
 
-		buildRSL r = new buildRSL(myExecutable, myArguments, myScheduler,
-				myResource, myArchOs, myRuntimeEstimate, sharedlist, perjoblist,
-				myOutput_files, myWorkingDir, myRequirements, myExtraRSL,
-				myUnique_id);
-	}
+		System.out.println(document);
+	}  // End createRSL.
+
 }
 
 
