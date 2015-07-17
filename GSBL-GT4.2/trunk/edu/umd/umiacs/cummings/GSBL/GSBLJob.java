@@ -73,6 +73,9 @@ public class GSBLJob {
 	 */
 	private String[] myOutput_files = null;
 
+	/* Host of job submission */
+	private String host; // ex.) asparagine
+
 	/**
 	 * The underlying Globus GramJob.
 	 */
@@ -129,6 +132,8 @@ public class GSBLJob {
 		// Write the RSL string
 		r.writeRSL();
 
+		host = r.getHost();
+
 		// write any mappings to our working directory (something like
 		// "/export/grid_files/[job_id]/").
 	//	r.writeMappingsToAdd(); 
@@ -153,7 +158,7 @@ public class GSBLJob {
 		}
 
 		if (log.isDebugEnabled()) {
-			log.debug("Created new GSBLJob with RSL = " + r.getXML());
+			log.debug("Created new GSBLJob with RSL = " + r.getRSL());
 		}
 
 		// If an executable is not specified, alert the user.
@@ -277,6 +282,13 @@ public class GSBLJob {
 	}
 
 	/**
+	 * Return host.
+	 */
+	public String getHost() {
+		return host;
+	}
+
+	/**
 	 * Get the arch_os.
 	 * 
 	 * @return myArch_os.
@@ -372,7 +384,7 @@ public class GSBLJob {
 		return getFilename("stderr");
 	}
 
-	public RSLxml getRSLxml() {
+	public RSLxml getRSLString() {
 		return r;
 	}
 }

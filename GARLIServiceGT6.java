@@ -456,6 +456,27 @@ public class GARLIService extends GSBLService {
 				arch_os = job.getArch_os();
 			}
 
+			/* globusrun command to execute */
+			globus_command = "globusrun -f -batch -r " + job.getHost();
+			
+			// Add job manager.
+			if (resource.equals("Condor")) {
+				globus_command += ("/jobmanager-condor");
+			} else if (resource.equals("PBS")) {
+				globus_command += ("/jobmanager-pbs");
+			} else if (resource.equals("SGE")) {
+				globus_command += ("/jobmanager-sge");
+			} else if (resource.equals("BOINC")) {
+				globus_command += ("/jobmanager-boinc");  // Does this exist? idk
+			} else {
+				globus_command += " ";
+			}
+
+			/* MUST EXECUTE globus_command with rlsString file as file argument */
+
+
+
+
 			// COMMENTED OUT FOR TESTING PURPOSES
 			/* 
 			GSBLJobManager myJob = new GSBLJobManager(job, scheduler, resource);

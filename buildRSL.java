@@ -57,6 +57,8 @@ public class buildRSL {
 	private String workingDir;  // Example: /export/grid_files/[0-9]*.[0-9]*
 	private String stagingDir;  // Example: [0-9]*.[0-9]*
 	private String cacheDir;  // Example: /export/grid_files/cache/
+	private String hostname;
+	private String host;
 
 	private ArrayList<String> sharedFiles;
 	private ArrayList<String[]> perJobFiles;
@@ -363,8 +365,8 @@ public class buildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
-		String hostname = "arginine.umiacs.umd.edu";  //(String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
-		String host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
+		hostname = "arginine.umiacs.umd.edu";  //(String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
 		// If matchmaking is set, perform scheduling.
@@ -431,19 +433,7 @@ public class buildRSL {
 			}
 		}
 
-		doc.append(header).append(host);  // "globusrun -r asparagine"
-		
-		// Add job manager.
-		if (resource.equals("Condor")) {
-			doc.append("/jobmanager-condor");
-		} else if (resource.equals("PBS")) {
-			doc.append("/jobmanager-pbs");
-		} else if (resource.equals("SGE")) {
-			doc.append("/jobmanager-sge");
-		} else if (resource.equals("BOINC")) {
-			doc.append("/jobmanager-boinc");  // Does this exist? idk
-		}
-
+		// START RSL STRING
 		// Add executable.
 		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64) ");
 
@@ -629,6 +619,78 @@ public class buildRSL {
 
 		System.out.println(document);
 	}  // End createRSL.
+
+		/**
+	 * Get the RSL string created by this object.
+	 * 
+	 * @return A string representation of this XML document.
+	 */
+	public String getRSL() {
+		return document;
+	}
+
+	/**
+	 * Write out the RSL String to "rslString" in the working directory.
+	 */
+	public void writeRSL() {
+		try {
+			PrintWriter pw = new PrintWriter(new FileWriter(workingDir
+					+ "rslString", true), true);
+			pw.println(document);
+			pw.close();
+		} catch (java.io.IOException e) {
+			log.error(e.getMessage());
+		}
+	}
+
+	/**
+	 * Return arch_os.
+	 */
+	public String getArch_os() {
+		return arch_os;
+	}
+
+	/**
+	 * Return scheduler.
+	 */
+	public String getScheduler() {
+		return scheduler;
+	}
+
+	/**
+	 * Return resource.
+	 */
+	public String getResource() {
+		return resource;
+	}
+
+	/**
+	 * Return cpus.
+	 */
+	public String getCPUs() {
+		return cpus;
+	}
+
+	/**
+	 * Return replicates.
+	 */
+	public String getReplicates() {
+		return replicates;
+	}
+
+	/**
+	 * Return reps.
+	 */
+	public int getReps() {
+		return reps;
+	}
+
+	/**
+	 * Return host.
+	 */
+	public String getHost() {
+		return host;
+	}
 
 }
 
