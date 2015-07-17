@@ -472,7 +472,10 @@ public class GARLIService extends GSBLService {
 				globus_command += " ";
 			}
 
-			/* MUST EXECUTE globus_command with rlsString file as file argument */
+			/* Executes a globusrun command */
+			String[] command = [globus_command, "rslString"];
+			GSBLUtils.executeCommand(command, false); 
+
 
 
 
