@@ -17,7 +17,7 @@ import java.io.*;
 /**
  * Create an RSL for globusrun command.
  */
-public class buildRSL {
+public class BuildRSL {
 
 	private static String rftServiceHost = "localhost";
 	private static String tempUploadLocation = "/tmp/temp_uploads/";
@@ -482,7 +482,7 @@ public class buildRSL {
 		} else if (job_type.equals("mpi")) {
 			doc.append(" (count = ").append(cpus).append(")");
 		}
-		
+
 		if (job_type.equals("mpi")) {  /* If job_type equals mpi, specify this
 				explicitly. */
 			doc.append(" (jobType = mpi)");
@@ -498,11 +498,11 @@ public class buildRSL {
 				doc.append(" (min_memory = ").append(max_memory).append(")");
 			}
 			doc.append(" (condor_submit =");
-			
+
 			if (!max_memory.equals("")) {
 				doc.append(" (request_memory = ").append(max_memory).append(")");
 			}
-			
+
 			doc.append(" (should_transfer_files YES)");
 			doc.append(" (when_to_transfer_output ON_EXIT)");
 
@@ -528,12 +528,45 @@ public class buildRSL {
 			doc.append(")");  // End condor_submit.
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("single")) {
-			
+			if (!max_memory.equals("")) {
+				doc.append(" (max_memory = ").append(max_memory).append(")");
+			}
+			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
+			if (resource.equals("PBS")) {
+				doc.append(" (pbs_submit = ");
+			} else {
+				doc.append(" (sge_submit = ");
+			}
+			doc.append(" (nodes = ").append(replicates).append(")");
+			doc.append(")");  // End pbs_submit/sge_submit.
+
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("mpi")) {
-			
+			if (max_mem != null) {
+				Integer memory = new Integer(max_mem.intValue() * num_cpus);
+				doc.append(" (max_memory = ").append(memory).append(")");
+			}
+			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
+			if (resource.equals("PBS")) {
+				doc.append(" (pbs_submit = ");
+			} else {
+				doc.append(" (sge_submit = ");
+			}
+			doc.append(" (nodes = ").append(cpus).append(")");
+
+			if (reps > 1) {
+				doc.append(" (replicates = ").append(replicates).append(")");
+			}
+			doc.append(")");  // End pbs_submit/sge_submit.
+
 		} else if (resource.equals("BOINC")) {
-			
+			if (!max_memory.equals("")) {
+				doc.append(" (max_memory = ").append(max_memory).append(")");
+			}
+			// Does boinc_submit or equivalent exist?
+			doc.append(" (boinc_submit = ");
+
+			doc.append(")");  // End boinc_submit.
 		}
 
 		// Stages in sharedFiles.
@@ -580,7 +613,8 @@ public class buildRSL {
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
 			if ((output_files != null) && (output_files.length > 0)) {
-				doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/") // Stages outputFiles.
+				// Stage outputFiles.
+				doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/").append(unique_id)
 						.append(".output/").append(" gsiftp://")
 						.append(hostname).append("/").append(workingDir)
@@ -606,7 +640,7 @@ public class buildRSL {
 							.append("/").append(output_files[i]).append(")");
 				}
 			}
-			doc.append(")"); // End file stage out.
+			doc.append(")");  // End file stage out.
 		}
 
 		// File cleanup.
@@ -620,10 +654,10 @@ public class buildRSL {
 		System.out.println(document);
 	}  // End createRSL.
 
-		/**
+	/**
 	 * Get the RSL string created by this object.
 	 * 
-	 * @return A string representation of this XML document.
+	 * @return A string representation of this RSL document.
 	 */
 	public String getRSL() {
 		return document;
@@ -634,8 +668,8 @@ public class buildRSL {
 	 */
 	public void writeRSL() {
 		try {
-			PrintWriter pw = new PrintWriter(new FileWriter(workingDir
-					+ "rslString", true), true);
+			PrintWriter pw = new PrintWriter(
+					new FileWriter((workingDir + "rslString"), true), true);
 			pw.println(document);
 			pw.close();
 		} catch (java.io.IOException e) {
@@ -644,56 +678,52 @@ public class buildRSL {
 	}
 
 	/**
-	 * Return arch_os.
+	 * @return arch_os.
 	 */
 	public String getArch_os() {
 		return arch_os;
 	}
 
 	/**
-	 * Return scheduler.
+	 * @return scheduler.
 	 */
 	public String getScheduler() {
 		return scheduler;
 	}
 
 	/**
-	 * Return resource.
+	 * @return resource.
 	 */
 	public String getResource() {
 		return resource;
 	}
 
 	/**
-	 * Return cpus.
+	 * @return cpus.
 	 */
 	public String getCPUs() {
 		return cpus;
 	}
 
 	/**
-	 * Return replicates.
+	 * @return replicates.
 	 */
 	public String getReplicates() {
 		return replicates;
 	}
 
 	/**
-	 * Return reps.
+	 * @return reps.
 	 */
 	public int getReps() {
 		return reps;
 	}
 
 	/**
-	 * Return host.
+	 * @return host.
 	 */
 	public String getHost() {
 		return host;
 	}
 
 }
-
-
-
-
