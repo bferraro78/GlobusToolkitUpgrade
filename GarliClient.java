@@ -1,3 +1,8 @@
+/**
+ * @author Adam Bazinet
+ * @author Ben Ferraro
+ * @author Jordan Kiesel
+ */
 package edu.umd.grid.bio.garli.clients;
 
 // GSBL classes.

@@ -1,4 +1,9 @@
-package edu.umd.grid.bio.garli.impl;
+/**
+ * @author Adam Bazinet
+ * @author Ben Ferraro
+ * @author Jordan Kiesel
+ */
+ package edu.umd.grid.bio.garli.impl;
 
 // GSBL classes.
 import edu.umd.umiacs.cummings.GSBL.BeanToArguments;

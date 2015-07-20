@@ -1,4 +1,9 @@
-//package edu.umd.umiacs.cummings.GSBL;
+/**
+ * @author Adam Bazinet
+ * @author Ben Ferraro
+ * @author Jordan Kiesel
+ */
+ //package edu.umd.umiacs.cummings.GSBL;
 
 import java.lang.Runtime;
 import java.lang.Integer;
