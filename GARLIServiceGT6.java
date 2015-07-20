@@ -483,8 +483,6 @@ public class GARLIService extends GSBLService {
 
 
 
-
-
 			// COMMENTED OUT FOR TESTING PURPOSES
 			/* 
 			GSBLJobManager myJob = new GSBLJobManager(job, scheduler, resource);

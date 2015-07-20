@@ -208,7 +208,7 @@ public class GarliSubmit extends GSBLClient {
 
 		// END PROTECT: beanSetup
 		// ----- ----- ----- END YOUR CODE ----- ----- ----- //
-
+		
 		myPerJobArguments = new String[perJobArguments.size()];
 		myBean.setPerJobArguments(perJobArguments.toArray(myPerJobArguments));
 

@@ -167,7 +167,7 @@ public class BuildRSL {
 		}
 
 		// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
-		//globusLocation = (String) env.get("GLOBUS_LOCATION");
+		globusLocation = (String) env.get("GLOBUS_LOCATION");
 
 		/*
 		// Determine the local hostname.
