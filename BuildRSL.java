@@ -116,10 +116,12 @@ public class BuildRSL {
 		String myExtraRSL = "";
 		String myUnique_id = "1234567890.1234567890";
 
-		buildRSL r = new buildRSL(myExecutable, myArguments, myScheduler,
+		BuildRSL r = new BuildRSL(myExecutable, myArguments, myScheduler,
 				myResource, myArchOs, myRuntimeEstimate, sharedlist, perjoblist,
 				myOutput_files, myWorkingDir, myRequirements, myExtraRSL,
 				myUnique_id);
+
+		System.out.println(r.getRSL());
 	}
 
 	/**
@@ -147,7 +149,7 @@ public class BuildRSL {
 	 * 				Extra RSL to be included in the job description. Must be
 	 * 				preformatted RSL.
 	 */
-	public buildRSL(String myExecutable, String myArguments, String myScheduler,
+	public BuildRSL(String myExecutable, String myArguments, String myScheduler,
 			String myResource, String myArchOs, int myRuntimeEstimate,
 			ArrayList<String> sharedlist, ArrayList<String[]> perjoblist,
 			String[] myOutput_files, String myWorkingDir,
@@ -651,8 +653,6 @@ public class BuildRSL {
 		doc.append("'");  // End RSL.
 
 		document = doc.toString();
-
-		System.out.println(document);
 	}  // End createRSL.
 
 	/**
@@ -674,7 +674,7 @@ public class BuildRSL {
 			pw.println(document);
 			pw.close();
 		} catch (java.io.IOException e) {
-			log.error(e.getMessage());
+			//log.error(e.getMessage());
 		}
 	}
 
