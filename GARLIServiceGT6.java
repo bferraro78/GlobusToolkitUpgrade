@@ -3,7 +3,7 @@
  * @author Ben Ferraro
  * @author Jordan Kiesel
  */
- package edu.umd.grid.bio.garli.impl;
+package edu.umd.grid.bio.garli.impl;
 
 // GSBL classes.
 import edu.umd.umiacs.cummings.GSBL.BeanToArguments;
@@ -124,6 +124,7 @@ public class GARLIService extends GSBLService {
 	 */
 	public boolean runService(GARLIArguments myBean) {
 		this.myBean = myBean;
+		String unique_id = null;
 
 		// Create symlinks.
 		// (Might not need because no symlinks are set in "GarliClient.java".)
@@ -243,9 +244,8 @@ public class GARLIService extends GSBLService {
 				actual_mem = myBean.getActualmemory();
 			}
 
-		
 			// NEW WAY IS ACCESSING JOBID THRU BEAN
-			String unique_id = myBean.getJobID();
+			unique_id = myBean.getJobID();
 
 				/* Get the unique ID from the working directory. -- OLD WAY -- 
 					myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
@@ -453,7 +453,6 @@ public class GARLIService extends GSBLService {
 					runtime_estimate_seconds_recent, sharedFiles, perJobFiles,
 					output_files, requirements, extraRSL, unique_id);
 
-
 			if (scheduler.equals("matchmaking")) {
 				scheduler = job.getScheduler();  /* These values could have
 						changed! */
@@ -462,7 +461,7 @@ public class GARLIService extends GSBLService {
 			}
 
 			/* globusrun command to execute */
-			globus_command = "globusrun -f -batch -r " + job.getHost();
+			String globus_command = "globusrun -f -batch -r " + job.getHost();
 			
 			// Add job manager.
 			if (resource.equals("Condor")) {
@@ -478,7 +477,7 @@ public class GARLIService extends GSBLService {
 			}
 
 			/* Executes a globusrun command */
-			String[] command = [globus_command, "rslString"];
+			String[] command = {globus_command, "rslString"};
 			GSBLUtils.executeCommand(command, false); 
 
 
