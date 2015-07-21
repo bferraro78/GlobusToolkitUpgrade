@@ -3,21 +3,19 @@
  * @author Ben Ferraro
  * @author Jordan Kiesel
  */
- //package edu.umd.umiacs.cummings.GSBL;
+package edu.umd.umiacs.cummings.GSBL;
 
 import java.lang.Runtime;
 import java.lang.Integer;
 
-//import org.apache.commons.logging.Log;
-//import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 // For determining host name.
 import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.io.*;
-
-//import test.buildRSL;
 
 /**
  * Create an RSL for globusrun command.
@@ -30,7 +28,7 @@ public class BuildRSL {
 	/**
 	 * Logger.
 	 */
-	//static Log log = LogFactory.getLog(RSLxml.class.getName());
+	static Log log = LogFactory.getLog(RSLxml.class.getName());
 
 	/**
 	 * The RSL string.
@@ -45,7 +43,7 @@ public class BuildRSL {
 	/**
 	 * For RLS queries.
 	 */
-	//private RLSManager rlsmanager = null;  // Might not be needed?
+	private RLSManager rlsmanager = null;  // Might not be needed?
 
 	/**
 	 * Job submission variables.
@@ -93,14 +91,11 @@ public class BuildRSL {
 
 	// -1 means an estimate has not been given.
 	private int runtime_estimate_seconds = -1;
-
-	/**
-	 * RSL header.
-	 */
-	private String header = "globusrun -r ";
 	
 	private Properties env = new Properties();
 
+	/*
+	// For testing purposes.
 	public static void main(String[] args) {
 		String myExecutable = "a.out";
 		String myArguments = "--replicates \"10\" garli.conf";
@@ -123,6 +118,7 @@ public class BuildRSL {
 
 		System.out.println(r.getRSL());
 	}
+	*/
 
 	/**
 	 * Create an RSL document using the parameters provided.
@@ -156,7 +152,7 @@ public class BuildRSL {
 			String myRequirements, String myExtraRSL, String myUnique_id) {
 
 		// Initialize RLS manager.
-		//rlsmanager = new RLSManager();
+		rlsmanager = new RLSManager();
 
 		// Initialize mappings-to-add.
 		mappingsToAdd = new ArrayList<String>();
@@ -165,7 +161,7 @@ public class BuildRSL {
 		try {
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 		} catch (Exception e) {
-			//log.error("Exception: " + e);
+			log.error("Exception: " + e);
 		}
 
 		// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
@@ -187,7 +183,7 @@ public class BuildRSL {
 			replicates = myArguments.substring((myArguments
 					.indexOf("replicates") + 11), myArguments.indexOf(" ",
 							(myArguments.indexOf("replicates") + 11)));
-			//log.debug("Number of replicates is: " + replicates);
+			log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
@@ -200,7 +196,7 @@ public class BuildRSL {
 			replicates = myArguments.substring((myArguments
 					.indexOf("replicates") + 11), myArguments.indexOf(" ",
 							(myArguments.indexOf("replicates") + 11)));
-			//log.debug("Number of replicates is: " + replicates);
+			log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
@@ -211,7 +207,7 @@ public class BuildRSL {
 		if (myArguments.matches(".*--mpi \"[0-9]+\" .*")) {
 			cpus = myArguments.substring((myArguments.indexOf("mpi") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mpi") + 4)));
-			//log.debug("This is an MPI job!  Number of processors: " + cpus);
+			log.debug("This is an MPI job!  Number of processors: " + cpus);
 			if (cpus.length() < 3) {
 				// This was probably an empty value
 				cpus = "8";  // Default to 8 cpus.
@@ -228,8 +224,8 @@ public class BuildRSL {
 		if (myArguments.matches(".*--mem \"[0-9]+\" .*")) {
 			max_memory = myArguments.substring((myArguments.indexOf("mem") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mem") + 4)));
-			/*log.debug("Maximum memory has been specified! memory: "
-					+ max_memory);*/
+			log.debug("Maximum memory has been specified! memory: "
+					+ max_memory);
 			// Strip the quotes off the mem value.
 			max_memory = max_memory.substring(1, (max_memory.length() - 1));
 			max_mem = new Integer(max_memory);
@@ -318,8 +314,8 @@ public class BuildRSL {
 		output_files = myOutput_files;
 
 		runtime_estimate_seconds = myRuntimeEstimate;
-		/*log.debug("runtime estimate is: "
-				+ (new Integer(runtime_estimate_seconds)).toString());*/
+		log.debug("runtime estimate is: "
+				+ (new Integer(runtime_estimate_seconds)).toString());
 
 		workingDir = myWorkingDir;  /* /export/work/drupal/user_files/admin/job# */
 
@@ -372,7 +368,7 @@ public class BuildRSL {
 
 	public void createRSL() {
 		StringBuilder doc = new StringBuilder();
-		hostname = "arginine.umiacs.umd.edu";  //(String)env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		hostname = (String)env.get("HOSTNAME");  //"arginine.umiacs.umd.edu";  // ex.) asparagine.umiacs.umd.edu
 		host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
@@ -380,12 +376,12 @@ public class BuildRSL {
 		if (scheduler.equals("matchmaking")) {
 			try {
 				Runtime r = Runtime.getRuntime();
-				//log.debug("Attempting to schedule job...\n");
+				log.debug("Attempting to schedule job...\n");
 
 				try {
 					Thread.sleep(150000);
 				} catch (Exception e) {
-					//log.error("Exception: " + e);
+					log.error("Exception: " + e);
 				}
 
 				String command = (globusLocation + "/get_resource.pl "
@@ -416,14 +412,14 @@ public class BuildRSL {
 
 				// Assign resource, arch, os, and scheduler.
 				String[] chunks = resource_arch_os_scheduler.split(" ", 3);
-				//log.debug("resource is: " + chunks[0]);
+				log.debug("resource is: " + chunks[0]);
 				resource = chunks[0];
-				//log.debug("arch_os is: " + chunks[1]);
+				log.debug("arch_os is: " + chunks[1]);
 				arch_os = chunks[1];
-				//log.debug("scheduler is: " + chunks[2]);
+				log.debug("scheduler is: " + chunks[2]);
 				scheduler = chunks[2];
 			} catch (Exception e) {
-				//log.error("Exception: " + e);
+				log.error("Exception: " + e);
 			}
 		}
 
@@ -674,7 +670,7 @@ public class BuildRSL {
 			pw.println(document);
 			pw.close();
 		} catch (java.io.IOException e) {
-			//log.error(e.getMessage());
+			log.error(e.getMessage());
 		}
 	}
 
