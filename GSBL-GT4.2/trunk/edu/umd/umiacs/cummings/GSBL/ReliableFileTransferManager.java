@@ -273,7 +273,7 @@ public class ReliableFileTransferManager {
 					log.debug("in per job files");
 					for (k = 0; k < perJobFilesArray.size(); k++) {
 						log.debug("k is: " + k);
-						log.debug("fileArray.length: " + fileArray.length);
+						//log.debug("fileArray.length: " + fileArray.length);
 						String[] files = perJobFilesArray.get(k);
 						for (int a = 0; a < files.length; a++) {
 							String file = files[a];

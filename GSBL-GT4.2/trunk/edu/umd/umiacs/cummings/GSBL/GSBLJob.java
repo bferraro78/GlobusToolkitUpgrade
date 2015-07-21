@@ -81,7 +81,7 @@ public class GSBLJob {
 	 */
 	private GramJob myJob = null;
 
-	private RSLxml r = null;
+	private BuildRSL r = null;
 
 	/**
 	 * A Jakarta-commons logging logger.

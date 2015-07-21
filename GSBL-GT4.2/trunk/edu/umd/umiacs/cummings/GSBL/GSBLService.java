@@ -129,7 +129,7 @@ public class GSBLService {
 			bfWriter.write(cwd);
 			bfWriter.close();
 			log.debug("client working directory written to file: "
-					+ cwdFilename); */
+					+ cwdFilename); 
 
 			// Write the client's hostname to a file in our working directory.
 			String hostFilename = myWorkingDir + "chn.txt";
@@ -138,7 +138,8 @@ public class GSBLService {
 			bfWriter.write(hostname);
 			bfWriter.close();
 			log.debug("client hostname written to file: " + hostFilename);
-
+			*/
+			
 		} catch (Exception e) {
 			log.error("Unable to create GSBLService temporary directory: "
 					+ myWorkingDir, e);
