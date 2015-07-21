@@ -258,7 +258,7 @@ public class BeanToArguments {
 		Class[] argumentTypes = new Class[0];
 		Method getMethod;
 		try {
-			getMethod = beanClass.getMethod(getMethodName, null);
+			getMethod = beanClass.getMethod(getMethodName, (Class[])null);
 		} catch (NoSuchMethodException nme) {
 			log.error("Unable to find a Method for method name: " + getMethodName
 					+ ": " + nme);
@@ -272,7 +272,7 @@ public class BeanToArguments {
 		// Now that we have a Method, we can call it.
 		Object retval;
 		try {
-			retval = getMethod.invoke(bean, null);
+			retval = getMethod.invoke(bean, (Object[])null);
 		} catch (IllegalAccessException iie) {
 			log.error("Illegal access to method " + getMethodName + ": " + iie);
 			throw iie;

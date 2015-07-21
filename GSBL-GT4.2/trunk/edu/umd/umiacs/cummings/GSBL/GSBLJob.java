@@ -125,7 +125,7 @@ public class GSBLJob {
 			ArrayList<String[]> perjob_files, String[] output_files,
 			String requirements, String extraRSL, String unique_id) throws Exception {
 
-		r = new buildRSL(executable, arguments, scheduler, resource, arch_os,
+		r = new BuildRSL(executable, arguments, scheduler, resource, arch_os,
 				runtime_estimate, shared_files, perjob_files, output_files,
 				workingDir, requirements, extraRSL, unique_id);
 
