@@ -384,7 +384,7 @@ public class GSBLJob {
 		return getFilename("stderr");
 	}
 
-	public RSLxml getRSLString() {
+	public BuildRSL getRSLString() {
 		return r;
 	}
 }
