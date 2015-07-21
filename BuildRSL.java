@@ -504,10 +504,6 @@ public class BuildRSL {
 			}
 			doc.append(" (condor_submit =");
 
-			if (!max_memory.equals("")) {
-				doc.append(" (request_memory = ").append(max_memory).append(")");
-			}
-
 			doc.append(" (should_transfer_files YES)");
 			doc.append(" (when_to_transfer_output ON_EXIT)");
 
