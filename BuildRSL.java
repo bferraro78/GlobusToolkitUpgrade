@@ -442,7 +442,7 @@ public class BuildRSL {
 
 		// START RSL STRING
 		// Add executable.
-		doc.append(" '&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
+		doc.append("'&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
 		// Add remote resource directory.
 		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);

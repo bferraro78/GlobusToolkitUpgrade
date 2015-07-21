@@ -31,12 +31,12 @@ import edu.umd.grid.bio.garli.shared.GARLIParser;
 import java.util.Arrays;
 // END PROTECT: SubImports
 
-public class GarliSubmit extends GSBLClient {
+public class GARLIClient extends GSBLClient {
 
 	/**
 	 * Logger.
 	 */
-	private static Log log = LogFactory.getLog(GARLISubmitClient.class);
+	private static Log log = LogFactory.getLog(GARLIClient.class);
 
 	/**
 	 * GARLIArguments "Bean".
@@ -82,9 +82,9 @@ public class GarliSubmit extends GSBLClient {
 		System.out.println("Creating GARLI job.");
 
 		/* Aquires new Service Instance and initializes jobID. */
-		GARLISubmitClient client = null;
+		GARLIClient client = null;
 		try {
-			client = new GARLISubmitClient(factoryURI, myBean);
+			client = new GARLIClient(factoryURI, myBean);
 		} catch (Exception e) {
 			System.exit(1);
 		}
@@ -100,7 +100,7 @@ public class GarliSubmit extends GSBLClient {
 	/**
 	 * Constructor.
 	 */
-	public GARLISubmitClient(String factoryURI, GARLIArguments myBean)
+	public GARLIClient(String factoryURI, GARLIArguments myBean)
 			throws Exception {
 		super("GARLI", factoryURI, GARLIFactoryServiceAddressingLocator.class,
 				GARLIServiceAddressingLocator.class);
