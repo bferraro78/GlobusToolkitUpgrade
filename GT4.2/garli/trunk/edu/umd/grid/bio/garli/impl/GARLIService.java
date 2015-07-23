@@ -85,7 +85,24 @@ public class GARLIService extends GSBLService {
 	 */
 	private String serviceName = "GARLI";
 
-	// CONSTRUCTOR??
+	public GARLIService() throws Exception {
+		super("GARLI");
+		try {
+			if (runtimeConfig == null) {
+				log.error("Runtime configuration for GARLI is unavailable.");
+				System.exit(1);
+			}
+			
+			// Start the monitoring thread.
+			MonitorJobs monitorJobs = new MonitorJobs();
+			Thread t = new Thread(monitorJobs);
+			t.setPriority(Thread.NORM_PRIORITY);
+			t.start();
+		} catch(Exception e) {
+			log.error("Exception: " + e);
+			e.printStackTrace();
+		}
+	}
 
 	// Load things from config files. We only want to do this once.
 	static {

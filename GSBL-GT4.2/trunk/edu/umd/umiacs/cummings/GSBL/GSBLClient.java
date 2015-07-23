@@ -1,5 +1,7 @@
 /**
  * @author Adam Bazinet
+ * @author Ben Ferraro
+ * @author Jordan Kiesel
  */
 package edu.umd.umiacs.cummings.GSBL;
 
@@ -68,8 +70,6 @@ public class GSBLClient {
 	 * 
 	 * @param svcName
 	 *            The name of the grid service, e.g. "Ssearch34".
-	 * @param factoryURI
-	 *            The URI of the grid service factory.
 	 * @param factorySvcLocatorClass
 	 *            The actual class object of the factory service locator.
 	 * @param instanceSvcLocatorClass
@@ -78,10 +78,10 @@ public class GSBLClient {
 	 *             If the client could not be initialized.
 	 */
 
-	public GSBLClient(String svcName, String factoryURI,
-			Class factorySvcLocatorClass, Class instanceSvcLocatorClass)
-					throws Exception {
+	public GSBLClient(String svcName, Class factorySvcLocatorClass,
+			Class instanceSvcLocatorClass) throws Exception {
 
+		/*
 		// Extract factory host from "factoryURI".
 		String[] factoryChunks = factoryURI.split("/");
 		factoryHost = factoryChunks[2];
@@ -89,6 +89,7 @@ public class GSBLClient {
 		// Remove the port.
 		factoryHost = factoryHost.substring(0, factoryHost.indexOf(":"));
 		log.debug("factoryHost is: " + factoryHost);
+		*/
 
 		try {
 			Object factoryLocator = factorySvcLocatorClass.newInstance();
@@ -97,6 +98,7 @@ public class GSBLClient {
 			// Must be used with secure containers!
 			Util.registerTransport();
 
+			/*
 			// Get factory portType.
 			factoryEPR = new EndpointReferenceType();
 			factoryEPR.setAddress(new Address(factoryURI));
@@ -121,6 +123,7 @@ public class GSBLClient {
 			args[0] = instanceEPR;
 			instancePortType = callObjectMethod(instanceLocator, "get" + svcName
 					+ "PortTypePort", args);
+			*/
 
 			// "instancePortType" is basically the handle to our service.
 			// Store the EPR for future use.

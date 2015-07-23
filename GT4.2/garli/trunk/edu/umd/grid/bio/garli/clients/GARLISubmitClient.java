@@ -65,7 +65,7 @@ public class GARLISubmitClient extends GSBLClient {
 			System.exit(1);
 		}
 
-		String propertiesfile = args[0];
+		String propertiesFile = args[0];
 		jobname = args[1];
 
 		/* Creates a bean, reads properties file, and updates bean with job
@@ -84,7 +84,7 @@ public class GARLISubmitClient extends GSBLClient {
 		/* Aquires new Service Instance and initializes jobID. */
 		GARLISubmitClient client = null;
 		try {
-			client = new GARLISubmitClient(factoryURI, myBean);
+			client = new GARLISubmitClient(myBean);
 		} catch (Exception e) {
 			System.exit(1);
 		}
@@ -100,16 +100,16 @@ public class GARLISubmitClient extends GSBLClient {
 	/**
 	 * Constructor.
 	 */
-	public GARLISubmitClient(String factoryURI, GARLIArguments myBean)
+	public GARLISubmitClient(GARLIArguments myBean)
 			throws Exception {
-		super("GARLI", factoryURI, GARLIFactoryServiceAddressingLocator.class,
+		super("GARLI", "", GARLIFactoryServiceAddressingLocator.class,
 				GARLIServiceAddressingLocator.class);
 		this.myBean = myBean;
 	}
 
 	void execute() throws Exception {  // ADD COMMENTS.
 		// Get a unique job id.
-		jobID = getJobID();
+		jobID = getjobID();
 
 		/* Store the directory the client submitted from as well as the
 		 * hostname. */
