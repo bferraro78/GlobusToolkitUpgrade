@@ -307,13 +307,13 @@ public class GSBLClient {
 	 * number to it.
 	 */
 	public String getInstanceJobID() {
-		ReferenceParametersType rpt = instanceEPR.getParameters();
+		/*ReferenceParametersType rpt = instanceEPR.getParameters();
 		ArrayList children = (ArrayList) ((MessageElement) rpt.get(0))
 				.getChildren();
-		Object anObject = children.get(0);
+		Object anObject = children.get(0);*/
 		Random generator = new Random();
 		Double r = new Double(generator.nextDouble());
-		String jobIDString = anObject.toString() + r.toString();
+		String jobIDString = /*anObject.toString() +*/ r.toString();
 
 		// Make sure string doesn't have any 'E's or '-'s in it.
 		jobIDString = jobIDString.replace("E", "");
