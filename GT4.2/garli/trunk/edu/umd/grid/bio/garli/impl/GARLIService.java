@@ -620,7 +620,7 @@ public class GARLIService extends GSBLService {
 					}
 					// set bean
 					myBean = (GARLIArguments)(getArguments(rwd));
-					retrieveFiles();
+					// retrieveFiles();
 				} else {
 					log.debug("The grid is down, skipping file retrieve...");
 				}
