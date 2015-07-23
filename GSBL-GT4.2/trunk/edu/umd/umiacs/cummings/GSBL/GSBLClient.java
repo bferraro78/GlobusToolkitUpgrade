@@ -191,7 +191,7 @@ public class GSBLClient {
 	 */
 
 	private void doFinalClientSetup() throws Exception {
-		jobID = getInstancejobID();
+		jobID = getInstanceJobID();
 	}
 
 	/**
@@ -306,7 +306,7 @@ public class GSBLClient {
 	 * Extract the resource ID that is embedded in the EPR, and append a random
 	 * number to it.
 	 */
-	public String getInstancejobID() {
+	public String getInstanceJobID() {
 		ReferenceParametersType rpt = instanceEPR.getParameters();
 		ArrayList children = (ArrayList) ((MessageElement) rpt.get(0))
 				.getChildren();
@@ -325,7 +325,7 @@ public class GSBLClient {
 	/**
 	 * Return the job ID.
 	 */
-	public String getjobID() {
+	public String getJobID() {
 		return jobID;
 	}
 

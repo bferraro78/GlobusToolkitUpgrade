@@ -310,6 +310,7 @@ schema.local:   Directory where our schema files are located.
 					<include name="*.jar" />
 					<exclude name="${stubs.jar.name}" />
 					<exclude name="${jar.name}" />
+                                        <exclude name="GSBL.jar" />
 				</fileset>
 			</classpath>
 		</javac>
@@ -329,6 +330,7 @@ schema.local:   Directory where our schema files are located.
 					<include name="*.jar" />
 					<exclude name="${stubs.jar.name}" />
 					<exclude name="${jar.name}" />
+                                        <exclude name="GSBL.jar" />
 				</fileset>
 			</classpath>
 		</javac>

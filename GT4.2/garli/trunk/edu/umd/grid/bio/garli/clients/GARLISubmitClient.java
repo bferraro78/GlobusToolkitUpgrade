@@ -102,14 +102,14 @@ public class GARLISubmitClient extends GSBLClient {
 	 */
 	public GARLISubmitClient(GARLIArguments myBean)
 			throws Exception {
-		super("GARLI", "", GARLIFactoryServiceAddressingLocator.class,
+		super("GARLI", GARLIFactoryServiceAddressingLocator.class,
 				GARLIServiceAddressingLocator.class);
 		this.myBean = myBean;
 	}
 
 	void execute() throws Exception {  // ADD COMMENTS.
 		// Get a unique job id.
-		jobID = getjobID();
+		jobID = super.getJobID();
 
 		/* Store the directory the client submitted from as well as the
 		 * hostname. */

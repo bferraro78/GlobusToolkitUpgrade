@@ -73,6 +73,7 @@
 					<xsd:element name="schedulerOverride" nillable="true" type="xsd:string"/>
 					<xsd:element name="appName" type="xsd:string"/>
 					<xsd:element name="jobName" type="xsd:string"/>
+					<xsd:element name="jobID" type="xsd:string"/>
                                         <xsd:element name="workingDir" type="xsd:string"/>
 				</xsd:all>
 			</xsd:complexType>
