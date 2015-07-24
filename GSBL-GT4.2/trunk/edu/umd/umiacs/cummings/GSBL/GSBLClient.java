@@ -303,8 +303,7 @@ public class GSBLClient {
 	}
 
 	/**
-	 * Extract the resource ID that is embedded in the EPR, and append a random
-	 * number to it.
+	 * Generate a JobID in this form XXXXXXXXX.XXXXXXXXX
 	 */
 	public String getInstanceJobID() {
 		/*ReferenceParametersType rpt = instanceEPR.getParameters();
@@ -312,13 +311,16 @@ public class GSBLClient {
 				.getChildren();
 		Object anObject = children.get(0);*/
 		Random generator = new Random();
-		Double r = new Double(generator.nextDouble());
-		String jobIDString = /*anObject.toString() +*/ r.toString();
 
-		// Make sure string doesn't have any 'E's or '-'s in it.
-		jobIDString = jobIDString.replace("E", "");
-		jobIDString = jobIDString.replace("-", "");
+		int r = generator.nextInt(900000000) + 100000000;
+		int l = generator.nextInt(900000000) + 100000000;
+		Integer i = l;
+		Integer i2 = r;
 
+		String part1 = i.toString();
+		String part2 = i2.toString();
+	 
+		String jobIDString = part1 + "." + part2; 
 		return jobIDString;
 	}
 
