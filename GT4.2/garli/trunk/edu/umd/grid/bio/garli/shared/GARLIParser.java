@@ -151,8 +151,8 @@ public class GARLIParser {
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
-		// Changed to blank for GT6.
-		globusLocation = "";  // (String) env.get("GLOBUS_LOCATION");
+		// Will be blank in GT6.
+		globusLocation = (String) env.get("GLOBUS_LOCATION");
 
 		// Get shared files.
 		String[] tempSharedFiles = myBean.getSharedFiles();
@@ -184,8 +184,9 @@ public class GARLIParser {
 
 			// Determine if path-to-config-file is a directory.
 			File dir = new File(workingDir + myBean.getConfigFile());
+
 			if (!dir.exists()) {
-				String justTheName = dir.getName();
+				// String justTheName = dir.getName();
 				/*
 				 * Hack: (This whole service should be rewritten anyway.)
 				 * Assumption: This is on the server side, and we need to find
@@ -193,15 +194,20 @@ public class GARLIParser {
 				 */
 				/* String tempWorkingDir =
 						workingDir.substring(0, (workingDir.length() - 1)); */
+				/*
 				String baseDir =
 						workingDir.substring(0, workingDir.lastIndexOf("/"));
 				baseDir = baseDir.substring(0, baseDir.lastIndexOf("/"));
 				String cacheDir = baseDir + "/cache/";
 				boolean foundConfigFile = false;
+				*/
 
+				this.configFileName = (workingDir + "/" + myBean.getConfigFile());
+
+				/*
 				for (String sharedFile : sharedFiles) {
-					if (sharedFile.indexOf(justTheName) != -1) {  /* We've got a
-							match. */
+					if (sharedFile.indexOf(justTheName) != -1) {  // We've got a
+							// match.
 						this.configFileName = (cacheDir + sharedFile);
 						foundConfigFile = true;
 						break;
@@ -228,6 +234,7 @@ public class GARLIParser {
 					log.error("ERROR: no conf file found when searching through shared/per-job files!");
 					this.configFileName = "";
 				}
+				*/
 
 				log.debug("configFileName is: " + configFileName);
 			} else if (dir.isDirectory()) {  /* We need to grab a sample
@@ -906,6 +913,7 @@ public class GARLIParser {
 		Runtime r = Runtime.getRuntime();
 		String exec_me = globusLocation + "/validate_garli_conf.pl "
 				+ this.configFileName;
+
 		Process proc = r.exec(exec_me);
 		String line = null;
 		String outputString = null;
@@ -926,6 +934,7 @@ public class GARLIParser {
 			this.unique_patterns = chunks[2];
 			this.num_taxa = chunks[3];
 			this.actual_mem = chunks[4];
+
 			if (chunks[5].toLowerCase().equals("true")) {
 				this.valid_dataf = true;
 			} else {

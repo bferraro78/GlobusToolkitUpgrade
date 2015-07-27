@@ -79,12 +79,15 @@ public class GSBLService {
 	 */
 
 	public synchronized boolean createWorkingDir(String info) {
+		System.out.println("HELLO");
 		// Break apart info.
 		String[] chunks = info.split("@--");
 		String unique_id = chunks[0];
 		String cwd = chunks[1];
 		String hostname = chunks[2];
 		int reps = Integer.parseInt(chunks[3]);
+
+		System.out.println("Parsed");
 
 		String myWorkingDir = cwd + "/";  // workingDirBase + unique_id + "/";
 
@@ -101,11 +104,16 @@ public class GSBLService {
 			log.debug("GSBLService using working dir of '" + myWorkingDir
 					+ "'."); */
 
+			System.out.println("Try");
+
 			if (reps > 1) {
 				/* If reps > 1, create an 'output' folder in our working
 				directory and fill it with sub-job folders. */
 				File outputDir =
 						new File(myWorkingDir + unique_id + ".output/");
+				
+				System.out.println("Output Dir");
+
 				try {
 					outputDir.mkdir();
 					File tempJobDir = null;

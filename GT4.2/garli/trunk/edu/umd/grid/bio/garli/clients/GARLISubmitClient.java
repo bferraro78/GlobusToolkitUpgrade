@@ -130,12 +130,14 @@ public class GARLISubmitClient extends GSBLClient {
 			replica = replicates.intValue();
 		}
 	
-		System.out.println("***LINE 133 OF GARLISubmitClient, createWorkingDir() IS FAILING***");
+		//System.out.println("***LINE 133 OF GARLISubmitClient, createWorkingDir() IS FAILING***");
 		/* If replicates > 1, then will created a output and populate it with
 		 * sub-job folders within /export/work/drupal/user_files/admin/job# */
+		/*
 		((GARLIPortType)instancePortType).createWorkingDir(jobID + "@--" + cwd
 				+ "@--" + hostname + "@--" + reps);
 		System.out.println("***JK, IT'S WORKING JUST FINE.***");
+		*/
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
 		ArrayList<String[]> perJobFiles = new ArrayList<String[]>();
@@ -180,7 +182,6 @@ public class GARLISubmitClient extends GSBLClient {
 			System.out.println("Unknown exception occurred while invoking the GARLI parser "
 					+ e);
 		}
-
 		/* Specifies memory restriction in garliconf file. */
 		String avail_mem = gp.getAvailMem();
 		if (avail_mem == null) {
@@ -197,7 +198,7 @@ public class GARLISubmitClient extends GSBLClient {
 			myBean.setNumtaxa(num_taxa);
 			myBean.setActualmemory(actual_memory);
 		}
-		
+
 		/* Sets configuration file name to bean. */
 		myBean.setConfigFile(gp.getConfigFileName());  /* Now this should no
 				longer be set to a directory. */
