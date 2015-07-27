@@ -574,8 +574,8 @@ public class BuildRSL {
 			stageIn = true;
 
 			for (int i = 0; i < sharedFiles.size(); i++) {
-				doc.append(" (gsiftp://").append(hostname).append("/")
-						.append(workingDir).append("/")
+				doc.append(" (gsiftp://").append(hostname)
+						.append(workingDir)
 						.append(sharedFiles.get(i))
 						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/")
@@ -616,18 +616,18 @@ public class BuildRSL {
 				doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/").append(unique_id)
 						.append(".output/").append(" gsiftp://")
-						.append(hostname).append("/").append(workingDir)
+						.append(hostname).append(workingDir)
 						.append(unique_id).append(".output/))");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
 			doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
 					.append(unique_id).append("/stdout gsiftp://")
-					.append(hostname).append("/").append(workingDir)
-					.append("/stdout) (file:///${GLOBUS_SCRATCH_DIR}")
+					.append(hostname).append(workingDir)
+					.append("stdout) (file:///${GLOBUS_SCRATCH_DIR}")
 					.append(unique_id).append("/stderr gsiftp://")
 					.append(hostname).append("/").append(workingDir)
-					.append("/stderr)");
+					.append("stderr)");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
@@ -635,8 +635,8 @@ public class BuildRSL {
 					doc.append(" (file:///${GLOBUS_SCRATCH_DIR}")
 							.append(unique_id).append("/")
 							.append(output_files[i]).append(" gsiftp://")
-							.append(hostname).append("/").append(workingDir)
-							.append("/").append(output_files[i]).append(")");
+							.append(hostname).append(workingDir)
+							.append(output_files[i]).append(")");
 				}
 			}
 			doc.append(")");  // End file stage out.
