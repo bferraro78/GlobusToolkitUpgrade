@@ -203,6 +203,7 @@ public class GARLIParser {
 				*/
 
 				this.configFileName = (workingDir + "/" + myBean.getConfigFile());
+				System.out.println(myBean.getConfigFile());
 
 				/*
 				for (String sharedFile : sharedFiles) {

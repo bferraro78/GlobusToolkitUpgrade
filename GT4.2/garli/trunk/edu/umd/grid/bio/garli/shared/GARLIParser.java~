@@ -203,6 +203,7 @@ public class GARLIParser {
 				*/
 
 				this.configFileName = (workingDir + "/" + myBean.getConfigFile());
+				System.out.println(this.configFileName);
 
 				/*
 				for (String sharedFile : sharedFiles) {
@@ -914,8 +915,6 @@ public class GARLIParser {
 		String exec_me = globusLocation + "/validate_garli_conf.pl "
 				+ this.configFileName;
 
-		System.out.println("Config File Name: " + this.configFileName);
-		
 		Process proc = r.exec(exec_me);
 		String line = null;
 		String outputString = null;
@@ -936,13 +935,6 @@ public class GARLIParser {
 			this.unique_patterns = chunks[2];
 			this.num_taxa = chunks[3];
 			this.actual_mem = chunks[4];
-
-			System.out.println("Zero: " + chunks[0]);
-			System.out.println("One: " + chunks[1]);
-			System.out.println("Two: " + chunks[2]);
-			System.out.println("Three: " + chunks[3]);
-			System.out.println("Four: " + chunks[4]);
-			System.out.println("Five: " + chunks[5]);
 
 			if (chunks[5].toLowerCase().equals("true")) {
 				this.valid_dataf = true;
