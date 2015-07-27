@@ -109,6 +109,8 @@ public class GARLIService extends GSBLService {
 	// Load things from config files. We only want to do this once.
 	public GARLIService() {
 		try {
+			super("GARLI");
+			
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 			// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
