@@ -67,6 +67,7 @@ public class GSBLService {
 		}
 	}
 
+
 	/**
 	 * Should be invoked via RPC by a GSBLClient to create the working directory
 	 * on the server. Also store the client working directory and the client
@@ -77,7 +78,7 @@ public class GSBLService {
 	 * 				+ hostname
 	 * @return true if method completes successfully.
 	 */
-
+	
 	public synchronized boolean createWorkingDir(String info) {
 		System.out.println("HELLO");
 		// Break apart info.
@@ -154,6 +155,8 @@ public class GSBLService {
 		}
 		return true;
 	}
+
+
 
 	/**
 	 * Called as a cleanup method after a successful run to delete the working

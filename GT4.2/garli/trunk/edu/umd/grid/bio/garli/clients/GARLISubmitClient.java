@@ -130,14 +130,12 @@ public class GARLISubmitClient extends GSBLClient {
 			replica = replicates.intValue();
 		}
 	
-		//System.out.println("***LINE 133 OF GARLISubmitClient, createWorkingDir() IS FAILING***");
 		/* If replicates > 1, then will created a output and populate it with
 		 * sub-job folders within /export/work/drupal/user_files/admin/job# */
-		/*
-		((GARLIPortType)instancePortType).createWorkingDir(jobID + "@--" + cwd
+		createWorkingDir(jobID + "@--" + cwd
 				+ "@--" + hostname + "@--" + reps);
 		System.out.println("***JK, IT'S WORKING JUST FINE.***");
-		*/
+
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
 		ArrayList<String[]> perJobFiles = new ArrayList<String[]>();

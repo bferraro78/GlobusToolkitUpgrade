@@ -185,6 +185,94 @@ public class GSBLClient {
 		}
 	}
 
+	/* This function has been moved from GSBLService to GSBLCLient due to the fact
+	   that we no longer need to create this working directory on the "service side".
+	   All we want to do is create a .output folder and populate it with job replicate 
+	   folders. */
+	public boolean createWorkingDir(String info) {
+		System.out.println("HELLO");
+		// Break apart info.
+		String[] chunks = info.split("@--");
+		String unique_id = chunks[0];
+		String cwd = chunks[1];
+		String hostname = chunks[2];
+		int reps = Integer.parseInt(chunks[3]);
+
+		System.out.println("Parsed");
+
+		String myWorkingDir = cwd + "/";  // workingDirBase + unique_id + "/";
+
+		try {
+			// Construct the full working directory.
+			
+			/* No longer need to create /export/grid_files/jobID because
+			 * cwd = "/export/work/drupal/user_files/admin/job#/".
+			 */
+			/* File myFile = new File(myWorkingDir);
+			if (!myFile.exists()) {
+				myFile.mkdir();
+			}
+			log.debug("GSBLService using working dir of '" + myWorkingDir
+					+ "'."); */
+
+			System.out.println("Try");
+
+			if (reps > 1) {
+				/* If reps > 1, create an 'output' folder in our working
+				directory and fill it with sub-job folders. */
+				File outputDir =
+						new File(myWorkingDir + unique_id + ".output/");
+				
+				System.out.println("Output Dir");
+
+				try {
+					outputDir.mkdir();
+					File tempJobDir = null;
+					for (int i = 0; i < reps; i++) {
+						tempJobDir = new File(myWorkingDir + unique_id
+								+ ".output/job" + i + "/");
+						tempJobDir.mkdir();
+					}
+				} catch (Exception e) {
+					log.error("Exception: " + e);
+				}
+			}
+
+			// write the cwd to a file in our working directory.
+			/* New system does not require cwd file because input files and
+			 * submission will take place in working directory.
+			 */
+			/* String cwdFilename = myWorkingDir + "cwd.txt";
+			FileWriter fileWriter = new FileWriter(cwdFilename);
+			BufferedWriter bfWriter = new BufferedWriter(fileWriter);
+			bfWriter.write(cwd);
+			bfWriter.close();
+			log.debug("client working directory written to file: "
+					+ cwdFilename); 
+
+			// Write the client's hostname to a file in our working directory.
+			String hostFilename = myWorkingDir + "chn.txt";
+			fileWriter = new FileWriter(hostFilename);
+			bfWriter = new BufferedWriter(fileWriter);
+			bfWriter.write(hostname);
+			bfWriter.close();
+			log.debug("client hostname written to file: " + hostFilename);
+			*/
+			
+		} catch (Exception e) {
+			log.error("Unable to create GSBLService temporary directory: "
+					+ myWorkingDir, e);
+		}
+		return true;
+	}
+
+
+
+
+
+
+
+
 	/**
 	 * Function called by constructors to finish client setup. Currently, it
 	 * simply initializes the jobID.
