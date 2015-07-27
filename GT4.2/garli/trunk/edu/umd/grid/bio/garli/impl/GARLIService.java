@@ -85,6 +85,7 @@ public class GARLIService extends GSBLService {
 	 */
 	private String serviceName = "GARLI";
 
+/*
 	public GARLIService() throws Exception {
 		super("GARLI");
 		try {
@@ -103,9 +104,10 @@ public class GARLIService extends GSBLService {
 			e.printStackTrace();
 		}
 	}
-
+*/
+	
 	// Load things from config files. We only want to do this once.
-	static {
+	public GARLIService() {
 		try {
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
@@ -523,6 +525,7 @@ public class GARLIService extends GSBLService {
 	/**
 	 * A threaded inner class which is responsible for periodically checking job status.
 	 */
+	/*
 	class MonitorJobs implements Runnable {
 
 		private GARLIArguments myBean = null;
@@ -628,3 +631,4 @@ public class GARLIService extends GSBLService {
 		}
 	}
 }  // End GARLIService class.
+

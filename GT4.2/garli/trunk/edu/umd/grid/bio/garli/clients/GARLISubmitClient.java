@@ -5,12 +5,14 @@
  */
 package edu.umd.grid.bio.garli.clients;
 
+//Garli Classes
+import edu.umd.grid.bio.garli.impl.GARLIService;
+
 // GSBL classes.
 import edu.umd.umiacs.cummings.GSBL.GSBLClient;
 import edu.umd.umiacs.cummings.GSBL.GSBLPropertiesManager;
 
 // Stub classes.
-import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIPortType;
 import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
 import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
 import edu.umd.grid.bio.garli.stubs.GARLIFactory.service.GARLIFactoryServiceAddressingLocator;
@@ -53,6 +55,8 @@ public class GARLISubmitClient extends GSBLClient {
 	 */
 	private static String jobID;
 
+	/* */
+	private static GARLIService garli_service;
 	/**
 	 * The main method. Reads in arguments from a properties file, creates a
 	 * client, and executes it.
@@ -105,6 +109,11 @@ public class GARLISubmitClient extends GSBLClient {
 		super("GARLI", GARLIFactoryServiceAddressingLocator.class,
 				GARLIServiceAddressingLocator.class);
 		this.myBean = myBean;
+	}
+
+
+	static {
+		garli_service = new GARLIService();
 	}
 
 	void execute() throws Exception {  // ADD COMMENTS.
@@ -259,8 +268,8 @@ public class GARLISubmitClient extends GSBLClient {
 
 		System.out.println("Submitting job.");
 
-		// "instancePortType" object comes from super-class.
-		((GARLIPortType)instancePortType).runService(myBean);
+		garli_service.runService(myBean);
+
 		System.out.println("Job submitted with ID: " + jobID);
 
 		// Destroy the service instance.
