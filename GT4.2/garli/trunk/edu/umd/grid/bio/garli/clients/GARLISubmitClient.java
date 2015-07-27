@@ -55,8 +55,6 @@ public class GARLISubmitClient extends GSBLClient {
 	 */
 	private static String jobID;
 
-	/* */
-	private static GARLIService garli_service;
 	/**
 	 * The main method. Reads in arguments from a properties file, creates a
 	 * client, and executes it.
@@ -109,11 +107,6 @@ public class GARLISubmitClient extends GSBLClient {
 		super("GARLI", GARLIFactoryServiceAddressingLocator.class,
 				GARLIServiceAddressingLocator.class);
 		this.myBean = myBean;
-	}
-
-
-	static {
-		garli_service = new GARLIService();
 	}
 
 	void execute() throws Exception {  // ADD COMMENTS.
@@ -268,7 +261,8 @@ public class GARLISubmitClient extends GSBLClient {
 
 		System.out.println("Submitting job.");
 
-		garli_service.runService(myBean);
+		/* Call to runService */
+		GARLIService garli_service = new GARLIService(myBean);
 
 		System.out.println("Job submitted with ID: " + jobID);
 

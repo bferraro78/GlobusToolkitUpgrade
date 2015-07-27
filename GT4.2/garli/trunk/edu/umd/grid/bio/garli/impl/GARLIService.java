@@ -85,9 +85,11 @@ public class GARLIService extends GSBLService {
 	 */
 	private String serviceName = "GARLI";
 
-/*
-	public GARLIService() throws Exception {
+
+	public GARLIService(GARLIArguments myBean) throws Exception {
 		super("GARLI");
+		runService(myBean);
+/*
 		try {
 			if (runtimeConfig == null) {
 				log.error("Runtime configuration for GARLI is unavailable.");
@@ -103,12 +105,12 @@ public class GARLIService extends GSBLService {
 			log.error("Exception: " + e);
 			e.printStackTrace();
 		}
-	}
 */
+	}
+
 
 	// Load things from config files. We only want to do this once.
-	public GARLIService() {
-			super("GARLI");
+	static {
 		try {
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
