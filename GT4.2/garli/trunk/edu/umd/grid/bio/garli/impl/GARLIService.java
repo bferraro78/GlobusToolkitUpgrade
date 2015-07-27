@@ -105,7 +105,7 @@ public class GARLIService extends GSBLService {
 		}
 	}
 */
-	
+
 	// Load things from config files. We only want to do this once.
 	public GARLIService() {
 		try {
@@ -525,7 +525,7 @@ public class GARLIService extends GSBLService {
 	/**
 	 * A threaded inner class which is responsible for periodically checking job status.
 	 */
-	/*
+	
 	class MonitorJobs implements Runnable {
 
 		private GARLIArguments myBean = null;
