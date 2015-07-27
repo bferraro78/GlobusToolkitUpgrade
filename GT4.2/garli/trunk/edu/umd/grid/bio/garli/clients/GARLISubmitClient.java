@@ -136,8 +136,6 @@ public class GARLISubmitClient extends GSBLClient {
 		 * sub-job folders within /export/work/drupal/user_files/admin/job# */
 		createWorkingDir(jobID + "@--" + cwd
 				+ "@--" + hostname + "@--" + reps);
-		System.out.println("***JK, IT'S WORKING JUST FINE.***");
-
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
 		ArrayList<String[]> perJobFiles = new ArrayList<String[]>();
@@ -201,8 +199,6 @@ public class GARLISubmitClient extends GSBLClient {
 
 		/* Sets configuration file name to bean. */
 		// myBean.setConfigFile(gp.getConfigFileName());  /* Now this should no longer be set to a directory. */
-
-		System.out.println(myBean.getConfigFile());
 
 		sharedFiles.addAll(gp.getInputFiles());  /* gp.getInputFiles() currently
 				only returns shared files. */
