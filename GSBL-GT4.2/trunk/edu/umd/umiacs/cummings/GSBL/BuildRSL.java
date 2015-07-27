@@ -491,7 +491,7 @@ public class BuildRSL {
 			doc.append(" (jobType = mpi)");
 		} else if (reps == 1) {  /* Specify single job explicitly (holding off
 				on multiple because I don't know about Condor implications). */
-			doc.append("(jobType = single)");
+			doc.append(" (jobType = single)");
 		}
 
 		// If the resource is Condor, add appropriate extensions.
