@@ -138,7 +138,7 @@ public class GSBLUtils {
 		try {
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
-			String globusLocation = ""; //(String) env.get("GLOBUS_LOCATION");
+			String globusLocation = (String) env.get("GLOBUS_LOCATION");
 			File configFile = new File(globusLocation
 					+ "/service_configurations/" + configElement);
 			if (configFile.exists()) {

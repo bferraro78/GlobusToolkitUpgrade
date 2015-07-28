@@ -125,14 +125,12 @@ public class GARLIService extends GSBLService {
 
 			update_interval_string =
 					GSBLUtils.getConfigElement("update_interval");
-
 			// Split interval string into min and max.
-			/*
 			update_interval = Integer.parseInt(update_interval_string
 					.substring(0, update_interval_string.indexOf(" ")));
 			update_max = Integer.parseInt(update_interval_string
 					.substring(update_interval_string.indexOf(" ") + 1));
-			*/
+		       
 			drupalUpdateURL = GSBLUtils.getConfigElement("drupal_update_url");
 
 		} catch (Exception e) {
