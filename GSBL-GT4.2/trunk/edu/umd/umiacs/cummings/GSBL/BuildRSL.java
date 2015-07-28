@@ -672,7 +672,7 @@ public class BuildRSL {
 	public void writeRSL() {
 		try {
 			PrintWriter pw = new PrintWriter(
-					new FileWriter((workingDir + "rslString"), true), true);
+					new FileWriter((workingDir + "rslString" + unique_id), true), true);
 			pw.println(document);
 			pw.close();
 		} catch (java.io.IOException e) {
