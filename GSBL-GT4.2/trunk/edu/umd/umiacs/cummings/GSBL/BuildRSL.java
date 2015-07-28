@@ -438,14 +438,14 @@ public class BuildRSL {
 
 		// START RSL STRING
 		// Add executable.
-		doc.append("'&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
+		doc.append("'&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)\n");
 
 		// Add remote resource directory.
 		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
 		if (reps > 1) {
 			doc.append("/").append(unique_id).append(".output");
 		}
-		doc.append(")");
+		doc.append(")\n");
 
 		// Add arguments tag to RSL from arguments string.
 		if (arguments.length != 0) {
@@ -458,40 +458,40 @@ public class BuildRSL {
 					}
 				}
 			}
-			doc.append(")");
+			doc.append(")\n");
 		}
 
 		// If environment variables need to be set, insert here.
 		if ((environment != null) && (environment != "")) {
-			doc.append(" ").append(environment);
+			doc.append(" ").append(environment+"\n");
 		}
 
 		// If stdin is defined, insert here.
 		if ((stdin != null) && (stdin != "")) {
-			doc.append(" ").append(stdin);
+			doc.append(" ").append(stdin+"\n");
 		}
 
 		/* Sets the stdout/stderr in RSL to remote resource directory. */
 		// Add stdout.
 		doc.append(" (stdout = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-				.append("/stdout)");
+				.append("/stdout)\n");
 		// Add stderr.
 		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-				.append("/stderr)");
+				.append("/stderr)\n");
 
 		// Add count element for multiple, mpi, and multiple mpi.
 		if ((reps > 1) && job_type.equals("single")) {
-			doc.append(" (count = ").append(replicates).append(")");
+			doc.append(" (count = ").append(replicates).append(")\n");
 		} else if (job_type.equals("mpi")) {
-			doc.append(" (count = ").append(cpus).append(")");
+			doc.append(" (count = ").append(cpus).append(")\n");
 		}
 
 		if (job_type.equals("mpi")) {  /* If job_type equals mpi, specify this
 				explicitly. */
-			doc.append(" (jobType = mpi)");
+			doc.append(" (jobType = mpi)\n");
 		} else if (reps == 1) {  /* Specify single job explicitly (holding off
 				on multiple because I don't know about Condor implications). */
-			doc.append(" (jobType = single)");
+			doc.append(" (jobType = single)\n");
 		}
 
 		// If the resource is Condor, add appropriate extensions.
@@ -524,7 +524,7 @@ public class BuildRSL {
 
 			doc.append(" (stream_output False)");
 			doc.append(" (stream_error False)");
-			doc.append(")");  // End condor_submit.
+			doc.append(")\n");  // End condor_submit.
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("single")) {
 			if (!max_memory.equals("")) {
@@ -537,7 +537,7 @@ public class BuildRSL {
 				doc.append(" (sge_submit = ");
 			}
 			doc.append(" (nodes = ").append(replicates).append(")");
-			doc.append(")");  // End pbs_submit/sge_submit.
+			doc.append(")\n");  // End pbs_submit/sge_submit.
 
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("mpi")) {
@@ -556,7 +556,7 @@ public class BuildRSL {
 			if (reps > 1) {
 				doc.append(" (replicates = ").append(replicates).append(")");
 			}
-			doc.append(")");  // End pbs_submit/sge_submit.
+			doc.append(")\n");  // End pbs_submit/sge_submit.
 
 		} else if (resource.equals("BOINC")) {
 			if (!max_memory.equals("")) {
@@ -565,7 +565,7 @@ public class BuildRSL {
 			// Does boinc_submit or equivalent exist?
 			doc.append(" (boinc_submit = ");
 
-			doc.append(")");  // End boinc_submit.
+			doc.append(")\n");  // End boinc_submit.
 		}
 
 		// Stages in sharedFiles.
@@ -605,7 +605,7 @@ public class BuildRSL {
 		*/
 
 		if (stageIn == true) {
-			doc.append(")");  // End file stage in.
+			doc.append(")\n");  // End file stage in.
 		}
 
 		/* Begin file stage out. */
@@ -639,7 +639,7 @@ public class BuildRSL {
 							.append(output_files[i]).append(")");
 				}
 			}
-			doc.append(")");  // End file stage out.
+			doc.append(")\n");  // End file stage out.
 		}
 
 		// File cleanup.
