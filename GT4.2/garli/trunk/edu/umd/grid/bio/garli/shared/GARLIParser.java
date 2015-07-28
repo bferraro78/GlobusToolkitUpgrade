@@ -87,9 +87,9 @@ public class GARLIParser {
 	protected String avail_mem = null;
 
 	/**
-	 * The maximum amount of memory we are currently allowing (24000M).
+	 * The maximum amount of memory we are currently allowing (12000M).
 	 */
-	protected int max_sys_mem = 24000;
+	protected int max_sys_mem = 12000;
 
 	/**
 	 * Memory "tipping point" (1G).
@@ -286,21 +286,12 @@ public class GARLIParser {
 					+ argBean.getConstraintfile() + "\n");
 		}
 
-		if (argBean.getStreefname() != null) {
-			if (argBean.getStreefname().equalsIgnoreCase("file")) {
-				if (argBean.getStreefname_userdata() != null) {
-					configBuffer.append("streefname = "
-							+ argBean.getStreefname_userdata() + "\n");
-				} else {
-					log.error("Please specify a value for the --streefname_userdata argument!");
-					System.exit(1);
-				}
-			} else {
-				configBuffer.append("streefname = " + argBean.getStreefname()
-						+ "\n");
-			}
+		if(argBean.getStreefname_userdata() != null) {
+	    	configBuffer.append("streefname = " + argBean.getStreefname_userdata() + "\n");
+		} else if(argBean.getStreefname() != null && (argBean.getStreefname().equalsIgnoreCase("stepwise") || argBean.getStreefname().equalsIgnoreCase("random"))) {
+	    	configBuffer.append("streefname = " + argBean.getStreefname() + "\n");
 		} else {
-			configBuffer.append("streefname = random\n");
+	    	configBuffer.append("streefname = stepwise\n");
 		}
 
 		if (argBean.getAttachmentspertaxon() != null) {
@@ -317,9 +308,9 @@ public class GARLIParser {
 		}
 
 		configBuffer.append("randseed = -1\n");
-
 		configBuffer.append("availablememory = 512\n");
-
+		// add a default value for workphasedivision
+		configBuffer.append("workphasedivision = 0\n");
 		configBuffer.append("logevery = 100000\n");
 		configBuffer.append("saveevery = 100000\n");
 
@@ -336,7 +327,11 @@ public class GARLIParser {
 		configBuffer.append("outputeachbettertopology = 0\n");
 		configBuffer.append("outputcurrentbesttopology = 0\n");
 		configBuffer.append("enforcetermconditions = 1\n");
-		configBuffer.append("genthreshfortopoterm = 5000\n");
+		if((argBean.getAnalysistype() != null) && (argBean.getAnalysistype().equalsIgnoreCase("bootstrap"))) {
+	    	configBuffer.append("genthreshfortopoterm = 10000\n"); // Derrick suggests halving this value for bootstrap runs
+		} else {
+	    	configBuffer.append("genthreshfortopoterm = 20000\n");
+		}
 		configBuffer.append("scorethreshforterm = 0.05\n");
 		configBuffer.append("significanttopochange = 0.01\n");
 
@@ -353,7 +348,6 @@ public class GARLIParser {
 		configBuffer.append("outputmostlyuselessfiles = 0\n");
 		configBuffer.append("writecheckpoints = 0\n");
 		configBuffer.append("restart = 0\n");
-
 
 		if (argBean.getOutgroup() != null) {
 			String decodedOutgroup =
@@ -1031,7 +1025,8 @@ public class GARLIParser {
 		boolean optimizeinputonly = false;
 		String constraintfile = "";  /* If this is set to something other than
 				none, add it to the "inputFiles" vector. */
-		boolean writecheckpoints = false;  // Not supporting at the moment.
+		boolean workphasedivision = false; // this should only be used with BOINC
+		boolean writecheckpoints = false; // supporting only with workphase division for use with BOINC
 		boolean restart = false;  // Not supporting at the moment.
 		boolean ratehetmodel = false;  /* None, gamma, gammafixed. false for
 				none, true for gamma or gammafixed. */
@@ -1275,6 +1270,9 @@ public class GARLIParser {
 					// }
 					inputFiles.add(fullConstraintFileName);
 				}
+				if(garliVar.equalsIgnoreCase("workphasedivision") && garliVarVal.equals("1")) {
+		    		workphasedivision = true;
+				}
 				if (garliVar.equalsIgnoreCase("writecheckpoints")
 						&& garliVarVal.equals("1")) {
 					writecheckpoints = true;
@@ -1428,10 +1426,14 @@ public class GARLIParser {
 			}
 		}
 
-		// v0.951.
-		if (writecheckpoints || restart) {
-			log.error("We are not currently supporting GARLI checkpointing, please fix your garli.conf file.");
-			throw new Exception("We are not currently supporting GARLI checkpointing, please fix your garli.conf file and check back in the future (10-6-06)");
+		if(restart) {
+	    	log.error("We are not currently supporting restarting from a GARLI checkpoint, please fix your garli.conf file.");
+	    	throw new Exception("We are not currently supporting restarting from a GARLI checkpoint, please fix your garli.conf file.");
+		}
+	
+		if(workphasedivision ^ writecheckpoints) {
+	    	log.error("workphasedivision can not be 1 if writecheckpoints is 0 (and vice versa...)");
+	    	throw new Exception("workphasedivision can not be 1 if writecheckpoints is 0 (and vice versa...)");
 		}
 
 		if (!numratecats.equals("1") && !ratehetmodel) {
