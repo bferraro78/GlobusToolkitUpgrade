@@ -438,18 +438,18 @@ public class BuildRSL {
 
 		// START RSL STRING
 		// Add executable.
-		doc.append("'&(executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)\n");
+		doc.append("& (executable  = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
 		// Add remote resource directory.
-		doc.append(" (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
+		doc.append("\n  (scratch_dir = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
 		if (reps > 1) {
 			doc.append("/").append(unique_id).append(".output");
 		}
-		doc.append(")\n");
+		doc.append(")");
 
 		// Add arguments tag to RSL from arguments string.
 		if (arguments.length != 0) {
-			doc.append(" (arguments = ");
+			doc.append("\n  (arguments   = ");
 			for (int i = 0; i < arguments.length; i++) {
 				if (!arguments[i].equals("")) {
 					doc.append("\"").append(arguments[i]).append("\"");
@@ -458,56 +458,56 @@ public class BuildRSL {
 					}
 				}
 			}
-			doc.append(")\n");
+			doc.append(")");
 		}
 
 		// If environment variables need to be set, insert here.
 		if ((environment != null) && (environment != "")) {
-			doc.append(" ").append(environment+"\n");
+			doc.append("\n  ").append(environment);
 		}
 
 		// If stdin is defined, insert here.
 		if ((stdin != null) && (stdin != "")) {
-			doc.append(" ").append(stdin+"\n");
+			doc.append("\n  ").append(stdin);
 		}
 
 		/* Sets the stdout/stderr in RSL to remote resource directory. */
 		// Add stdout.
-		doc.append(" (stdout = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-				.append("/stdout)\n");
+		doc.append("\n  (stdout  = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
+				.append("/stdout)");
 		// Add stderr.
-		doc.append(" (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-				.append("/stderr)\n");
+		doc.append("\n  (stderr  = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
+				.append("/stderr)");
 
 		// Add count element for multiple, mpi, and multiple mpi.
 		if ((reps > 1) && job_type.equals("single")) {
-			doc.append(" (count = ").append(replicates).append(")\n");
+			doc.append("\n  (count   = ").append(replicates).append(")");
 		} else if (job_type.equals("mpi")) {
-			doc.append(" (count = ").append(cpus).append(")\n");
+			doc.append("\n  (count   = ").append(cpus).append(")");
 		}
 
 		if (job_type.equals("mpi")) {  /* If job_type equals mpi, specify this
 				explicitly. */
-			doc.append(" (jobType = mpi)\n");
+			doc.append("\n  (jobType = mpi)");
 		} else if (reps == 1) {  /* Specify single job explicitly (holding off
 				on multiple because I don't know about Condor implications). */
-			doc.append(" (jobType = single)\n");
+			doc.append("\n  (jobType = single)");
 		}
 
 		// If the resource is Condor, add appropriate extensions.
 		if (resource.equals("Condor")) {
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
-				doc.append(" (min_memory = ").append(max_memory).append(")\n");
+				doc.append("\n  (min_memory = ").append(max_memory).append(")");
 			}
-			doc.append(" (condor_submit =");
+			doc.append("\n  (condor_submit =");
 
-			doc.append(" (should_transfer_files YES)");
-			doc.append(" (when_to_transfer_output ON_EXIT)");
+			doc.append(" (should_transfer_files   YES)");
+			doc.append("\n\t\t   (when_to_transfer_output ON_EXIT)");
 
 			// Handle sharedFiles.
 			if (sharedFiles != null && sharedFiles.size() > 0) {
-				doc.append(" (transfer_input_files ");
+				doc.append("\n\t\t   (transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
 					doc.append(sharedFiles.get(i));
 					if (i != (sharedFiles.size() - 1)) {
@@ -522,55 +522,54 @@ public class BuildRSL {
 				doc.append(")");  // End transfer input files.
 			}
 
-			doc.append(" (stream_output False)");
-			doc.append(" (stream_error False)");
-			doc.append(")\n");  // End condor_submit.
+			doc.append("\n\t\t   (stream_output False)");
+			doc.append("\n\t\t   (stream_error  False) )");  // End condor_submit.
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("single")) {
 			if (!max_memory.equals("")) {
-				doc.append(" (max_memory = ").append(max_memory).append(")");
+				doc.append("\n  (max_memory = ").append(max_memory).append(")");
 			}
 			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
 			if (resource.equals("PBS")) {
-				doc.append(" (pbs_submit = ");
+				doc.append("\n  (pbs_submit =");
 			} else {
-				doc.append(" (sge_submit = ");
+				doc.append("\n  (sge_submit =");
 			}
-			doc.append(" (nodes = ").append(replicates).append(")");
-			doc.append(")\n");  // End pbs_submit/sge_submit.
+			doc.append(" (nodes = ").append(replicates)
+				.append(") )");  // End pbs_submit/sge_submit.
 
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("mpi")) {
 			if (max_mem != null) {
 				Integer memory = new Integer(max_mem.intValue() * num_cpus);
-				doc.append(" (max_memory = ").append(memory).append(")");
+				doc.append("\n  (max_memory = ").append(memory).append(")");
 			}
 			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
 			if (resource.equals("PBS")) {
-				doc.append(" (pbs_submit = ");
+				doc.append("\n  (pbs_submit =");
 			} else {
-				doc.append(" (sge_submit = ");
+				doc.append("\n  (sge_submit =");
 			}
 			doc.append(" (nodes = ").append(cpus).append(")");
 
 			if (reps > 1) {
-				doc.append(" (replicates = ").append(replicates).append(")");
+				doc.append("\n\t\t(replicates = ").append(replicates).append(")");
 			}
-			doc.append(")\n");  // End pbs_submit/sge_submit.
+			doc.append(" )");  // End pbs_submit/sge_submit.
 
 		} else if (resource.equals("BOINC")) {
 			if (!max_memory.equals("")) {
-				doc.append(" (max_memory = ").append(max_memory).append(")");
+				doc.append("\n  (max_memory = ").append(max_memory).append(")");
 			}
 			// Does boinc_submit or equivalent exist?
-			doc.append(" (boinc_submit = ");
+			doc.append("\n  (boinc_submit =");
 
-			doc.append(")\n");  // End boinc_submit.
+			doc.append(" )");  // End boinc_submit.
 		}
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
-			doc.append(" (file_stage_in =");
+			doc.append("\n  (file_stage_in =");
 			stageIn = true;
 
 			for (int i = 0; i < sharedFiles.size(); i++) {
@@ -580,8 +579,8 @@ public class BuildRSL {
 						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/")
 						.append(sharedFiles.get(i)).append(")");
-				if (i != sharedFiles.size()-1){
-					doc.append("\n");
+				if (i != (sharedFiles.size() - 1)){
+					doc.append("\n\t\t   ");
 				}
 			}
 		}
@@ -590,7 +589,7 @@ public class BuildRSL {
 		// Stages in perJobFiles.
 		if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
 			if (stageIn == false) {  // No sharedFiles.
-				doc.append(" (file_stage_in =");
+				doc.append("\n  (file_stage_in =");
 				stageIn = true;
 			}
 			for (int i = 0; i < perJobFiles.size(); i++) {
@@ -608,7 +607,7 @@ public class BuildRSL {
 		*/
 
 		if (stageIn == true) {
-			doc.append(")\n");  // End file stage in.
+			doc.append(" )");  // End file stage in.
 		}
 
 		/* Begin file stage out. */
@@ -616,43 +615,40 @@ public class BuildRSL {
 		if (reps > 1) {
 			if ((output_files != null) && (output_files.length > 0)) {
 				// Stage outputFiles.
-				doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
+				doc.append("\n  (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/").append(unique_id)
 						.append(".output/").append(" gsiftp://")
 						.append(hostname).append(workingDir)
-						.append(unique_id).append(".output/))\n");
+						.append(unique_id).append(".output/) )");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
-			doc.append(" (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
+			doc.append("\n  (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
 					.append(unique_id).append("/stdout gsiftp://")
 					.append(hostname).append(workingDir)
-					.append("stdout) (file:///${GLOBUS_SCRATCH_DIR}")
+					.append("stdout)\n\t\t    (file:///${GLOBUS_SCRATCH_DIR}")
 					.append(unique_id).append("/stderr gsiftp://")
-					.append(hostname).append("/").append(workingDir)
-					.append("stderr)\n");
+					.append(hostname).append(workingDir)
+					.append("stderr)");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					doc.append(" (file:///${GLOBUS_SCRATCH_DIR}")
+					doc.append("\n\t\t    (file:///${GLOBUS_SCRATCH_DIR}")
 							.append(unique_id).append("/")
 							.append(output_files[i]).append(" gsiftp://")
 							.append(hostname).append(workingDir)
 							.append(output_files[i]).append(")");
-					if (i != output_files.length-1){
-						doc.append("\n");
-					}
 				}
 			}
-			doc.append(")\n");  // End file stage out.
+			doc.append(" )");  // End file stage out.
 		}
 
 		// File cleanup.
-		doc.append(" (file_clean_up = file:///${GLOBUS_SCRATCH_DIR}/")
+		doc.append("\n  (file_clean_up = file:///${GLOBUS_SCRATCH_DIR}/")
 				.append(unique_id).append(")");
 
-		doc.append("'");  // End RSL.
+		// End RSL.
 
 		document = doc.toString();
 	}  // End createRSL.
