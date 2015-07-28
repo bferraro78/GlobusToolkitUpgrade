@@ -581,7 +581,7 @@ public class BuildRSL {
 						.append(unique_id).append("/")
 						.append(sharedFiles.get(i)).append(")");
 				if (i != sharedFiles.size()-1){
-					doc.append("\n")
+					doc.append("\n");
 				}
 			}
 		}
@@ -641,7 +641,7 @@ public class BuildRSL {
 							.append(hostname).append(workingDir)
 							.append(output_files[i]).append(")");
 					if (i != output_files.length-1){
-						doc.append("\n")
+						doc.append("\n");
 					}
 				}
 			}
