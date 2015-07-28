@@ -162,7 +162,7 @@ public class GARLIService extends GSBLService {
 		}
 		ArrayList<String> sharedFiles =
 				new ArrayList<String>(Arrays.asList(tempSharedFiles));
-		sharedFiles.add(myBean.getConfigFile());
+		sharedFiles.add(myBean.getConfigFile()); // add conf file to shared files
 
 		String[] tempPerJobArguments = myBean.getPerJobArguments();
 		if (tempPerJobArguments == null) {

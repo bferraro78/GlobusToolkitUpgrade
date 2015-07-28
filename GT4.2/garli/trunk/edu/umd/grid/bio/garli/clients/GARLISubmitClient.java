@@ -200,8 +200,7 @@ public class GARLISubmitClient extends GSBLClient {
 		/* Sets configuration file name to bean. */
 		// myBean.setConfigFile(gp.getConfigFileName());  /* Now this should no longer be set to a directory. */
 
-		sharedFiles.addAll(gp.getInputFiles());  /* gp.getInputFiles() currently
-				only returns shared files. */
+		sharedFiles.addAll(gp.getInputFiles());  /* gp.getInputFiles() currently only returns shared files. */
 
 		String [] output_files = gp.getOutputFiles();   
 		myBean.setOutputFiles(output_files);

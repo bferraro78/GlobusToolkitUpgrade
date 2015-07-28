@@ -150,8 +150,6 @@ public class BuildRSL {
 			ArrayList<String> sharedlist, ArrayList<String[]> perjoblist,
 			String[] myOutput_files, String myWorkingDir,
 			String myRequirements, String myExtraRSL, String myUnique_id) {
-		
-		System.out.println("Shared Files: " + sharedlist.toString());
 
 		// Initialize RLS manager.
 		rlsmanager = new RLSManager();
