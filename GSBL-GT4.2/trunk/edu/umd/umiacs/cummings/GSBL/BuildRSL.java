@@ -579,7 +579,7 @@ public class BuildRSL {
 						.append(sharedFiles.get(i))
 						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/")
-						.append(sharedFiles.get(i)).append(")");
+						.append(sharedFiles.get(i)).append(")\n");
 			}
 		}
 
@@ -617,7 +617,7 @@ public class BuildRSL {
 						.append(unique_id).append("/").append(unique_id)
 						.append(".output/").append(" gsiftp://")
 						.append(hostname).append(workingDir)
-						.append(unique_id).append(".output/))");
+						.append(unique_id).append(".output/))\n");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
@@ -636,7 +636,7 @@ public class BuildRSL {
 							.append(unique_id).append("/")
 							.append(output_files[i]).append(" gsiftp://")
 							.append(hostname).append(workingDir)
-							.append(output_files[i]).append(")");
+							.append(output_files[i]).append(")\n");
 				}
 			}
 			doc.append(")\n");  // End file stage out.
