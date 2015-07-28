@@ -498,7 +498,7 @@ public class BuildRSL {
 		if (resource.equals("Condor")) {
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
-				doc.append(" (min_memory = ").append(max_memory).append(")");
+				doc.append(" (min_memory = ").append(max_memory).append(")\n");
 			}
 			doc.append(" (condor_submit =");
 
@@ -579,7 +579,10 @@ public class BuildRSL {
 						.append(sharedFiles.get(i))
 						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
 						.append(unique_id).append("/")
-						.append(sharedFiles.get(i)).append(")\n");
+						.append(sharedFiles.get(i)).append(")");
+				if (i != sharedFiles.size()-1){
+					doc.append("\n")
+				}
 			}
 		}
 
@@ -627,7 +630,7 @@ public class BuildRSL {
 					.append("stdout) (file:///${GLOBUS_SCRATCH_DIR}")
 					.append(unique_id).append("/stderr gsiftp://")
 					.append(hostname).append("/").append(workingDir)
-					.append("stderr)");
+					.append("stderr)\n");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
@@ -636,7 +639,10 @@ public class BuildRSL {
 							.append(unique_id).append("/")
 							.append(output_files[i]).append(" gsiftp://")
 							.append(hostname).append(workingDir)
-							.append(output_files[i]).append(")\n");
+							.append(output_files[i]).append(")");
+					if (i != output_files.length-1){
+						doc.append("\n")
+					}
 				}
 			}
 			doc.append(")\n");  // End file stage out.
