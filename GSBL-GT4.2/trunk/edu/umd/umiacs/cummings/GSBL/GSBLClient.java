@@ -16,7 +16,6 @@ import org.oasis.wsrf.lifetime.Destroy;
 import org.xml.sax.InputSource;
 import org.globus.wsrf.encoding.ObjectSerializer;
 
-import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
 import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResource;
 import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResourceResponse;
 
