@@ -183,7 +183,7 @@ public class GARLIParser {
 		if (buildConfig == false) {  // Config file already exists.
 
 			// Determine if path-to-config-file is a directory.
-			File dir = new File(workingDir + myBean.getConfigFile());
+			File dir = new File(myBean.getConfigFile());
 
 			if (!dir.exists()) {
 				System.out.println("1");
@@ -246,7 +246,7 @@ public class GARLIParser {
 						+ filenames[0];
 			} else {
 				System.out.println("3");
-				this.configFileName = workingDir + myBean.getConfigFile();
+				this.configFileName = myBean.getConfigFile();
 				// Add to input files (shared files, really) here.
 				inputFiles.add(configFileName);
 			}
