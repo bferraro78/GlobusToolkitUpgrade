@@ -16,6 +16,7 @@ import org.oasis.wsrf.lifetime.Destroy;
 import org.xml.sax.InputSource;
 import org.globus.wsrf.encoding.ObjectSerializer;
 
+import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
 import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResource;
 import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResourceResponse;
 
@@ -269,9 +270,9 @@ public class GSBLClient {
 
 	/* If the bean has a congif file, we do not need to build one.
 	   Therefore add it to sharedFiles */
-	public void addConfigFile(ArrayList<String> sharedFiles, String confFile) {
-		if (confFile != null && confFile != "") {
-			sharedFiles.add(confFile);
+	public void addConfigFile(ArrayList<String> sharedFiles, GARLIArguments myBean) {
+	        if (myBean.getConfigFile() != null && myBean.getConfigFile() != "") {
+		    sharedFiles.add(myBean.getConfigFile());
 		}
 	}
 
