@@ -267,17 +267,6 @@ public class GSBLClient {
 	}
 
 
-	/* If the bean has a congif file, we do not need to build one.
-	   Therefore add it to sharedFiles */
-	public void addConfigFile(ArrayList<String> sharedFiles, String confFile) {
-	        if (confFile != null && confFile != "") {
-		    sharedFiles.add(confFile);
-		}
-	}
-
-
-
-
 	/**
 	 * Function called by constructors to finish client setup. Currently, it
 	 * simply initializes the jobID.

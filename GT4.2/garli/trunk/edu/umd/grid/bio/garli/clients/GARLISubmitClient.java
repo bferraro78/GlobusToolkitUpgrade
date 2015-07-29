@@ -144,10 +144,7 @@ public class GARLISubmitClient extends GSBLClient {
 		String[] allSharedFiles = null;
 		String[] myPerJobArguments = null;
 		String[] allPerJobFiles = null;
-		String configFile = myBean.getConfigFile();
-
-		// Do we add conif file to sharedFiles? or will build config take care of it
-		addConfigFile(sharedFiles, configFile);
+		
 
 
 		// ----- ----- ----- YOUR CODE HERE ----- ----- ----- //
@@ -155,6 +152,7 @@ public class GARLISubmitClient extends GSBLClient {
 
 		String confFileNames[] = null;
 		boolean buildConfig = false;
+		String configFile = myBean.getConfigFile();
 
 		if ((configFile == "") || (configFile == null)) {  /* We will build a
 				configuration file from the args passed in. */
