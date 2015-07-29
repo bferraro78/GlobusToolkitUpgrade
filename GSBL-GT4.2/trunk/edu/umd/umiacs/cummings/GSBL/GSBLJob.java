@@ -158,7 +158,7 @@ public class GSBLJob {
 		}
 
 		if (log.isDebugEnabled()) {
-			log.debug("Created new GSBLJob with RSL = " + r.getRSL());
+			log.debug("Created new GSBLJob with RSL =\n" + r.getRSL());
 		}
 
 		// If an executable is not specified, alert the user.
