@@ -401,12 +401,11 @@ public class GSBLClient {
 		Random generator = new Random();
 
 		int r = generator.nextInt(900000000) + 100000000;
-		int l = generator.nextInt(900000000) + 100000000;
-		Integer i = l;
-		Integer i2 = r;
+		Double d = new Double(generator.nextDouble());
+		Integer i = r;
 
 		String part1 = i.toString();
-		String part2 = i2.toString();
+		String part2 = d.toString();
 	 
 		String jobIDString = part1 + "." + part2; 
 		return jobIDString;
