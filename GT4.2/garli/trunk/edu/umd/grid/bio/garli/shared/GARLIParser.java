@@ -186,7 +186,6 @@ public class GARLIParser {
 			File dir = new File(myBean.getConfigFile());
 
 			if (!dir.exists()) {
-				System.out.println("1");
 				// String justTheName = dir.getName();
 				/*
 				 * Hack: (This whole service should be rewritten anyway.)
@@ -203,7 +202,7 @@ public class GARLIParser {
 				boolean foundConfigFile = false;
 				*/
 
-				this.configFileName = (workingDir + "/" + myBean.getConfigFile());
+				this.configFileName = myBean.getConfigFile();
 
 				/*
 				for (String sharedFile : sharedFiles) {
@@ -240,12 +239,10 @@ public class GARLIParser {
 				log.debug("configFileName is: " + configFileName);
 			} else if (dir.isDirectory()) {  /* We need to grab a sample
 					garli.conf file out of here to use for parsing. */
-					System.out.println("2");
 				String[] filenames = dir.list();
 				this.configFileName = workingDir + myBean.getConfigFile() + "/"
 						+ filenames[0];
 			} else {
-				System.out.println("3");
 				this.configFileName = myBean.getConfigFile();
 				// Add to input files (shared files, really) here.
 				inputFiles.add(configFileName);
