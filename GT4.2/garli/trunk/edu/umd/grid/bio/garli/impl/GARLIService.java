@@ -494,12 +494,13 @@ public class GARLIService extends GSBLService {
 			} else if (resource.equals("BOINC")) {
 				globus_command += ("/jobmanager-boinc");  // Does this exist? idk
 			} else {
-				globus_command += " ";
+				globus_command += "/jobmanager-fork";
 			}
 
 			/* Executes a globusrun command */
 			GSBLUtils.executeCommand(globus_command, "rslString"); 
 			
+			System.out.println("Globusrun Command: " + globus_command);
 
 			// COMMENTED OUT FOR TESTING PURPOSES
 			/* 
