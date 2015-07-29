@@ -267,8 +267,14 @@ public class GSBLClient {
 	}
 
 
-
-
+	/* If the bean has a congif file, we do not need to build one.
+	   Therefore add it to sharedFiles */
+	private void addConfigFile(ArrayList<String> sharedFiles, GARLIArguments myBean) {
+		if (myBean.getConfigFile() != null || myBean.getConfigFile() != "") {
+			System.out.println("ADDING CONFIG TO SHARED FILES: ");
+			sharedFiles.add(myBean.getConfigFile());
+		}
+	}
 
 
 
