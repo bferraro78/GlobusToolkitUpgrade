@@ -146,7 +146,7 @@ public class GARLISubmitClient extends GSBLClient {
 		String[] allPerJobFiles = null;
 
 		// Do we add conif file to sharedFiles? or will build config take care of it
-		addConfigFile(sharedFiles, myBean);
+		addConfigFile(sharedFiles, myBean.getConfigFile());
 
 
 		// ----- ----- ----- YOUR CODE HERE ----- ----- ----- //
