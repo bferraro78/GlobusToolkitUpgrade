@@ -436,11 +436,18 @@ public class BuildRSL {
 		}
 
 		// START RSL STRING
+		// Add RSL substitutions.
+		document.append("& (rsl_substitution = (CLIENT ")
+			.append(hostname).append(workingDir).append(")");
+		document.append("\n\t\t      (SERVER ${GLOBUS_SCRATCH_DIR}/")
+			.append(unique_id).append("/) ");
+		document.append(")");  // End RSL substitution.
+
 		// Add executable.
-		document.append("& (executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
+		document.append("\n  (executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
 		// Add remote resource directory.
-		document.append("\n  (directory = ${GLOBUS_SCRATCH_DIR}/").append(unique_id);
+		document.append("\n  (directory = $(CLIENT))");
 		if (reps > 1) {
 			document.append("/").append(unique_id).append(".output");
 		}
@@ -472,11 +479,9 @@ public class BuildRSL {
 
 		/* Sets the stdout/stderr in RSL to remote resource directory. */
 		// Add stdout.
-		document.append("\n  (stdout = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-				.append("/stdout)");
+		document.append("\n  (stdout = $(SERVER)").append("stdout)");
 		// Add stderr.
-		document.append("\n  (stderr = ${GLOBUS_SCRATCH_DIR}/").append(unique_id)
-				.append("/stderr)");
+		document.append("\n  (stderr = $(SERVER)").append("stderr)");
 
 		// Add count element for multiple, mpi, and multiple mpi.
 		if ((reps > 1) && job_type.equals("single")) {
@@ -616,12 +621,9 @@ public class BuildRSL {
 			stageIn = true;
 
 			for (int i = 0; i < sharedFiles.size(); i++) {
-				document.append(" (gsiftp://").append(hostname)
-						.append(workingDir)
-						.append(sharedFiles.get(i))
-						.append(" file:///${GLOBUS_SCRATCH_DIR}/")
-						.append(unique_id).append("/")
-						.append(sharedFiles.get(i)).append(")");
+				document.append(" (gsiftp://$(CLIENT)")
+					.append(sharedFiles.get(i)).append(" file:///$(SERVER)")
+					.append(sharedFiles.get(i)).append(")");
 				if (i != (sharedFiles.size() - 1)){
 					document.append("\n\t\t  ");
 				}
@@ -638,12 +640,9 @@ public class BuildRSL {
 			for (int i = 0; i < perJobFiles.size(); i++) {
 				String[] tempcouples = perJobFiles.get(i);
 				for (int j = 0; j < tempcouples.length; j++) {
-					document.append(" (gsiftp://").append(hostname).append("/")
-							.append(workingDir).append("/")
-							.append(tempcouples[j])
-							.append(" file:///${GLOBUS_SCRATCH_DIR}/")
-							.append(unique_id).append(tempcouples[j])
-							.append(")");
+					document.append(" (gsiftp://$(CLIENT)")
+						.append(tempcouples[j]).append(" file:///$(SERVER)")
+						.append(tempcouples[j]).append(")");
 				}
 			}
 		}
@@ -658,38 +657,32 @@ public class BuildRSL {
 		if (reps > 1) {
 			if ((output_files != null) && (output_files.length > 0)) {
 				// Stage outputFiles.
-				document.append("\n  (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
-						.append(unique_id).append("/").append(unique_id)
-						.append(".output/").append(" gsiftp://")
-						.append(hostname).append(workingDir)
-						.append(unique_id).append(".output/) )");
+				document.append("\n  (file_stage_out = (file:///$(SERVER)")
+					.append(unique_id).append(".output/")
+					.append(" gsiftp://$(CLIENT)").append(unique_id)
+					.append(".output/) )");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
-			document.append("\n  (file_stage_out = (file:///${GLOBUS_SCRATCH_DIR}/")
-					.append(unique_id).append("/stdout gsiftp://")
-					.append(hostname).append(workingDir)
-					.append("stdout)\n\t\t    (file:///${GLOBUS_SCRATCH_DIR}/")
-					.append(unique_id).append("/stderr gsiftp://")
-					.append(hostname).append(workingDir)
-					.append("stderr)");
+			document.append("\n  (file_stage_out = (file:///$(SERVER)")
+				.append("stdout gsiftp://$(CLIENT)")
+				.append("stdout)\n\t\t    (file:///$(SERVER)")
+				.append("stderr gsiftp://$(CLIENT)")
+				.append("stderr)");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					document.append("\n\t\t    (file:///${GLOBUS_SCRATCH_DIR}/")
-							.append(unique_id).append("/")
-							.append(output_files[i]).append(" gsiftp://")
-							.append(hostname).append(workingDir)
-							.append(output_files[i]).append(")");
+					document.append("\n\t\t    (file:///$(SERVER)")
+						.append(output_files[i]).append(" gsiftp://(CLIENT)")
+						.append(output_files[i]).append(")");
 				}
 			}
 			document.append(" )");  // End file stage out.
 		}
 
 		// File cleanup.
-		document.append("\n  (file_clean_up = file:///${GLOBUS_SCRATCH_DIR}/")
-				.append(unique_id).append(")");
+		document.append("\n  (file_clean_up = file:///$(SERVER)");
 	}  // End createRSL.
 
 	private void transferOutputFiles() {
