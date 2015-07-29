@@ -407,7 +407,7 @@ public class GSBLClient {
 		String part1 = i.toString();
 		String part2 = d.toString();
 	 
-		String jobIDString = part1 + "." + part2; 
+		String jobIDString = part1 + part2; 
 		return jobIDString;
 	}
 
