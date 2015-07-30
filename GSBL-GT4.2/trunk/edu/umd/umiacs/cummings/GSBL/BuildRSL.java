@@ -447,7 +447,7 @@ public class BuildRSL {
 		document.append("\n  (executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
 		// Add remote resource directory.
-		document.append("\n  (directory = $(SERVER))");
+		document.append("\n  (directory = $(SERVER)");
 		if (reps > 1) {
 			document.append("/").append(unique_id).append(".output");
 		}
@@ -516,11 +516,11 @@ public class BuildRSL {
 
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
-				document.append("(memory ").append(max_memory)
-					.append(")\n\t\t   ");
+				document.append("(min_memory ").append(max_memory)
+					.append(")\t\t   ");
 			}
-			document.append("\n\t\t   (architecture ").append(architecture)
-			document.append("\n\t\t   (operating_system ").append(os).append(") )");
+			document.append("\n\t\t   (architecture ").append(architecture).append(")");
+			document.append("\n\t\t   (operating_system ").append(os).append(")");
 			document.append("\n\t\t   (should_transfer_files YES)");
 			document.append("\n\t\t   (when_to_transfer_output ON_EXIT)");
 
@@ -543,7 +543,7 @@ public class BuildRSL {
 			transferOutputFiles();
 
 			document.append("\n\t\t   (stream_output False)");
-			document.append("\n\t\t   (stream_error False) )");  // End condor_submit.
+			document.append("\n\t\t   (stream_error False))");  // End condor_submit.
 
 
 
@@ -587,7 +587,7 @@ public class BuildRSL {
 
 			if (!max_memory.equals("")) {
 				doIndent = true;
-				document.append("(max_memory = ").append(max_memory)
+				document.append("(max_memory ").append(max_memory)
 					.append(")");
 			}
 			if (runtime_estimate_seconds != -1) {
@@ -596,8 +596,8 @@ public class BuildRSL {
 				} else {
 					doIndent = true;
 				}
-				document.append("(runtime_estimate = ")
-					.append(runtime_estimate_seconds);
+				document.append("(runtime_estimate ")
+				        .append(runtime_estimate_seconds).append(")");
 			}
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 				if (doIndent) {
@@ -614,7 +614,7 @@ public class BuildRSL {
 			}
 			transferOutputFiles();
 
-			document.append(") )");  // End boinc_submit.
+			document.append(")");  // End boinc_submit.
 		}
 
 		// Stages in sharedFiles.
