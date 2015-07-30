@@ -1034,7 +1034,7 @@ public class GSBLService {
 			String serv = br.readLine();
 			String user = br.readLine();
 			String pass = br.readLine();
-			String db = br.readLine();
+			String db = "GT6_dev";
 
 			ret = "jdbc:mysql://" + serv + "/" + db + "?user=" + user
 					+ "&password=" + pass

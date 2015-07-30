@@ -507,7 +507,8 @@ public class GARLIService extends GSBLService {
 			GSBLJobManager myJob = new GSBLJobManager(job, scheduler, resource);
 			// This is a non-blocking call.
 			myJob.submit();
-
+			*/
+			
 			// Add this job entry to the database.
 			addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
 					unique_id, argumentString, scheduler, resource, arch_os,
@@ -516,7 +517,7 @@ public class GARLIService extends GSBLService {
 					(new Integer(runtime_estimate_seconds_recent).toString()),
 					(new Integer(searchreps).toString()),
 					(new Integer(bootstrapreps).toString()));
-			 */
+			 
 		} catch (Exception e) {
 			log.error("Could not create GSBL job " + e);
 		}
