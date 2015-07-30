@@ -145,8 +145,6 @@ public class GARLISubmitClient extends GSBLClient {
 		String[] myPerJobArguments = null;
 		String[] allPerJobFiles = null;
 		
-
-
 		// ----- ----- ----- YOUR CODE HERE ----- ----- ----- //
 		// BEGIN PROTECT: beanSetup
 

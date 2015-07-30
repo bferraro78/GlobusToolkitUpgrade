@@ -190,7 +190,6 @@ public class GSBLClient {
 	   All we want to do is create a .output folder and populate it with job replicate 
 	   folders. */
 	public boolean createWorkingDir(String info) {
-		System.out.println("HELLO");
 		// Break apart info.
 		String[] chunks = info.split("@--");
 		String unique_id = chunks[0];
@@ -214,8 +213,6 @@ public class GSBLClient {
 			}
 			log.debug("GSBLService using working dir of '" + myWorkingDir
 					+ "'."); */
-
-			System.out.println("Try");
 
 			if (reps > 1) {
 				/* If reps > 1, create an 'output' folder in our working

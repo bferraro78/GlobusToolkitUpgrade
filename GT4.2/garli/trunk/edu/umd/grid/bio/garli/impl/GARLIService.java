@@ -148,7 +148,7 @@ public class GARLIService extends GSBLService {
 		String unique_id = null;
 
 		// Create symlinks.
-		// (Might not need because no symlinks are set in "GarliClient.java".)
+		// (Might not need because no symlinks are set in "GARLISubmitClient.java".)
 		if ((myBean.getSymlinks() != null)
 				&& !myBean.getSymlinks().equals("")) {
 			makeSymlinks(myBean.getSymlinks());
@@ -508,7 +508,7 @@ public class GARLIService extends GSBLService {
 			// This is a non-blocking call.
 			myJob.submit();
 			*/
-			
+
 			// Add this job entry to the database.
 			addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
 					unique_id, argumentString, scheduler, resource, arch_os,
