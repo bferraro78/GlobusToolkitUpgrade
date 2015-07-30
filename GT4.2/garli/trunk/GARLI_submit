@@ -447,7 +447,7 @@ open(PROPERTIES_OUT, ">GARLI.properties.$pid") || die "Cannot write properties f
 print PROPERTIES_OUT $properties;
 close(PROPERTIES_OUT);
 
-system("source setClassPath.sh");
+#system("source setClassPath.sh");
 
 system("java -DGLOBUS_LOCATION=\$GLOBUS_LOCATION -classpath $RealBin:$RealBin/build/classes/:$RealBin/build/stubs/classes/:\$CLASSPATH edu.umd.grid.bio.garli.clients.GARLISubmitClient GARLI.properties.$pid $jobname");
 
