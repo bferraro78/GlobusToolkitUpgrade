@@ -447,7 +447,7 @@ public class BuildRSL {
 		document.append("\n  (executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
 
 		// Add remote resource directory.
-		document.append("\n  (directory = $(CLIENT))");
+		document.append("\n  (directory = $(SERVER))");
 		if (reps > 1) {
 			document.append("/").append(unique_id).append(".output");
 		}
@@ -513,15 +513,14 @@ public class BuildRSL {
 		// If the resource is Condor, add appropriate extensions.
 		if (resource.equals("Condor")) {
 			document.append("\n  (condor_submit = ");
-			document.append("(requirements = ");
 
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
-				document.append("(memory >= ").append(max_memory)
+				document.append("(memory ").append(max_memory)
 					.append(")\n\t\t   ");
 			}
-			document.append("(requirements = (Arch == ").append(architecture)
-				.append(") && (OpSys == ").append(os).append(") )");
+			document.append("\n\t\t   (architecture ").append(architecture)
+			document.append("\n\t\t   (operating_system ").append(os).append(") )");
 			document.append("\n\t\t   (should_transfer_files YES)");
 			document.append("\n\t\t   (when_to_transfer_output ON_EXIT)");
 
@@ -545,6 +544,9 @@ public class BuildRSL {
 
 			document.append("\n\t\t   (stream_output False)");
 			document.append("\n\t\t   (stream_error False) )");  // End condor_submit.
+
+
+
 		} else if ((resource.equals("PBS") || resource.equals("SGE"))
 				&& job_type.equals("single")) {
 			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
@@ -691,7 +693,7 @@ public class BuildRSL {
 			if (resource.equals("Condor")) {
 				document.append(" ");
 			}
-			document.append("(transfer_output_files = ");
+			document.append("(transfer_output_files ");
 			for (int i = 0; i < output_files.length; i++) {
 				document.append(output_files[i]);
 				if (i != (output_files.length - 1)) {
