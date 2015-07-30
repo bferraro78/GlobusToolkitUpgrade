@@ -93,33 +93,7 @@ public class BuildRSL {
 	private int runtime_estimate_seconds = -1;
 	
 	private Properties env = new Properties();
-
-	/*
-	// For testing purposes.
-	public static void main(String[] args) {
-		String myExecutable = "a.out";
-		String myArguments = "--replicates \"10\" garli.conf";
-		String myScheduler = "";
-		String myResource = "Condor";
-		String myArchOs = "INTEL_OSX";
-		int myRuntimeEstimate = 50;
-		ArrayList<String> sharedlist = new ArrayList<String>() {{ add("file1"); add("file2"); add("File3"); }};
-		ArrayList<String[]> perjoblist = new ArrayList<String[]>();
-		String[] myOutput_files = {"outputFile1", "outputFile2"};
-		String myWorkingDir = "myWorkingDir/export/gridstuff";
-		String myRequirements = "";
-		String myExtraRSL = "";
-		String myUnique_id = "1234567890.1234567890";
-
-		BuildRSL r = new BuildRSL(myExecutable, myArguments, myScheduler,
-				myResource, myArchOs, myRuntimeEstimate, sharedlist, perjoblist,
-				myOutput_files, myWorkingDir, myRequirements, myExtraRSL,
-				myUnique_id);
-
-		System.out.println(r.getRSL());
-	}
-	*/
-
+	
 	/**
 	 * Create an RSL document using the parameters provided.
 	 * 
@@ -166,15 +140,6 @@ public class BuildRSL {
 
 		// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
 		globusLocation = (String) env.get("GLOBUS_LOCATION");
-
-		/*
-		// Determine the local hostname.
-		try {
-			rftServiceHost = InetAddress.getLocalHost().getHostName();
-		} catch (Exception e) {
-			log.error("Exception: " + e);
-		}
-		*/
 
 		executable = myExecutable;
 
@@ -319,14 +284,6 @@ public class BuildRSL {
 
 		workingDir = myWorkingDir;  /* /export/work/drupal/user_files/admin/job# */
 
-		/*
-		workingDirBase = workingDir.substring(0, (workingDir.length() - 1));
-		workingDirBase =
-				workingDirBase.substring(0, workingDirBase.lastIndexOf("/"));
-
-		cacheDir = workingDirBase + "/cache/";
-		*/
-
 		extraRSL = myExtraRSL;
 		if ((extraRSL != null) && (extraRSL != "")) {
 
@@ -335,13 +292,13 @@ public class BuildRSL {
 			 * (environment = ... )
 			 */
 			String startEnv = "(environment = ";
-			String lastEnv = ")";
+			String endEnv = ")";
 			int firstEnvIndex = extraRSL.indexOf(startEnv);
-			int lastEnvIndex = extraRSL.indexOf(lastEnv, firstEnvIndex);
+			int lastEnvIndex = extraRSL.indexOf(endEnv, firstEnvIndex);
 
 			if ((firstEnvIndex != -1) && (lastEnvIndex != -1)) {
 				environment = extraRSL.substring(firstEnvIndex,
-						(lastEnvIndex + lastEnvIndex));
+						(lastEnvIndex + endEnv.length()));
 			} else {
 				environment = "";
 			}
@@ -351,13 +308,13 @@ public class BuildRSL {
 			 * (stdin = file:/// ... )
 			 */
 			String startStdin = "(stdin = ";
-			String lastStdin = ")";
+			String endStdin = ")";
 			int firstStdinIndex = extraRSL.indexOf(startStdin);
-			int lastStdinIndex = extraRSL.indexOf(lastStdin, firstStdinIndex);
+			int lastStdinIndex = extraRSL.indexOf(endStdin, firstStdinIndex);
 
 			if ((firstStdinIndex != -1) && (lastStdinIndex != -1)) {
 				stdin = extraRSL.substring(firstStdinIndex,
-						(lastStdinIndex + lastStdin.length()));
+						(lastStdinIndex + endStdin.length()));
 			} else {
 				stdin = "";
 			}
@@ -367,7 +324,7 @@ public class BuildRSL {
 	}
 
 	public void createRSL() {
-		hostname = (String)env.get("HOSTNAME");  //"arginine.umiacs.umd.edu";  // ex.) asparagine.umiacs.umd.edu
+		hostname = (String) env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
 		host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
@@ -435,12 +392,12 @@ public class BuildRSL {
 			}
 		}
 
-		// START RSL STRING
+		// START RSL STRING.
 		// Add RSL substitutions.
 		document.append("& (rsl_substitution = (CLIENT ")
 			.append(hostname).append(workingDir).append(")");
-		document.append("\n\t\t      (SERVER ${GLOBUS_SCRATCH_DIR}/")
-			.append(unique_id).append("/) ");
+		document.append("\n                      (SERVER ${GLOBUS_SCRATCH_DIR}/")
+			.append(unique_id).append("/)");
 		document.append(")");  // End RSL substitution.
 
 		// Add executable.
@@ -517,16 +474,16 @@ public class BuildRSL {
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
 				document.append("(min_memory ").append(max_memory)
-					.append(")\t\t   ");
+					.append(")                   ");
 			}
-			document.append("\n\t\t   (architecture ").append(architecture).append(")");
-			document.append("\n\t\t   (operating_system ").append(os).append(")");
-			document.append("\n\t\t   (should_transfer_files YES)");
-			document.append("\n\t\t   (when_to_transfer_output ON_EXIT)");
+			document.append("\n                   (architecture ").append(architecture).append(")");
+			document.append("\n                   (operating_system ").append(os).append(")");
+			document.append("\n                   (should_transfer_files YES)");
+			document.append("\n                   (when_to_transfer_output ON_EXIT)");
 
 			// Handle sharedFiles.
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
-				document.append("\n\t\t   (transfer_input_files ");
+				document.append("\n                   (transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
 					document.append(sharedFiles.get(i));
 					if (i != (sharedFiles.size() - 1)) {
@@ -536,52 +493,44 @@ public class BuildRSL {
 				/* Add hack to transfer one_proc_driver_CLFSCONDOR.r if we're
 				 * running on a WINDOWS machine under Condor... . */
 				if (executable.equals("setR.bat")) {
-					document.append(",${GLOBUS_SCRATCH_DIR}/cache/one_proc_driver_CLFSCONDOR.r");
+					document.append(",one_proc_driver_CLFSCONDOR.r");
 				}
 				document.append(")");  // End transfer input files.
 			}
 			transferOutputFiles();
 
-			document.append("\n\t\t   (stream_output False)");
-			document.append("\n\t\t   (stream_error False))");  // End condor_submit.
+			document.append("\n                   (stream_output False)");
+			document.append("\n                   (stream_error False))");  // End condor_submit.
 
-
-
-		} else if ((resource.equals("PBS") || resource.equals("SGE"))
-				&& job_type.equals("single")) {
+		} else if (resource.equals("PBS") || resource.equals("SGE")) {
 			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
 			document.append("\n  (").append(resource.toLowerCase())
 				.append("_submit = ");
-
-			if (!max_memory.equals("")) {
-				document.append("(max_memory = ").append(max_memory)
-					.append(")\n\t       ");
-			}
-			document.append("(nodes = ").append(replicates)
-				.append(")");
-			document.append(" )");  // End pbs_submit/sge_submit.
-
-		} else if ((resource.equals("PBS") || resource.equals("SGE"))
-				&& job_type.equals("mpi")) {
-			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
-			document.append("\n  (").append(resource.toLowerCase())
-				.append("_submit = ");
-
-			if (max_mem != null) {
-				Integer memory = new Integer(max_mem.intValue() * num_cpus);
-				document.append("(max_memory = ").append(memory)
-					.append(")\n\t       ");
-			}
-			document.append("(nodes = ").append(cpus).append(")");
-
-			if (reps > 1) {
-				document.append("\n\t       (replicates = ").append(replicates)
+			if (job_type.equals("single")) {
+				if (!max_memory.equals("")) {
+					document.append("(max_memory = ").append(max_memory)
+						.append(")\n               ");
+				}
+				document.append("(nodes = ").append(replicates)
 					.append(")");
+			} else if (job_type.equals("mpi")) {
+				if (max_mem != null) {
+					Integer memory = new Integer(max_mem.intValue() * num_cpus);
+					document.append("(max_memory = ").append(memory)
+						.append(")\n               ");
+				}
+				document.append("(nodes = ").append(cpus).append(")");
+
+				if (reps > 1) {
+					document.append("\n               (replicates = ")
+						.append(replicates).append(")");
+				}
 			}
-			document.append(" )");  // End pbs_submit/sge_submit.
+			document.append(")");  // End pbs_submit/sge_submit.
 
 		} else if (resource.equals("BOINC")) {
 			boolean doIndent = false;  // For properly indenting RSL attributes.
+			
 			// Does boinc_submit or equivalent exist?
 			document.append("\n  (boinc_submit = ");
 
@@ -592,7 +541,7 @@ public class BuildRSL {
 			}
 			if (runtime_estimate_seconds != -1) {
 				if (doIndent) {
-					document.append("\n\t\t  ");
+					document.append("\n                  ");
 				} else {
 					doIndent = true;
 				}
@@ -601,7 +550,7 @@ public class BuildRSL {
 			}
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 				if (doIndent) {
-					document.append("\n\t\t  ");
+					document.append("\n                  ");
 				}
 				document.append("(transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
@@ -627,7 +576,7 @@ public class BuildRSL {
 					.append(sharedFiles.get(i)).append(" file:///$(SERVER)")
 					.append(sharedFiles.get(i)).append(")");
 				if (i != (sharedFiles.size() - 1)){
-					document.append("\n\t\t  ");
+					document.append("\n                  ");
 				}
 			}
 		}
@@ -651,7 +600,7 @@ public class BuildRSL {
 		*/
 
 		if (stageIn == true) {
-			document.append(" )");  // End file stage in.
+			document.append(")");  // End file stage in.
 		}
 
 		/* Begin file stage out. */
@@ -662,34 +611,34 @@ public class BuildRSL {
 				document.append("\n  (file_stage_out = (file:///$(SERVER)")
 					.append(unique_id).append(".output/")
 					.append(" gsiftp://$(CLIENT)").append(unique_id)
-					.append(".output/) )");
+					.append(".output/))");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
 			document.append("\n  (file_stage_out = (file:///$(SERVER)")
 				.append("stdout gsiftp://$(CLIENT)")
-				.append("stdout)\n\t\t    (file:///$(SERVER)")
+				.append("stdout)\n                    (file:///$(SERVER)")
 				.append("stderr gsiftp://$(CLIENT)")
 				.append("stderr)");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					document.append("\n\t\t    (file:///$(SERVER)")
+					document.append("\n                    (file:///$(SERVER)")
 						.append(output_files[i]).append(" gsiftp://(CLIENT)")
 						.append(output_files[i]).append(")");
 				}
 			}
-			document.append(" )");  // End file stage out.
+			document.append(")");  // End file stage out.
 		}
 
 		// File cleanup.
-		document.append("\n  (file_clean_up = file:///$(SERVER)");
+		document.append("\n  (file_clean_up = file:///$(SERVER))");
 	}  // End createRSL.
 
 	private void transferOutputFiles() {
 		if ((output_files != null) && (output_files.length > 0)) {
-			document.append("\n\t\t  ");
+			document.append("\n                  ");
 			if (resource.equals("Condor")) {
 				document.append(" ");
 			}

@@ -5,7 +5,7 @@
  */
 package edu.umd.grid.bio.garli.clients;
 
-//Garli Classes
+// Garli Classes.
 import edu.umd.grid.bio.garli.impl.GARLIService;
 
 // GSBL classes.
@@ -59,7 +59,7 @@ public class GARLISubmitClient extends GSBLClient {
 	 * The main method. Reads in arguments from a properties file, creates a
 	 * client, and executes it.
 	 */
-	public static void main(String [] args) {
+	public static void main(String[] args) {
 		/* Checks to see how many command line arguments are included.
 		 * Two are needed (job properties file and a job name). */
 		if (args.length != 2) {
@@ -109,7 +109,7 @@ public class GARLISubmitClient extends GSBLClient {
 		this.myBean = myBean;
 	}
 
-	void execute() throws Exception {  // ADD COMMENTS.
+	void execute() throws Exception {
 		// Get a unique job id.
 		jobID = super.getJobID();
 
@@ -202,7 +202,7 @@ public class GARLISubmitClient extends GSBLClient {
 
 		sharedFiles.addAll(gp.getInputFiles());  /* gp.getInputFiles() currently only returns shared files. */
 
-		String [] output_files = gp.getOutputFiles();   
+		String[] output_files = gp.getOutputFiles();   
 		myBean.setOutputFiles(output_files);
 
 		// END PROTECT: beanSetup
@@ -226,9 +226,9 @@ public class GARLISubmitClient extends GSBLClient {
 			String[] tempcouples = perJobFiles.get(i);
 			String filenames = "";
 			for (int j = 0; j < tempcouples.length; j++) {
-				if (j < (tempcouples.length - 1)) {  /* Add the ':' couple
-						delimiter. */
-					filenames += tempcouples[j] + ":";
+				if (j < (tempcouples.length - 1)) {
+					// Add the ':' couple delimiter.
+					filenames += (tempcouples[j] + ":");
 				} else {
 					filenames += tempcouples[j];
 				}
@@ -257,7 +257,7 @@ public class GARLISubmitClient extends GSBLClient {
 
 		System.out.println("Submitting job.");
 
-		/* Call to runService */
+		/* Call to runService(). */
 		GARLIService garli_service = new GARLIService(myBean);
 
 		System.out.println("Job submitted with ID: " + jobID);

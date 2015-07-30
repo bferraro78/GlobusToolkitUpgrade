@@ -81,56 +81,12 @@ public class GSBLClient {
 	public GSBLClient(String svcName, Class factorySvcLocatorClass,
 			Class instanceSvcLocatorClass) throws Exception {
 
-		/*
-		// Extract factory host from "factoryURI".
-		String[] factoryChunks = factoryURI.split("/");
-		factoryHost = factoryChunks[2];
-
-		// Remove the port.
-		factoryHost = factoryHost.substring(0, factoryHost.indexOf(":"));
-		log.debug("factoryHost is: " + factoryHost);
-		*/
-
 		try {
 			Object factoryLocator = factorySvcLocatorClass.newInstance();
 			Object instanceLocator = instanceSvcLocatorClass.newInstance();
 
 			// Must be used with secure containers!
 			Util.registerTransport();
-
-			/*
-			// Get factory portType.
-			factoryEPR = new EndpointReferenceType();
-			factoryEPR.setAddress(new Address(factoryURI));
-			Object[] args = new Object[1];
-			args[0] = factoryEPR;
-			factoryPortType = callObjectMethod(factoryLocator, "get" + svcName
-					+ "FactoryPortTypePort", args);
-
-			// Create resource and get endpoint reference of WS-Resource.
-			// This resource is our "instance".
-			args = new Object[1];
-			args[0] = new CreateResource();
-			CreateResourceResponse createResponse = (CreateResourceResponse)
-					callObjectMethod(factoryPortType, "createResource", args);
-			instanceEPR = createResponse.getEndpointReference();
-
-			String endpointString = ObjectSerializer.toString(instanceEPR,
-					GSBLQNames.RESOURCE_REFERENCE);
-
-			// Get instance portType.
-			args = new Object[1];
-			args[0] = instanceEPR;
-			instancePortType = callObjectMethod(instanceLocator, "get" + svcName
-					+ "PortTypePort", args);
-			*/
-
-			// "instancePortType" is basically the handle to our service.
-			// Store the EPR for future use.
-			/*
-			 * args = new Object[1]; args[0] = endpointString;
-			 * callMethod("setEPR", args);
-			 */
 
 		} catch (Exception e) {
 			log.error("Error setting up GSBL client: createService call threw Exception: "
@@ -197,22 +153,9 @@ public class GSBLClient {
 		String hostname = chunks[2];
 		int reps = Integer.parseInt(chunks[3]);
 
-		System.out.println("Parsed");
-
-		String myWorkingDir = cwd + "/";  // workingDirBase + unique_id + "/";
+		String myWorkingDir = cwd + "/";
 
 		try {
-			// Construct the full working directory.
-			
-			/* No longer need to create /export/grid_files/jobID because
-			 * cwd = "/export/work/drupal/user_files/admin/job#/".
-			 */
-			/* File myFile = new File(myWorkingDir);
-			if (!myFile.exists()) {
-				myFile.mkdir();
-			}
-			log.debug("GSBLService using working dir of '" + myWorkingDir
-					+ "'."); */
 
 			if (reps > 1) {
 				/* If reps > 1, create an 'output' folder in our working
@@ -233,29 +176,7 @@ public class GSBLClient {
 				} catch (Exception e) {
 					log.error("Exception: " + e);
 				}
-			}
-
-			// write the cwd to a file in our working directory.
-			/* New system does not require cwd file because input files and
-			 * submission will take place in working directory.
-			 */
-			/* String cwdFilename = myWorkingDir + "cwd.txt";
-			FileWriter fileWriter = new FileWriter(cwdFilename);
-			BufferedWriter bfWriter = new BufferedWriter(fileWriter);
-			bfWriter.write(cwd);
-			bfWriter.close();
-			log.debug("client working directory written to file: "
-					+ cwdFilename); 
-
-			// Write the client's hostname to a file in our working directory.
-			String hostFilename = myWorkingDir + "chn.txt";
-			fileWriter = new FileWriter(hostFilename);
-			bfWriter = new BufferedWriter(fileWriter);
-			bfWriter.write(hostname);
-			bfWriter.close();
-			log.debug("client hostname written to file: " + hostFilename);
-			*/
-			
+			}			
 		} catch (Exception e) {
 			log.error("Unable to create GSBLService temporary directory: "
 					+ myWorkingDir, e);
@@ -268,26 +189,9 @@ public class GSBLClient {
 	 * Function called by constructors to finish client setup. Currently, it
 	 * simply initializes the jobID.
 	 */
-
 	private void doFinalClientSetup() throws Exception {
 		jobID = getInstanceJobID();
 	}
-
-	/**
-	 * This old method no longer works... . It's not clear it was doing anything
-	 * useful anyway, although the container memory usage should be watched,
-	 * because not calling destroy might = memory leak.
-	 */
-	/* public synchronized void destroy() throws Exception {
-		try {
-			Object [] args = new Object[1];
-			args[0] = new Destroy();
-			callMethod("destroy", args);
-		} catch (RemoteException RE) {
-			log.error("Error destroying grid service: " + RE);
-			throw new Exception(RE.getMessage());
-		}
-	} */
 
 	/**
 	 * This method is used to destroy a Grid service instance.
@@ -385,10 +289,6 @@ public class GSBLClient {
 	 * Generate a JobID in this form XXXXXXXXX.XXXXXXXXX
 	 */
 	public String getInstanceJobID() {
-		/*ReferenceParametersType rpt = instanceEPR.getParameters();
-		ArrayList children = (ArrayList) ((MessageElement) rpt.get(0))
-				.getChildren();
-		Object anObject = children.get(0);*/
 		Random generator = new Random();
 
 		int r = generator.nextInt(900000000) + 100000000;

@@ -87,21 +87,9 @@ public class GSBLService {
 		String hostname = chunks[2];
 		int reps = Integer.parseInt(chunks[3]);
 
-		String myWorkingDir = cwd + "/";  // workingDirBase + unique_id + "/";
+		String myWorkingDir = cwd + "/";
 
 		try {
-			// Construct the full working directory.
-			
-			/* No longer need to create /export/grid_files/jobID because
-			 * cwd = "/export/work/drupal/user_files/admin/job#/".
-			 */
-			/* File myFile = new File(myWorkingDir);
-			if (!myFile.exists()) {
-				myFile.mkdir();
-			}
-			log.debug("GSBLService using working dir of '" + myWorkingDir
-					+ "'."); */
-
 			if (reps > 1) {
 				/* If reps > 1, create an 'output' folder in our working
 				directory and fill it with sub-job folders. */
@@ -122,28 +110,6 @@ public class GSBLService {
 					log.error("Exception: " + e);
 				}
 			}
-
-			// write the cwd to a file in our working directory.
-			/* New system does not require cwd file because input files and
-			 * submission will take place in working directory.
-			 */
-			/* String cwdFilename = myWorkingDir + "cwd.txt";
-			FileWriter fileWriter = new FileWriter(cwdFilename);
-			BufferedWriter bfWriter = new BufferedWriter(fileWriter);
-			bfWriter.write(cwd);
-			bfWriter.close();
-			log.debug("client working directory written to file: "
-					+ cwdFilename); 
-
-			// Write the client's hostname to a file in our working directory.
-			String hostFilename = myWorkingDir + "chn.txt";
-			fileWriter = new FileWriter(hostFilename);
-			bfWriter = new BufferedWriter(fileWriter);
-			bfWriter.write(hostname);
-			bfWriter.close();
-			log.debug("client hostname written to file: " + hostFilename);
-			*/
-			
 		} catch (Exception e) {
 			log.error("Unable to create GSBLService temporary directory: "
 					+ myWorkingDir, e);
@@ -478,10 +444,6 @@ public class GSBLService {
 			String runtime_estimate, String searchreps, String bootstrapreps) {
 
 		// Changed parameter "workingDir" to "job_id".
-		/* // Get job id from working directory.
-		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
-
 		log.debug("job id is: " + job_id);
 
 		// Break apart architecture and operating system.
@@ -572,10 +534,6 @@ public class GSBLService {
 			String runtime_estimate) {
 
 		// Changed parameter "workingDir" to "job_id".
-		/* // Get job id from working directory.
-		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
-
 		log.debug("job id is: " + job_id);
 
 		// Break apart architecture and operating system.
@@ -663,10 +621,6 @@ public class GSBLService {
 			String resource, String arch_os, String cpus, String replicates) {
 
 		// Changed parameter "workingDir" to "job_id".
-		/* // Get job id from working directory.
-		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
-
 		log.debug("job id is: " + job_id);
 
 		// Break apart architecture and operating system.
@@ -753,10 +707,6 @@ public class GSBLService {
 			String resource, String arch_os) {
 
 		// Changed parameter "workingDir" to "job_id".
-		/* // Get job id from working directory.
-		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
-
 		log.debug("job id is: " + job_id);
 
 		// Break apart architecture and operating system.
