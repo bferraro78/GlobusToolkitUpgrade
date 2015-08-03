@@ -78,15 +78,14 @@ public class GSBLClient {
 	 *             If the client could not be initialized.
 	 */
 
-	public GSBLClient(String svcName, Class factorySvcLocatorClass,
-			Class instanceSvcLocatorClass) throws Exception {
+	public GSBLClient(String svcName) throws Exception {
 
 		try {
-			Object factoryLocator = factorySvcLocatorClass.newInstance();
-			Object instanceLocator = instanceSvcLocatorClass.newInstance();
+		    //Object factoryLocator = factorySvcLocatorClass.newInstance();
+		    //Object instanceLocator = instanceSvcLocatorClass.newInstance();
 
 			// Must be used with secure containers!
-			Util.registerTransport();
+		    //Util.registerTransport();
 
 		} catch (Exception e) {
 			log.error("Error setting up GSBL client: createService call threw Exception: "

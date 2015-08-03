@@ -104,8 +104,7 @@ public class GARLISubmitClient extends GSBLClient {
 	 */
 	public GARLISubmitClient(GARLIArguments myBean)
 			throws Exception {
-		super("GARLI", GARLIFactoryServiceAddressingLocator.class,
-				GARLIServiceAddressingLocator.class);
+		super("GARLI");
 		this.myBean = myBean;
 	}
 
