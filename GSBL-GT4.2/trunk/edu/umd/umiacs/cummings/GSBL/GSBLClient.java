@@ -13,10 +13,11 @@ import org.globus.axis.message.addressing.EndpointReferenceType;
 import org.globus.axis.message.addressing.ReferenceParametersType;
 import org.apache.axis.message.MessageElement;
 */
-import org.globus.wsrf.encoding.ObjectDeserializer;
-import org.oasis.wsrf.lifetime.Destroy;
+
+//import org.globus.wsrf.encoding.ObjectDeserializer;
+//import org.oasis.wsrf.lifetime.Destroy;
 import org.xml.sax.InputSource;
-import org.globus.wsrf.encoding.ObjectSerializer;
+//import org.globus.wsrf.encoding.ObjectSerializer;
 
 //import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResource;
 //import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResourceResponse;
@@ -326,7 +327,7 @@ public class GSBLClient {
 		return factoryHost;
 	}
 	*/
-		
+
 	/**
 	 * This function returns the filenames within a directory, checking them
 	 * against the number of replicates.

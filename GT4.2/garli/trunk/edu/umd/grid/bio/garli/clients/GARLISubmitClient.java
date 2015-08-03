@@ -261,7 +261,8 @@ public class GARLISubmitClient extends GSBLClient {
 
 		System.out.println("Job submitted with ID: " + jobID);
 
-		// Destroy the service instance.
-		this.destroy();
+		// Destroy the service instance. - NO NEED FOR THIS ANYMORE. We do not create service instance.
+		//this.destroy();
+
 	}  // End execute.
 }  // End class.
