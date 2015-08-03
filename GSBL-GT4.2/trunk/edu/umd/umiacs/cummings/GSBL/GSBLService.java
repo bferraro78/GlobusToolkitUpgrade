@@ -27,10 +27,10 @@ import java.util.Calendar;
 import java.util.Vector;
 import java.sql.*;
 
-import org.globus.wsrf.ResourceContext;
-import org.globus.wsrf.encoding.ObjectSerializer;
+//import org.globus.wsrf.ResourceContext;
+//import org.globus.wsrf.encoding.ObjectSerializer;
 import org.globus.axis.message.addressing.EndpointReferenceType;
-import org.globus.wsrf.encoding.ObjectDeserializer;
+//import org.globus.wsrf.encoding.ObjectDeserializer;
 import org.xml.sax.InputSource;
 
 /**
@@ -213,7 +213,7 @@ public class GSBLService {
 		return dir.delete();
 	}
 
-	/**
+	/*
 	 * Reads the EPR of the associated GramJob from the working directory. File
 	 * must be named "jobEPR.txt".
 	 * 
@@ -221,13 +221,12 @@ public class GSBLService {
 	 * 				Passed as an argument in case "myWorkingDir" hasn't yet been
 	 * 				initialized in this class.
 	 * @return the EPR for the job associated with this Grid service instance.
-	 */
+	 
 	public synchronized EndpointReferenceType getJobEPR(String workingDir) {
 		String eprString = workingDir + "jobEPR.txt";
 		File eprFile = new File(eprString);
 		int seconds = 0;
-		while (!eprFile.exists() && (seconds < 60)) {  /* Give it some time to
-				be written to disk. */
+		while (!eprFile.exists() && (seconds < 60)) {   //Give it some time to be written to disk. 
 			try {
 				Thread.sleep(2000);
 			} catch (Exception e) {
@@ -248,6 +247,7 @@ public class GSBLService {
 		}
 		return jobEPR;
 	}
+	*/
 
 	/**
 	 * Returns our argBean, read from disk.

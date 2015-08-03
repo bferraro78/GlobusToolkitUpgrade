@@ -7,7 +7,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.globus.exec.client.GramJob;
-import org.globus.axis.message.addressing.EndpointReferenceType;
+//import org.globus.axis.message.addressing.EndpointReferenceType;
 
 import java.io.File;
 import java.util.ArrayList;
