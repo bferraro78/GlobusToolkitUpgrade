@@ -29,7 +29,7 @@ import java.sql.*;
 
 //import org.globus.wsrf.ResourceContext;
 //import org.globus.wsrf.encoding.ObjectSerializer;
-import org.globus.axis.message.addressing.EndpointReferenceType;
+//import org.globus.axis.message.addressing.EndpointReferenceType;
 //import org.globus.wsrf.encoding.ObjectDeserializer;
 import org.xml.sax.InputSource;
 
