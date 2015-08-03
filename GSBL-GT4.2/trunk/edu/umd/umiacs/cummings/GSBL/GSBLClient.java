@@ -5,19 +5,21 @@
  */
 package edu.umd.umiacs.cummings.GSBL;
 
+/*
 import org.globus.axis.util.Util;
 
 import org.globus.axis.message.addressing.Address;
 import org.globus.axis.message.addressing.EndpointReferenceType;
 import org.globus.axis.message.addressing.ReferenceParametersType;
 import org.apache.axis.message.MessageElement;
+*/
 import org.globus.wsrf.encoding.ObjectDeserializer;
 import org.oasis.wsrf.lifetime.Destroy;
 import org.xml.sax.InputSource;
 import org.globus.wsrf.encoding.ObjectSerializer;
 
-import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResource;
-import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResourceResponse;
+//import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResource;
+//import edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl.CreateResourceResponse;
 
 import java.rmi.RemoteException;
 import java.lang.reflect.Method;
@@ -49,14 +51,14 @@ public class GSBLClient {
 	protected String factoryHost = null;
 
 	// Associated port types.
-	protected Object factoryPortType;
-	protected Object instancePortType;
+	//protected Object factoryPortType;
+	//protected Object instancePortType;
 
 	// Endpoint reference for our factory.
-	protected EndpointReferenceType factoryEPR = null;
+	//protected EndpointReferenceType factoryEPR = null;
 
 	// Endpoint reference for our instance.
-	protected EndpointReferenceType instanceEPR = null;
+	//protected EndpointReferenceType instanceEPR = null;
 
 	// The resource ID should be unique.
 	protected String jobID = null;
@@ -113,10 +115,11 @@ public class GSBLClient {
 	 * @throws Exception
 	 *             If the client could not be initialized.
 	 */
-	public GSBLClient(String svcName, String EPR, Class instanceSvcLocatorClass)
+	public GSBLClient(String svcName, String EPR)
 			throws Exception {
 		log.debug("Connecting to existing instance at: " + EPR);
 		try {
+			/*
 			Object instanceLocator = instanceSvcLocatorClass.newInstance();
 
 			// Must be used with secure containers!
@@ -131,6 +134,7 @@ public class GSBLClient {
 			args[0] = instanceEPR;
 			instancePortType = callObjectMethod(instanceLocator, "get" + svcName
 					+ "PortTypePort", args);
+			*/
 
 			doFinalClientSetup();
 
@@ -215,7 +219,7 @@ public class GSBLClient {
 			throws Exception {
 		Object retval = null;
 		try {
-			callObjectMethod(instancePortType, methodName, args);
+			//callObjectMethod(instancePortType, methodName, args);
 		} catch (Exception e) {
 			// Logging done by "callObjectMethod".
 			throw new Exception(e);
@@ -270,19 +274,20 @@ public class GSBLClient {
 		return retval;
 	}
 
-	/**
-	 * Return EndpointReference for this Grid service instance.
-	 */
+	/*
+	  Return EndpointReference for this Grid service instance.
 	public EndpointReferenceType getInstanceEPR() {
 		return instanceEPR;
 	}
+	*/
 
-	/**
+	/*
 	 * Return the InstancePortType object.
-	 */
+	 
 	public Object getInstancePortType() {
 		return instancePortType;
 	}
+	*/
 
 	/**
 	 * Generate a JobID in this form XXXXXXXXX.XXXXXXXXX
@@ -315,13 +320,13 @@ public class GSBLClient {
 		return workingDirBase;
 	}
 
-	/**
-	 * Return the factoryHost.
-	 */
+	/*
+	 Return the factoryHost.
 	public String getFactoryHost() {
 		return factoryHost;
 	}
-
+	*/
+		
 	/**
 	 * This function returns the filenames within a directory, checking them
 	 * against the number of replicates.
