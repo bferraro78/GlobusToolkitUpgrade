@@ -311,7 +311,7 @@ schema.local:   Directory where our schema files are located.
 					<exclude name="${stubs.jar.name}" />
 					<exclude name="${jar.name}" />
                     <exclude name="GSBL.jar" />
-                    <exclude name="mysql-connector-java-3.1.12-bin.jar">
+                    <exclude name="mysql-connector-java-3.1.12-bin.jar" />
 				</fileset>
 			</classpath>
 		</javac>
@@ -332,7 +332,7 @@ schema.local:   Directory where our schema files are located.
 					<exclude name="${stubs.jar.name}" />
 					<exclude name="${jar.name}" />
                     <exclude name="GSBL.jar" />
-                    <exclude name="mysql-connector-java-3.1.12-bin.jar">
+                    <exclude name="mysql-connector-java-3.1.12-bin.jar" />
 				</fileset>
 			</classpath>
 		</javac>
