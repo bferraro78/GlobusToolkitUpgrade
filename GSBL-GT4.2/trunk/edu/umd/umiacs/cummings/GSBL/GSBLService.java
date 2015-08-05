@@ -349,10 +349,6 @@ public class GSBLService {
 			String searchreps, String bootstrapreps) {
 
 		// Changed parameter "workingDir" to "job_id".
-		/* // Get job id from working directory.
-		String job_id = workingDir.substring(0, workingDir.lastIndexOf("/"));
-		job_id = job_id.substring(job_id.lastIndexOf("/") + 1); */
-
 		log.debug("job id is: " + job_id);
 
 		// Break apart architecture and operating system.
@@ -388,6 +384,7 @@ public class GSBLService {
 			ResultSet rs =
 					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
 							+ user + "' LIMIT 1");
+
 			int id = -1;
 			while (rs.next()) {
 				id = rs.getInt(1);
@@ -569,6 +566,7 @@ public class GSBLService {
 			ResultSet rs =
 					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
 							+ user + "' LIMIT 1");
+
 			int id = -1;
 			while (rs.next()) {
 				id = rs.getInt(1);

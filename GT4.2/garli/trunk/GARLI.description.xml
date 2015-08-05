@@ -451,20 +451,21 @@
 			<optionalValue>false</optionalValue>
 		</argument>
 
-                <argument key="optimizeinputonly">
-                        <flag>optimizeinputonly</flag>
-                        <type>none</type>
-                        <description>Only optimize model and branch lengths</description>
-                        <optionalFlag>true</optionalFlag>
-                        <optionalValue>true</optionalValue>
-                </argument>
-
 		<argument key="searchreps">
 			<flag>searchreps</flag>
 			<type>java.lang.Integer</type>
-			<description>Number of search reps (for bootstrap runs)</description>
+			<description>Search Reps as applies only to BootStrap runs</description>
 			<optionalFlag>true</optionalFlag>
 			<optionalValue>false</optionalValue>
+		</argument>
+
+		<argument key="jobID">
+			<flag>jobID</flag>
+			<type>java.lang.String</type>
+			<description>Unique ID for the job</description>
+			<takes>jobID</takes>
+			<optionalFlag>true</optionalFlag>
+			<optionalValue>true</optionalValue>
 		</argument>
 
 	</arguments>

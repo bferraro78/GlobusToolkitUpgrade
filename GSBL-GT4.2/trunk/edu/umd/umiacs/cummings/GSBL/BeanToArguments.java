@@ -3,10 +3,10 @@
  */
 package edu.umd.umiacs.cummings.GSBL;
 
-import org.jdom.JDOMException;
-import org.jdom.input.SAXBuilder;
-import org.jdom.*;
-import org.jdom.xpath.XPath;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+import org.jdom2.*;
+import org.jdom2.xpath.XPath;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
