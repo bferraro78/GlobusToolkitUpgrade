@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+#Standard analysis
+#
+#To run this test script, you must first copy sample.infile, short.paramfile, 
+#  and this file into the main Migrate directory
+#
+#Output files: medium.outfile, mathfile-set, medium.logfile
+#
+#Approx time: < 3 min
+
+my $output = `./Migrate_submit medium.paramfile sample.infile`;
+print "stdout:\n";
+print $output;

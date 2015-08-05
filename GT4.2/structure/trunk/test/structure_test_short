@@ -1,0 +1,19 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+# Small number of reps in the associated mainparams file
+# Testing the -K option as well
+#
+# To run this test script, you must first copy main_params_short to mainparams 
+# and extraparams in the main structure directory.  Then move testdata1 and
+# this file to the main structure directory as well.
+#
+#
+# Output files: structure_test_short.out_f
+#
+# Approx runtime: < 1 min
+
+my $output = `./Structure_submit -i testdata1 -o structure_test_short.out -K 5`;
+print "stdout:\n";
+print $output;

@@ -1,0 +1,27 @@
+usertree see TREES block
+usertype see ASSUMPTIONS block
+
+Done:
+log file=output-file 
+Execute filename (input file)
+SaveTrees File=output-file
+Nj TreeFile=output-file
+Agree command has an option TreeFile = tree-file-name causing output
+AllTrees has FDFile and ScoreFile output options 
+BandB command has FDFile output option
+Bootstrap: TreeFile output
+ConTree: TreeFile output
+DScores: ScoreFile output
+Edit command: must disallow
+Export File=export-file-name
+GetTrees File=input-file
+Jackknife treefile=output-file
+LoadConstr File=input-file
+Lscores score-file=output-file 
+MatrixRep File=output-file
+Pscores ScoreFile=output-file
+Puzzle treefile=output-file
+SaveAssum File=output-file
+ToNexus FromFile=infile ToFile=outfile
+TreeDist file=outfile
+UPGMA treefile=outfile

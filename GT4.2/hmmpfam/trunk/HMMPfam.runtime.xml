@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<service name="HMMPfam"
+        xmlns="http://cummings.umiacs.umd.edu/GSBL/service_runtime"
+        xmlns:tns="http://cummings.umiacs.umd.edu/GSBL/service_runtime"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cummings.umiacs.umd.edu/GSBL/service_runtime http://cummings.umiacs.umd.edu/GSBL/service_runtime.xsd">
+	<argument_description>/export/work/globus-nightly-3-6-07/service_configurations/HMMPfam.description.xml</argument_description>
+	<executable>hmmpfam</executable>
+	<scheduler>https://lysine.umiacs.umd.edu:8443/wsrf/services/ManagedJobFactoryService</scheduler>
+	<resource>BOINC</resource>
+        <arch_os>INTEL_LINUX</arch_os>
+	<requirements></requirements>
+</service>

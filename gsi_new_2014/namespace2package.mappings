@@ -1,0 +1,9 @@
+http\://www.umd.edu/namespaces/grid/bio/GSIService=edu.umd.grid.bio.gsi.stubs.GSIService
+http\://www.umd.edu/namespaces/grid/bio/GSIService/bindings=edu.umd.grid.bio.gsi.stubs.GSIService.bindings
+http\://www.umd.edu/namespaces/grid/bio/GSIService/service=edu.umd.grid.bio.gsi.stubs.GSI.service
+
+http\://www.umd.edu/namespaces/grid/bio/GSIFactoryService=edu.umd.grid.bio.gsi.stubs.GSIFactoryService
+http\://www.umd.edu/namespaces/grid/bio/GSIFactoryService/bindings=edu.umd.grid.bio.gsi.stubs.GSIFactoryService.bindings
+http\://www.umd.edu/namespaces/grid/bio/GSIFactoryService/service=edu.umd.grid.bio.gsi.stubs.GSIFactory.service
+
+

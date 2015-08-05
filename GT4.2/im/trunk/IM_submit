@@ -1,0 +1,308 @@
+#!/usr/bin/perl
+
+use strict;
+use Cwd;
+use GSBL::Client ':all';
+
+use FindBin qw($RealBin);
+use lib "$RealBin/../lib";
+
+my %option_desc = ( 
+
+
+	sl => { 	TYPE => "f",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "sLower",
+		 TAKES => qq{s_lower},
+		 DESC => qq{lower limit of range for population split parameter s},
+	},
+
+	d => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "geneUpdates",
+		 TAKES => qq{updates},
+		 DESC => qq{number of genealogy updates per step (default is 1)},
+	},
+
+	s => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "randomSeed",
+		 TAKES => qq{seed},
+		 DESC => qq{random number seed (default is taken from current time)},
+	},
+
+	w => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "minTime",
+		 TAKES => qq{min_time},
+		 DESC => qq{minimum time of population splitting (default is 0)},
+	},
+
+	n => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "numChains",
+		 TAKES => qq{chains},
+		 DESC => qq{number of chains},
+	},
+
+	a => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "recordKeeping",
+		 TAKES => qq{steps},
+		 DESC => qq{number of steps between record keeping (default is 10)},
+	},
+
+	x => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "ckptFile",
+		 TAKES => qq{ckptfile},
+		 DESC => qq{'*.dck' file name for starting from a previous run},
+	},
+
+	bh => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "burnHeating",
+		 TAKES => qq{burnheat},
+		 DESC => qq{ramped heating scheme for burn, -bh default is ~100,000 steps},
+	},
+
+	b => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "burnDuration",
+		 TAKES => qq{duration},
+		 DESC => qq{duration of burn (if integer, the number of burnin steps; if floating point, the time in hours of burnin period)},
+	},
+
+	g1 => { 	TYPE => "f",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "heatParamFirst",
+		 TAKES => qq{param_1},
+		 DESC => qq{first heating parameter, effect depends on heating mode (default 0.05)},
+	},
+
+	m1 => { 	TYPE => "f",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "migrationOut",
+		 TAKES => qq{mig_1-2},
+		 DESC => qq{maximum migration rate from population 1 to population 2},
+	},
+
+	u => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "genTime",
+		 TAKES => qq{gen_time},
+		 DESC => qq{generation time in years  (default is 1)},
+	},
+
+	qA => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "thetAMax",
+		 TAKES => qq{tA_max},
+		 DESC => qq{scalar for thetaA maximum (default = scalar for theta1 maximum)},
+	},
+
+	g2 => { 	TYPE => "f",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "heatParamSecond",
+		 TAKES => qq{param_2},
+		 DESC => qq{second heating parameter, effect depends on heating mode},
+	},
+
+	replicates => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "replicates",
+		 TAKES => qq{replicates},
+		 DESC => qq{The number of times to execute this job.},
+	},
+
+	t => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "maxTime",
+		 TAKES => qq{max_time},
+		 DESC => qq{maximum time of population splitting},
+	},
+
+	su => { 	TYPE => "f",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "sUpper",
+		 TAKES => qq{s_upper},
+		 DESC => qq{upper limit of range for population split parameter s},
+	},
+
+	k => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "chainSwaps",
+		 TAKES => qq{chain_swaps},
+		 DESC => qq{with multiple chains (-n) the number of chain swap attempts per step},
+	},
+
+	e => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "time",
+		 TAKES => qq{time},
+		 DESC => qq{time (hours) between save of checkpoint file (e0 for only after burn)},
+	},
+
+	o => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "outputFile",
+		 TAKES => qq{out_file},
+		 DESC => qq{output file name (no spaces)},
+	},
+
+	f => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "heatMode",
+		 TAKES => qq{h_mode},
+		 DESC => qq{heat mode: l linear (default); t twostep; a adaptive twostep; g geometric},
+	},
+
+	p => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "outOptions",
+		 TAKES => qq{out_opt},
+		 DESC => qq{output options (default is no options): 0: print file of values of basic parameters (file can be enormous!) | 1: print TMRCA histogram for each locus | 2: print histogram of parameters on demographic scales | 3: print histograms of # migration events and mean migration times | 4: print ASCII-based trends of parameters | 5: print ASCII-based posterior density curves | 6: print smoothed distributions of marginal log likelihoods},
+	},
+
+	z => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "displaySteps",
+		 TAKES => qq{disp_steps},
+		 DESC => qq{number of steps between output to the monitor (default 10000)},
+	},
+
+	j => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "runOptions",
+		 TAKES => qq{run_opt},
+		 DESC => qq{0: likelihood() functions return 1 - posterior should equal prior | 1: for 4Nu priors (q1,q2,qa) use command-line values as actual priors (default: priors = product of command-line values and data estimates) | 2: treat inheritance scalars as parameters.(default= input file value or 1) | 3: include ranges on mutation rates as priors on mutation rate scalars | 4: set t to a very large value, mimics two population island model | 5: set t = 0 to mimic one large panmictic population of size thetaA | 6: set theta1 = theta2 = thetaA | 7: set m1 = m2 | 8: each locus has a pair of migration rates, m1 and m2 | 9: turn on population size change (include splitting parameter)},
+	},
+
+	q2 => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "thetaTwoMax",
+		 TAKES => qq{t2_max},
+		 DESC => qq{scalar for theta2 maximum (default = scalar for theta1 maximum)},
+	},
+
+	v => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "windowWidth",
+		 TAKES => qq{w_width},
+		 DESC => qq{window width adjust for t updating - reduce window size w/ multiple loci},
+	},
+
+	l => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "runDuration",
+		 TAKES => qq{duration},
+		 DESC => qq{duration of run (if integer, the number of steps in the chains; if floating point, the time in hours between outputs. run continues until file IMrun is no longer present in the directory, or if present, does not begin with 'y')},
+	},
+
+	y => { 	TYPE => "none",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "1",
+		 KEY => "restartAfterBurn",
+		 DESC => qq{restart as if burn just ended, use with -x and '*.dck' file},
+	},
+
+	q1 => { 	TYPE => "i",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "thetaOneMax",
+		 TAKES => qq{t1_max},
+		 DESC => qq{scalar for theta1 maximum},
+	},
+
+	i => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "inputFile",
+		 TAKES => qq{in_file},
+		 DESC => qq{input file name (no spaces)},
+	},
+
+	h => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "comment",
+		 TAKES => qq{comment},
+		 DESC => qq{comment for output file (no spaces)},
+	},
+
+	m2 => { 	TYPE => "f",
+		 OPTIONAL_FLAG => "0",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "migrationIn",
+		 TAKES => qq{mig_2-1},
+		 DESC => qq{maximum migration rate from population 2 to population 1},
+	},
+
+	jobname => { 	TYPE => "s",
+		 OPTIONAL_FLAG => "1",
+		 OPTIONAL_VALUE => "0",
+		 KEY => "jobname",
+		 TAKES => qq{jobname},
+		 DESC => qq{The arbitrary name to assign this job or batch of jobs.},
+	},
+
+
+);
+
+my $properties = process_options(\%option_desc, "IM");
+
+my $pid = $$;
+my $jobname = "not initialized";
+
+if($properties =~ /jobname \@-- (.*) \@-- java.lang.String/) { # override job name
+    $jobname = $1;
+    my @properties_chunks = split(/\n/, $properties);
+    my $new_properties = "";
+    foreach my $chunk(@properties_chunks) {
+	if(!($chunk =~ /jobname.*java.lang.String/)) {
+	    $new_properties .= $chunk . "\n";
+	}
+    }
+    $properties = $new_properties;
+} else {
+    my $wd = getcwd;
+    $wd =~ /.*\/(.*)/;
+    $wd = $1;
+    $jobname = $wd;
+}
+
+open(PROPERTIES_OUT, ">IM.properties.$pid") || die "Cannot write properties file: $!";
+print PROPERTIES_OUT $properties;
+close(PROPERTIES_OUT);
+
+system("java -DGLOBUS_LOCATION=\$GLOBUS_LOCATION -classpath $RealBin:$RealBin/build/classes/:$RealBin/build/stubs/classes/:\$CLASSPATH edu.umd.grid.bio.im.clients.IMSubmitClient https://valine.umiacs.umd.edu:8443/wsrf/services/edu/umd/grid/bio/im/IMFactoryService IM.properties.$pid $jobname");
+
+unlink("IM.properties.$$");
+
