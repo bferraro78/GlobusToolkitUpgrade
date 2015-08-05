@@ -1,9 +1,0 @@
-http\://www.umd.edu/namespaces/grid/bio/GARLIService=edu.umd.grid.bio.garli.stubs.GARLIService
-http\://www.umd.edu/namespaces/grid/bio/GARLIService/bindings=edu.umd.grid.bio.garli.stubs.GARLIService.bindings
-http\://www.umd.edu/namespaces/grid/bio/GARLIService/service=edu.umd.grid.bio.garli.stubs.GARLI.service
-
-http\://www.umd.edu/namespaces/grid/bio/GARLIFactoryService=edu.umd.grid.bio.garli.stubs.GARLIFactoryService
-http\://www.umd.edu/namespaces/grid/bio/GARLIFactoryService/bindings=edu.umd.grid.bio.garli.stubs.GARLIFactoryService.bindings
-http\://www.umd.edu/namespaces/grid/bio/GARLIFactoryService/service=edu.umd.grid.bio.garli.stubs.GARLIFactory.service
-
-

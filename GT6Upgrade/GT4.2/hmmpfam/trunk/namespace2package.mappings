@@ -1,9 +1,0 @@
-http\://www.umd.edu/namespaces/grid/bio/HMMPfamService=edu.umd.grid.bio.hmmpfam.stubs.HMMPfamService
-http\://www.umd.edu/namespaces/grid/bio/HMMPfamService/bindings=edu.umd.grid.bio.hmmpfam.stubs.HMMPfamService.bindings
-http\://www.umd.edu/namespaces/grid/bio/HMMPfamService/service=edu.umd.grid.bio.hmmpfam.stubs.HMMPfam.service
-
-http\://www.umd.edu/namespaces/grid/bio/HMMPfamFactoryService=edu.umd.grid.bio.hmmpfam.stubs.HMMPfamFactoryService
-http\://www.umd.edu/namespaces/grid/bio/HMMPfamFactoryService/bindings=edu.umd.grid.bio.hmmpfam.stubs.HMMPfamFactoryService.bindings
-http\://www.umd.edu/namespaces/grid/bio/HMMPfamFactoryService/service=edu.umd.grid.bio.hmmpfam.stubs.HMMPfamFactory.service
-
-

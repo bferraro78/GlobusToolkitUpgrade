@@ -1,9 +1,0 @@
-http\://www.umd.edu/namespaces/grid/bio/StructureService=edu.umd.grid.bio.structure.stubs.StructureService
-http\://www.umd.edu/namespaces/grid/bio/StructureService/bindings=edu.umd.grid.bio.structure.stubs.StructureService.bindings
-http\://www.umd.edu/namespaces/grid/bio/StructureService/service=edu.umd.grid.bio.structure.stubs.Structure.service
-
-http\://www.umd.edu/namespaces/grid/bio/StructureFactoryService=edu.umd.grid.bio.structure.stubs.StructureFactoryService
-http\://www.umd.edu/namespaces/grid/bio/StructureFactoryService/bindings=edu.umd.grid.bio.structure.stubs.StructureFactoryService.bindings
-http\://www.umd.edu/namespaces/grid/bio/StructureFactoryService/service=edu.umd.grid.bio.structure.stubs.StructureFactory.service
-
-

@@ -1,9 +1,0 @@
-http\://www.umd.edu/namespaces/grid/bio/PAUPService=edu.umd.grid.bio.paup.stubs.PAUPService
-http\://www.umd.edu/namespaces/grid/bio/PAUPService/bindings=edu.umd.grid.bio.paup.stubs.PAUPService.bindings
-http\://www.umd.edu/namespaces/grid/bio/PAUPService/service=edu.umd.grid.bio.paup.stubs.PAUP.service
-
-http\://www.umd.edu/namespaces/grid/bio/PAUPFactoryService=edu.umd.grid.bio.paup.stubs.PAUPFactoryService
-http\://www.umd.edu/namespaces/grid/bio/PAUPFactoryService/bindings=edu.umd.grid.bio.paup.stubs.PAUPFactoryService.bindings
-http\://www.umd.edu/namespaces/grid/bio/PAUPFactoryService/service=edu.umd.grid.bio.paup.stubs.PAUPFactory.service
-
-

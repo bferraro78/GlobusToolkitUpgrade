@@ -1,9 +1,0 @@
-http\://www.umd.edu/namespaces/grid/bio/IMService=edu.umd.grid.bio.im.stubs.IMService
-http\://www.umd.edu/namespaces/grid/bio/IMService/bindings=edu.umd.grid.bio.im.stubs.IMService.bindings
-http\://www.umd.edu/namespaces/grid/bio/IMService/service=edu.umd.grid.bio.im.stubs.IM.service
-
-http\://www.umd.edu/namespaces/grid/bio/IMFactoryService=edu.umd.grid.bio.im.stubs.IMFactoryService
-http\://www.umd.edu/namespaces/grid/bio/IMFactoryService/bindings=edu.umd.grid.bio.im.stubs.IMFactoryService.bindings
-http\://www.umd.edu/namespaces/grid/bio/IMFactoryService/service=edu.umd.grid.bio.im.stubs.IMFactory.service
-
-
