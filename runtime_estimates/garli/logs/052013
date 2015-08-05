@@ -1,0 +1,119 @@
+1369024201:------Starting to build matrix 1369024201 ------
+1369024204:ERROR:Unable to resolve Resource Type on 3904
+1369024205:ERROR:Unable to resolve Resource Type on 3907
+1369024205:ERROR:Unable to resolve Resource Type on 3909
+1369024205:ERROR:Unable to resolve Resource Type on 3910
+1369024205:ERROR:Unable to resolve Resource Type on 3911
+1369024205:ERROR:Unable to resolve Resource Type on 3913
+1369024205:ERROR:Unable to resolve Resource Type on 3914
+1369024206:ERROR:Unable to resolve Resource Type on 3921
+1369024206:ERROR:Unable to resolve Resource Type on 3922
+1369024206:ERROR:Unable to resolve Resource Type on 3928
+1369024206:ERROR:Unable to resolve Resource Type on 3931
+1369024207:ERROR:Unable to resolve Resource Type on 3932
+1369024207:ERROR:Unable to resolve Resource Type on 3935
+1369024207:ERROR:Unable to resolve Resource Type on 3936
+1369024207:ERROR:Unable to resolve Resource Type on 3938
+1369024208:ERROR:Unable to resolve Resource Type on 3941
+1369024208:ERROR:Unable to resolve Resource Type on 3942
+1369024208:ERROR:Unable to resolve Resource Type on 3945
+1369024208:ERROR:Unable to resolve Resource Type on 3946
+1369024208:ERROR:Unable to resolve Resource Type on 3948
+1369024209:ERROR:Unable to resolve Resource Type on 3951
+1369024209:ERROR:Unable to resolve Resource Type on 3955
+1369024209:ERROR:Unable to resolve Resource Type on 3956
+1369024209:ERROR:Unable to resolve Resource Type on 3964
+1369024209:ERROR:Unable to resolve Resource Type on 3966
+1369024209:ERROR:Unable to resolve Resource Type on 3970
+1369024210:ERROR:Unable to resolve Resource Type on 3980
+1369024210:ERROR:Unable to resolve Resource Type on 3982
+1369024210:ERROR:Unable to resolve Resource Type on 3983
+1369024210:ERROR:Unable to resolve Resource Type on 3984
+1369024211:ERROR:Unable to resolve Resource Type on 4022
+1369024211:ERROR:Unable to resolve Resource Type on 4029
+1369024211:ERROR:Unable to resolve Resource Type on 4031
+1369024211:ERROR:Unable to resolve Resource Type on 4048
+1369024211:ERROR:Unable to resolve Resource Type on 4052
+1369024212:ERROR:Unable to resolve Resource Type on 4054
+1369024212:ERROR:Unable to resolve Resource Type on 4055
+1369024212:ERROR:Unable to resolve Resource Type on 4056
+1369024212:ERROR:Unable to resolve Resource Type on 4058
+1369024406:------Finished building matrix 1369024406 ------
+1369107630:DBG:Incoming DataF: ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex,
+1369107630:DBG:Files:Array
+1369107630:DBG:Discovered dataf:ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex
+1369107630:DBG:Last Index:36
+1369107630:DBG:Finalized dataf:/export/grid_files/cache/ad9/ad9c4b365fc201f36c0679bcc827d696
+1369107630:/export/grid_files/cache/98a/98aa07909e65e1837de810a446272ca6/
+1369107631:DBG:Array
+(
+    [0] => subset0 99 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [1] => subset1 241 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [2] => subset2 137 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+)
+
+1369107848:DBG:Incoming DataF: ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex,
+1369107848:DBG:Files:Array
+1369107848:DBG:Discovered dataf:ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex
+1369107848:DBG:Last Index:36
+1369107848:DBG:Finalized dataf:/export/grid_files/cache/ad9/ad9c4b365fc201f36c0679bcc827d696
+1369107848:/export/grid_files/cache/05e/05ec154534df8c0a32f89c46156bd673/
+1369107848:DBG:Array
+(
+    [0] => subset0 99 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [1] => subset1 241 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [2] => subset2 137 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+)
+
+1369108113:DBG:Incoming DataF: ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex,
+1369108113:DBG:Files:Array
+1369108113:DBG:Discovered dataf:ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex
+1369108113:DBG:Last Index:36
+1369108113:DBG:Finalized dataf:/export/grid_files/cache/ad9/ad9c4b365fc201f36c0679bcc827d696
+1369108113:/export/grid_files/cache/bab/bab883e8ab9bbc6bd44dea3207e9390f/
+1369108113:DBG:Array
+(
+    [0] => subset0 99 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [1] => subset1 241 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [2] => subset2 137 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+)
+
+1369108324:DBG:Incoming DataF: ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex,
+1369108324:DBG:Files:Array
+1369108324:DBG:Discovered dataf:ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex
+1369108324:DBG:Last Index:36
+1369108324:DBG:Finalized dataf:/export/grid_files/cache/ad9/ad9c4b365fc201f36c0679bcc827d696
+1369108324:/export/grid_files/cache/9a8/9a81e0f7b78bf28b3469f117a1418273/
+1369108324:DBG:Array
+(
+    [0] => subset0 99 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [1] => subset1 241 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [2] => subset2 137 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+)
+
+1369108533:DBG:Incoming DataF: ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex,
+1369108533:DBG:Files:Array
+1369108533:DBG:Discovered dataf:ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex
+1369108533:DBG:Last Index:36
+1369108533:DBG:Finalized dataf:/export/grid_files/cache/ad9/ad9c4b365fc201f36c0679bcc827d696
+1369108533:/export/grid_files/cache/9a8/9a81e0f7b78bf28b3469f117a1418273/
+1369108533:DBG:Array
+(
+    [0] => subset0 99 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [1] => subset1 241 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [2] => subset2 137 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+)
+
+1369108742:DBG:Incoming DataF: ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex,
+1369108742:DBG:Files:Array
+1369108742:DBG:Discovered dataf:ad9/ad9c4b365fc201f36c0679bcc827d696/3genesML.nex
+1369108742:DBG:Last Index:36
+1369108742:DBG:Finalized dataf:/export/grid_files/cache/ad9/ad9c4b365fc201f36c0679bcc827d696
+1369108742:/export/grid_files/cache/9a8/9a81e0f7b78bf28b3469f117a1418273/
+1369108742:DBG:Array
+(
+    [0] => subset0 99 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [1] => subset1 241 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+    [2] => subset2 137 73 44.0 nucleotide 2rate estimate gamma 4 estimate
+)
+

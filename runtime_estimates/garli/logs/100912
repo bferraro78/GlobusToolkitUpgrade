@@ -1,0 +1,95 @@
+1349757001:------Starting to build matrix 1349757001 ------
+1349757003:ERROR:Unable to resolve Resource Type on 3904
+1349757003:ERROR:Unable to resolve Resource Type on 3907
+1349757003:ERROR:Unable to resolve Resource Type on 3909
+1349757003:ERROR:Unable to resolve Resource Type on 3910
+1349757003:ERROR:Unable to resolve Resource Type on 3911
+1349757004:ERROR:Unable to resolve Resource Type on 3913
+1349757004:ERROR:Unable to resolve Resource Type on 3914
+1349757004:ERROR:Unable to resolve Resource Type on 3921
+1349757004:ERROR:Unable to resolve Resource Type on 3922
+1349757004:ERROR:Unable to resolve Resource Type on 3928
+1349757005:ERROR:Unable to resolve Resource Type on 3931
+1349757005:ERROR:Unable to resolve Resource Type on 3932
+1349757005:ERROR:Unable to resolve Resource Type on 3935
+1349757005:ERROR:Unable to resolve Resource Type on 3936
+1349757005:ERROR:Unable to resolve Resource Type on 3938
+1349757006:ERROR:Unable to resolve Resource Type on 3941
+1349757006:ERROR:Unable to resolve Resource Type on 3942
+1349757006:ERROR:Unable to resolve Resource Type on 3945
+1349757006:ERROR:Unable to resolve Resource Type on 3946
+1349757007:ERROR:Unable to resolve Resource Type on 3948
+1349757007:ERROR:Unable to resolve Resource Type on 3951
+1349757007:ERROR:Unable to resolve Resource Type on 3955
+1349757007:ERROR:Unable to resolve Resource Type on 3956
+1349757007:ERROR:Unable to resolve Resource Type on 3964
+1349757008:ERROR:Unable to resolve Resource Type on 3966
+1349757008:ERROR:Unable to resolve Resource Type on 3970
+1349757008:ERROR:Unable to resolve Resource Type on 3980
+1349757009:ERROR:Unable to resolve Resource Type on 3982
+1349757009:ERROR:Unable to resolve Resource Type on 3983
+1349757009:ERROR:Unable to resolve Resource Type on 3984
+1349757009:ERROR:Unable to resolve Resource Type on 4022
+1349757009:ERROR:Unable to resolve Resource Type on 4029
+1349757009:ERROR:Unable to resolve Resource Type on 4031
+1349757010:ERROR:Unable to resolve Resource Type on 4048
+1349757010:ERROR:Unable to resolve Resource Type on 4052
+1349757010:ERROR:Unable to resolve Resource Type on 4054
+1349757010:ERROR:Unable to resolve Resource Type on 4055
+1349757010:ERROR:Unable to resolve Resource Type on 4056
+1349757010:ERROR:Unable to resolve Resource Type on 4058
+1349757011:ERROR:Unable to resolve Resource Type on 4101
+1349757012:ERROR:Unable to resolve Resource Type on 4112
+1349757061:------Finished building matrix 1349757061 ------
+1349760989:DBG:Incoming DataF: d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex,
+1349760989:DBG:Files:Array
+1349760989:DBG:Discovered dataf:d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex
+1349760989:DBG:Last Index:36
+1349760989:DBG:Finalized dataf:/export/grid_files/cache/d57/d577a0f221ae3c93d76c30dcefd1c2f3
+1349760989:/export/grid_files/cache/7c3/7c3fbe57ea3e4e9a47b8e7638b0b2a8a/
+1349760989:DBG:Array
+(
+    [0] => subset0 2346 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1524 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3555 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1349761169:DBG:Incoming DataF: d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex,
+1349761169:DBG:Files:Array
+1349761169:DBG:Discovered dataf:d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex
+1349761169:DBG:Last Index:36
+1349761169:DBG:Finalized dataf:/export/grid_files/cache/d57/d577a0f221ae3c93d76c30dcefd1c2f3
+1349761169:/export/grid_files/cache/7c3/7c3fbe57ea3e4e9a47b8e7638b0b2a8a/
+1349761169:DBG:Array
+(
+    [0] => subset0 2346 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1524 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3555 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1349761349:DBG:Incoming DataF: d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex,
+1349761349:DBG:Files:Array
+1349761349:DBG:Discovered dataf:d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex
+1349761349:DBG:Last Index:36
+1349761349:DBG:Finalized dataf:/export/grid_files/cache/d57/d577a0f221ae3c93d76c30dcefd1c2f3
+1349761349:/export/grid_files/cache/7c3/7c3fbe57ea3e4e9a47b8e7638b0b2a8a/
+1349761349:DBG:Array
+(
+    [0] => subset0 2346 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1524 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3555 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1349761553:DBG:Incoming DataF: d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex,
+1349761553:DBG:Files:Array
+1349761553:DBG:Discovered dataf:d57/d577a0f221ae3c93d76c30dcefd1c2f3/Boont_untrimmed.fasta_.alter_.nex
+1349761553:DBG:Last Index:36
+1349761553:DBG:Finalized dataf:/export/grid_files/cache/d57/d577a0f221ae3c93d76c30dcefd1c2f3
+1349761553:/export/grid_files/cache/7c3/7c3fbe57ea3e4e9a47b8e7638b0b2a8a/
+1349761553:DBG:Array
+(
+    [0] => subset0 2346 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1524 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3555 30 261.7 nucleotide 6rate estimate gamma 4 estimate
+)
+

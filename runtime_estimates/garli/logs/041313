@@ -1,0 +1,81 @@
+1365827401:------Starting to build matrix 1365827401 ------
+1365827404:ERROR:Unable to resolve Resource Type on 3904
+1365827405:ERROR:Unable to resolve Resource Type on 3907
+1365827405:ERROR:Unable to resolve Resource Type on 3909
+1365827405:ERROR:Unable to resolve Resource Type on 3910
+1365827405:ERROR:Unable to resolve Resource Type on 3911
+1365827405:ERROR:Unable to resolve Resource Type on 3913
+1365827405:ERROR:Unable to resolve Resource Type on 3914
+1365827406:ERROR:Unable to resolve Resource Type on 3921
+1365827406:ERROR:Unable to resolve Resource Type on 3922
+1365827406:ERROR:Unable to resolve Resource Type on 3928
+1365827406:ERROR:Unable to resolve Resource Type on 3931
+1365827406:ERROR:Unable to resolve Resource Type on 3932
+1365827407:ERROR:Unable to resolve Resource Type on 3935
+1365827407:ERROR:Unable to resolve Resource Type on 3936
+1365827407:ERROR:Unable to resolve Resource Type on 3938
+1365827407:ERROR:Unable to resolve Resource Type on 3941
+1365827407:ERROR:Unable to resolve Resource Type on 3942
+1365827408:ERROR:Unable to resolve Resource Type on 3945
+1365827408:ERROR:Unable to resolve Resource Type on 3946
+1365827408:ERROR:Unable to resolve Resource Type on 3948
+1365827408:ERROR:Unable to resolve Resource Type on 3951
+1365827408:ERROR:Unable to resolve Resource Type on 3955
+1365827409:ERROR:Unable to resolve Resource Type on 3956
+1365827409:ERROR:Unable to resolve Resource Type on 3964
+1365827409:ERROR:Unable to resolve Resource Type on 3966
+1365827409:ERROR:Unable to resolve Resource Type on 3970
+1365827410:ERROR:Unable to resolve Resource Type on 3980
+1365827410:ERROR:Unable to resolve Resource Type on 3982
+1365827410:ERROR:Unable to resolve Resource Type on 3983
+1365827410:ERROR:Unable to resolve Resource Type on 3984
+1365827410:ERROR:Unable to resolve Resource Type on 4022
+1365827410:ERROR:Unable to resolve Resource Type on 4029
+1365827410:ERROR:Unable to resolve Resource Type on 4031
+1365827411:ERROR:Unable to resolve Resource Type on 4048
+1365827411:ERROR:Unable to resolve Resource Type on 4052
+1365827411:ERROR:Unable to resolve Resource Type on 4054
+1365827411:ERROR:Unable to resolve Resource Type on 4055
+1365827411:ERROR:Unable to resolve Resource Type on 4056
+1365827411:ERROR:Unable to resolve Resource Type on 4058
+1365827598:------Finished building matrix 1365827598 ------
+1365902370:DBG:Incoming DataF: a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.,
+1365902370:DBG:Files:Array
+1365902370:DBG:Discovered dataf:a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.
+1365902370:DBG:Last Index:36
+1365902370:DBG:Finalized dataf:/export/grid_files/cache/a8c/a8c52a0c115c6460fd73240f34dd85d9
+1365902370:/export/grid_files/cache/cf4/cf4571f1446027d9d6d507a02ce58cd5/
+1365902370:DBG:Array
+(
+)
+
+1365902580:DBG:Incoming DataF: a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.,
+1365902580:DBG:Files:Array
+1365902580:DBG:Discovered dataf:a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.
+1365902580:DBG:Last Index:36
+1365902580:DBG:Finalized dataf:/export/grid_files/cache/a8c/a8c52a0c115c6460fd73240f34dd85d9
+1365902580:/export/grid_files/cache/cf4/cf4571f1446027d9d6d507a02ce58cd5/
+1365902580:DBG:Array
+(
+)
+
+1365902785:DBG:Incoming DataF: a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.,
+1365902785:DBG:Files:Array
+1365902785:DBG:Discovered dataf:a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.
+1365902785:DBG:Last Index:36
+1365902785:DBG:Finalized dataf:/export/grid_files/cache/a8c/a8c52a0c115c6460fd73240f34dd85d9
+1365902785:/export/grid_files/cache/cf4/cf4571f1446027d9d6d507a02ce58cd5/
+1365902785:DBG:Array
+(
+)
+
+1365902976:DBG:Incoming DataF: a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.,
+1365902976:DBG:Files:Array
+1365902976:DBG:Discovered dataf:a8c/a8c52a0c115c6460fd73240f34dd85d9/startingTree.
+1365902976:DBG:Last Index:36
+1365902976:DBG:Finalized dataf:/export/grid_files/cache/a8c/a8c52a0c115c6460fd73240f34dd85d9
+1365902976:/export/grid_files/cache/cf4/cf4571f1446027d9d6d507a02ce58cd5/
+1365902976:DBG:Array
+(
+)
+

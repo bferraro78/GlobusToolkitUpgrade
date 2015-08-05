@@ -1,0 +1,97 @@
+1360213322:DBG:Incoming DataF: 986/9863e71e01df56d742a9f40fc289213a/Arg18S_28S.nex,
+1360213322:DBG:Files:Array
+1360213322:DBG:Discovered dataf:986/9863e71e01df56d742a9f40fc289213a/Arg18S_28S.nex
+1360213322:DBG:Last Index:36
+1360213322:DBG:Finalized dataf:/export/grid_files/cache/986/9863e71e01df56d742a9f40fc289213a
+1360213322:/export/grid_files/cache/8a4/8a4b578229bfd7b7b2c7b39fad6e1a03/
+1360213322:DBG:Array
+(
+    [0] => subset0 818 112 219.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 763 112 219.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1360215001:------Starting to build matrix 1360215001 ------
+1360215004:ERROR:Unable to resolve Resource Type on 3904
+1360215005:ERROR:Unable to resolve Resource Type on 3907
+1360215005:ERROR:Unable to resolve Resource Type on 3909
+1360215005:ERROR:Unable to resolve Resource Type on 3910
+1360215005:ERROR:Unable to resolve Resource Type on 3911
+1360215005:ERROR:Unable to resolve Resource Type on 3913
+1360215005:ERROR:Unable to resolve Resource Type on 3914
+1360215006:ERROR:Unable to resolve Resource Type on 3921
+1360215006:ERROR:Unable to resolve Resource Type on 3922
+1360215006:ERROR:Unable to resolve Resource Type on 3928
+1360215006:ERROR:Unable to resolve Resource Type on 3931
+1360215006:ERROR:Unable to resolve Resource Type on 3932
+1360215007:ERROR:Unable to resolve Resource Type on 3935
+1360215007:ERROR:Unable to resolve Resource Type on 3936
+1360215007:ERROR:Unable to resolve Resource Type on 3938
+1360215007:ERROR:Unable to resolve Resource Type on 3941
+1360215007:ERROR:Unable to resolve Resource Type on 3942
+1360215008:ERROR:Unable to resolve Resource Type on 3945
+1360215008:ERROR:Unable to resolve Resource Type on 3946
+1360215008:ERROR:Unable to resolve Resource Type on 3948
+1360215008:ERROR:Unable to resolve Resource Type on 3951
+1360215008:ERROR:Unable to resolve Resource Type on 3955
+1360215009:ERROR:Unable to resolve Resource Type on 3956
+1360215009:ERROR:Unable to resolve Resource Type on 3964
+1360215009:ERROR:Unable to resolve Resource Type on 3966
+1360215009:ERROR:Unable to resolve Resource Type on 3970
+1360215010:ERROR:Unable to resolve Resource Type on 3980
+1360215010:ERROR:Unable to resolve Resource Type on 3982
+1360215010:ERROR:Unable to resolve Resource Type on 3983
+1360215010:ERROR:Unable to resolve Resource Type on 3984
+1360215010:ERROR:Unable to resolve Resource Type on 4022
+1360215010:ERROR:Unable to resolve Resource Type on 4029
+1360215010:ERROR:Unable to resolve Resource Type on 4031
+1360215011:ERROR:Unable to resolve Resource Type on 4048
+1360215011:ERROR:Unable to resolve Resource Type on 4052
+1360215011:ERROR:Unable to resolve Resource Type on 4054
+1360215011:ERROR:Unable to resolve Resource Type on 4055
+1360215011:ERROR:Unable to resolve Resource Type on 4056
+1360215011:ERROR:Unable to resolve Resource Type on 4058
+1360215193:------Finished building matrix 1360215193 ------
+1360234600:DBG:Incoming DataF: 3ea/3ead5861fc404678d44866f04b817c2b/rana.phy,
+1360234600:DBG:Files:Array
+1360234600:DBG:Discovered dataf:3ea/3ead5861fc404678d44866f04b817c2b/rana.phy
+1360234600:DBG:Last Index:36
+1360234600:DBG:Finalized dataf:/export/grid_files/cache/3ea/3ead5861fc404678d44866f04b817c2b
+1360234600:/export/grid_files/cache/6ac/6acb882e1d74f0e9839a48f70324d1e4/
+1360234600:DBG:Array
+(
+    [0] => subset1 890 64 69.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1360234798:DBG:Incoming DataF: 3ea/3ead5861fc404678d44866f04b817c2b/rana.phy,
+1360234798:DBG:Files:Array
+1360234798:DBG:Discovered dataf:3ea/3ead5861fc404678d44866f04b817c2b/rana.phy
+1360234798:DBG:Last Index:36
+1360234798:DBG:Finalized dataf:/export/grid_files/cache/3ea/3ead5861fc404678d44866f04b817c2b
+1360234798:/export/grid_files/cache/6ac/6acb882e1d74f0e9839a48f70324d1e4/
+1360234798:DBG:Array
+(
+    [0] => subset1 890 64 69.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1360235046:DBG:Incoming DataF: 3ea/3ead5861fc404678d44866f04b817c2b/rana.phy,
+1360235046:DBG:Files:Array
+1360235046:DBG:Discovered dataf:3ea/3ead5861fc404678d44866f04b817c2b/rana.phy
+1360235046:DBG:Last Index:36
+1360235046:DBG:Finalized dataf:/export/grid_files/cache/3ea/3ead5861fc404678d44866f04b817c2b
+1360235046:/export/grid_files/cache/6ac/6acb882e1d74f0e9839a48f70324d1e4/
+1360235046:DBG:Array
+(
+    [0] => subset1 890 64 69.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1360235253:DBG:Incoming DataF: 3ea/3ead5861fc404678d44866f04b817c2b/rana.phy,
+1360235253:DBG:Files:Array
+1360235253:DBG:Discovered dataf:3ea/3ead5861fc404678d44866f04b817c2b/rana.phy
+1360235253:DBG:Last Index:36
+1360235253:DBG:Finalized dataf:/export/grid_files/cache/3ea/3ead5861fc404678d44866f04b817c2b
+1360235253:/export/grid_files/cache/6ac/6acb882e1d74f0e9839a48f70324d1e4/
+1360235253:DBG:Array
+(
+    [0] => subset1 890 64 69.9 nucleotide 6rate estimate gamma 4 estimate
+)
+

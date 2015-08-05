@@ -1,0 +1,483 @@
+1354858202:------Starting to build matrix 1354858202 ------
+1354858203:ERROR:Unable to resolve Resource Type on 3904
+1354858204:ERROR:Unable to resolve Resource Type on 3907
+1354858204:ERROR:Unable to resolve Resource Type on 3909
+1354858204:ERROR:Unable to resolve Resource Type on 3910
+1354858204:ERROR:Unable to resolve Resource Type on 3911
+1354858204:ERROR:Unable to resolve Resource Type on 3913
+1354858204:ERROR:Unable to resolve Resource Type on 3914
+1354858205:ERROR:Unable to resolve Resource Type on 3921
+1354858205:ERROR:Unable to resolve Resource Type on 3922
+1354858205:ERROR:Unable to resolve Resource Type on 3928
+1354858205:ERROR:Unable to resolve Resource Type on 3931
+1354858205:ERROR:Unable to resolve Resource Type on 3932
+1354858206:ERROR:Unable to resolve Resource Type on 3935
+1354858206:ERROR:Unable to resolve Resource Type on 3936
+1354858206:ERROR:Unable to resolve Resource Type on 3938
+1354858206:ERROR:Unable to resolve Resource Type on 3941
+1354858206:ERROR:Unable to resolve Resource Type on 3942
+1354858207:ERROR:Unable to resolve Resource Type on 3945
+1354858207:ERROR:Unable to resolve Resource Type on 3946
+1354858207:ERROR:Unable to resolve Resource Type on 3948
+1354858207:ERROR:Unable to resolve Resource Type on 3951
+1354858208:ERROR:Unable to resolve Resource Type on 3955
+1354858208:ERROR:Unable to resolve Resource Type on 3956
+1354858208:ERROR:Unable to resolve Resource Type on 3964
+1354858208:ERROR:Unable to resolve Resource Type on 3966
+1354858208:ERROR:Unable to resolve Resource Type on 3970
+1354858209:ERROR:Unable to resolve Resource Type on 3980
+1354858209:ERROR:Unable to resolve Resource Type on 3982
+1354858209:ERROR:Unable to resolve Resource Type on 3983
+1354858209:ERROR:Unable to resolve Resource Type on 3984
+1354858210:ERROR:Unable to resolve Resource Type on 4022
+1354858210:ERROR:Unable to resolve Resource Type on 4029
+1354858210:ERROR:Unable to resolve Resource Type on 4031
+1354858210:ERROR:Unable to resolve Resource Type on 4048
+1354858210:ERROR:Unable to resolve Resource Type on 4052
+1354858211:ERROR:Unable to resolve Resource Type on 4054
+1354858211:ERROR:Unable to resolve Resource Type on 4055
+1354858211:ERROR:Unable to resolve Resource Type on 4056
+1354858211:ERROR:Unable to resolve Resource Type on 4058
+1354858282:------Finished building matrix 1354858282 ------
+1354913307:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354913307:DBG:Files:Array
+1354913307:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354913307:DBG:Last Index:36
+1354913307:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354913307:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354913307:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354913497:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354913497:DBG:Files:Array
+1354913497:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354913497:DBG:Last Index:36
+1354913497:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354913497:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354913497:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354913676:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354913676:DBG:Files:Array
+1354913676:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354913676:DBG:Last Index:36
+1354913676:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354913676:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354913676:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354913855:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354913855:DBG:Files:Array
+1354913855:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354913855:DBG:Last Index:36
+1354913855:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354913855:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354913855:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354914627:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354914627:DBG:Files:Array
+1354914627:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354914627:DBG:Last Index:36
+1354914627:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354914627:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354914627:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354914813:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354914813:DBG:Files:Array
+1354914813:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354914813:DBG:Last Index:36
+1354914813:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354914813:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354914813:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354914992:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354914992:DBG:Files:Array
+1354914992:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354914992:DBG:Last Index:36
+1354914992:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354914992:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354914992:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354915171:DBG:Incoming DataF: 91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex,
+1354915171:DBG:Files:Array
+1354915171:DBG:Discovered dataf:91e/91efd234e3d2b10255c2a7dba41f1fb0/Pelodytes_mtDNAhaplotypesGarlipart.nex
+1354915171:DBG:Last Index:36
+1354915171:DBG:Finalized dataf:/export/grid_files/cache/91e/91efd234e3d2b10255c2a7dba41f1fb0
+1354915171:/export/grid_files/cache/d5d/d5dd9e138833d77a78a705c724973199/
+1354915171:DBG:Array
+(
+    [0] => subset0 47 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [1] => subset1 152 152 40.0 nucleotide 2rate estimate none 4 estimate
+    [2] => subset2 42 152 40.0 nucleotide 2rate estimate none 4 estimate
+)
+
+1354918351:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354918351:DBG:Files:Array
+1354918351:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354918351:DBG:Last Index:36
+1354918351:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354918351:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354918351:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354918548:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354918548:DBG:Files:Array
+1354918548:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354918548:DBG:Last Index:36
+1354918548:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354918548:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354918548:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354918743:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354918743:DBG:Files:Array
+1354918743:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354918743:DBG:Last Index:36
+1354918743:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354918743:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354918743:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354918921:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354918921:DBG:Files:Array
+1354918921:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354918921:DBG:Last Index:36
+1354918921:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354918921:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354918922:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354919101:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354919101:DBG:Files:Array
+1354919101:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354919101:DBG:Last Index:36
+1354919101:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354919101:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354919101:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354919310:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354919310:DBG:Files:Array
+1354919310:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354919310:DBG:Last Index:36
+1354919310:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354919310:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354919310:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354919503:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354919503:DBG:Files:Array
+1354919503:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354919503:DBG:Last Index:36
+1354919503:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354919503:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354919503:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354919706:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354919706:DBG:Files:Array
+1354919706:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354919706:DBG:Last Index:36
+1354919706:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354919706:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354919706:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354919888:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354919888:DBG:Files:Array
+1354919888:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354919888:DBG:Last Index:36
+1354919888:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354919888:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354919888:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354920104:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354920104:DBG:Files:Array
+1354920104:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354920104:DBG:Last Index:36
+1354920104:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354920104:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354920104:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354920284:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354920284:DBG:Files:Array
+1354920284:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354920284:DBG:Last Index:36
+1354920284:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354920284:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354920284:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354920479:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354920479:DBG:Files:Array
+1354920479:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354920479:DBG:Last Index:36
+1354920479:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354920479:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354920479:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354920657:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354920657:DBG:Files:Array
+1354920657:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354920657:DBG:Last Index:36
+1354920657:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354920657:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354920657:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354920860:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354920860:DBG:Files:Array
+1354920860:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354920860:DBG:Last Index:36
+1354920860:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354920860:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354920860:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354921046:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354921046:DBG:Files:Array
+1354921046:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354921046:DBG:Last Index:36
+1354921046:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354921046:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354921046:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354921245:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354921245:DBG:Files:Array
+1354921245:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354921245:DBG:Last Index:36
+1354921245:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354921245:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354921245:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354921425:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354921425:DBG:Files:Array
+1354921425:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354921425:DBG:Last Index:36
+1354921425:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354921425:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354921425:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354921604:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354921604:DBG:Files:Array
+1354921604:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354921604:DBG:Last Index:36
+1354921604:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354921604:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354921604:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354921817:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354921817:DBG:Files:Array
+1354921817:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354921817:DBG:Last Index:36
+1354921817:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354921817:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354921817:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354921999:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354921999:DBG:Files:Array
+1354921999:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354921999:DBG:Last Index:36
+1354921999:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354921999:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354922000:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354922199:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354922199:DBG:Files:Array
+1354922199:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354922199:DBG:Last Index:36
+1354922199:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354922199:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354922199:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354922378:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354922378:DBG:Files:Array
+1354922378:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354922378:DBG:Last Index:36
+1354922378:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354922378:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354922378:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354922557:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354922557:DBG:Files:Array
+1354922557:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354922557:DBG:Last Index:36
+1354922557:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354922557:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354922557:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354922753:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354922753:DBG:Files:Array
+1354922753:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354922753:DBG:Last Index:36
+1354922753:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354922753:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354922753:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354922932:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354922932:DBG:Files:Array
+1354922932:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354922932:DBG:Last Index:36
+1354922932:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354922932:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354922932:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1354923120:DBG:Incoming DataF: fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex,
+1354923120:DBG:Files:Array
+1354923120:DBG:Discovered dataf:fe9/fe9ef06f9574b639011ec39f38d3fa2b/04Oct2012Combo_garli.nex
+1354923120:DBG:Last Index:36
+1354923120:DBG:Finalized dataf:/export/grid_files/cache/fe9/fe9ef06f9574b639011ec39f38d3fa2b
+1354923120:/export/grid_files/cache/a67/a67b9f149122415ad3fe3e3314898306/
+1354923120:DBG:Array
+(
+    [0] => subset0 593 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 363 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 577 81 152.0 nucleotide 6rate estimate gamma 4 estimate
+)
+

@@ -1,0 +1,223 @@
+1368419401:------Starting to build matrix 1368419401 ------
+1368419404:ERROR:Unable to resolve Resource Type on 3904
+1368419405:ERROR:Unable to resolve Resource Type on 3907
+1368419405:ERROR:Unable to resolve Resource Type on 3909
+1368419405:ERROR:Unable to resolve Resource Type on 3910
+1368419405:ERROR:Unable to resolve Resource Type on 3911
+1368419405:ERROR:Unable to resolve Resource Type on 3913
+1368419405:ERROR:Unable to resolve Resource Type on 3914
+1368419406:ERROR:Unable to resolve Resource Type on 3921
+1368419406:ERROR:Unable to resolve Resource Type on 3922
+1368419406:ERROR:Unable to resolve Resource Type on 3928
+1368419407:ERROR:Unable to resolve Resource Type on 3931
+1368419407:ERROR:Unable to resolve Resource Type on 3932
+1368419407:ERROR:Unable to resolve Resource Type on 3935
+1368419407:ERROR:Unable to resolve Resource Type on 3936
+1368419407:ERROR:Unable to resolve Resource Type on 3938
+1368419407:ERROR:Unable to resolve Resource Type on 3941
+1368419408:ERROR:Unable to resolve Resource Type on 3942
+1368419408:ERROR:Unable to resolve Resource Type on 3945
+1368419408:ERROR:Unable to resolve Resource Type on 3946
+1368419408:ERROR:Unable to resolve Resource Type on 3948
+1368419409:ERROR:Unable to resolve Resource Type on 3951
+1368419409:ERROR:Unable to resolve Resource Type on 3955
+1368419409:ERROR:Unable to resolve Resource Type on 3956
+1368419409:ERROR:Unable to resolve Resource Type on 3964
+1368419409:ERROR:Unable to resolve Resource Type on 3966
+1368419409:ERROR:Unable to resolve Resource Type on 3970
+1368419410:ERROR:Unable to resolve Resource Type on 3980
+1368419410:ERROR:Unable to resolve Resource Type on 3982
+1368419410:ERROR:Unable to resolve Resource Type on 3983
+1368419410:ERROR:Unable to resolve Resource Type on 3984
+1368419411:ERROR:Unable to resolve Resource Type on 4022
+1368419411:ERROR:Unable to resolve Resource Type on 4029
+1368419411:ERROR:Unable to resolve Resource Type on 4031
+1368419411:ERROR:Unable to resolve Resource Type on 4048
+1368419411:ERROR:Unable to resolve Resource Type on 4052
+1368419412:ERROR:Unable to resolve Resource Type on 4054
+1368419412:ERROR:Unable to resolve Resource Type on 4055
+1368419412:ERROR:Unable to resolve Resource Type on 4056
+1368419412:ERROR:Unable to resolve Resource Type on 4058
+1368419608:------Finished building matrix 1368419608 ------
+1368488552:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368488552:DBG:Files:Array
+1368488552:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368488552:DBG:Last Index:36
+1368488552:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368488552:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368488553:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368488777:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368488777:DBG:Files:Array
+1368488777:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368488777:DBG:Last Index:36
+1368488777:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368488777:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368488777:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368488985:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368488985:DBG:Files:Array
+1368488985:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368488985:DBG:Last Index:36
+1368488985:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368488985:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368488985:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368489193:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368489193:DBG:Files:Array
+1368489193:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368489193:DBG:Last Index:36
+1368489193:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368489193:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368489193:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368489404:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368489404:DBG:Files:Array
+1368489404:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368489404:DBG:Last Index:36
+1368489404:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368489404:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368489404:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368489616:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368489616:DBG:Files:Array
+1368489616:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368489616:DBG:Last Index:36
+1368489616:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368489616:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368489616:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368489844:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368489844:DBG:Files:Array
+1368489844:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368489844:DBG:Last Index:36
+1368489844:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368489844:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368489844:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368490052:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368490052:DBG:Files:Array
+1368490052:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368490052:DBG:Last Index:36
+1368490052:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368490052:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368490052:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368490290:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368490290:DBG:Files:Array
+1368490290:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368490290:DBG:Last Index:36
+1368490290:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368490290:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368490290:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368490499:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368490499:DBG:Files:Array
+1368490499:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368490499:DBG:Last Index:36
+1368490499:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368490499:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368490499:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368490712:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368490712:DBG:Files:Array
+1368490712:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368490712:DBG:Last Index:36
+1368490712:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368490712:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368490712:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368490920:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368490920:DBG:Files:Array
+1368490920:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368490920:DBG:Last Index:36
+1368490920:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368490920:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368490921:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368491153:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368491153:DBG:Files:Array
+1368491153:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368491153:DBG:Last Index:36
+1368491153:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368491153:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368491153:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368491360:DBG:Incoming DataF: b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex,
+1368491360:DBG:Files:Array
+1368491360:DBG:Discovered dataf:b73/b7350c7e058cb6e8a5c08d46b4fd9220/LH_Codon_NoNetelia.nex
+1368491360:DBG:Last Index:36
+1368491360:DBG:Finalized dataf:/export/grid_files/cache/b73/b7350c7e058cb6e8a5c08d46b4fd9220
+1368491360:/export/grid_files/cache/b90/b90b0e94614ff94e2916e6d5b5847355/
+1368491360:DBG:Array
+(
+    [0] => subset0 187 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 163 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 223 663 478.0 nucleotide 6rate estimate gamma 4 estimate
+)
+

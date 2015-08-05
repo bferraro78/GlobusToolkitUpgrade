@@ -1,0 +1,85 @@
+1366605002:------Starting to build matrix 1366605002 ------
+1366605005:ERROR:Unable to resolve Resource Type on 3904
+1366605005:ERROR:Unable to resolve Resource Type on 3907
+1366605005:ERROR:Unable to resolve Resource Type on 3909
+1366605005:ERROR:Unable to resolve Resource Type on 3910
+1366605005:ERROR:Unable to resolve Resource Type on 3911
+1366605006:ERROR:Unable to resolve Resource Type on 3913
+1366605006:ERROR:Unable to resolve Resource Type on 3914
+1366605006:ERROR:Unable to resolve Resource Type on 3921
+1366605006:ERROR:Unable to resolve Resource Type on 3922
+1366605006:ERROR:Unable to resolve Resource Type on 3928
+1366605007:ERROR:Unable to resolve Resource Type on 3931
+1366605007:ERROR:Unable to resolve Resource Type on 3932
+1366605007:ERROR:Unable to resolve Resource Type on 3935
+1366605007:ERROR:Unable to resolve Resource Type on 3936
+1366605007:ERROR:Unable to resolve Resource Type on 3938
+1366605007:ERROR:Unable to resolve Resource Type on 3941
+1366605008:ERROR:Unable to resolve Resource Type on 3942
+1366605008:ERROR:Unable to resolve Resource Type on 3945
+1366605008:ERROR:Unable to resolve Resource Type on 3946
+1366605008:ERROR:Unable to resolve Resource Type on 3948
+1366605008:ERROR:Unable to resolve Resource Type on 3951
+1366605008:ERROR:Unable to resolve Resource Type on 3955
+1366605009:ERROR:Unable to resolve Resource Type on 3956
+1366605009:ERROR:Unable to resolve Resource Type on 3964
+1366605009:ERROR:Unable to resolve Resource Type on 3966
+1366605009:ERROR:Unable to resolve Resource Type on 3970
+1366605010:ERROR:Unable to resolve Resource Type on 3980
+1366605010:ERROR:Unable to resolve Resource Type on 3982
+1366605010:ERROR:Unable to resolve Resource Type on 3983
+1366605010:ERROR:Unable to resolve Resource Type on 3984
+1366605010:ERROR:Unable to resolve Resource Type on 4022
+1366605011:ERROR:Unable to resolve Resource Type on 4029
+1366605011:ERROR:Unable to resolve Resource Type on 4031
+1366605011:ERROR:Unable to resolve Resource Type on 4048
+1366605011:ERROR:Unable to resolve Resource Type on 4052
+1366605011:ERROR:Unable to resolve Resource Type on 4054
+1366605011:ERROR:Unable to resolve Resource Type on 4055
+1366605011:ERROR:Unable to resolve Resource Type on 4056
+1366605012:ERROR:Unable to resolve Resource Type on 4058
+1366605203:------Finished building matrix 1366605203 ------
+1366645710:DBG:Incoming DataF: 5e5/5e505cf617de81ab3a46b5d9587748e4/Combined_rootest.phy,
+1366645710:DBG:Files:Array
+1366645710:DBG:Discovered dataf:5e5/5e505cf617de81ab3a46b5d9587748e4/Combined_rootest.phy
+1366645710:DBG:Last Index:36
+1366645710:DBG:Finalized dataf:/export/grid_files/cache/5e5/5e505cf617de81ab3a46b5d9587748e4
+1366645710:/export/grid_files/cache/5e7/5e7fd26430b5105061e2b8858c2db117/
+1366645711:DBG:Array
+(
+    [0] => subset1 89 55 6.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1366646457:DBG:Incoming DataF: 5e5/5e505cf617de81ab3a46b5d9587748e4/Combined_rootest.phy,
+1366646457:DBG:Files:Array
+1366646457:DBG:Discovered dataf:5e5/5e505cf617de81ab3a46b5d9587748e4/Combined_rootest.phy
+1366646457:DBG:Last Index:36
+1366646457:DBG:Finalized dataf:/export/grid_files/cache/5e5/5e505cf617de81ab3a46b5d9587748e4
+1366646457:/export/grid_files/cache/030/0301df312af3855f90806e0e572124dd/
+1366646457:DBG:Array
+(
+    [0] => subset1 89 55 6.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1366647750:DBG:Incoming DataF: 1be/1be9054a47f8f00d001f3dc2afed09ea/Rootedtest.nex,
+1366647750:DBG:Files:Array
+1366647750:DBG:Discovered dataf:1be/1be9054a47f8f00d001f3dc2afed09ea/Rootedtest.nex
+1366647750:DBG:Last Index:36
+1366647750:DBG:Finalized dataf:/export/grid_files/cache/1be/1be9054a47f8f00d001f3dc2afed09ea
+1366647750:/export/grid_files/cache/afe/afebd5d4c8df3ba485ddd4d8ab15d0e0/
+1366647750:DBG:Array
+(
+    [0] => subset1 89 55 6.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1366647949:DBG:Incoming DataF: 1be/1be9054a47f8f00d001f3dc2afed09ea/Rootedtest.nex,
+1366647949:DBG:Files:Array
+1366647949:DBG:Discovered dataf:1be/1be9054a47f8f00d001f3dc2afed09ea/Rootedtest.nex
+1366647949:DBG:Last Index:36
+1366647949:DBG:Finalized dataf:/export/grid_files/cache/1be/1be9054a47f8f00d001f3dc2afed09ea
+1366647949:/export/grid_files/cache/afe/afebd5d4c8df3ba485ddd4d8ab15d0e0/
+1366647949:DBG:Array
+(
+    [0] => subset1 89 55 6.0 nucleotide 6rate estimate gamma 4 estimate
+)
+

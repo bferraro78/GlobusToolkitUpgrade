@@ -1,0 +1,121 @@
+1362115802:------Starting to build matrix 1362115802 ------
+1362115804:ERROR:Unable to resolve Resource Type on 3904
+1362115805:ERROR:Unable to resolve Resource Type on 3907
+1362115805:ERROR:Unable to resolve Resource Type on 3909
+1362115805:ERROR:Unable to resolve Resource Type on 3910
+1362115805:ERROR:Unable to resolve Resource Type on 3911
+1362115805:ERROR:Unable to resolve Resource Type on 3913
+1362115806:ERROR:Unable to resolve Resource Type on 3914
+1362115806:ERROR:Unable to resolve Resource Type on 3921
+1362115806:ERROR:Unable to resolve Resource Type on 3922
+1362115806:ERROR:Unable to resolve Resource Type on 3928
+1362115807:ERROR:Unable to resolve Resource Type on 3931
+1362115807:ERROR:Unable to resolve Resource Type on 3932
+1362115807:ERROR:Unable to resolve Resource Type on 3935
+1362115807:ERROR:Unable to resolve Resource Type on 3936
+1362115807:ERROR:Unable to resolve Resource Type on 3938
+1362115808:ERROR:Unable to resolve Resource Type on 3941
+1362115808:ERROR:Unable to resolve Resource Type on 3942
+1362115808:ERROR:Unable to resolve Resource Type on 3945
+1362115808:ERROR:Unable to resolve Resource Type on 3946
+1362115809:ERROR:Unable to resolve Resource Type on 3948
+1362115809:ERROR:Unable to resolve Resource Type on 3951
+1362115809:ERROR:Unable to resolve Resource Type on 3955
+1362115809:ERROR:Unable to resolve Resource Type on 3956
+1362115809:ERROR:Unable to resolve Resource Type on 3964
+1362115809:ERROR:Unable to resolve Resource Type on 3966
+1362115810:ERROR:Unable to resolve Resource Type on 3970
+1362115810:ERROR:Unable to resolve Resource Type on 3980
+1362115810:ERROR:Unable to resolve Resource Type on 3982
+1362115810:ERROR:Unable to resolve Resource Type on 3983
+1362115810:ERROR:Unable to resolve Resource Type on 3984
+1362115811:ERROR:Unable to resolve Resource Type on 4022
+1362115811:ERROR:Unable to resolve Resource Type on 4029
+1362115811:ERROR:Unable to resolve Resource Type on 4031
+1362115811:ERROR:Unable to resolve Resource Type on 4048
+1362115811:ERROR:Unable to resolve Resource Type on 4052
+1362115811:ERROR:Unable to resolve Resource Type on 4054
+1362115812:ERROR:Unable to resolve Resource Type on 4055
+1362115812:ERROR:Unable to resolve Resource Type on 4056
+1362115812:ERROR:Unable to resolve Resource Type on 4058
+1362116003:------Finished building matrix 1362116003 ------
+1362121502:DBG:Incoming DataF: 2be/2bea8431f5724cfc5d10f061273ef572/ArgCon1_9.txt,
+1362121502:DBG:Files:Array
+1362121502:DBG:Discovered dataf:2be/2bea8431f5724cfc5d10f061273ef572/ArgCon1_9.txt
+1362121502:DBG:Last Index:36
+1362121502:DBG:Finalized dataf:/export/grid_files/cache/2be/2bea8431f5724cfc5d10f061273ef572
+1362121502:/export/grid_files/cache/7a0/7a0852e5c5e8f0afd170752df1278b89/
+1362121502:DBG:Array
+(
+)
+
+1362121699:DBG:Incoming DataF: 2be/2bea8431f5724cfc5d10f061273ef572/ArgCon1_9.txt,
+1362121699:DBG:Files:Array
+1362121699:DBG:Discovered dataf:2be/2bea8431f5724cfc5d10f061273ef572/ArgCon1_9.txt
+1362121699:DBG:Last Index:36
+1362121699:DBG:Finalized dataf:/export/grid_files/cache/2be/2bea8431f5724cfc5d10f061273ef572
+1362121699:/export/grid_files/cache/7a0/7a0852e5c5e8f0afd170752df1278b89/
+1362121699:DBG:Array
+(
+)
+
+1362121961:DBG:Incoming DataF: ec1/ec182f693d1826324eea740b2b969d17/ArgCon1_11.txt,
+1362121961:DBG:Files:Array
+1362121961:DBG:Discovered dataf:ec1/ec182f693d1826324eea740b2b969d17/ArgCon1_11.txt
+1362121961:DBG:Last Index:36
+1362121961:DBG:Finalized dataf:/export/grid_files/cache/ec1/ec182f693d1826324eea740b2b969d17
+1362121961:/export/grid_files/cache/dfc/dfc796cbe0a69060180267ed4af1eea8/
+1362121961:DBG:Array
+(
+)
+
+1362122172:DBG:Incoming DataF: ec1/ec182f693d1826324eea740b2b969d17/ArgCon1_11.txt,
+1362122172:DBG:Files:Array
+1362122172:DBG:Discovered dataf:ec1/ec182f693d1826324eea740b2b969d17/ArgCon1_11.txt
+1362122172:DBG:Last Index:36
+1362122172:DBG:Finalized dataf:/export/grid_files/cache/ec1/ec182f693d1826324eea740b2b969d17
+1362122172:/export/grid_files/cache/dfc/dfc796cbe0a69060180267ed4af1eea8/
+1362122172:DBG:Array
+(
+)
+
+1362122364:DBG:Incoming DataF: b96/b960e05aca43c164d8c0403f73ac9eb7/ArgCon1_12.txt,
+1362122364:DBG:Files:Array
+1362122364:DBG:Discovered dataf:b96/b960e05aca43c164d8c0403f73ac9eb7/ArgCon1_12.txt
+1362122364:DBG:Last Index:36
+1362122364:DBG:Finalized dataf:/export/grid_files/cache/b96/b960e05aca43c164d8c0403f73ac9eb7
+1362122364:/export/grid_files/cache/811/811bde9bbd3684fe4d71ae053bc49237/
+1362122364:DBG:Array
+(
+)
+
+1362122558:DBG:Incoming DataF: b96/b960e05aca43c164d8c0403f73ac9eb7/ArgCon1_12.txt,
+1362122558:DBG:Files:Array
+1362122558:DBG:Discovered dataf:b96/b960e05aca43c164d8c0403f73ac9eb7/ArgCon1_12.txt
+1362122558:DBG:Last Index:36
+1362122558:DBG:Finalized dataf:/export/grid_files/cache/b96/b960e05aca43c164d8c0403f73ac9eb7
+1362122558:/export/grid_files/cache/811/811bde9bbd3684fe4d71ae053bc49237/
+1362122558:DBG:Array
+(
+)
+
+1362122772:DBG:Incoming DataF: 3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt,
+1362122772:DBG:Files:Array
+1362122772:DBG:Discovered dataf:3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt
+1362122772:DBG:Last Index:36
+1362122772:DBG:Finalized dataf:/export/grid_files/cache/3dc/3dc77bbe6f4e2b5b070216e722c2b1a0
+1362122772:/export/grid_files/cache/35b/35b9c322a61837e38f9bd6170e338c8c/
+1362122772:DBG:Array
+(
+)
+
+1362122966:DBG:Incoming DataF: 3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt,
+1362122966:DBG:Files:Array
+1362122966:DBG:Discovered dataf:3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt
+1362122966:DBG:Last Index:36
+1362122966:DBG:Finalized dataf:/export/grid_files/cache/3dc/3dc77bbe6f4e2b5b070216e722c2b1a0
+1362122966:/export/grid_files/cache/35b/35b9c322a61837e38f9bd6170e338c8c/
+1362122966:DBG:Array
+(
+)
+

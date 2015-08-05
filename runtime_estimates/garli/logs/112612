@@ -1,0 +1,101 @@
+1353907802:------Starting to build matrix 1353907802 ------
+1353907804:ERROR:Unable to resolve Resource Type on 3904
+1353907804:ERROR:Unable to resolve Resource Type on 3907
+1353907804:ERROR:Unable to resolve Resource Type on 3909
+1353907804:ERROR:Unable to resolve Resource Type on 3910
+1353907805:ERROR:Unable to resolve Resource Type on 3911
+1353907805:ERROR:Unable to resolve Resource Type on 3913
+1353907805:ERROR:Unable to resolve Resource Type on 3914
+1353907805:ERROR:Unable to resolve Resource Type on 3921
+1353907806:ERROR:Unable to resolve Resource Type on 3922
+1353907806:ERROR:Unable to resolve Resource Type on 3928
+1353907806:ERROR:Unable to resolve Resource Type on 3931
+1353907806:ERROR:Unable to resolve Resource Type on 3932
+1353907806:ERROR:Unable to resolve Resource Type on 3935
+1353907807:ERROR:Unable to resolve Resource Type on 3936
+1353907807:ERROR:Unable to resolve Resource Type on 3938
+1353907807:ERROR:Unable to resolve Resource Type on 3941
+1353907807:ERROR:Unable to resolve Resource Type on 3942
+1353907808:ERROR:Unable to resolve Resource Type on 3945
+1353907808:ERROR:Unable to resolve Resource Type on 3946
+1353907808:ERROR:Unable to resolve Resource Type on 3948
+1353907808:ERROR:Unable to resolve Resource Type on 3951
+1353907809:ERROR:Unable to resolve Resource Type on 3955
+1353907809:ERROR:Unable to resolve Resource Type on 3956
+1353907809:ERROR:Unable to resolve Resource Type on 3964
+1353907809:ERROR:Unable to resolve Resource Type on 3966
+1353907809:ERROR:Unable to resolve Resource Type on 3970
+1353907810:ERROR:Unable to resolve Resource Type on 3980
+1353907810:ERROR:Unable to resolve Resource Type on 3982
+1353907811:ERROR:Unable to resolve Resource Type on 3983
+1353907811:ERROR:Unable to resolve Resource Type on 3984
+1353907811:ERROR:Unable to resolve Resource Type on 4022
+1353907811:ERROR:Unable to resolve Resource Type on 4029
+1353907811:ERROR:Unable to resolve Resource Type on 4031
+1353907811:ERROR:Unable to resolve Resource Type on 4048
+1353907812:ERROR:Unable to resolve Resource Type on 4052
+1353907812:ERROR:Unable to resolve Resource Type on 4054
+1353907812:ERROR:Unable to resolve Resource Type on 4055
+1353907812:ERROR:Unable to resolve Resource Type on 4056
+1353907812:ERROR:Unable to resolve Resource Type on 4058
+1353907879:------Finished building matrix 1353907879 ------
+1353976830:DBG:Incoming DataF: 725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex,
+1353976830:DBG:Files:Array
+1353976830:DBG:Discovered dataf:725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex
+1353976830:DBG:Last Index:36
+1353976830:DBG:Finalized dataf:/export/grid_files/cache/725/725801ff18e2982f51fcccd2e74559ec
+1353976830:/export/grid_files/cache/393/393be787f446ca61d9ac5ba447a6939a/
+1353976832:DBG:Array
+(
+    [0] => subset0 2120 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1293 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3322 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 656 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 465 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1353977038:DBG:Incoming DataF: 725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex,
+1353977038:DBG:Files:Array
+1353977038:DBG:Discovered dataf:725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex
+1353977038:DBG:Last Index:36
+1353977038:DBG:Finalized dataf:/export/grid_files/cache/725/725801ff18e2982f51fcccd2e74559ec
+1353977038:/export/grid_files/cache/393/393be787f446ca61d9ac5ba447a6939a/
+1353977038:DBG:Array
+(
+    [0] => subset0 2120 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1293 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3322 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 656 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 465 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1353977219:DBG:Incoming DataF: 725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex,
+1353977219:DBG:Files:Array
+1353977219:DBG:Discovered dataf:725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex
+1353977219:DBG:Last Index:36
+1353977219:DBG:Finalized dataf:/export/grid_files/cache/725/725801ff18e2982f51fcccd2e74559ec
+1353977219:/export/grid_files/cache/393/393be787f446ca61d9ac5ba447a6939a/
+1353977219:DBG:Array
+(
+    [0] => subset0 2120 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1293 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3322 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 656 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 465 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1353977424:DBG:Incoming DataF: 725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex,
+1353977424:DBG:Files:Array
+1353977424:DBG:Discovered dataf:725/725801ff18e2982f51fcccd2e74559ec/Klompen-combinedmtDNA12318Sp28S.fasta_.alter_.nex
+1353977424:DBG:Last Index:36
+1353977424:DBG:Finalized dataf:/export/grid_files/cache/725/725801ff18e2982f51fcccd2e74559ec
+1353977424:/export/grid_files/cache/393/393be787f446ca61d9ac5ba447a6939a/
+1353977424:DBG:Array
+(
+    [0] => subset0 2120 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 1293 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 3322 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 656 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 465 86 830.7 nucleotide 6rate estimate gamma 4 estimate
+)
+

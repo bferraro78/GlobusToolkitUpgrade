@@ -1,0 +1,301 @@
+1362029402:------Starting to build matrix 1362029402 ------
+1362029405:ERROR:Unable to resolve Resource Type on 3904
+1362029406:ERROR:Unable to resolve Resource Type on 3907
+1362029406:ERROR:Unable to resolve Resource Type on 3909
+1362029406:ERROR:Unable to resolve Resource Type on 3910
+1362029406:ERROR:Unable to resolve Resource Type on 3911
+1362029406:ERROR:Unable to resolve Resource Type on 3913
+1362029406:ERROR:Unable to resolve Resource Type on 3914
+1362029407:ERROR:Unable to resolve Resource Type on 3921
+1362029407:ERROR:Unable to resolve Resource Type on 3922
+1362029407:ERROR:Unable to resolve Resource Type on 3928
+1362029407:ERROR:Unable to resolve Resource Type on 3931
+1362029407:ERROR:Unable to resolve Resource Type on 3932
+1362029408:ERROR:Unable to resolve Resource Type on 3935
+1362029408:ERROR:Unable to resolve Resource Type on 3936
+1362029408:ERROR:Unable to resolve Resource Type on 3938
+1362029408:ERROR:Unable to resolve Resource Type on 3941
+1362029408:ERROR:Unable to resolve Resource Type on 3942
+1362029409:ERROR:Unable to resolve Resource Type on 3945
+1362029409:ERROR:Unable to resolve Resource Type on 3946
+1362029409:ERROR:Unable to resolve Resource Type on 3948
+1362029409:ERROR:Unable to resolve Resource Type on 3951
+1362029410:ERROR:Unable to resolve Resource Type on 3955
+1362029410:ERROR:Unable to resolve Resource Type on 3956
+1362029410:ERROR:Unable to resolve Resource Type on 3964
+1362029410:ERROR:Unable to resolve Resource Type on 3966
+1362029410:ERROR:Unable to resolve Resource Type on 3970
+1362029411:ERROR:Unable to resolve Resource Type on 3980
+1362029411:ERROR:Unable to resolve Resource Type on 3982
+1362029411:ERROR:Unable to resolve Resource Type on 3983
+1362029411:ERROR:Unable to resolve Resource Type on 3984
+1362029412:ERROR:Unable to resolve Resource Type on 4022
+1362029412:ERROR:Unable to resolve Resource Type on 4029
+1362029412:ERROR:Unable to resolve Resource Type on 4031
+1362029412:ERROR:Unable to resolve Resource Type on 4048
+1362029412:ERROR:Unable to resolve Resource Type on 4052
+1362029412:ERROR:Unable to resolve Resource Type on 4054
+1362029413:ERROR:Unable to resolve Resource Type on 4055
+1362029413:ERROR:Unable to resolve Resource Type on 4056
+1362029413:ERROR:Unable to resolve Resource Type on 4058
+1362029600:------Finished building matrix 1362029600 ------
+1362097122:DBG:Incoming DataF: fa5/fa5be7fc98e68dc9c2672a8ba271926c/ArgCon1_5.txt,
+1362097122:DBG:Files:Array
+1362097122:DBG:Discovered dataf:fa5/fa5be7fc98e68dc9c2672a8ba271926c/ArgCon1_5.txt
+1362097122:DBG:Last Index:36
+1362097122:DBG:Finalized dataf:/export/grid_files/cache/fa5/fa5be7fc98e68dc9c2672a8ba271926c
+1362097122:/export/grid_files/cache/a2d/a2d13743f83c1b8128f203160b87ad08/
+1362097122:DBG:Array
+(
+)
+
+1362097332:DBG:Incoming DataF: fa5/fa5be7fc98e68dc9c2672a8ba271926c/ArgCon1_5.txt,
+1362097332:DBG:Files:Array
+1362097332:DBG:Discovered dataf:fa5/fa5be7fc98e68dc9c2672a8ba271926c/ArgCon1_5.txt
+1362097332:DBG:Last Index:36
+1362097332:DBG:Finalized dataf:/export/grid_files/cache/fa5/fa5be7fc98e68dc9c2672a8ba271926c
+1362097332:/export/grid_files/cache/a2d/a2d13743f83c1b8128f203160b87ad08/
+1362097332:DBG:Array
+(
+)
+
+1362097535:DBG:Incoming DataF: ef4/ef49adc3e1bd5224db473e81d65136dc/ArgCon1_7.txt,
+1362097535:DBG:Files:Array
+1362097535:DBG:Discovered dataf:ef4/ef49adc3e1bd5224db473e81d65136dc/ArgCon1_7.txt
+1362097535:DBG:Last Index:36
+1362097535:DBG:Finalized dataf:/export/grid_files/cache/ef4/ef49adc3e1bd5224db473e81d65136dc
+1362097535:/export/grid_files/cache/fd7/fd7b46d3c2b7fad4c9cfbfeeaa7450ed/
+1362097535:DBG:Array
+(
+)
+
+1362097747:DBG:Incoming DataF: ef4/ef49adc3e1bd5224db473e81d65136dc/ArgCon1_7.txt,
+1362097747:DBG:Files:Array
+1362097747:DBG:Discovered dataf:ef4/ef49adc3e1bd5224db473e81d65136dc/ArgCon1_7.txt
+1362097747:DBG:Last Index:36
+1362097747:DBG:Finalized dataf:/export/grid_files/cache/ef4/ef49adc3e1bd5224db473e81d65136dc
+1362097747:/export/grid_files/cache/fd7/fd7b46d3c2b7fad4c9cfbfeeaa7450ed/
+1362097747:DBG:Array
+(
+)
+
+1362097939:DBG:Incoming DataF: c58/c580ed133f9741cc792d67afa07dcb69/ArgCon1_9.txt,
+1362097939:DBG:Files:Array
+1362097939:DBG:Discovered dataf:c58/c580ed133f9741cc792d67afa07dcb69/ArgCon1_9.txt
+1362097939:DBG:Last Index:36
+1362097939:DBG:Finalized dataf:/export/grid_files/cache/c58/c580ed133f9741cc792d67afa07dcb69
+1362097939:/export/grid_files/cache/7a0/7a0852e5c5e8f0afd170752df1278b89/
+1362097939:DBG:Array
+(
+)
+
+1362098130:DBG:Incoming DataF: c58/c580ed133f9741cc792d67afa07dcb69/ArgCon1_9.txt,
+1362098130:DBG:Files:Array
+1362098130:DBG:Discovered dataf:c58/c580ed133f9741cc792d67afa07dcb69/ArgCon1_9.txt
+1362098130:DBG:Last Index:36
+1362098130:DBG:Finalized dataf:/export/grid_files/cache/c58/c580ed133f9741cc792d67afa07dcb69
+1362098130:/export/grid_files/cache/7a0/7a0852e5c5e8f0afd170752df1278b89/
+1362098130:DBG:Array
+(
+)
+
+1362098364:DBG:Incoming DataF: 5b0/5b07c02a4cd384c1e4361754f91329e7/ArgCon1_10.txt,
+1362098364:DBG:Files:Array
+1362098364:DBG:Discovered dataf:5b0/5b07c02a4cd384c1e4361754f91329e7/ArgCon1_10.txt
+1362098364:DBG:Last Index:36
+1362098364:DBG:Finalized dataf:/export/grid_files/cache/5b0/5b07c02a4cd384c1e4361754f91329e7
+1362098364:/export/grid_files/cache/fd1/fd10b2cc6b39fe18e86b98a088517d6d/
+1362098364:DBG:Array
+(
+)
+
+1362098556:DBG:Incoming DataF: 5b0/5b07c02a4cd384c1e4361754f91329e7/ArgCon1_10.txt,
+1362098556:DBG:Files:Array
+1362098556:DBG:Discovered dataf:5b0/5b07c02a4cd384c1e4361754f91329e7/ArgCon1_10.txt
+1362098556:DBG:Last Index:36
+1362098556:DBG:Finalized dataf:/export/grid_files/cache/5b0/5b07c02a4cd384c1e4361754f91329e7
+1362098556:/export/grid_files/cache/fd1/fd10b2cc6b39fe18e86b98a088517d6d/
+1362098556:DBG:Array
+(
+)
+
+1362098764:DBG:Incoming DataF: 47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt,
+1362098764:DBG:Files:Array
+1362098764:DBG:Discovered dataf:47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt
+1362098764:DBG:Last Index:36
+1362098764:DBG:Finalized dataf:/export/grid_files/cache/47c/47cd3ce7c838bc8512370650592cbfb9
+1362098764:/export/grid_files/cache/dfc/dfc796cbe0a69060180267ed4af1eea8/
+1362098765:DBG:Array
+(
+)
+
+1362098956:DBG:Incoming DataF: 47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt,
+1362098956:DBG:Files:Array
+1362098956:DBG:Discovered dataf:47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt
+1362098956:DBG:Last Index:36
+1362098956:DBG:Finalized dataf:/export/grid_files/cache/47c/47cd3ce7c838bc8512370650592cbfb9
+1362098956:/export/grid_files/cache/dfc/dfc796cbe0a69060180267ed4af1eea8/
+1362098956:DBG:Array
+(
+)
+
+1362099167:DBG:Incoming DataF: 84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt,
+1362099167:DBG:Files:Array
+1362099167:DBG:Discovered dataf:84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt
+1362099167:DBG:Last Index:36
+1362099167:DBG:Finalized dataf:/export/grid_files/cache/84b/84b93f8637e35de6e1eb6c4a54bedc1a
+1362099167:/export/grid_files/cache/811/811bde9bbd3684fe4d71ae053bc49237/
+1362099167:DBG:Array
+(
+)
+
+1362099359:DBG:Incoming DataF: 84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt,
+1362099359:DBG:Files:Array
+1362099359:DBG:Discovered dataf:84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt
+1362099359:DBG:Last Index:36
+1362099359:DBG:Finalized dataf:/export/grid_files/cache/84b/84b93f8637e35de6e1eb6c4a54bedc1a
+1362099359:/export/grid_files/cache/811/811bde9bbd3684fe4d71ae053bc49237/
+1362099359:DBG:Array
+(
+)
+
+1362099558:DBG:Incoming DataF: 022/0224338bca17bc42780776489be6f402/ArgCon1_16.txt,
+1362099558:DBG:Files:Array
+1362099558:DBG:Discovered dataf:022/0224338bca17bc42780776489be6f402/ArgCon1_16.txt
+1362099558:DBG:Last Index:36
+1362099558:DBG:Finalized dataf:/export/grid_files/cache/022/0224338bca17bc42780776489be6f402
+1362099558:/export/grid_files/cache/f66/f666e59385b3f769bb963751a33f43d9/
+1362099558:DBG:Array
+(
+)
+
+1362099756:DBG:Incoming DataF: 022/0224338bca17bc42780776489be6f402/ArgCon1_16.txt,
+1362099756:DBG:Files:Array
+1362099756:DBG:Discovered dataf:022/0224338bca17bc42780776489be6f402/ArgCon1_16.txt
+1362099756:DBG:Last Index:36
+1362099756:DBG:Finalized dataf:/export/grid_files/cache/022/0224338bca17bc42780776489be6f402
+1362099756:/export/grid_files/cache/f66/f666e59385b3f769bb963751a33f43d9/
+1362099756:DBG:Array
+(
+)
+
+1362109861:DBG:Incoming DataF: c95/c95e958cd06a8b0fbdd16be5088df140/ArgCon1_9.txt,
+1362109861:DBG:Files:Array
+1362109861:DBG:Discovered dataf:c95/c95e958cd06a8b0fbdd16be5088df140/ArgCon1_9.txt
+1362109861:DBG:Last Index:36
+1362109861:DBG:Finalized dataf:/export/grid_files/cache/c95/c95e958cd06a8b0fbdd16be5088df140
+1362109861:/export/grid_files/cache/9ba/9ba7d0f9ef5b167ee8464e9ac0d67934/
+1362109861:DBG:Array
+(
+)
+
+1362110056:DBG:Incoming DataF: c95/c95e958cd06a8b0fbdd16be5088df140/ArgCon1_9.txt,
+1362110056:DBG:Files:Array
+1362110056:DBG:Discovered dataf:c95/c95e958cd06a8b0fbdd16be5088df140/ArgCon1_9.txt
+1362110056:DBG:Last Index:36
+1362110056:DBG:Finalized dataf:/export/grid_files/cache/c95/c95e958cd06a8b0fbdd16be5088df140
+1362110056:/export/grid_files/cache/9ba/9ba7d0f9ef5b167ee8464e9ac0d67934/
+1362110056:DBG:Array
+(
+)
+
+1362110323:DBG:Incoming DataF: 47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt,
+1362110323:DBG:Files:Array
+1362110323:DBG:Discovered dataf:47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt
+1362110323:DBG:Last Index:36
+1362110323:DBG:Finalized dataf:/export/grid_files/cache/47c/47cd3ce7c838bc8512370650592cbfb9
+1362110323:/export/grid_files/cache/dfc/dfc796cbe0a69060180267ed4af1eea8/
+1362110324:DBG:Array
+(
+)
+
+1362110512:DBG:Incoming DataF: 47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt,
+1362110512:DBG:Files:Array
+1362110512:DBG:Discovered dataf:47c/47cd3ce7c838bc8512370650592cbfb9/ArgCon1_11.txt
+1362110512:DBG:Last Index:36
+1362110512:DBG:Finalized dataf:/export/grid_files/cache/47c/47cd3ce7c838bc8512370650592cbfb9
+1362110512:/export/grid_files/cache/dfc/dfc796cbe0a69060180267ed4af1eea8/
+1362110512:DBG:Array
+(
+)
+
+1362110725:DBG:Incoming DataF: 84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt,
+1362110725:DBG:Files:Array
+1362110725:DBG:Discovered dataf:84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt
+1362110725:DBG:Last Index:36
+1362110725:DBG:Finalized dataf:/export/grid_files/cache/84b/84b93f8637e35de6e1eb6c4a54bedc1a
+1362110725:/export/grid_files/cache/811/811bde9bbd3684fe4d71ae053bc49237/
+1362110725:DBG:Array
+(
+)
+
+1362110918:DBG:Incoming DataF: 84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt,
+1362110918:DBG:Files:Array
+1362110918:DBG:Discovered dataf:84b/84b93f8637e35de6e1eb6c4a54bedc1a/ArgCon1_12.txt
+1362110918:DBG:Last Index:36
+1362110918:DBG:Finalized dataf:/export/grid_files/cache/84b/84b93f8637e35de6e1eb6c4a54bedc1a
+1362110918:/export/grid_files/cache/811/811bde9bbd3684fe4d71ae053bc49237/
+1362110918:DBG:Array
+(
+)
+
+1362111110:DBG:Incoming DataF: 3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt,
+1362111110:DBG:Files:Array
+1362111110:DBG:Discovered dataf:3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt
+1362111110:DBG:Last Index:36
+1362111110:DBG:Finalized dataf:/export/grid_files/cache/3dc/3dc77bbe6f4e2b5b070216e722c2b1a0
+1362111110:/export/grid_files/cache/35b/35b9c322a61837e38f9bd6170e338c8c/
+1362111110:DBG:Array
+(
+)
+
+1362111322:DBG:Incoming DataF: 3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt,
+1362111322:DBG:Files:Array
+1362111322:DBG:Discovered dataf:3dc/3dc77bbe6f4e2b5b070216e722c2b1a0/ArgCon1_13.txt
+1362111322:DBG:Last Index:36
+1362111322:DBG:Finalized dataf:/export/grid_files/cache/3dc/3dc77bbe6f4e2b5b070216e722c2b1a0
+1362111322:/export/grid_files/cache/35b/35b9c322a61837e38f9bd6170e338c8c/
+1362111322:DBG:Array
+(
+)
+
+1362111514:DBG:Incoming DataF: b8f/b8f3307fce1e3583626d5603befd2682/ArgCon1_15.txt,
+1362111514:DBG:Files:Array
+1362111514:DBG:Discovered dataf:b8f/b8f3307fce1e3583626d5603befd2682/ArgCon1_15.txt
+1362111514:DBG:Last Index:36
+1362111514:DBG:Finalized dataf:/export/grid_files/cache/b8f/b8f3307fce1e3583626d5603befd2682
+1362111514:/export/grid_files/cache/3e6/3e68444529384568d8b306e3b354af53/
+1362111514:DBG:Array
+(
+)
+
+1362111706:DBG:Incoming DataF: b8f/b8f3307fce1e3583626d5603befd2682/ArgCon1_15.txt,
+1362111706:DBG:Files:Array
+1362111706:DBG:Discovered dataf:b8f/b8f3307fce1e3583626d5603befd2682/ArgCon1_15.txt
+1362111706:DBG:Last Index:36
+1362111706:DBG:Finalized dataf:/export/grid_files/cache/b8f/b8f3307fce1e3583626d5603befd2682
+1362111706:/export/grid_files/cache/3e6/3e68444529384568d8b306e3b354af53/
+1362111706:DBG:Array
+(
+)
+
+1362112024:DBG:Incoming DataF: d68/d6863a5831118c0d158553923a371b92/ArgCon1_8.txt,
+1362112024:DBG:Files:Array
+1362112024:DBG:Discovered dataf:d68/d6863a5831118c0d158553923a371b92/ArgCon1_8.txt
+1362112024:DBG:Last Index:36
+1362112024:DBG:Finalized dataf:/export/grid_files/cache/d68/d6863a5831118c0d158553923a371b92
+1362112024:/export/grid_files/cache/cfb/cfb884ebc3c1ae7a6d082fcd2639a57b/
+1362112024:DBG:Array
+(
+)
+
+1362112217:DBG:Incoming DataF: d68/d6863a5831118c0d158553923a371b92/ArgCon1_8.txt,
+1362112217:DBG:Files:Array
+1362112217:DBG:Discovered dataf:d68/d6863a5831118c0d158553923a371b92/ArgCon1_8.txt
+1362112217:DBG:Last Index:36
+1362112217:DBG:Finalized dataf:/export/grid_files/cache/d68/d6863a5831118c0d158553923a371b92
+1362112217:/export/grid_files/cache/cfb/cfb884ebc3c1ae7a6d082fcd2639a57b/
+1362112217:DBG:Array
+(
+)
+

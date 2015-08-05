@@ -1,0 +1,31 @@
+Running GARLI-PART Version 2.0.1019 (29 Mar 2011)
+->Single processor version<-
+
+##############################################################
+ This is GARLI 2.0, the first "official" release including 
+          partitioned models.  It is a merging of
+   official release 1.0 and beta version GARLI-PART 0.97
+  Briefly, it includes models for nucleotides, amino acids,
+ codons, and morphology-like characters, any of which can be 
+  mixed together and applied to different subsets of data.
+
+    General program usage is extensively documented here:
+            http://www.nescent.org/wg/garli/
+      see this page for details on partitioned usage:
+  http://www.nescent.org/wg/garli/Partition_testing_version
+   and this page for details on Mkv mophology model usage:
+    http://www.nescent.org/wg/garli/Mkv_morphology_model
+         PLEASE LET ME KNOW OF ANY PROBLEMS AT:
+                garli.support@gmail.com
+##############################################################
+Compiled Jun 15 2011 14:04:14 using GNU gcc compiler version 4.1.2
+Using NCL version 2.1.10
+
+#######################################################
+Reading config file /export/grid_files/cache/da0/da0fb46bd0dda5406363d22757d175ea/garli.conf
+###################################################
+READING OF DATA
+
+ERROR: data file not found: Synallgarliconcat.nex!
+
+

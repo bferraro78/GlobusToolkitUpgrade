@@ -1,0 +1,17 @@
+1343770230:DBG:Raw ID is:274846520.4289489652582963
+1343770230:DBG:Portal Job ID is: 865
+1343770230:DBG:Datafname is: 
+1343770311:DBG:Raw ID is:274846520.4289489652582963
+1343770311:DBG:Portal Job ID is: 865
+1343770311:DBG:Datafname is: 
+1343770311:DBG:Array
+(
+    [0] => SimpleXMLElement Object
+        (
+            [0] => ${GLOBUS_SCRATCH_DIR}/cache/da0/da0fb46bd0dda5406363d22757d175ea/garli.conf,${GLOBUS_SCRATCH_DIR}/cache/d43/d431bd30e687148aee47924eeceb4b8a/Synallgarliconcat.nex
+        )
+
+)
+
+1343770311:/export/grid_files/cache/da0/da0fb46bd0dda5406363d22757d175ea
+1343770311:ERROR:No screen log!

@@ -1,0 +1,181 @@
+1365741002:------Starting to build matrix 1365741002 ------
+1365741005:ERROR:Unable to resolve Resource Type on 3904
+1365741005:ERROR:Unable to resolve Resource Type on 3907
+1365741005:ERROR:Unable to resolve Resource Type on 3909
+1365741006:ERROR:Unable to resolve Resource Type on 3910
+1365741006:ERROR:Unable to resolve Resource Type on 3911
+1365741006:ERROR:Unable to resolve Resource Type on 3913
+1365741006:ERROR:Unable to resolve Resource Type on 3914
+1365741007:ERROR:Unable to resolve Resource Type on 3921
+1365741007:ERROR:Unable to resolve Resource Type on 3922
+1365741007:ERROR:Unable to resolve Resource Type on 3928
+1365741007:ERROR:Unable to resolve Resource Type on 3931
+1365741007:ERROR:Unable to resolve Resource Type on 3932
+1365741008:ERROR:Unable to resolve Resource Type on 3935
+1365741008:ERROR:Unable to resolve Resource Type on 3936
+1365741008:ERROR:Unable to resolve Resource Type on 3938
+1365741008:ERROR:Unable to resolve Resource Type on 3941
+1365741008:ERROR:Unable to resolve Resource Type on 3942
+1365741008:ERROR:Unable to resolve Resource Type on 3945
+1365741009:ERROR:Unable to resolve Resource Type on 3946
+1365741009:ERROR:Unable to resolve Resource Type on 3948
+1365741009:ERROR:Unable to resolve Resource Type on 3951
+1365741009:ERROR:Unable to resolve Resource Type on 3955
+1365741009:ERROR:Unable to resolve Resource Type on 3956
+1365741009:ERROR:Unable to resolve Resource Type on 3964
+1365741010:ERROR:Unable to resolve Resource Type on 3966
+1365741010:ERROR:Unable to resolve Resource Type on 3970
+1365741010:ERROR:Unable to resolve Resource Type on 3980
+1365741010:ERROR:Unable to resolve Resource Type on 3982
+1365741010:ERROR:Unable to resolve Resource Type on 3983
+1365741011:ERROR:Unable to resolve Resource Type on 3984
+1365741011:ERROR:Unable to resolve Resource Type on 4022
+1365741011:ERROR:Unable to resolve Resource Type on 4029
+1365741011:ERROR:Unable to resolve Resource Type on 4031
+1365741011:ERROR:Unable to resolve Resource Type on 4048
+1365741011:ERROR:Unable to resolve Resource Type on 4052
+1365741011:ERROR:Unable to resolve Resource Type on 4054
+1365741012:ERROR:Unable to resolve Resource Type on 4055
+1365741012:ERROR:Unable to resolve Resource Type on 4056
+1365741012:ERROR:Unable to resolve Resource Type on 4058
+1365741199:------Finished building matrix 1365741199 ------
+1365802108:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365802108:DBG:Files:Array
+1365802108:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365802108:DBG:Last Index:36
+1365802108:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365802108:/export/grid_files/cache/84c/84ccfb17d3e580880eb3fd329abead67/
+1365802109:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365802328:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365802328:DBG:Files:Array
+1365802328:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365802328:DBG:Last Index:36
+1365802328:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365802328:/export/grid_files/cache/c28/c282af7ec0a6b20532c5b3edc8b01268/
+1365802328:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365802547:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365802547:DBG:Files:Array
+1365802547:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365802547:DBG:Last Index:36
+1365802547:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365802547:/export/grid_files/cache/32a/32a50f7a6d5f94924f84a188c9ce8ee3/
+1365802547:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365802775:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365802775:DBG:Files:Array
+1365802775:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365802775:DBG:Last Index:36
+1365802775:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365802775:/export/grid_files/cache/84c/84ccfb17d3e580880eb3fd329abead67/
+1365802775:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365803011:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365803011:DBG:Files:Array
+1365803011:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365803011:DBG:Last Index:36
+1365803011:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365803011:/export/grid_files/cache/c28/c282af7ec0a6b20532c5b3edc8b01268/
+1365803011:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365803230:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365803230:DBG:Files:Array
+1365803230:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365803230:DBG:Last Index:36
+1365803230:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365803230:/export/grid_files/cache/32a/32a50f7a6d5f94924f84a188c9ce8ee3/
+1365803230:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365803557:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365803557:DBG:Files:Array
+1365803557:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365803557:DBG:Last Index:36
+1365803557:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365803557:/export/grid_files/cache/157/157fb86b34408e3d4f2a6041e7057730/
+1365803557:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365803791:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365803791:DBG:Files:Array
+1365803791:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365803791:DBG:Last Index:36
+1365803791:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365803791:/export/grid_files/cache/de1/de13ba10dac15c07ac31e52c9b4c4ea3/
+1365803791:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365804014:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365804014:DBG:Files:Array
+1365804014:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365804014:DBG:Last Index:36
+1365804014:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365804014:/export/grid_files/cache/5ff/5ffc3ee36c8b80b207fb9d46cf18af94/
+1365804014:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1365804249:DBG:Incoming DataF: 0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex,
+1365804249:DBG:Files:Array
+1365804249:DBG:Discovered dataf:0c0/0c09a8723691778295bf6ccefb464bd7/SyndemisNml_no28s.nex
+1365804249:DBG:Last Index:36
+1365804249:DBG:Finalized dataf:/export/grid_files/cache/0c0/0c09a8723691778295bf6ccefb464bd7
+1365804249:/export/grid_files/cache/970/97092bf1b4e3aa9fa201c2f51dd930d8/
+1365804249:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+

@@ -1,0 +1,22 @@
+1385136802:DBG:Incoming DataF: e06/e06fd16cfe7cbbf2ccbea05119e4b73f/simulated-dna-data.nex,
+1385136802:DBG:Files:Array
+1385136802:DBG:Discovered dataf:e06/e06fd16cfe7cbbf2ccbea05119e4b73f/simulated-dna-data.nex
+1385136802:DBG:Last Index:36
+1385136802:DBG:Finalized dataf:/export/grid_files/cache/e06/e06fd16cfe7cbbf2ccbea05119e4b73f
+1385136802:/export/grid_files/cache/856/85654b447126e0469baa2cd70a9fa047/
+1385136802:DBG:Array
+(
+    [0] => subset1 83 9 1.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1385136823:DBG:Incoming DataF: e06/e06fd16cfe7cbbf2ccbea05119e4b73f/simulated-dna-data.nex,
+1385136823:DBG:Files:Array
+1385136823:DBG:Discovered dataf:e06/e06fd16cfe7cbbf2ccbea05119e4b73f/simulated-dna-data.nex
+1385136823:DBG:Last Index:36
+1385136823:DBG:Finalized dataf:/export/grid_files/cache/e06/e06fd16cfe7cbbf2ccbea05119e4b73f
+1385136823:/export/grid_files/cache/856/85654b447126e0469baa2cd70a9fa047/
+1385136823:DBG:Array
+(
+    [0] => subset1 83 9 1.0 nucleotide 6rate estimate gamma 4 estimate
+)
+

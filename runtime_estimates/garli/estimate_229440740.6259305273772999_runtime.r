@@ -1,0 +1,5 @@
+suppressPackageStartupMessages(library(randomForest))
+load("garli_recent.rf")
+garli_estimate_one <- read.table("229440740.6259305273772999_estimate",header=T)
+garli.pred <- predict(garli_recent.rf, garli_estimate_one[1,])
+cat('ESTIMATE: ',as.integer(garli.pred[1]),'\n',sep="")

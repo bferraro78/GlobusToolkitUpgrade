@@ -1,0 +1,52 @@
+1359264601:------Starting to build matrix 1359264601 ------
+1359264604:ERROR:Unable to resolve Resource Type on 3904
+1359264604:ERROR:Unable to resolve Resource Type on 3907
+1359264605:ERROR:Unable to resolve Resource Type on 3909
+1359264605:ERROR:Unable to resolve Resource Type on 3910
+1359264605:ERROR:Unable to resolve Resource Type on 3911
+1359264605:ERROR:Unable to resolve Resource Type on 3913
+1359264605:ERROR:Unable to resolve Resource Type on 3914
+1359264606:ERROR:Unable to resolve Resource Type on 3921
+1359264606:ERROR:Unable to resolve Resource Type on 3922
+1359264606:ERROR:Unable to resolve Resource Type on 3928
+1359264606:ERROR:Unable to resolve Resource Type on 3931
+1359264606:ERROR:Unable to resolve Resource Type on 3932
+1359264607:ERROR:Unable to resolve Resource Type on 3935
+1359264607:ERROR:Unable to resolve Resource Type on 3936
+1359264607:ERROR:Unable to resolve Resource Type on 3938
+1359264607:ERROR:Unable to resolve Resource Type on 3941
+1359264607:ERROR:Unable to resolve Resource Type on 3942
+1359264608:ERROR:Unable to resolve Resource Type on 3945
+1359264608:ERROR:Unable to resolve Resource Type on 3946
+1359264608:ERROR:Unable to resolve Resource Type on 3948
+1359264608:ERROR:Unable to resolve Resource Type on 3951
+1359264608:ERROR:Unable to resolve Resource Type on 3955
+1359264608:ERROR:Unable to resolve Resource Type on 3956
+1359264609:ERROR:Unable to resolve Resource Type on 3964
+1359264609:ERROR:Unable to resolve Resource Type on 3966
+1359264609:ERROR:Unable to resolve Resource Type on 3970
+1359264609:ERROR:Unable to resolve Resource Type on 3980
+1359264610:ERROR:Unable to resolve Resource Type on 3982
+1359264610:ERROR:Unable to resolve Resource Type on 3983
+1359264610:ERROR:Unable to resolve Resource Type on 3984
+1359264610:ERROR:Unable to resolve Resource Type on 4022
+1359264610:ERROR:Unable to resolve Resource Type on 4029
+1359264610:ERROR:Unable to resolve Resource Type on 4031
+1359264611:ERROR:Unable to resolve Resource Type on 4048
+1359264611:ERROR:Unable to resolve Resource Type on 4052
+1359264611:ERROR:Unable to resolve Resource Type on 4054
+1359264611:ERROR:Unable to resolve Resource Type on 4055
+1359264611:ERROR:Unable to resolve Resource Type on 4056
+1359264611:ERROR:Unable to resolve Resource Type on 4058
+1359264777:------Finished building matrix 1359264777 ------
+1359303304:DBG:Incoming DataF: dc8/dc83c9b8d1131e6695d19ab2513b5e65/nt123.lep35tx20373char_plus_NGS.nex,
+1359303304:DBG:Files:Array
+1359303304:DBG:Discovered dataf:dc8/dc83c9b8d1131e6695d19ab2513b5e65/nt123.lep35tx20373char_plus_NGS.nex
+1359303304:DBG:Last Index:36
+1359303304:DBG:Finalized dataf:/export/grid_files/cache/dc8/dc83c9b8d1131e6695d19ab2513b5e65
+1359303304:/export/grid_files/cache/bdc/bdc2b404a991619d78a3c05eead0cc09/
+1359303304:DBG:Array
+(
+    [0] => subset1 1004411 35 8850.8 nucleotide 6rate estimate gamma 4 estimate
+)
+

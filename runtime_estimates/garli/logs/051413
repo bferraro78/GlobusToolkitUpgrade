@@ -1,0 +1,74 @@
+1368505801:------Starting to build matrix 1368505801 ------
+1368505804:ERROR:Unable to resolve Resource Type on 3904
+1368505805:ERROR:Unable to resolve Resource Type on 3907
+1368505805:ERROR:Unable to resolve Resource Type on 3909
+1368505805:ERROR:Unable to resolve Resource Type on 3910
+1368505805:ERROR:Unable to resolve Resource Type on 3911
+1368505805:ERROR:Unable to resolve Resource Type on 3913
+1368505805:ERROR:Unable to resolve Resource Type on 3914
+1368505805:ERROR:Unable to resolve Resource Type on 3921
+1368505806:ERROR:Unable to resolve Resource Type on 3922
+1368505806:ERROR:Unable to resolve Resource Type on 3928
+1368505806:ERROR:Unable to resolve Resource Type on 3931
+1368505806:ERROR:Unable to resolve Resource Type on 3932
+1368505806:ERROR:Unable to resolve Resource Type on 3935
+1368505806:ERROR:Unable to resolve Resource Type on 3936
+1368505807:ERROR:Unable to resolve Resource Type on 3938
+1368505807:ERROR:Unable to resolve Resource Type on 3941
+1368505807:ERROR:Unable to resolve Resource Type on 3942
+1368505807:ERROR:Unable to resolve Resource Type on 3945
+1368505807:ERROR:Unable to resolve Resource Type on 3946
+1368505807:ERROR:Unable to resolve Resource Type on 3948
+1368505808:ERROR:Unable to resolve Resource Type on 3951
+1368505808:ERROR:Unable to resolve Resource Type on 3955
+1368505808:ERROR:Unable to resolve Resource Type on 3956
+1368505808:ERROR:Unable to resolve Resource Type on 3964
+1368505808:ERROR:Unable to resolve Resource Type on 3966
+1368505809:ERROR:Unable to resolve Resource Type on 3970
+1368505809:ERROR:Unable to resolve Resource Type on 3980
+1368505809:ERROR:Unable to resolve Resource Type on 3982
+1368505810:ERROR:Unable to resolve Resource Type on 3983
+1368505810:ERROR:Unable to resolve Resource Type on 3984
+1368505810:ERROR:Unable to resolve Resource Type on 4022
+1368505810:ERROR:Unable to resolve Resource Type on 4029
+1368505810:ERROR:Unable to resolve Resource Type on 4031
+1368505811:ERROR:Unable to resolve Resource Type on 4048
+1368505811:ERROR:Unable to resolve Resource Type on 4052
+1368505811:ERROR:Unable to resolve Resource Type on 4054
+1368505811:ERROR:Unable to resolve Resource Type on 4055
+1368505811:ERROR:Unable to resolve Resource Type on 4056
+1368505811:ERROR:Unable to resolve Resource Type on 4058
+1368506004:------Finished building matrix 1368506004 ------
+1368585329:DBG:Incoming DataF: d40/d402db9784f03c19f342817a9776c698/lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix.fasta,
+1368585329:DBG:Files:Array
+1368585329:DBG:Discovered dataf:d40/d402db9784f03c19f342817a9776c698/lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix.fasta
+1368585329:DBG:Last Index:36
+1368585329:DBG:Finalized dataf:/export/grid_files/cache/d40/d402db9784f03c19f342817a9776c698
+1368585329:/export/grid_files/cache/806/8061802bf51867747b3c3163eefc580b/
+1368585367:DBG:Array
+(
+    [0] => subset1 479165 16 2186.6 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368585451:DBG:Incoming DataF: d40/d402db9784f03c19f342817a9776c698/lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix.fasta,
+1368585451:DBG:Files:Array
+1368585451:DBG:Discovered dataf:d40/d402db9784f03c19f342817a9776c698/lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix.fasta
+1368585451:DBG:Last Index:36
+1368585451:DBG:Finalized dataf:/export/grid_files/cache/d40/d402db9784f03c19f342817a9776c698
+1368585451:/export/grid_files/cache/270/27070c3dbfd4385307e8141770d86b2f/
+1368585451:DBG:Array
+(
+    [0] => subset1 479165 16 2186.6 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368585503:DBG:Incoming DataF: d40/d402db9784f03c19f342817a9776c698/lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix.fasta,
+1368585503:DBG:Files:Array
+1368585503:DBG:Discovered dataf:d40/d402db9784f03c19f342817a9776c698/lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix.fasta
+1368585503:DBG:Last Index:36
+1368585503:DBG:Finalized dataf:/export/grid_files/cache/d40/d402db9784f03c19f342817a9776c698
+1368585503:/export/grid_files/cache/270/27070c3dbfd4385307e8141770d86b2f/
+1368585503:DBG:Array
+(
+    [0] => subset1 479165 16 2186.6 nucleotide 6rate estimate gamma 4 estimate
+)
+

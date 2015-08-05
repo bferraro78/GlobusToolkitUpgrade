@@ -1,0 +1,2494 @@
+1363667401:------Starting to build matrix 1363667401 ------
+1363667404:ERROR:Unable to resolve Resource Type on 3904
+1363667404:ERROR:Unable to resolve Resource Type on 3907
+1363667405:ERROR:Unable to resolve Resource Type on 3909
+1363667405:ERROR:Unable to resolve Resource Type on 3910
+1363667405:ERROR:Unable to resolve Resource Type on 3911
+1363667405:ERROR:Unable to resolve Resource Type on 3913
+1363667405:ERROR:Unable to resolve Resource Type on 3914
+1363667406:ERROR:Unable to resolve Resource Type on 3921
+1363667406:ERROR:Unable to resolve Resource Type on 3922
+1363667406:ERROR:Unable to resolve Resource Type on 3928
+1363667406:ERROR:Unable to resolve Resource Type on 3931
+1363667406:ERROR:Unable to resolve Resource Type on 3932
+1363667407:ERROR:Unable to resolve Resource Type on 3935
+1363667407:ERROR:Unable to resolve Resource Type on 3936
+1363667407:ERROR:Unable to resolve Resource Type on 3938
+1363667407:ERROR:Unable to resolve Resource Type on 3941
+1363667407:ERROR:Unable to resolve Resource Type on 3942
+1363667408:ERROR:Unable to resolve Resource Type on 3945
+1363667408:ERROR:Unable to resolve Resource Type on 3946
+1363667408:ERROR:Unable to resolve Resource Type on 3948
+1363667408:ERROR:Unable to resolve Resource Type on 3951
+1363667409:ERROR:Unable to resolve Resource Type on 3955
+1363667409:ERROR:Unable to resolve Resource Type on 3956
+1363667409:ERROR:Unable to resolve Resource Type on 3964
+1363667409:ERROR:Unable to resolve Resource Type on 3966
+1363667409:ERROR:Unable to resolve Resource Type on 3970
+1363667410:ERROR:Unable to resolve Resource Type on 3980
+1363667410:ERROR:Unable to resolve Resource Type on 3982
+1363667410:ERROR:Unable to resolve Resource Type on 3983
+1363667410:ERROR:Unable to resolve Resource Type on 3984
+1363667411:ERROR:Unable to resolve Resource Type on 4022
+1363667411:ERROR:Unable to resolve Resource Type on 4029
+1363667411:ERROR:Unable to resolve Resource Type on 4031
+1363667411:ERROR:Unable to resolve Resource Type on 4048
+1363667411:ERROR:Unable to resolve Resource Type on 4052
+1363667412:ERROR:Unable to resolve Resource Type on 4054
+1363667412:ERROR:Unable to resolve Resource Type on 4055
+1363667412:ERROR:Unable to resolve Resource Type on 4056
+1363667412:ERROR:Unable to resolve Resource Type on 4058
+1363667612:------Finished building matrix 1363667612 ------
+1363688731:DBG:Incoming DataF: 472/47222aa0c0754c7ed18e6b906fae5f5d/ArgCon1_6.txt,
+1363688731:DBG:Files:Array
+1363688731:DBG:Discovered dataf:472/47222aa0c0754c7ed18e6b906fae5f5d/ArgCon1_6.txt
+1363688731:DBG:Last Index:36
+1363688731:DBG:Finalized dataf:/export/grid_files/cache/472/47222aa0c0754c7ed18e6b906fae5f5d
+1363688731:/export/grid_files/cache/d59/d595691001bb76b481aea2b05ed7b524/
+1363688731:DBG:Array
+(
+)
+
+1363688925:DBG:Incoming DataF: 472/47222aa0c0754c7ed18e6b906fae5f5d/ArgCon1_6.txt,
+1363688925:DBG:Files:Array
+1363688925:DBG:Discovered dataf:472/47222aa0c0754c7ed18e6b906fae5f5d/ArgCon1_6.txt
+1363688925:DBG:Last Index:36
+1363688925:DBG:Finalized dataf:/export/grid_files/cache/472/47222aa0c0754c7ed18e6b906fae5f5d
+1363688925:/export/grid_files/cache/d59/d595691001bb76b481aea2b05ed7b524/
+1363688925:DBG:Array
+(
+)
+
+1363689106:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363689106:DBG:Files:Array
+1363689106:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363689106:DBG:Last Index:36
+1363689106:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363689106:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363689106:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363689287:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363689287:DBG:Files:Array
+1363689287:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363689287:DBG:Last Index:36
+1363689287:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363689287:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363689287:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363689471:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363689471:DBG:Files:Array
+1363689471:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363689471:DBG:Last Index:36
+1363689471:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363689471:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363689471:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363689651:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363689651:DBG:Files:Array
+1363689651:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363689651:DBG:Last Index:36
+1363689651:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363689651:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363689651:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363689832:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363689832:DBG:Files:Array
+1363689832:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363689832:DBG:Last Index:36
+1363689832:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363689832:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363689832:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363690024:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363690024:DBG:Files:Array
+1363690024:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363690024:DBG:Last Index:36
+1363690024:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363690024:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363690024:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363690204:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363690204:DBG:Files:Array
+1363690204:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363690204:DBG:Last Index:36
+1363690204:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363690204:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363690204:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363690391:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363690391:DBG:Files:Array
+1363690391:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363690391:DBG:Last Index:36
+1363690391:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363690391:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363690391:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363690572:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363690572:DBG:Files:Array
+1363690572:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363690572:DBG:Last Index:36
+1363690572:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363690572:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363690572:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363690753:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363690753:DBG:Files:Array
+1363690753:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363690753:DBG:Last Index:36
+1363690753:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363690753:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363690753:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363690950:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363690950:DBG:Files:Array
+1363690950:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363690950:DBG:Last Index:36
+1363690950:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363690950:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363690950:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363691134:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363691134:DBG:Files:Array
+1363691134:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363691134:DBG:Last Index:36
+1363691134:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363691134:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363691134:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363691328:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363691328:DBG:Files:Array
+1363691328:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363691328:DBG:Last Index:36
+1363691328:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363691328:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363691328:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363691535:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363691535:DBG:Files:Array
+1363691535:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363691535:DBG:Last Index:36
+1363691535:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363691535:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363691536:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363691719:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363691719:DBG:Files:Array
+1363691719:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363691719:DBG:Last Index:36
+1363691719:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363691719:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363691719:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363691899:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363691899:DBG:Files:Array
+1363691899:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363691899:DBG:Last Index:36
+1363691899:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363691899:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363691899:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363692082:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363692082:DBG:Files:Array
+1363692082:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363692082:DBG:Last Index:36
+1363692082:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363692082:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363692083:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363692266:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363692266:DBG:Files:Array
+1363692266:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363692266:DBG:Last Index:36
+1363692266:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363692266:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363692266:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363692462:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363692462:DBG:Files:Array
+1363692462:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363692462:DBG:Last Index:36
+1363692462:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363692462:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363692462:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363692643:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363692643:DBG:Files:Array
+1363692643:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363692643:DBG:Last Index:36
+1363692643:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363692643:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363692643:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363692835:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363692835:DBG:Files:Array
+1363692835:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363692835:DBG:Last Index:36
+1363692835:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363692835:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363692835:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363693021:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363693021:DBG:Files:Array
+1363693021:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363693021:DBG:Last Index:36
+1363693021:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363693021:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363693021:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363693225:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363693225:DBG:Files:Array
+1363693225:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363693225:DBG:Last Index:36
+1363693225:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363693225:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363693225:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363693405:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363693405:DBG:Files:Array
+1363693405:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363693405:DBG:Last Index:36
+1363693405:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363693405:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363693405:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363693611:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363693611:DBG:Files:Array
+1363693611:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363693611:DBG:Last Index:36
+1363693611:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363693611:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363693611:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363693791:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363693791:DBG:Files:Array
+1363693791:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363693791:DBG:Last Index:36
+1363693791:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363693791:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363693791:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363693971:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363693971:DBG:Files:Array
+1363693971:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363693971:DBG:Last Index:36
+1363693971:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363693971:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363693971:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363694151:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363694151:DBG:Files:Array
+1363694151:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363694151:DBG:Last Index:36
+1363694151:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363694151:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363694151:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363694352:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363694352:DBG:Files:Array
+1363694352:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363694352:DBG:Last Index:36
+1363694352:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363694352:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363694352:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363694538:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363694538:DBG:Files:Array
+1363694538:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363694538:DBG:Last Index:36
+1363694538:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363694538:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363694538:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363694722:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363694722:DBG:Files:Array
+1363694722:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363694722:DBG:Last Index:36
+1363694722:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363694722:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363694722:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363694919:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363694919:DBG:Files:Array
+1363694919:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363694919:DBG:Last Index:36
+1363694919:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363694919:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363694919:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363695102:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363695102:DBG:Files:Array
+1363695102:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363695102:DBG:Last Index:36
+1363695102:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363695102:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363695102:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363695284:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363695284:DBG:Files:Array
+1363695284:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363695284:DBG:Last Index:36
+1363695284:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363695284:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363695284:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363695465:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363695465:DBG:Files:Array
+1363695465:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363695465:DBG:Last Index:36
+1363695465:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363695465:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363695465:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363695662:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363695662:DBG:Files:Array
+1363695662:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363695662:DBG:Last Index:36
+1363695662:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363695662:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363695663:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363695844:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363695844:DBG:Files:Array
+1363695844:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363695844:DBG:Last Index:36
+1363695844:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363695844:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363695844:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363696030:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363696030:DBG:Files:Array
+1363696030:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363696030:DBG:Last Index:36
+1363696030:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363696030:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363696030:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363696226:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363696226:DBG:Files:Array
+1363696226:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363696226:DBG:Last Index:36
+1363696226:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363696226:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363696226:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363696407:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363696407:DBG:Files:Array
+1363696407:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363696407:DBG:Last Index:36
+1363696407:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363696407:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363696407:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363696589:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363696589:DBG:Files:Array
+1363696589:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363696589:DBG:Last Index:36
+1363696589:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363696589:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363696589:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363696770:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363696770:DBG:Files:Array
+1363696770:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363696770:DBG:Last Index:36
+1363696770:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363696770:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363696770:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363696973:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363696973:DBG:Files:Array
+1363696973:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363696973:DBG:Last Index:36
+1363696973:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363696973:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363696973:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363697153:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363697153:DBG:Files:Array
+1363697153:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363697153:DBG:Last Index:36
+1363697153:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363697153:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363697154:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363697335:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363697335:DBG:Files:Array
+1363697335:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363697335:DBG:Last Index:36
+1363697335:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363697335:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363697335:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363697539:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363697539:DBG:Files:Array
+1363697539:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363697539:DBG:Last Index:36
+1363697539:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363697539:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363697539:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363697741:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363697741:DBG:Files:Array
+1363697741:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363697741:DBG:Last Index:36
+1363697741:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363697741:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363697741:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363697919:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363697919:DBG:Files:Array
+1363697919:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363697919:DBG:Last Index:36
+1363697919:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363697919:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363697919:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363698100:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363698100:DBG:Files:Array
+1363698100:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363698100:DBG:Last Index:36
+1363698100:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363698100:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363698100:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363698298:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363698298:DBG:Files:Array
+1363698298:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363698298:DBG:Last Index:36
+1363698298:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363698298:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363698298:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363698499:DBG:Incoming DataF: fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex,
+1363698499:DBG:Files:Array
+1363698499:DBG:Discovered dataf:fcd/fcd9d975fdf3f8a361cf4e4653242ff3/SynallML.nex
+1363698499:DBG:Last Index:36
+1363698499:DBG:Finalized dataf:/export/grid_files/cache/fcd/fcd9d975fdf3f8a361cf4e4653242ff3
+1363698499:/export/grid_files/cache/fc3/fc3f5231881d6f08fa36f886e540ded8/
+1363698499:DBG:Array
+(
+    [0] => subset0 20 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [5] => subset5 58 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [6] => subset6 42 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [7] => subset7 50 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+    [8] => subset8 97 49 25.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363698680:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363698680:DBG:Files:Array
+1363698680:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363698680:DBG:Last Index:36
+1363698680:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363698680:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363698680:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363698878:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363698878:DBG:Files:Array
+1363698878:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363698878:DBG:Last Index:36
+1363698878:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363698878:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363698878:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363699064:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363699064:DBG:Files:Array
+1363699064:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363699064:DBG:Last Index:36
+1363699064:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363699064:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363699064:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363699258:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363699258:DBG:Files:Array
+1363699258:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363699258:DBG:Last Index:36
+1363699258:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363699258:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363699258:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363699459:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363699459:DBG:Files:Array
+1363699459:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363699459:DBG:Last Index:36
+1363699459:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363699459:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363699459:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363699639:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363699639:DBG:Files:Array
+1363699639:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363699639:DBG:Last Index:36
+1363699639:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363699639:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363699639:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363699842:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363699842:DBG:Files:Array
+1363699842:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363699842:DBG:Last Index:36
+1363699842:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363699842:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363699842:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363700023:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363700023:DBG:Files:Array
+1363700023:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363700023:DBG:Last Index:36
+1363700023:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363700023:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363700023:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363700203:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363700203:DBG:Files:Array
+1363700203:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363700203:DBG:Last Index:36
+1363700203:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363700203:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363700203:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363700383:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363700383:DBG:Files:Array
+1363700383:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363700383:DBG:Last Index:36
+1363700383:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363700383:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363700383:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363700581:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363700581:DBG:Files:Array
+1363700581:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363700581:DBG:Last Index:36
+1363700581:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363700581:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363700581:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363700766:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363700766:DBG:Files:Array
+1363700766:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363700766:DBG:Last Index:36
+1363700766:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363700766:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363700766:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363700990:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363700990:DBG:Files:Array
+1363700990:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363700990:DBG:Last Index:36
+1363700990:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363700990:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363700990:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363701175:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363701175:DBG:Files:Array
+1363701175:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363701175:DBG:Last Index:36
+1363701175:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363701175:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363701175:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363701355:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363701355:DBG:Files:Array
+1363701355:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363701355:DBG:Last Index:36
+1363701355:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363701355:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363701355:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363701554:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363701554:DBG:Files:Array
+1363701554:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363701554:DBG:Last Index:36
+1363701554:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363701554:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363701554:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363701750:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363701750:DBG:Files:Array
+1363701750:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363701750:DBG:Last Index:36
+1363701750:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363701750:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363701750:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363701930:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363701930:DBG:Files:Array
+1363701930:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363701930:DBG:Last Index:36
+1363701930:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363701930:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363701930:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363702110:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363702110:DBG:Files:Array
+1363702110:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363702110:DBG:Last Index:36
+1363702110:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363702110:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363702110:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363702292:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363702292:DBG:Files:Array
+1363702292:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363702292:DBG:Last Index:36
+1363702292:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363702292:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363702292:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363702472:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363702472:DBG:Files:Array
+1363702472:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363702472:DBG:Last Index:36
+1363702472:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363702472:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363702472:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363702674:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363702674:DBG:Files:Array
+1363702674:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363702674:DBG:Last Index:36
+1363702674:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363702674:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363702674:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363702854:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363702854:DBG:Files:Array
+1363702854:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363702854:DBG:Last Index:36
+1363702854:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363702854:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363702854:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363703061:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363703061:DBG:Files:Array
+1363703061:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363703061:DBG:Last Index:36
+1363703061:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363703061:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363703061:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363703241:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363703241:DBG:Files:Array
+1363703241:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363703241:DBG:Last Index:36
+1363703241:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363703241:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363703241:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363703425:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363703425:DBG:Files:Array
+1363703425:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363703425:DBG:Last Index:36
+1363703425:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363703425:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363703425:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363703641:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363703641:DBG:Files:Array
+1363703641:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363703641:DBG:Last Index:36
+1363703641:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363703641:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363703641:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363703822:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363703822:DBG:Files:Array
+1363703822:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363703822:DBG:Last Index:36
+1363703822:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363703822:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363703822:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363704003:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363704003:DBG:Files:Array
+1363704003:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363704003:DBG:Last Index:36
+1363704003:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363704003:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363704003:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363704186:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363704186:DBG:Files:Array
+1363704186:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363704186:DBG:Last Index:36
+1363704186:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363704186:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363704186:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363704386:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363704386:DBG:Files:Array
+1363704386:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363704386:DBG:Last Index:36
+1363704386:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363704386:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363704386:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363704567:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363704567:DBG:Files:Array
+1363704567:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363704567:DBG:Last Index:36
+1363704567:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363704567:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363704567:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363704748:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363704748:DBG:Files:Array
+1363704748:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363704748:DBG:Last Index:36
+1363704748:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363704748:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363704748:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363704949:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363704949:DBG:Files:Array
+1363704949:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363704949:DBG:Last Index:36
+1363704949:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363704949:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363704949:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363705137:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363705137:DBG:Files:Array
+1363705137:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363705137:DBG:Last Index:36
+1363705137:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363705137:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363705137:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363705320:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363705320:DBG:Files:Array
+1363705320:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363705320:DBG:Last Index:36
+1363705320:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363705320:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363705320:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363705522:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363705522:DBG:Files:Array
+1363705522:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363705522:DBG:Last Index:36
+1363705522:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363705522:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363705522:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363705705:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363705705:DBG:Files:Array
+1363705705:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363705705:DBG:Last Index:36
+1363705705:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363705705:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363705705:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363705886:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363705886:DBG:Files:Array
+1363705886:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363705886:DBG:Last Index:36
+1363705886:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363705886:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363705886:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363706082:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363706082:DBG:Files:Array
+1363706082:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363706082:DBG:Last Index:36
+1363706082:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363706082:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363706082:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363706262:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363706262:DBG:Files:Array
+1363706262:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363706262:DBG:Last Index:36
+1363706262:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363706262:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363706262:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363706457:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363706457:DBG:Files:Array
+1363706457:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363706457:DBG:Last Index:36
+1363706457:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363706457:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363706457:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363706637:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363706637:DBG:Files:Array
+1363706637:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363706637:DBG:Last Index:36
+1363706637:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363706637:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363706637:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363706823:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363706823:DBG:Files:Array
+1363706823:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363706823:DBG:Last Index:36
+1363706823:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363706823:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363706823:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363707027:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363707027:DBG:Files:Array
+1363707027:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363707027:DBG:Last Index:36
+1363707027:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363707027:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363707027:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363707221:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363707221:DBG:Files:Array
+1363707221:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363707221:DBG:Last Index:36
+1363707221:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363707221:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363707221:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363707401:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363707401:DBG:Files:Array
+1363707401:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363707401:DBG:Last Index:36
+1363707401:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363707401:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363707401:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363707581:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363707581:DBG:Files:Array
+1363707581:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363707581:DBG:Last Index:36
+1363707581:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363707581:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363707582:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363707762:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363707762:DBG:Files:Array
+1363707762:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363707762:DBG:Last Index:36
+1363707762:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363707762:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363707762:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363707941:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363707941:DBG:Files:Array
+1363707941:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363707941:DBG:Last Index:36
+1363707941:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363707941:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363707941:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363708125:DBG:Incoming DataF: d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex,
+1363708125:DBG:Files:Array
+1363708125:DBG:Discovered dataf:d1c/d1c57613500002d58c565e89c01ca69b/SynMTml.nex
+1363708125:DBG:Last Index:36
+1363708125:DBG:Finalized dataf:/export/grid_files/cache/d1c/d1c57613500002d58c565e89c01ca69b
+1363708125:/export/grid_files/cache/566/56610b1b90a2dec86c582c79879b0aca/
+1363708126:DBG:Array
+(
+    [0] => subset0 58 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 42 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 50 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 97 49 15.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363742794:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363742794:DBG:Files:Array
+1363742794:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363742794:DBG:Last Index:36
+1363742794:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363742794:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363742794:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363742973:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363742973:DBG:Files:Array
+1363742973:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363742973:DBG:Last Index:36
+1363742973:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363742973:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363742973:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363743152:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363743152:DBG:Files:Array
+1363743152:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363743152:DBG:Last Index:36
+1363743152:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363743152:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363743152:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363743352:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363743352:DBG:Files:Array
+1363743352:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363743352:DBG:Last Index:36
+1363743352:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363743352:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363743352:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363743531:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363743531:DBG:Files:Array
+1363743531:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363743531:DBG:Last Index:36
+1363743531:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363743531:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363743531:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363743710:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363743710:DBG:Files:Array
+1363743710:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363743710:DBG:Last Index:36
+1363743710:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363743710:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363743710:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363743908:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363743908:DBG:Files:Array
+1363743908:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363743908:DBG:Last Index:36
+1363743908:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363743908:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363743908:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363744091:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363744091:DBG:Files:Array
+1363744091:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363744091:DBG:Last Index:36
+1363744091:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363744091:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363744091:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363744274:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363744274:DBG:Files:Array
+1363744274:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363744274:DBG:Last Index:36
+1363744274:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363744274:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363744274:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363744453:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363744453:DBG:Files:Array
+1363744453:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363744453:DBG:Last Index:36
+1363744453:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363744453:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363744453:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363744652:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363744652:DBG:Files:Array
+1363744652:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363744652:DBG:Last Index:36
+1363744652:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363744652:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363744652:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363744832:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363744832:DBG:Files:Array
+1363744832:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363744832:DBG:Last Index:36
+1363744832:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363744832:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363744832:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363745015:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363745015:DBG:Files:Array
+1363745015:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363745015:DBG:Last Index:36
+1363745015:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363745015:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363745015:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363745197:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363745197:DBG:Files:Array
+1363745197:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363745197:DBG:Last Index:36
+1363745197:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363745197:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363745197:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363745395:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363745395:DBG:Files:Array
+1363745395:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363745395:DBG:Last Index:36
+1363745395:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363745395:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363745395:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363745575:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363745575:DBG:Files:Array
+1363745575:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363745575:DBG:Last Index:36
+1363745575:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363745575:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363745575:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363745754:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363745754:DBG:Files:Array
+1363745754:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363745754:DBG:Last Index:36
+1363745754:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363745754:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363745754:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363745933:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363745933:DBG:Files:Array
+1363745933:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363745933:DBG:Last Index:36
+1363745933:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363745933:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363745933:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363746115:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363746115:DBG:Files:Array
+1363746115:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363746115:DBG:Last Index:36
+1363746115:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363746115:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363746115:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363746309:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363746309:DBG:Files:Array
+1363746309:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363746309:DBG:Last Index:36
+1363746309:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363746309:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363746309:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363746489:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363746489:DBG:Files:Array
+1363746489:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363746489:DBG:Last Index:36
+1363746489:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363746489:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363746489:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363746670:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363746670:DBG:Files:Array
+1363746670:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363746670:DBG:Last Index:36
+1363746670:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363746670:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363746670:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363746871:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363746871:DBG:Files:Array
+1363746871:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363746871:DBG:Last Index:36
+1363746871:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363746871:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363746871:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363747050:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363747050:DBG:Files:Array
+1363747050:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363747050:DBG:Last Index:36
+1363747050:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363747050:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363747050:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363747233:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363747233:DBG:Files:Array
+1363747233:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363747233:DBG:Last Index:36
+1363747233:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363747233:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363747233:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363747429:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363747429:DBG:Files:Array
+1363747429:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363747429:DBG:Last Index:36
+1363747429:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363747429:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363747429:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363747609:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363747609:DBG:Files:Array
+1363747609:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363747609:DBG:Last Index:36
+1363747609:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363747609:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363747609:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363747789:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363747789:DBG:Files:Array
+1363747789:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363747789:DBG:Last Index:36
+1363747789:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363747789:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363747789:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363747968:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363747968:DBG:Files:Array
+1363747968:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363747968:DBG:Last Index:36
+1363747968:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363747968:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363747968:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363748165:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363748165:DBG:Files:Array
+1363748165:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363748165:DBG:Last Index:36
+1363748165:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363748165:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363748165:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363748345:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363748345:DBG:Files:Array
+1363748345:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363748345:DBG:Last Index:36
+1363748345:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363748345:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363748345:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363748524:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363748524:DBG:Files:Array
+1363748524:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363748524:DBG:Last Index:36
+1363748524:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363748524:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363748524:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363748721:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363748721:DBG:Files:Array
+1363748721:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363748721:DBG:Last Index:36
+1363748721:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363748721:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363748721:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363748901:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363748901:DBG:Files:Array
+1363748901:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363748901:DBG:Last Index:36
+1363748901:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363748901:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363748901:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363749094:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363749094:DBG:Files:Array
+1363749094:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363749094:DBG:Last Index:36
+1363749094:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363749094:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363749094:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363749274:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363749274:DBG:Files:Array
+1363749274:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363749274:DBG:Last Index:36
+1363749274:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363749274:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363749274:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363749454:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363749454:DBG:Files:Array
+1363749454:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363749454:DBG:Last Index:36
+1363749454:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363749454:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363749454:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363749633:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363749633:DBG:Files:Array
+1363749633:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363749633:DBG:Last Index:36
+1363749633:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363749633:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363749633:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363749814:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363749814:DBG:Files:Array
+1363749814:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363749814:DBG:Last Index:36
+1363749814:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363749814:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363749814:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363750011:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363750011:DBG:Files:Array
+1363750011:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363750011:DBG:Last Index:36
+1363750011:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363750011:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363750011:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363750190:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363750190:DBG:Files:Array
+1363750190:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363750190:DBG:Last Index:36
+1363750190:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363750190:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363750190:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363750370:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363750370:DBG:Files:Array
+1363750370:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363750370:DBG:Last Index:36
+1363750370:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363750370:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363750370:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363750550:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363750550:DBG:Files:Array
+1363750550:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363750550:DBG:Last Index:36
+1363750550:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363750550:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363750550:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363750730:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363750730:DBG:Files:Array
+1363750730:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363750730:DBG:Last Index:36
+1363750730:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363750730:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363750730:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363750910:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363750910:DBG:Files:Array
+1363750910:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363750910:DBG:Last Index:36
+1363750910:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363750910:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363750910:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363751090:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363751090:DBG:Files:Array
+1363751090:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363751090:DBG:Last Index:36
+1363751090:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363751090:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363751090:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363751270:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363751270:DBG:Files:Array
+1363751270:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363751270:DBG:Last Index:36
+1363751270:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363751270:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363751270:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363751463:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363751463:DBG:Files:Array
+1363751463:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363751463:DBG:Last Index:36
+1363751463:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363751463:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363751463:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363751642:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363751642:DBG:Files:Array
+1363751642:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363751642:DBG:Last Index:36
+1363751642:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363751642:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363751642:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1363751822:DBG:Incoming DataF: 585/585d361d51fea485e574401148553521/SynNml.nex,
+1363751822:DBG:Files:Array
+1363751822:DBG:Discovered dataf:585/585d361d51fea485e574401148553521/SynNml.nex
+1363751822:DBG:Last Index:36
+1363751822:DBG:Finalized dataf:/export/grid_files/cache/585/585d361d51fea485e574401148553521
+1363751822:/export/grid_files/cache/ae7/ae768f1cbbc8991a6ea89b16b0d7c80b/
+1363751822:DBG:Array
+(
+    [0] => subset0 20 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [1] => subset1 58 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [2] => subset2 5 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [3] => subset3 47 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+    [4] => subset4 49 49 11.0 nucleotide 6rate estimate gamma 4 estimate
+)
+

@@ -1,0 +1,107 @@
+1358227802:------Starting to build matrix 1358227802 ------
+1358227804:ERROR:Unable to resolve Resource Type on 3904
+1358227804:ERROR:Unable to resolve Resource Type on 3907
+1358227804:ERROR:Unable to resolve Resource Type on 3909
+1358227804:ERROR:Unable to resolve Resource Type on 3910
+1358227804:ERROR:Unable to resolve Resource Type on 3911
+1358227805:ERROR:Unable to resolve Resource Type on 3913
+1358227805:ERROR:Unable to resolve Resource Type on 3914
+1358227805:ERROR:Unable to resolve Resource Type on 3921
+1358227805:ERROR:Unable to resolve Resource Type on 3922
+1358227805:ERROR:Unable to resolve Resource Type on 3928
+1358227806:ERROR:Unable to resolve Resource Type on 3931
+1358227806:ERROR:Unable to resolve Resource Type on 3932
+1358227806:ERROR:Unable to resolve Resource Type on 3935
+1358227806:ERROR:Unable to resolve Resource Type on 3936
+1358227806:ERROR:Unable to resolve Resource Type on 3938
+1358227807:ERROR:Unable to resolve Resource Type on 3941
+1358227807:ERROR:Unable to resolve Resource Type on 3942
+1358227807:ERROR:Unable to resolve Resource Type on 3945
+1358227807:ERROR:Unable to resolve Resource Type on 3946
+1358227807:ERROR:Unable to resolve Resource Type on 3948
+1358227808:ERROR:Unable to resolve Resource Type on 3951
+1358227808:ERROR:Unable to resolve Resource Type on 3955
+1358227808:ERROR:Unable to resolve Resource Type on 3956
+1358227808:ERROR:Unable to resolve Resource Type on 3964
+1358227808:ERROR:Unable to resolve Resource Type on 3966
+1358227809:ERROR:Unable to resolve Resource Type on 3970
+1358227809:ERROR:Unable to resolve Resource Type on 3980
+1358227809:ERROR:Unable to resolve Resource Type on 3982
+1358227810:ERROR:Unable to resolve Resource Type on 3983
+1358227810:ERROR:Unable to resolve Resource Type on 3984
+1358227810:ERROR:Unable to resolve Resource Type on 4022
+1358227810:ERROR:Unable to resolve Resource Type on 4029
+1358227810:ERROR:Unable to resolve Resource Type on 4031
+1358227811:ERROR:Unable to resolve Resource Type on 4048
+1358227811:ERROR:Unable to resolve Resource Type on 4052
+1358227811:ERROR:Unable to resolve Resource Type on 4054
+1358227811:ERROR:Unable to resolve Resource Type on 4055
+1358227811:ERROR:Unable to resolve Resource Type on 4056
+1358227811:ERROR:Unable to resolve Resource Type on 4058
+1358227893:------Finished building matrix 1358227893 ------
+1358265511:DBG:Incoming DataF: 082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex,
+1358265511:DBG:Files:Array
+1358265511:DBG:Discovered dataf:082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex
+1358265511:DBG:Last Index:36
+1358265511:DBG:Finalized dataf:/export/grid_files/cache/082/08213abfc010fe6fa7a5ac109a7374b8
+1358265511:/export/grid_files/cache/f5e/f5e4e860754e226d289e50beeffe6dfe/
+1358265511:DBG:Array
+(
+    [0] => subset1 405113 16 1657.4 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1358265551:DBG:Incoming DataF: 082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex,
+1358265551:DBG:Files:Array
+1358265551:DBG:Discovered dataf:082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex
+1358265551:DBG:Last Index:36
+1358265551:DBG:Finalized dataf:/export/grid_files/cache/082/08213abfc010fe6fa7a5ac109a7374b8
+1358265551:/export/grid_files/cache/f5e/f5e4e860754e226d289e50beeffe6dfe/
+1358265551:DBG:Array
+(
+    [0] => subset1 405113 16 1657.4 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1358265590:DBG:Incoming DataF: 082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex,
+1358265590:DBG:Files:Array
+1358265590:DBG:Discovered dataf:082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex
+1358265590:DBG:Last Index:36
+1358265590:DBG:Finalized dataf:/export/grid_files/cache/082/08213abfc010fe6fa7a5ac109a7374b8
+1358265590:/export/grid_files/cache/f5e/f5e4e860754e226d289e50beeffe6dfe/
+1358265590:DBG:Array
+(
+    [0] => subset1 405113 16 1657.4 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1358265627:DBG:Incoming DataF: 082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex,
+1358265627:DBG:Files:Array
+1358265627:DBG:Discovered dataf:082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex
+1358265627:DBG:Last Index:36
+1358265627:DBG:Finalized dataf:/export/grid_files/cache/082/08213abfc010fe6fa7a5ac109a7374b8
+1358265627:/export/grid_files/cache/f5e/f5e4e860754e226d289e50beeffe6dfe/
+1358265627:DBG:Array
+(
+    [0] => subset1 405113 16 1657.4 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1358265664:DBG:Incoming DataF: 082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex,
+1358265664:DBG:Files:Array
+1358265664:DBG:Discovered dataf:082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex
+1358265664:DBG:Last Index:36
+1358265664:DBG:Finalized dataf:/export/grid_files/cache/082/08213abfc010fe6fa7a5ac109a7374b8
+1358265664:/export/grid_files/cache/f5e/f5e4e860754e226d289e50beeffe6dfe/
+1358265664:DBG:Array
+(
+    [0] => subset1 405113 16 1657.4 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1358265701:DBG:Incoming DataF: 082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex,
+1358265701:DBG:Files:Array
+1358265701:DBG:Discovered dataf:082/08213abfc010fe6fa7a5ac109a7374b8/lep15taxa_plus_bombyx_1575_OGs.nex
+1358265701:DBG:Last Index:36
+1358265701:DBG:Finalized dataf:/export/grid_files/cache/082/08213abfc010fe6fa7a5ac109a7374b8
+1358265701:/export/grid_files/cache/f5e/f5e4e860754e226d289e50beeffe6dfe/
+1358265701:DBG:Array
+(
+    [0] => subset1 405113 16 1657.4 nucleotide 6rate estimate gamma 4 estimate
+)
+

@@ -1,0 +1,74 @@
+1368676869:DBG:Incoming DataF: a2d/a2d7fd07baa772f48c7c33e6516e9598/Degen_lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix_divergent_removed.fasta,
+1368676869:DBG:Files:Array
+1368676869:DBG:Discovered dataf:a2d/a2d7fd07baa772f48c7c33e6516e9598/Degen_lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix_divergent_removed.fasta
+1368676869:DBG:Last Index:36
+1368676869:DBG:Finalized dataf:/export/grid_files/cache/a2d/a2d7fd07baa772f48c7c33e6516e9598
+1368676869:/export/grid_files/cache/a64/a6458773c74732604f6c258bbe5de862/
+1368676901:DBG:Array
+(
+    [0] => subset1 409532 15 1739.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368676963:DBG:Incoming DataF: a2d/a2d7fd07baa772f48c7c33e6516e9598/Degen_lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix_divergent_removed.fasta,
+1368676963:DBG:Files:Array
+1368676963:DBG:Discovered dataf:a2d/a2d7fd07baa772f48c7c33e6516e9598/Degen_lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix_divergent_removed.fasta
+1368676963:DBG:Last Index:36
+1368676963:DBG:Finalized dataf:/export/grid_files/cache/a2d/a2d7fd07baa772f48c7c33e6516e9598
+1368676963:/export/grid_files/cache/a64/a6458773c74732604f6c258bbe5de862/
+1368676963:DBG:Array
+(
+    [0] => subset1 409532 15 1739.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368677042:DBG:Incoming DataF: a2d/a2d7fd07baa772f48c7c33e6516e9598/Degen_lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix_divergent_removed.fasta,
+1368677042:DBG:Files:Array
+1368677042:DBG:Discovered dataf:a2d/a2d7fd07baa772f48c7c33e6516e9598/Degen_lep15taxa_plus_bombyx_CON_degen1_addallfrags_bugfix_divergent_removed.fasta
+1368677042:DBG:Last Index:36
+1368677042:DBG:Finalized dataf:/export/grid_files/cache/a2d/a2d7fd07baa772f48c7c33e6516e9598
+1368677042:/export/grid_files/cache/a64/a6458773c74732604f6c258bbe5de862/
+1368677042:DBG:Array
+(
+    [0] => subset1 409532 15 1739.9 nucleotide 6rate estimate gamma 4 estimate
+)
+
+1368678601:------Starting to build matrix 1368678601 ------
+1368678604:ERROR:Unable to resolve Resource Type on 3904
+1368678605:ERROR:Unable to resolve Resource Type on 3907
+1368678605:ERROR:Unable to resolve Resource Type on 3909
+1368678605:ERROR:Unable to resolve Resource Type on 3910
+1368678605:ERROR:Unable to resolve Resource Type on 3911
+1368678605:ERROR:Unable to resolve Resource Type on 3913
+1368678605:ERROR:Unable to resolve Resource Type on 3914
+1368678606:ERROR:Unable to resolve Resource Type on 3921
+1368678606:ERROR:Unable to resolve Resource Type on 3922
+1368678606:ERROR:Unable to resolve Resource Type on 3928
+1368678606:ERROR:Unable to resolve Resource Type on 3931
+1368678607:ERROR:Unable to resolve Resource Type on 3932
+1368678607:ERROR:Unable to resolve Resource Type on 3935
+1368678607:ERROR:Unable to resolve Resource Type on 3936
+1368678607:ERROR:Unable to resolve Resource Type on 3938
+1368678608:ERROR:Unable to resolve Resource Type on 3941
+1368678608:ERROR:Unable to resolve Resource Type on 3942
+1368678608:ERROR:Unable to resolve Resource Type on 3945
+1368678608:ERROR:Unable to resolve Resource Type on 3946
+1368678608:ERROR:Unable to resolve Resource Type on 3948
+1368678608:ERROR:Unable to resolve Resource Type on 3951
+1368678609:ERROR:Unable to resolve Resource Type on 3955
+1368678609:ERROR:Unable to resolve Resource Type on 3956
+1368678609:ERROR:Unable to resolve Resource Type on 3964
+1368678609:ERROR:Unable to resolve Resource Type on 3966
+1368678609:ERROR:Unable to resolve Resource Type on 3970
+1368678610:ERROR:Unable to resolve Resource Type on 3980
+1368678610:ERROR:Unable to resolve Resource Type on 3982
+1368678610:ERROR:Unable to resolve Resource Type on 3983
+1368678610:ERROR:Unable to resolve Resource Type on 3984
+1368678611:ERROR:Unable to resolve Resource Type on 4022
+1368678611:ERROR:Unable to resolve Resource Type on 4029
+1368678611:ERROR:Unable to resolve Resource Type on 4031
+1368678611:ERROR:Unable to resolve Resource Type on 4048
+1368678611:ERROR:Unable to resolve Resource Type on 4052
+1368678611:ERROR:Unable to resolve Resource Type on 4054
+1368678611:ERROR:Unable to resolve Resource Type on 4055
+1368678612:ERROR:Unable to resolve Resource Type on 4056
+1368678612:ERROR:Unable to resolve Resource Type on 4058
+1368678808:------Finished building matrix 1368678808 ------
