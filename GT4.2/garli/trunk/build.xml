@@ -306,11 +306,8 @@ schema.local:   Directory where our schema files are located.
 		<javac srcdir="${stubs.src}" destdir="${stubs.dest}" debug="${java.debug}">
 			<include name="**/*.java" />
 			<classpath>
-				<fileset dir="${globus.location}/lib">
+				<fileset dir="/molehomes/gt4admin/newVersions">
 					<include name="*.jar" />
-					<exclude name="${stubs.jar.name}" />
-					<exclude name="${jar.name}" />
-                    <exclude name="GSBL.jar" />
 				</fileset>
 			</classpath>
 		</javac>
@@ -326,11 +323,8 @@ schema.local:   Directory where our schema files are located.
 		<javac srcdir="${src.dir}" includes="${package.dir}/impl/**,${package.dir}/clients/**,${package.dir}/shared/**" destdir="${build.dest}" debug="${java.debug}" deprecation="${deprecation}">
 			<classpath>
 				<pathelement location="${stubs.dest}" />
-				<fileset dir="${globus.location}/lib">
+				<fileset dir="/molehomes/gt4admin/newVersions">
 					<include name="*.jar" />
-					<exclude name="${stubs.jar.name}" />
-					<exclude name="${jar.name}" />
-                    <exclude name="GSBL.jar" />
 				</fileset>
 			</classpath>
 		</javac>
