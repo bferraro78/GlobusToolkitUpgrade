@@ -62,9 +62,9 @@ src.dir:        Directory where source files are located.
 schema.local:   Directory where our schema files are located.
 
 -->
-<project default="all" name="GSBT GT6 buildfile" basedir=".">
+<project default="all" name="GSBT GT4 buildfile" basedir=".">
 	<description>
-        GSBT GT6 buildfile
+        GSBT GT4 buildfile
     </description>
 
 	<!-- Define the environment variable -->

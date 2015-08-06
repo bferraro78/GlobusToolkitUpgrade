@@ -118,6 +118,11 @@ public class GARLISubmitClient extends GSBLClient {
 		env.load(Runtime.getRuntime().exec("env").getInputStream());
 		String cwd = (String)env.get("PWD");
 		String hostname = (String)env.get("HOSTNAME");
+		//String gl = (String)env.get("GSBL_CONFIG_DIR");
+
+		//System.out.println("CWD: " + cwd);
+		//System.out.println("Hostname: " + hostname);
+		//System.out.println("GSBL_CONFIG_DIR" + gl);
 
 		// Create a working directory on the service side.
 		Integer replicates = myBean.getReplicates();
