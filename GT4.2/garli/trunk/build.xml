@@ -301,7 +301,7 @@ schema.local:   Directory where our schema files are located.
 	</target>
 
 	
-	<!-- Compile the stubs generated in the previous step -->
+	<!-- Compile the stubs generated in the previous step--> 
 	<target name="compileStubs" depends="stubs, factoryStubs">
 		<javac srcdir="${stubs.src}" destdir="${stubs.dest}" debug="${java.debug}">
 			<include name="**/*.java" />
@@ -311,12 +311,11 @@ schema.local:   Directory where our schema files are located.
 				</fileset>
 			</classpath>
 		</javac>
-		<!-- Copy compiled stubs to global stub directory (see note above) -->
+
 		<copy toDir="${stubs.global.dest}" overwrite="true">
 			<fileset dir="${stubs.dest}"/>	
 		</copy>
 	</target>
-
 	
 	<!-- Compile the implementation classes (service, resource, clients, etc.) -->
 	<target name="compile" depends="compileStubs">
@@ -325,7 +324,7 @@ schema.local:   Directory where our schema files are located.
 				<pathelement location="${stubs.dest}" />
 				<fileset dir="/molehomes/gt4admin/newVersions">
 					<include name="*.jar" />
-				</fileset>
+      				</fileset>
 			</classpath>
 		</javac>
 	</target>
