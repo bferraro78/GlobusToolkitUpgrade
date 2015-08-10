@@ -516,6 +516,7 @@ public class GARLIService extends GSBLService {
 					unique_id, argumentString, scheduler, resource, arch_os,
 					job.getCPUs(), job.getReplicates(),
 					(new Integer(runtime_estimate_seconds).toString()),
+					(new Integer(runtime_estimate_seconds_recent).toString()),
 					(new Integer(searchreps).toString()),
 					(new Integer(bootstrapreps).toString()));
 			 
