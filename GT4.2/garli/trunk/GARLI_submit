@@ -1,11 +1,12 @@
 #!/usr/bin/perl
 
+use lib "/home/gt6admin/GT6Upgrade/GSBL-GT4.2/trunk/blib/lib";
 use strict;
 use Cwd;
 use GSBL::Client ':all';
 
 use FindBin qw($RealBin);
-use lib "$RealBin/../lib";
+
 
 my %option_desc = ( 
 
