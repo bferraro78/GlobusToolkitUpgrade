@@ -6,7 +6,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://cummings.umiacs.umd.edu/GSBL/service_runtime http://cummings.umiacs.umd.edu/GSBL/service_runtime.xsd">
         <requirements>"has_GARLI == TRUE"</requirements>
-	<argument_description>/export/work/globus/service_configurations/GARLI.description.xml</argument_description>
+		<argument_description>/home/gt6admin/GARLI.description.xml</argument_description>
 	<executable>garli</executable>
 	<scheduler>https://asparagine.umiacs.umd.edu:8443/wsrf/services/ManagedJobFactoryService</scheduler>
 	<resource>Condor</resource>
