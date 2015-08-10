@@ -497,8 +497,8 @@ public class GARLIService extends GSBLService {
 				globus_command += "/jobmanager-fork";
 			}
 
-			/* Executes a globusrun command */
-			GSBLUtils.executeCommand(globus_command, "rslString"); 
+			/* Executes a globusrun command. */
+			GSBLUtils.executeCommand(globus_command, "rslString" + unique_id);
 			
 			System.out.println("Globusrun Command: " + globus_command);
 
