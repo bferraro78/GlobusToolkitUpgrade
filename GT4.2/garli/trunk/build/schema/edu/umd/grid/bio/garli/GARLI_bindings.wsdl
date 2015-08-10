@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService/bindings" xmlns:porttype="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" location="GARLI_flattened.wsdl"/>
+  <wsdl:binding name="GARLIPortTypeSOAPBinding" type="porttype:GARLIPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="runService">
+      <soap:operation soapAction="http://www.umd.edu/namespaces/grid/bio/GARLIService/GARLIPortType/runServiceRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createWorkingDir">
+      <soap:operation soapAction="http://www.umd.edu/namespaces/grid/bio/GARLIService/GARLIPortType/createWorkingDirRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>
