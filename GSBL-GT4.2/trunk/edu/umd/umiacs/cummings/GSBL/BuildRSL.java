@@ -625,7 +625,7 @@ public class BuildRSL {
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
 					document.append("\n                    (file:///$(SERVER)")
-						.append(output_files[i]).append(" gsiftp://(CLIENT)")
+						.append(output_files[i]).append(" gsiftp://$(CLIENT)")
 						.append(output_files[i]).append(")");
 				}
 			}
@@ -638,7 +638,7 @@ public class BuildRSL {
 
 	private void transferOutputFiles() {
 		if ((output_files != null) && (output_files.length > 0)) {
-			document.append("\n                  ");
+			document.append("\n                 ");
 			if (resource.equals("Condor")) {
 				document.append(" ");
 			}
