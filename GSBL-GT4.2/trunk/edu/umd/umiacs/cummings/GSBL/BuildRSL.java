@@ -396,7 +396,7 @@ public class BuildRSL {
 		// Add RSL substitutions.
 		document.append("& (rsl_substitution = (CLIENT ")
 			.append(hostname).append(workingDir).append(")");
-		document.append("\n                      (SERVER ${GLOBUS_SCRATCH_DIR}/")
+		document.append("\n                      (SERVER $(GLOBUS_SCRATCH_DIR)/")
 			.append(unique_id).append("/)");
 		document.append(")");  // End RSL substitution.
 
@@ -474,16 +474,16 @@ public class BuildRSL {
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
 				document.append("(min_memory ").append(max_memory)
-					.append(")                   ");
+					.append(")");
 			}
-			document.append("\n                   (architecture ").append(architecture).append(")");
-			document.append("\n                   (operating_system ").append(os).append(")");
-			document.append("\n                   (should_transfer_files YES)");
-			document.append("\n                   (when_to_transfer_output ON_EXIT)");
+			document.append("\n                  (architecture ").append(architecture).append(")");
+			document.append("\n                  (operating_system ").append(os).append(")");
+			document.append("\n                  (should_transfer_files YES)");
+			document.append("\n                  (when_to_transfer_output ON_EXIT)");
 
 			// Handle sharedFiles.
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
-				document.append("\n                   (transfer_input_files ");
+				document.append("\n                  (transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
 					document.append(sharedFiles.get(i));
 					if (i != (sharedFiles.size() - 1)) {
@@ -499,8 +499,8 @@ public class BuildRSL {
 			}
 			transferOutputFiles();
 
-			document.append("\n                   (stream_output False)");
-			document.append("\n                   (stream_error False))");  // End condorsubmit.
+			document.append("\n                  (stream_output False)");
+			document.append("\n                  (stream_error False))");  // End condorsubmit.
 
 		} else if (resource.equals("PBS") || resource.equals("SGE")) {
 			// Do pbssubmit and/or sgesubmit or equivalent(s) exist?
@@ -509,7 +509,7 @@ public class BuildRSL {
 			if (job_type.equals("single")) {
 				if (!max_memory.equals("")) {
 					document.append("(max_memory = ").append(max_memory)
-						.append(")\n               ");
+						.append(")\n              ");
 				}
 				document.append("(nodes = ").append(replicates)
 					.append(")");
@@ -517,12 +517,12 @@ public class BuildRSL {
 				if (max_mem != null) {
 					Integer memory = new Integer(max_mem.intValue() * num_cpus);
 					document.append("(max_memory = ").append(memory)
-						.append(")\n               ");
+						.append(")\n              ");
 				}
 				document.append("(nodes = ").append(cpus).append(")");
 
 				if (reps > 1) {
-					document.append("\n               (replicates = ")
+					document.append("\n              (replicates = ")
 						.append(replicates).append(")");
 				}
 			}
@@ -541,7 +541,7 @@ public class BuildRSL {
 			}
 			if (runtime_estimate_seconds != -1) {
 				if (doIndent) {
-					document.append("\n                  ");
+					document.append("\n                 ");
 				} else {
 					doIndent = true;
 				}
@@ -550,7 +550,7 @@ public class BuildRSL {
 			}
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 				if (doIndent) {
-					document.append("\n                  ");
+					document.append("\n                 ");
 				}
 				document.append("(transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
