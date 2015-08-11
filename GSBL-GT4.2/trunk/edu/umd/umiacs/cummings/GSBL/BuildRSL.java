@@ -396,7 +396,7 @@ public class BuildRSL {
 		// Add RSL substitutions.
 		document.append("& (rsl_substitution = (CLIENT ")
 			.append(hostname).append(workingDir).append(")");
-		document.append("\n                      (SERVER $(GLOBUS_SCRATCH_DIR)/")
+		document.append("\n                      (SERVER $(HOME)/")  // Changed from "$(GLOBUS_SCRATCH_DIR" for testing.
 			.append(unique_id).append("/)");
 		document.append(")");  // End RSL substitution.
 
@@ -573,7 +573,7 @@ public class BuildRSL {
 
 			for (int i = 0; i < sharedFiles.size(); i++) {
 				document.append(" (gsiftp://$(CLIENT)")
-					.append(sharedFiles.get(i)).append(" file:///$(SERVER)")
+					.append(sharedFiles.get(i)).append(" file://$(SERVER)")
 					.append(sharedFiles.get(i)).append(")");
 				if (i != (sharedFiles.size() - 1)){
 					document.append("\n                  ");
@@ -608,23 +608,23 @@ public class BuildRSL {
 		if (reps > 1) {
 			if ((output_files != null) && (output_files.length > 0)) {
 				// Stage outputFiles.
-				document.append("\n  (file_stage_out = (file:///$(SERVER)")
+				document.append("\n  (file_stage_out = (file://$(SERVER)")
 					.append(unique_id).append(".output/")
 					.append(" gsiftp://$(CLIENT)").append(unique_id)
 					.append(".output/))");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
-			document.append("\n  (file_stage_out = (file:///$(SERVER)")
+			document.append("\n  (file_stage_out = (file://$(SERVER)")
 				.append("stdout gsiftp://$(CLIENT)")
-				.append("stdout)\n                    (file:///$(SERVER)")
+				.append("stdout)\n                    (file://$(SERVER)")
 				.append("stderr gsiftp://$(CLIENT)")
 				.append("stderr)");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					document.append("\n                    (file:///$(SERVER)")
+					document.append("\n                    (file://$(SERVER)")
 						.append(output_files[i]).append(" gsiftp://$(CLIENT)")
 						.append(output_files[i]).append(")");
 				}
@@ -633,7 +633,7 @@ public class BuildRSL {
 		}
 
 		// File cleanup.
-		document.append("\n  (file_clean_up = file:///$(SERVER))");
+		document.append("\n  (file_clean_up = file://$(SERVER))");
 	}  // End createRSL.
 
 	private void transferOutputFiles() {
