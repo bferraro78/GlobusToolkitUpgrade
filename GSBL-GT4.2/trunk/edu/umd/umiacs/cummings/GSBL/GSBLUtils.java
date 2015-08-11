@@ -29,8 +29,10 @@ public class GSBLUtils {
 			int exitVal = proc.waitFor();
 			if (exitVal == 0) {
 				log.debug(command + " was successful!");
+				System.out.println(command + " was successful!");
 			} else {
 				log.debug(command + " was NOT successful!");
+				System.out.println(command + " was NOT successful!");
 			}
 		} catch (Throwable t) {
 			StringWriter tStack = new StringWriter();
