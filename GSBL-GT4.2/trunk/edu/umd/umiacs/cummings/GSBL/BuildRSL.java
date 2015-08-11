@@ -469,7 +469,7 @@ public class BuildRSL {
 
 		// If the resource is Condor, add appropriate extensions.
 		if (resource.equals("Condor")) {
-			document.append("\n  (condor_submit = ");
+			document.append("\n  (condorsubmit = ");
 
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
@@ -500,12 +500,12 @@ public class BuildRSL {
 			transferOutputFiles();
 
 			document.append("\n                   (stream_output False)");
-			document.append("\n                   (stream_error False))");  // End condor_submit.
+			document.append("\n                   (stream_error False))");  // End condorsubmit.
 
 		} else if (resource.equals("PBS") || resource.equals("SGE")) {
-			// Do pbs_submit and/or sge_submit or equivalent(s) exist?
+			// Do pbssubmit and/or sgesubmit or equivalent(s) exist?
 			document.append("\n  (").append(resource.toLowerCase())
-				.append("_submit = ");
+				.append("submit = ");
 			if (job_type.equals("single")) {
 				if (!max_memory.equals("")) {
 					document.append("(max_memory = ").append(max_memory)
@@ -526,13 +526,13 @@ public class BuildRSL {
 						.append(replicates).append(")");
 				}
 			}
-			document.append(")");  // End pbs_submit/sge_submit.
+			document.append(")");  // End pbssubmit/sgesubmit.
 
 		} else if (resource.equals("BOINC")) {
 			boolean doIndent = false;  // For properly indenting RSL attributes.
 			
-			// Does boinc_submit or equivalent exist?
-			document.append("\n  (boinc_submit = ");
+			// Does boincsubmit or equivalent exist?
+			document.append("\n  (boincsubmit = ");
 
 			if (!max_memory.equals("")) {
 				doIndent = true;
@@ -563,7 +563,7 @@ public class BuildRSL {
 			}
 			transferOutputFiles();
 
-			document.append(")");  // End boinc_submit.
+			document.append(")");  // End boincsubmit.
 		}
 
 		// Stages in sharedFiles.
