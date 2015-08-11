@@ -722,7 +722,7 @@ public class BuildRSL {
 	 * @return host.
 	 */
 	public String getHost() {
-		return host;
+		return hostname;
 	}
 
 }
