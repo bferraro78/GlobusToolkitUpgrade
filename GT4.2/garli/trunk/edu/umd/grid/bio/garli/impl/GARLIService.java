@@ -482,7 +482,7 @@ public class GARLIService extends GSBLService {
 			}
 
 			/* globusrun command to execute */
-			String globus_command = "globusrun -f -batch -r " + job.getHost();
+			String globus_command = "globusrun -batch -r " + job.getHost();
 
 			// Add job manager.
 			if (resource.equals("Condor")) {
@@ -497,7 +497,7 @@ public class GARLIService extends GSBLService {
 				globus_command += "/jobmanager-fork";
 			}
 
-			globus_command += (" rslString" + unique_id);
+			globus_command += (" -f rslString" + unique_id);  // Add RSL file.
 
 			/* Executes a globusrun command */
 			GSBLUtils.executeCommand(globus_command);
