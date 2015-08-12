@@ -566,23 +566,22 @@ public class BuildRSL {
 			document.append(")");  // End boincsubmit.
 		}
 
+		document.append("\n  (file_stage_in =");
+
+		// Create the empty directory if it doesn't exist.
+		File emptyDir = new File(globusLocation + "/emptyDir/");
+		try {
+			emptyDir.mkdir();
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+		}
+
+		document.append(" (gsiftp://$(GSBL_CONFIG_DIR)emptyDir/ $(SERVER))");
+
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
-			document.append("\n  (file_stage_in =");
-			stageIn = true;
-
-			// Create the empty directory if it doesn't exist.
-			File emptyDir = new File(globusLocation + "/emptyDir/");
-			try {
-				emptyDir.mkdir();
-			} catch (Exception e) {
-				log.error("Exception: " + e);
-			}
-			
-			document.append(" (gsiftp://$(CLIENT)emptyDir/ $(SERVER))");
-
 			for (int i = 0; i < sharedFiles.size(); i++) {
-				document.append("\n                  (gsiftp://$(CLIENT)")
+				document.append("\n                   (gsiftp://$(CLIENT)")
 					.append(sharedFiles.get(i)).append(" $(SERVER)")
 					.append(sharedFiles.get(i)).append(")");
 			}
@@ -591,10 +590,6 @@ public class BuildRSL {
 		/*
 		// Stages in perJobFiles.
 		if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
-			if (stageIn == false) {  // No sharedFiles.
-				document.append("\n  (file_stage_in =");
-				stageIn = true;
-			}
 			for (int i = 0; i < perJobFiles.size(); i++) {
 				String[] tempcouples = perJobFiles.get(i);
 				for (int j = 0; j < tempcouples.length; j++) {
@@ -606,9 +601,7 @@ public class BuildRSL {
 		}
 		*/
 
-		if (stageIn == true) {
-			document.append(")");  // End file stage in.
-		}
+		document.append(")");  // End file stage in.
 
 		/* Begin file stage out. */
 		// If reps > 1, transfer back the entire output sub-directory.
