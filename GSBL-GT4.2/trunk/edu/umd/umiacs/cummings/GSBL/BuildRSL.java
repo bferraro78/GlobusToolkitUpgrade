@@ -576,7 +576,7 @@ public class BuildRSL {
 			log.error("Exception: " + e);
 		}
 
-		document.append(" (gsiftp://$(CLIENT)emptyDir/ $(SERVER))");
+		document.append(" (gsiftp://$(CLIENT)emptyDir/ file://$(SERVER))");
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
