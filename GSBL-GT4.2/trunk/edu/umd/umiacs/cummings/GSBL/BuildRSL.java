@@ -435,9 +435,7 @@ public class BuildRSL {
 		}
 
 		/* Sets the stdout/stderr in RSL to remote resource directory. */
-		// Add stdout.
 		document.append("\n  (stdout = $(SERVER)").append("stdout)");
-		// Add stderr.
 		document.append("\n  (stderr = $(SERVER)").append("stderr)");
 
 		// Add count element for multiple, mpi, and multiple mpi.
@@ -576,7 +574,7 @@ public class BuildRSL {
 			log.error("Exception: " + e);
 		}
 
-		document.append(" (gsiftp://$(CLIENT)emptyDir/ file://$(SERVER))");
+		document.append(" (gsiftp://$(CLIENT)emptyDir/ $(SERVER))");
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
@@ -594,7 +592,7 @@ public class BuildRSL {
 				String[] tempcouples = perJobFiles.get(i);
 				for (int j = 0; j < tempcouples.length; j++) {
 					document.append(" (gsiftp://$(CLIENT)")
-						.append(tempcouples[j]).append(" file:///$(SERVER)")
+						.append(tempcouples[j]).append(" $(SERVER)")
 						.append(tempcouples[j]).append(")");
 				}
 			}
