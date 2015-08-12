@@ -573,7 +573,7 @@ public class BuildRSL {
 
 			for (int i = 0; i < sharedFiles.size(); i++) {
 				document.append(" (gsiftp://$(CLIENT)")
-					.append(sharedFiles.get(i)).append(" file://$(SERVER)")
+					.append(sharedFiles.get(i)).append(" $(SERVER)")
 					.append(sharedFiles.get(i)).append(")");
 				if (i != (sharedFiles.size() - 1)){
 					document.append("\n                  ");

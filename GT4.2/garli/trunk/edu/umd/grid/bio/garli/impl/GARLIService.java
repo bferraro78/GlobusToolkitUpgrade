@@ -499,6 +499,8 @@ public class GARLIService extends GSBLService {
 
 			globus_command += (" -f rslString" + unique_id);  // Add RSL file.
 
+			GSBLUtils.executeCommand("mkdir ${HOME}/" + unique_id);  // Temporary "GLOBUS_SCRATCH_DIR" for testing.
+
 			/* Executes a globusrun command */
 			GSBLUtils.executeCommand(globus_command);
 			
