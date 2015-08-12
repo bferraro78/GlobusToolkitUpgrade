@@ -571,13 +571,20 @@ public class BuildRSL {
 			document.append("\n  (file_stage_in =");
 			stageIn = true;
 
+			// Create the empty directory if it doesn't exist.
+			File emptyDir = new File(globusLocation + "/emptyDir/");
+			try {
+				emptyDir.mkdir();
+			} catch (Exception e) {
+				log.error("Exception: " + e);
+			}
+			
+			document.append(" (gsiftp://$(CLIENT)emptyDir/ $(SERVER))");
+
 			for (int i = 0; i < sharedFiles.size(); i++) {
-				document.append(" (gsiftp://$(CLIENT)")
+				document.append("\n                  (gsiftp://$(CLIENT)")
 					.append(sharedFiles.get(i)).append(" $(SERVER)")
 					.append(sharedFiles.get(i)).append(")");
-				if (i != (sharedFiles.size() - 1)){
-					document.append("\n                  ");
-				}
 			}
 		}
 
