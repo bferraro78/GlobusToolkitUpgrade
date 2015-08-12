@@ -569,14 +569,14 @@ public class BuildRSL {
 		document.append("\n  (file_stage_in =");
 
 		// Create the empty directory if it doesn't exist.
-		File emptyDir = new File(globusLocation + "/emptyDir/");
+		File emptyDir = new File(workingDir + "/emptyDir/");
 		try {
 			emptyDir.mkdir();
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
 
-		document.append(" (gsiftp://$(GSBL_CONFIG_DIR)emptyDir/ $(SERVER))");
+		document.append(" (gsiftp://$(CLIENT)emptyDir/ $(SERVER))");
 
 		// Stages in sharedFiles.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
