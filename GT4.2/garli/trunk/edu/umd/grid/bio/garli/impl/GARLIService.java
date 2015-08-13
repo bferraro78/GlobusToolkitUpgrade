@@ -499,7 +499,8 @@ public class GARLIService extends GSBLService {
 
 			globus_command += (" -f rslString" + unique_id);  // Add RSL file.
 
-			String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://" + job.getHost() + job.getWorkingDir() + "emptyDir/ ${HOME}/" + unique_id + "/";
+			String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://" + job.getHost()
+				+ job.getWorkingDir() + "emptyDir/ file://${HOME}/" + unique_id + "/";
 
 			System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
