@@ -723,4 +723,11 @@ public class BuildRSL {
 		return hostname;
 	}
 
+	/**
+	 * @return working directory.
+	 */
+	public String getWorkingDir() {
+		return workingDir;
+	}
+
 }

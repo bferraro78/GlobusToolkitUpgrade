@@ -499,6 +499,8 @@ public class GARLIService extends GSBLService {
 
 			globus_command += (" -f rslString" + unique_id);  // Add RSL file.
 
+			GSBLUtils.executeCommand("globus-url-copy -cd -r gsiftp://" + job.getHost() + job.getWorkingDir() + "emptyDir/ file://${HOME}/" + unique_id);
+
 			/* Executes a globusrun command */
 			GSBLUtils.executeCommand(globus_command);
 			
