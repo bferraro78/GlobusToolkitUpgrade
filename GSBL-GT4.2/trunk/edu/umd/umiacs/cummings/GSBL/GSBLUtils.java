@@ -29,10 +29,8 @@ public class GSBLUtils {
 			int exitVal = proc.waitFor();
 			if (exitVal == 0) {
 				log.debug(command + " was successful!");
-				System.out.println(command + " was successful!");
 			} else {
 				log.debug(command + " was NOT successful!");
-				System.out.println(command + " was NOT successful!");
 			}
 		} catch (Throwable t) {
 			StringWriter tStack = new StringWriter();
@@ -134,6 +132,35 @@ public class GSBLUtils {
 		}
 		return output;
 	}
+
+	public static String executeCommandReturnOutput(String command) {
+		Process proc = null;
+		StringBuilder output = new StringBuilder();
+		try {
+			Runtime r = Runtime.getRuntime();
+			proc = r.exec(command);
+			int exitVal = proc.waitFor();
+			if (exitVal == 0) {
+				log.debug(command + " was successful!");
+			} else {
+				log.debug(command + " was NOT successful!");
+			}
+			String line = "";
+			InputStream stdout = proc.getInputStream();
+			InputStreamReader isr = new InputStreamReader(stdout);
+			BufferedReader br = new BufferedReader(isr);
+			while ((line = br.readLine()) != null) {
+				output.append(line).append("\n");
+			}
+			br.close();
+		} catch (Throwable t) {
+			StringWriter tStack = new StringWriter();
+			t.printStackTrace(new PrintWriter(tStack));
+			log.error(tStack);
+		}
+		return output.toString();
+	}
+
 
 	public static String getConfigElement(String configElement) {
 		String configValue = "null";
