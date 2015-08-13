@@ -396,7 +396,7 @@ public class BuildRSL {
 		// Add RSL substitutions.
 		document.append("& (rsl_substitution = (CLIENT ")
 			.append(hostname).append(workingDir).append(")");
-		document.append("\n                      (SERVER $(HOME)/")  // Changed from "$(GLOBUS_SCRATCH_DIR" for testing.
+		document.append("\n                      (SERVER $(HOME)/")  // Changed from "$(GLOBUS_SCRATCH_DIR)" for testing.
 			.append(unique_id).append("/)");
 		document.append(")");  // End RSL substitution.
 
@@ -563,7 +563,8 @@ public class BuildRSL {
 
 			document.append(")");  // End boincsubmit.
 		}
-
+		
+		/*
 		document.append("\n  (file_stage_in =");
 
 		// Create the empty directory if it doesn't exist.
@@ -585,23 +586,24 @@ public class BuildRSL {
 			}
 		}
 
-		/*
+		
 		// Stages in perJobFiles.
-		if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
-			for (int i = 0; i < perJobFiles.size(); i++) {
-				String[] tempcouples = perJobFiles.get(i);
-				for (int j = 0; j < tempcouples.length; j++) {
-					document.append(" (gsiftp://$(CLIENT)")
-						.append(tempcouples[j]).append(" $(SERVER)")
-						.append(tempcouples[j]).append(")");
-				}
-			}
-		}
-		*/
+		//if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
+		//	for (int i = 0; i < perJobFiles.size(); i++) {
+		//		String[] tempcouples = perJobFiles.get(i);
+		//		for (int j = 0; j < tempcouples.length; j++) {
+		//			document.append(" (gsiftp://$(CLIENT)")
+		//				.append(tempcouples[j]).append(" $(SERVER)")
+		//				.append(tempcouples[j]).append(")");
+		//		}
+		//	}
+		//}
+		
 
 		document.append(")");  // End file stage in.
+		
 
-		/* Begin file stage out. */
+		// Begin file stage out.
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
 			if ((output_files != null) && (output_files.length > 0)) {
@@ -632,6 +634,7 @@ public class BuildRSL {
 
 		// File cleanup.
 		document.append("\n  (file_clean_up = file://$(SERVER))");
+		*/
 	}  // End createRSL.
 
 	private void transferOutputFiles() {
