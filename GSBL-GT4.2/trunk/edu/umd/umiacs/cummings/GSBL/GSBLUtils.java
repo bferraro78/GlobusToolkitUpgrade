@@ -150,6 +150,7 @@ public class GSBLUtils {
 			InputStreamReader isr = new InputStreamReader(stdout);
 			BufferedReader br = new BufferedReader(isr);
 			while ((line = br.readLine()) != null) {
+				System.out.println(line);
 				output.append(line).append("\n");
 			}
 			br.close();
