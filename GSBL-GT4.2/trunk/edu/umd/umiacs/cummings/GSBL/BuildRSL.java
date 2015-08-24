@@ -563,7 +563,15 @@ public class BuildRSL {
 
 			document.append(")");  // End boincsubmit.
 		}
-		
+	
+		// Create job directory if it doesn't exist.
+		File dir = new File(workingDir + "/" + unique_id + "/");
+		try {
+			dir.mkdir();
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+		}
+
 		/*
 		document.append("\n  (file_stage_in =");
 
