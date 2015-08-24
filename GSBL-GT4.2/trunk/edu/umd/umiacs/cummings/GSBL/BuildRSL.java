@@ -583,14 +583,14 @@ public class BuildRSL {
 
 		String home = (String) env.get("HOME");
 
-		String gucStageInCmd = "globus-url-copy -cd -r gsiftp://"
+		String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://"
 			+ hostname + workingDir + unique_id + "/ file://"
 			+ home + "/" + unique_id + "/";
 
-		System.out.println("Globus-url-copy command: " + gucStageInCmd);
+		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
-		// Stage in job folder and its contents.
-		System.out.print(GSBLUtils.executeCommandReturnOutput(gucStageInCmd));
+		// Tranfer job folder and its contents.
+		System.out.print(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
 
 		/*
 		document.append("\n  (file_stage_in =");
@@ -663,15 +663,6 @@ public class BuildRSL {
 		// File cleanup.
 		document.append("\n  (file_clean_up = file://$(SERVER))");
 		*/
-
-		String gucStageOutCmd = "globus-url-copy -cd -r file://" + home + "/"
-			+ unique_id + "/ gsiftp://" + hostname + workingDir + unique_id
-			+ "/";
-
-		System.out.println("Globus-url-copy command: " + gucStageOutCmd);
-
-		// Stage out job folder and its contents.
-		System.out.print(GSBLUtils.executeCommandReturnOutput(gucStageOutCmd));
 	}  // End createRSL.
 
 	private void transferOutputFiles() {
