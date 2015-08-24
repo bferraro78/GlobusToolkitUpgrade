@@ -583,7 +583,7 @@ public class BuildRSL {
 		
 		// Changed source from "gsiftp://" + hostname + workingDir + unique_id + "/" for testing.
 		String globusUrlCopyCmd = "globus-url-copy -cd -r file://"
-			+ workingDir + unique_id + "/ gsiftp://" + "$HOME" + unique_id + "/";
+			+ workingDir + unique_id + "/ gsiftp://" + hostname + "$HOME" + unique_id + "/";
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Transfer job id folder and its contents.
