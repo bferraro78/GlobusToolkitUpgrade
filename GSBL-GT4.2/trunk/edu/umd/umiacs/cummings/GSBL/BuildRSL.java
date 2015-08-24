@@ -587,7 +587,9 @@ public class BuildRSL {
 			+ hostname + workingDir + unique_id + "/ file://"
 			+ home + "/" + unique_id + "/";
 
-		// Transfer job id folder and its contents.
+		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
+
+		// Transfer job folder and its contents.
 		System.out.print(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
 
 		/*
