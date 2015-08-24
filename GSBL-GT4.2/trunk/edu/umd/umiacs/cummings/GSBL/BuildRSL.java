@@ -572,7 +572,7 @@ public class BuildRSL {
 			log.error("Exception: " + e);
 		}
 
-		// Make symlinks.
+		// Make symlinks into job folder.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 			for (String f : sharedFiles) {
 				String symlinkCommand = ("ln -s " + workingDir + f
@@ -583,14 +583,14 @@ public class BuildRSL {
 
 		String home = (String) env.get("HOME");
 
-		String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://"
+		String gucStageInCmd = "globus-url-copy -cd -r gsiftp://"
 			+ hostname + workingDir + unique_id + "/ file://"
 			+ home + "/" + unique_id + "/";
 
-		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
+		System.out.println("Globus-url-copy command: " + gucStageInCmd);
 
-		// Transfer job folder and its contents.
-		System.out.print(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
+		// Stage in job folder and its contents.
+		System.out.print(GSBLUtils.executeCommandReturnOutput(gucStageInCmd));
 
 		/*
 		document.append("\n  (file_stage_in =");
@@ -663,6 +663,15 @@ public class BuildRSL {
 		// File cleanup.
 		document.append("\n  (file_clean_up = file://$(SERVER))");
 		*/
+
+		String gucStageOutCmd = "globus-url-copy -cd -r file://" + home + "/"
+			+ unique_id + "/ gsiftp://" + hostname + workingDir + unique_id
+			+ "/";
+
+		System.out.println("Globus-url-copy command: " + gucStageOutCmd);
+
+		// Stage out job folder and its contents.
+		System.out.print(GSBLUtils.executeCommandReturnOutput(gucStageOutCmd));
 	}  // End createRSL.
 
 	private void transferOutputFiles() {
