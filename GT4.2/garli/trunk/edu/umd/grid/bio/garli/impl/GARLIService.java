@@ -502,8 +502,8 @@ public class GARLIService extends GSBLService {
 			// Make symlinks.
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 				for (String f : sharedFiles) {
-					String symlinkCommand = ("ln -s " + f + " " + unique_id
-							+ "/" + f);
+					String symlinkCommand = ("ln -s " + job.getWorkingDir() + f
+							+ " " + job.getWorkingDir() + unique_id + "/" + f);
 					System.out.println("Symlink command: " + symlinkCommand);
 					GSBLUtils.executeCommand(symlinkCommand);
 				}
