@@ -563,7 +563,7 @@ public class BuildRSL {
 
 			document.append(")");  // End boincsubmit.
 		}
-	
+
 		// Create job directory if it doesn't exist.
 		File dir = new File(workingDir + "/" + unique_id + "/");
 		try {
@@ -571,6 +571,24 @@ public class BuildRSL {
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
+
+		// Make symlinks.
+		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
+			for (String f : sharedFiles) {
+				String symlinkCommand = ("ln -s " + workingDir + f
+						+ " " + workingDir + unique_id + "/" + f);
+				GSBLUtils.executeCommand(symlinkCommand);
+			}
+		}
+		
+		String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://"
+			+ hostname + workingDir + unique_id + "/ file://"
+			+ "$HOME/" + unique_id + "/";
+		
+		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
+
+		// Transfer job id folder and its contents.
+		System.out.print(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
 
 		/*
 		document.append("\n  (file_stage_in =");

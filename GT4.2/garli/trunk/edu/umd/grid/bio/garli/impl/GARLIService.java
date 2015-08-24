@@ -499,29 +499,6 @@ public class GARLIService extends GSBLService {
 
 			globus_command += (" -f rslString" + unique_id);  // Add RSL file.
 
-			// Make symlinks.
-			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
-				for (String f : sharedFiles) {
-					String symlinkCommand = ("ln -s " + job.getWorkingDir() + f
-							+ " " + job.getWorkingDir() + unique_id + "/" + f);
-					System.out.println("Symlink command: " + symlinkCommand);
-					GSBLUtils.executeCommand(symlinkCommand);
-				}
-			}
-
-			Properties env = new Properties();
-			env.load(Runtime.getRuntime().exec("env").getInputStream());
-
-			String home = (String) env.get("HOME");
-
-			String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://" + job.getHost()
-				+ job.getWorkingDir() + unique_id + "/ file://" + home + "/" + unique_id + "/";
-
-			System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
-
-			// Move emptyDir and rename it to the job's unique_id.
-			System.out.print(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
-
 			System.out.println("Globusrun Command: " + globus_command);
 
 			/* Executes a globusrun command */
