@@ -89,6 +89,8 @@ public class GARLIService extends GSBLService {
 	public GARLIService(GARLIArguments myBean) throws Exception {
 		super("GARLI");
 		runService(myBean);
+
+		monitorJob();
 /*
 		try {
 			if (runtimeConfig == null) {
@@ -120,8 +122,10 @@ public class GARLIService extends GSBLService {
 					+ "/service_configurations/GARLI.runtime.xml");
 			runtime_estimates_location = globusLocation + "/runtime_estimates/";
 
-			/* container_status_location =
-					GSBLUtils.getConfigElement("container_status.location"); */
+			/*
+			container_status_location =
+					GSBLUtils.getConfigElement("container_status.location");
+			*/
 
 			update_interval_string =
 					GSBLUtils.getConfigElement("update_interval");
@@ -265,13 +269,8 @@ public class GARLIService extends GSBLService {
 				actual_mem = myBean.getActualmemory();
 			}
 
-			// NEW WAY IS ACCESSING JOBID THRU BEAN
+			// New way is accessing job ID through the bean.
 			unique_id = myBean.getJobID();
-
-			/* Get the unique ID from the working directory. -- OLD WAY -- 
-					myWorkingDir.substring(0, myWorkingDir.lastIndexOf("/"));
-					unique_id = unique_id.substring(unique_id.lastIndexOf("/") + 1);
-			 */
 
 			// Formulate working directory for command.
 			String workingDir = runtime_estimates_location + executable + "/";
@@ -367,11 +366,6 @@ public class GARLIService extends GSBLService {
 					+ statefrequencies + " " + ratehetmodel + " " + numratecats
 					+ " " + invariantsites;
 
-			/* RFMatrixUpdater.INSTANCE.addJob(job.getUnique_id(), unique_patterns,
-					num_taxa, actual_mem, datatype, ratematrix,
-					statefrequencies, ratehetmodel, numratecats,
-					invariantsites); */
-
 			log.debug("command is: " + command);
 			log.debug("command2 is: " + command2);
 
@@ -411,8 +405,7 @@ public class GARLIService extends GSBLService {
 		}
 
 		/* Redo argument string - remove all arguments except for config file
-		 * name.
-		 */
+		 * name. */
 		argumentString = "\"" + myBean.getConfigFile() + "\"";
 
 		// Prepend replicates to the argument string.
@@ -481,7 +474,7 @@ public class GARLIService extends GSBLService {
 				arch_os = job.getArch_os();
 			}
 
-			/* globusrun command to execute */
+			// The globusrun command to execute.
 			String globus_command = "globusrun -batch -r " + job.getHost();
 
 			// Add job manager.
@@ -501,7 +494,7 @@ public class GARLIService extends GSBLService {
 
 			System.out.println("Globusrun Command: " + globus_command);
 
-			/* Executes a globusrun command */
+			// Executes a globusrun command.
 			System.out.print(GSBLUtils.executeCommandReturnOutput(globus_command));
 
 			// COMMENTED OUT FOR TESTING PURPOSES
@@ -526,10 +519,90 @@ public class GARLIService extends GSBLService {
 		return true;
 	}  // End runService().
 
+	GARLIArguments bean = null;
+	GSBLJobManager myJob = null;
+	Object[] jobIDs = null;
+	BufferedReader br = null;
+	String rwd = "";
+	String cwd = "";
+	String[] status;
+
+	public void monitorJob() {
+		int timeCounter = 0;
+
+		while (true) {
+			status = new String[2];
+			status[0] = "1";
+			status[1] = "2";
+			jobIDs = getJobList(getName(), status, timeCounter);
+
+			for (int i = 0; i < jobIDs.length; i++) {
+				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
+				checkJobStatus();
+			}
+			checkFinished();
+
+			try {
+				System.gc();  // Suggest Java clean things up.
+				Thread.sleep(update_interval);  // Take a breather.
+			} catch (Exception e) {
+				log.error("Exception: " + e);
+			}
+			if ((timeCounter + update_interval) <= update_max) {
+				timeCounter += update_interval;
+			} else {
+				timeCounter = 0;
+			}
+		}
+	}
+
+	public void checkJobStatus() {
+		try {
+			myJob = new GSBLJobManager(new GSBLJob(rwd));
+			myJob.checkJobStatus(update_interval, update_max);
+		} catch(Exception e) {
+			log.error("Exception: " + e);
+			updateDBStatus("5", rwd, update_interval, update_max);  // Set job to failed if unable to refresh job state.
+		}
+	}
+	
+	private void checkFinished() {
+		status = new String[1];
+		status[0] = "4";
+		jobIDs = getJobList(getName(), status, 0);  // Get finished.
+		for (int i = 0; i < jobIDs.length; i++) {
+			// First make sure the grid is up!
+			String up_or_down = "UP";
+			try {
+				br = new BufferedReader(new FileReader(container_status_location));
+				up_or_down = br.readLine();
+				br.close();
+			} catch (Exception e) {
+				log.error("Exception: " + e);
+			}
+
+			if (up_or_down.equals("UP")) {
+				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
+				try {
+					br = new BufferedReader(new FileReader(rwd + "cwd.txt"));
+					cwd = br.readLine();
+					br.close();
+				} catch(Exception e) {
+					log.error("Exception: " + e);
+				}
+				// Set bean.
+				bean = ((GARLIArguments) getArguments(rwd));
+				// retrieveFiles();
+			} else {
+				log.debug("The grid is down, skipping file retrieve...");
+			}
+		}
+	}
+
 	/**
 	 * A threaded inner class which is responsible for periodically checking job status.
 	 */
-	
+/*
 	class MonitorJobs implements Runnable {
 
 		private GARLIArguments myBean = null;
@@ -540,13 +613,13 @@ public class GARLIService extends GSBLService {
 		private String rwd = "";
 		private String cwd = "";
 		private String [] status;
-
+*/
 		/**
 		 * This constructor checks for finished jobs.
 		 *
 		 * @param service associated Grid service instance
 		 */
-		public MonitorJobs() {
+/*		public MonitorJobs() {
 			try {
 				Thread.sleep(30000); // sleep for 30 seconds and then check the status of finished jobs
 			} catch(Exception e) {
@@ -583,11 +656,11 @@ public class GARLIService extends GSBLService {
 				}
 			}
 		}
-
+*/
 		/**
 		 * Update job status.
 		 */
-		public void checkJobStatus() {
+/*		public void checkJobStatus() {
 			try {
 				job = new GSBLJob(rwd);
 				myJob = new GSBLJobManager(job);
@@ -597,11 +670,11 @@ public class GARLIService extends GSBLService {
 				updateDBStatus("5", rwd, update_interval, update_max); // set job to failed if unable to refresh job state
 			}
 		}
-
+*/
 		/**
 		 * Check for jobs that are finished, but not retrieved.
 		 */
-		private void checkFinished() {
+/*		private void checkFinished() {
 			status = new String[1];
 			status[0] = "4";
 			jobIDs = getJobList(getName(), status, 0); // get finished
@@ -634,5 +707,6 @@ public class GARLIService extends GSBLService {
 			}
 		}
 	}
+*/
 }  // End GARLIService class.
 
