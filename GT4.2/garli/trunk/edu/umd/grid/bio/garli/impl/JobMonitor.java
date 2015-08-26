@@ -4,13 +4,13 @@
  * @author Jordan Kiesel
  */
 
+package edu.umd.grid.bio.garli.impl;
+
 // GSBL classes.
 import edu.umd.umiacs.cummings.GSBL.GSBLJobManager;
 import edu.umd.umiacs.cummings.GSBL.GSBLService;
 import edu.umd.umiacs.cummings.GSBL.GSBLJob;
 import edu.umd.umiacs.cummings.GSBL.GSBLUtils;
-
-import edu.umd.grid.bio.garli.impl.GARLIService;
 
 // For logging.
 import org.apache.commons.logging.Log;
