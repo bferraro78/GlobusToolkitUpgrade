@@ -89,8 +89,6 @@ public class GARLIService extends GSBLService {
 	public GARLIService(GARLIArguments myBean) throws Exception {
 		super("GARLI");
 		runService(myBean);
-
-		monitorJob();
 /*
 		try {
 			if (runtimeConfig == null) {
@@ -109,7 +107,6 @@ public class GARLIService extends GSBLService {
 		}
 */
 	}
-
 
 	// Load things from config files. We only want to do this once.
 	static {
@@ -144,6 +141,7 @@ public class GARLIService extends GSBLService {
 
 	/**
 	 * This is almost like our "main" method.
+	 *
 	 * @param myBean argument bean.
 	 * @return true if service was started successfully.
 	 */
@@ -359,12 +357,12 @@ public class GARLIService extends GSBLService {
 				}
 			}
 
-			command = command + datatype + " " + ratematrix + " "
-					+ statefrequencies + " " + ratehetmodel + " " + numratecats
-					+ " " + invariantsites;
-			command2 = command2 + datatype + " " + ratematrix + " "
-					+ statefrequencies + " " + ratehetmodel + " " + numratecats
-					+ " " + invariantsites;
+			command += (datatype + " " + ratematrix + " " + statefrequencies
+					+ " " + ratehetmodel + " " + numratecats + " "
+					+ invariantsites);
+			command2 += (datatype + " " + ratematrix + " " + statefrequencies
+					+ " " + ratehetmodel + " " + numratecats + " "
+					+ invariantsites);
 
 			log.debug("command is: " + command);
 			log.debug("command2 is: " + command2);
@@ -406,16 +404,16 @@ public class GARLIService extends GSBLService {
 
 		/* Redo argument string - remove all arguments except for config file
 		 * name. */
-		argumentString = "\"" + myBean.getConfigFile() + "\"";
+		argumentString = ("\"" + myBean.getConfigFile() + "\"");
 
 		// Prepend replicates to the argument string.
 		if(replicates != null) {
-			argumentString = "--replicates \"" + replicates.toString() + "\" "
-					+ argumentString;
+			argumentString = ("--replicates \"" + replicates.toString() + "\" "
+					+ argumentString);
 		}
 
 		// Prepend memory requirement to the argument string.
-		argumentString = "--mem \"" + avail_mem + "\" " + argumentString;
+		argumentString = ("--mem \"" + avail_mem + "\" " + argumentString);
 
 		log.debug("argument string before hetero batch mucking is: "
 				+ argumentString);
@@ -428,20 +426,20 @@ public class GARLIService extends GSBLService {
 			log.debug("Config File from bean: " + myBean.getConfigFile());
 			int first = argumentString.indexOf("\"" + myBean.getConfigFile()
 					+ "\"");
-			int last = first + myBean.getConfigFile().length() + 1;
+			int last = (first + myBean.getConfigFile().length() + 1);
 			String beginning = argumentString.substring(0,first);
 			if (last == -1) {
-				argumentString = beginning + " " + csv;
+				argumentString = (beginning + " " + csv);
 			} else {
-				String end = argumentString.substring(last+1);
-				argumentString = beginning + " " + csv + " " + end;
+				String end = argumentString.substring(last + 1);
+				argumentString = (beginning + " " + csv + " " + end);
 			}
 		}
 
 		log.debug("argument string after hetero batch mucking is: "
 				+ argumentString);
 
-		String [] output_files = myBean.getOutputFiles();
+		String[] output_files = myBean.getOutputFiles();
 
 		// Estimate split code here.
 
@@ -475,17 +473,17 @@ public class GARLIService extends GSBLService {
 			}
 
 			// The globusrun command to execute.
-			String globus_command = "globusrun -batch -r " + job.getHost();
+			String globus_command = ("globusrun -batch -r " + job.getHost());
 
 			// Add job manager.
 			if (resource.equals("Condor")) {
-				globus_command += ("/jobmanager-condor");
+				globus_command += "/jobmanager-condor";
 			} else if (resource.equals("PBS")) {
-				globus_command += ("/jobmanager-pbs");
+				globus_command += "/jobmanager-pbs";
 			} else if (resource.equals("SGE")) {
-				globus_command += ("/jobmanager-sge");
+				globus_command += "/jobmanager-sge";
 			} else if (resource.equals("BOINC")) {
-				globus_command += ("/jobmanager-boinc");  // Does this exist? idk
+				globus_command += "/jobmanager-boinc";  // Does this exist? idk
 			} else {
 				globus_command += "/jobmanager-fork";
 			}
@@ -518,86 +516,6 @@ public class GARLIService extends GSBLService {
 		}
 		return true;
 	}  // End runService().
-
-	GARLIArguments bean = null;
-	GSBLJobManager myJob = null;
-	Object[] jobIDs = null;
-	BufferedReader br = null;
-	String rwd = "";
-	String cwd = "";
-	String[] status;
-
-	public void monitorJob() {
-		int timeCounter = 0;
-
-		while (true) {
-			status = new String[2];
-			status[0] = "1";
-			status[1] = "2";
-			jobIDs = getJobList(getName(), status, timeCounter);
-
-			for (int i = 0; i < jobIDs.length; i++) {
-				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
-				checkJobStatus();
-			}
-			checkFinished();
-
-			try {
-				System.gc();  // Suggest Java clean things up.
-				Thread.sleep(update_interval);  // Take a breather.
-			} catch (Exception e) {
-				log.error("Exception: " + e);
-			}
-			if ((timeCounter + update_interval) <= update_max) {
-				timeCounter += update_interval;
-			} else {
-				timeCounter = 0;
-			}
-		}
-	}
-
-	public void checkJobStatus() {
-		try {
-			myJob = new GSBLJobManager(new GSBLJob(rwd));
-			myJob.checkJobStatus(update_interval, update_max);
-		} catch(Exception e) {
-			log.error("Exception: " + e);
-			updateDBStatus("5", rwd, update_interval, update_max);  // Set job to failed if unable to refresh job state.
-		}
-	}
-	
-	private void checkFinished() {
-		status = new String[1];
-		status[0] = "4";
-		jobIDs = getJobList(getName(), status, 0);  // Get finished.
-		for (int i = 0; i < jobIDs.length; i++) {
-			// First make sure the grid is up!
-			String up_or_down = "UP";
-			try {
-				br = new BufferedReader(new FileReader(container_status_location));
-				up_or_down = br.readLine();
-				br.close();
-			} catch (Exception e) {
-				log.error("Exception: " + e);
-			}
-
-			if (up_or_down.equals("UP")) {
-				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
-				try {
-					br = new BufferedReader(new FileReader(rwd + "cwd.txt"));
-					cwd = br.readLine();
-					br.close();
-				} catch(Exception e) {
-					log.error("Exception: " + e);
-				}
-				// Set bean.
-				bean = ((GARLIArguments) getArguments(rwd));
-				// retrieveFiles();
-			} else {
-				log.debug("The grid is down, skipping file retrieve...");
-			}
-		}
-	}
 
 	/**
 	 * A threaded inner class which is responsible for periodically checking job status.
