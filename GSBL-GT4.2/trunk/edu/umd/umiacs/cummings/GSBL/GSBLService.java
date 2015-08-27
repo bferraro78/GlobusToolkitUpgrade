@@ -47,7 +47,7 @@ public class GSBLService {
 	 * A writable directory under which our temporary directories will be
 	 * created.
 	 */
-	final static protected String workingDirBase = "/export/grid_files/";
+	final static protected String workingDirBase = "/test/";
 
 	/**
 	 * This will be our service name, e.g., "Ssearch34".
@@ -926,8 +926,6 @@ public class GSBLService {
 			}
 			query += (") and update_delay <= " + timecounter);
 
-			System.out.println("Query: " + query);
-
 			ResultSet rs = stmt.executeQuery(query);
 			String jobID = "";
 			String jobFolder = "";
@@ -935,7 +933,6 @@ public class GSBLService {
 			while (rs.next()) {
 				jobID = rs.getString(1);
 				jobFolder = (workingDirBase + jobID);
-				System.out.println("Job folder: " + jobFolder);
 				jobFileFolder = new File(jobFolder);
 				if (jobFileFolder.exists()) {  /* Double check that the job
 						hasn't been cleaned up yet. */
