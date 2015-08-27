@@ -42,8 +42,8 @@ class JobMonitor extends GSBLService {
 	 * Update interval - how frequently the service checks on the status of its
 	 * jobs.
 	 */
-	static protected int update_interval = 5000;//300000;  // Default is 5 minutes.
-	static protected int update_max = 30000;//4800000;  // Default is 80 minutes.
+	static protected int update_interval = 300000;  // Default is 5 minutes.
+	static protected int update_max = 4800000;  // Default is 80 minutes.
 
 	private GARLIArguments myBean = null;
 	private GSBLJob job = null;
@@ -103,12 +103,12 @@ class JobMonitor extends GSBLService {
 		int timeCounter = 0;
 
 		while (true) {
-			System.out.println(".");
-
 			status = new String[2];
 			status[0] = "1";
 			status[1] = "2";
 			jobIDs = getJobList(getName(), status, timeCounter);  // Get the status of idle and running jobs that are due to be checked.
+
+			System.out.println("Number of jobs: " + jobIDs.length);
 
 			for (int i = 0; i < jobIDs.length; i++) {
 				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
