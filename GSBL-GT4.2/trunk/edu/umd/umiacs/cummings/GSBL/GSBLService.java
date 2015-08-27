@@ -924,6 +924,8 @@ public class GSBLService {
 			}
 			query = query + ") and update_delay <= " + timecounter;
 
+			System.out.println("Query: " + query);
+
 			ResultSet rs = stmt.executeQuery(query);
 			String jobID = "";
 			String jobFolder = "";
