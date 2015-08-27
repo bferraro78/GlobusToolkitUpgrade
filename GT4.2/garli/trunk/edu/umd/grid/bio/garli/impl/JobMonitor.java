@@ -92,6 +92,9 @@ class JobMonitor extends GSBLService {
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
+
+		System.out.println("Update interval: " + update_interval);
+		System.out.println("Update max: " + update_max);
 	}
 
 	// The main loop periodically updates the status of jobs that were known to be idle or running.
@@ -100,6 +103,8 @@ class JobMonitor extends GSBLService {
 		int timeCounter = 0;
 
 		while (true) {
+			System.out.println(".");
+
 			status = new String[2];
 			status[0] = "1";
 			status[1] = "2";
@@ -135,6 +140,7 @@ class JobMonitor extends GSBLService {
 			myJob.checkJobStatus(update_interval, update_max);
 		} catch (Exception e) {
 			log.error("Exception: " + e);
+			System.out.println("Job failed.");
 			updateDBStatus("5", rwd, update_interval, update_max);  // Set job to failed if unable to refresh job state.
 		}
 	}
