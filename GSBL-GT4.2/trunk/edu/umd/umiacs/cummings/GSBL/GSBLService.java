@@ -904,6 +904,8 @@ public class GSBLService {
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
 
+		System.out.println("Database: " + db);
+
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
 					.newInstance();
@@ -912,8 +914,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			String query = "SELECT unique_id FROM job WHERE app = '"
-					+ serviceName + "' and (status = ";
+			String query = ("SELECT unique_id FROM job WHERE app = '"
+					+ serviceName + "' and (status = ");
 
 			for (int i = 0; i < status.length; i++) {
 				String myStatus = status[i];
@@ -922,7 +924,7 @@ public class GSBLService {
 					query += " OR status = ";
 				}
 			}
-			query = query + ") and update_delay <= " + timecounter;
+			query += (") and update_delay <= " + timecounter);
 
 			System.out.println("Query: " + query);
 
