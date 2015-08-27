@@ -47,7 +47,7 @@ public class GSBLService {
 	 * A writable directory under which our temporary directories will be
 	 * created.
 	 */
-	final static protected String workingDirBase = "/test/";
+	final static protected String workingDirBase = "test/";
 
 	/**
 	 * This will be our service name, e.g., "Ssearch34".
