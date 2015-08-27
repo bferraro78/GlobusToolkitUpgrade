@@ -935,6 +935,7 @@ public class GSBLService {
 			while (rs.next()) {
 				jobID = rs.getString(1);
 				jobFolder = (workingDirBase + jobID);
+				System.out.println("Job folder: " + jobFolder);
 				jobFileFolder = new File(jobFolder);
 				if (jobFileFolder.exists()) {  /* Double check that the job
 						hasn't been cleaned up yet. */
