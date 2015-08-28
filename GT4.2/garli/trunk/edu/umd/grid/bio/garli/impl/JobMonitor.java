@@ -112,7 +112,7 @@ class JobMonitor extends GSBLService {
 
 			for (int i = 0; i < jobIDs.length; i++) {
 				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
-				checkJobStatus();  // Set bean.
+				checkJobStatus(i);  // Set bean.
 			}
 			checkFinished();
 
@@ -133,11 +133,76 @@ class JobMonitor extends GSBLService {
 	/**
 	 * Update job status.
 	 */
-	public void checkJobStatus() {
+	public void checkJobStatus(int i) {
 		try {
 			job = new GSBLJob(rwd);
-			myJob = new GSBLJobManager(job);
-			myJob.checkJobStatus(update_interval, update_max);
+			//myJob = new GSBLJobManager(job);
+			//myJob.checkJobStatus(update_interval, update_max);
+
+			Properties env = new Properties();
+			env.load(Runtime.getRuntime().exec("env").getInputStream());
+			String globusLocation = (String) env.get("GSBL_CONFIG_DIR");
+			Runtime r = Runtime.getRuntime();
+			File stateFile = new File(rwd + "last_known_status.txt");
+			stateFile.delete();
+			Process proc = r.exec(globusLocation + "/check_job_state.pl "
+					+ rwd);
+			int elapsedTime = 0;
+
+			while (!stateFile.exists()) {
+				try {
+					Thread.sleep(3000);
+				} catch (Exception e) {
+					log.error("Exception while sleeping during job state check: "
+							+ e);
+				}
+				elapsedTime += 3;
+
+				if (elapsedTime > 30) {
+					log.error("State check did not produce a state file (and might be hung), destroying state check process... .");
+					proc.destroy();
+					break;
+				}
+			}
+			if (stateFile.exists()) {
+				BufferedReader br = new BufferedReader(
+						new FileReader(stateFile));
+				String jobState = null;
+				jobState = br.readLine();
+				br.close();
+
+				if (jobState != null) {
+					if (jobState.equals("Idle")) {
+						log.debug("Updating job status: 1 for " + rwd);
+						// Update the status of this job in the database (1 =
+						// idle).
+						GSBLService.updateDBStatus("1", rwd, update_interval,
+								update_max);
+					} else if (jobState.equals("Running")) {
+						log.debug("Updating job status: 2 for " + rwd);
+						// Update the status of this job in the database (2 =
+						// running).
+						GSBLService.updateDBStatus("2", rwd, update_interval,
+								update_max);
+					} else if (jobState.equals("Finished")) {
+						log.debug("Updating job status: 4 for " + rwd);
+						// Update the status of this job in the database (4 =
+						// finished).
+						GSBLService.updateDBStatus("4", rwd, update_interval,
+								update_max);
+					} else if (jobState.equals("Failed")) {
+						log.debug("Updating job status: 5 for " + rwd);
+						// Update the status of this job in the database (5 =
+						// failed).
+						GSBLService.updateDBStatus("5", rwd, update_interval,
+								update_max);
+					} else {
+						log.debug("jobState for " + rwd + " is: " + jobState);
+					}
+				} else {
+					log.debug("jobState is null!");
+				}
+			}
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 			System.out.println("Job failed.");
