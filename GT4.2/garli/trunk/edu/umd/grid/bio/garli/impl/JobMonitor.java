@@ -52,7 +52,8 @@ class JobMonitor extends GSBLService {
 	private String[] status;
 
 	private String hostname = "arginine.umiacs.umd.edu";  // Set for testing purposes.
-	private String port = "59280";
+	private String port = "59280";  // Hard coded for testing purposes.
+	private String jobDir = "16506011838205659016/4637920321498756531/";  // Hard coded for testing purposes.
 
 	public static void main(String[] args) {
 		JobMonitor jm = new JobMonitor();
@@ -144,7 +145,7 @@ class JobMonitor extends GSBLService {
 			File stateFile = new File(rwd + "last_known_status.txt");
 			stateFile.delete();
 			Process proc = r.exec(globusLocation + "/check_job_state.pl "
-					+ hostname + " " + port + " " + (String) jobIDs[i]);
+					+ rwd + " " + hostname + " " + port + " " + jobDir);
 			int elapsedTime = 0;
 
 			while (!stateFile.exists()) {
