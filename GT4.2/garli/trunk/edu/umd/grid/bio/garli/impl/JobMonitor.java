@@ -251,7 +251,7 @@ class JobMonitor extends GSBLService {
 		String home = (String) env.get("HOME");
 
 		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://" + home
-				+ "/" + jobIDs[i] + "/ gsiftp://" + hostname + rwd);
+				+ "/" + jobIDs[i] + "/ gsiftp://" + hostname + "/" + rwd);
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Transfer job folder and its contents.
