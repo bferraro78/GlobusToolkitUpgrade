@@ -7,7 +7,6 @@
 package edu.umd.grid.bio.garli.impl;
 
 // GSBL classes.
-import edu.umd.umiacs.cummings.GSBL.GSBLJobManager;
 import edu.umd.umiacs.cummings.GSBL.GSBLService;
 import edu.umd.umiacs.cummings.GSBL.GSBLJob;
 import edu.umd.umiacs.cummings.GSBL.GSBLUtils;
@@ -47,7 +46,6 @@ class JobMonitor extends GSBLService {
 
 	private GARLIArguments myBean = null;
 	private GSBLJob job = null;
-	private GSBLJobManager myJob = null;
 	private Object[] jobIDs = null;
 	private BufferedReader br = null;
 	private String rwd = "";
