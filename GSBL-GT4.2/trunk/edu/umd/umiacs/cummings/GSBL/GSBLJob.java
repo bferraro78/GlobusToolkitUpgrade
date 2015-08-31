@@ -231,9 +231,7 @@ public class GSBLJob {
 	 *            server.
 	 */
 	public GSBLJob(String rwd) {
-		System.out.println("About to create GRAM job.");
 		myJob = new GramJob();
-		System.out.println("Created GRAM job.");
 		try {
 			// myJob.setEndpoint(jobEPR);
 			// myJob.setSecurityTypeFromEndpoint(jobEPR);

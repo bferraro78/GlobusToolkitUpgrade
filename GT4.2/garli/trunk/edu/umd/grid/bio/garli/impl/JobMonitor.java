@@ -45,7 +45,6 @@ class JobMonitor extends GSBLService {
 	static protected int update_max = 4800000;  // Default is 80 minutes.
 
 	private GARLIArguments myBean = null;
-	private GSBLJob job = null;
 	private Object[] jobIDs = null;
 	private BufferedReader br = null;
 	private String rwd = "";
@@ -133,7 +132,7 @@ class JobMonitor extends GSBLService {
 	 */
 	public void checkJobStatus(int i) {
 		try {
-			job = new GSBLJob(rwd);
+			//job = new GSBLJob(rwd);
 			//myJob = new GSBLJobManager(job);
 			//myJob.checkJobStatus(update_interval, update_max);
 
