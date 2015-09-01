@@ -392,7 +392,7 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gramID, myWorkingDir, hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
+				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gram_id, working_dir, hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
 						+ "VALUES ('"
 						+ dateStr + "',"
 						+ id + ",'"
@@ -990,6 +990,74 @@ public class GSBLService {
 			}
 		}
 		return gramID;
+	}
+
+	public static Object getHostname(String uniqueID) {
+		Object hostname = null;
+		Connection connection = null;
+		String db = findDB();
+
+		try {
+			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
+					.newInstance();
+			DriverManager.registerDriver(driver);
+
+			connection = DriverManager.getConnection(db);
+			Statement stmt = connection.createStatement();
+
+			String query = ("SELECT hostname FROM job WHERE unique_id = '"
+					+ uniqueID + "'");
+
+			ResultSet rs = stmt.executeQuery(query);
+			hostname = rs.getString(1);
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+			log.error(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e) {
+				log.error(e.getMessage());
+			}
+		}
+		return hostname;
+	}
+
+	public static Object getWorkingDir(String uniqueID) {
+		Object workingDir = null;
+		Connection connection = null;
+		String db = findDB();
+
+		try {
+			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
+					.newInstance();
+			DriverManager.registerDriver(driver);
+
+			connection = DriverManager.getConnection(db);
+			Statement stmt = connection.createStatement();
+
+			String query = ("SELECT working_dir FROM job WHERE unique_id = '"
+					+ uniqueID + "'");
+
+			ResultSet rs = stmt.executeQuery(query);
+			workingDir = rs.getString(1);
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+			log.error(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e) {
+				log.error(e.getMessage());
+			}
+		}
+		return workingDir;
 	}
 
 	/* There is now a copy of this function in GSBLUtils - classes should be
