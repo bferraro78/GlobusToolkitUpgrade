@@ -975,6 +975,7 @@ public class GSBLService {
 					+ uniqueID + "'");
 
 			ResultSet rs = stmt.executeQuery(query);
+			rs.next();
 			gramID = rs.getString(1);
 		} catch (Exception e) {
 			log.error("Exception: " + e);
@@ -1009,6 +1010,7 @@ public class GSBLService {
 					+ uniqueID + "'");
 
 			ResultSet rs = stmt.executeQuery(query);
+			rs.next();
 			hostname = rs.getString(1);
 		} catch (Exception e) {
 			log.error("Exception: " + e);
@@ -1043,6 +1045,7 @@ public class GSBLService {
 					+ uniqueID + "'");
 
 			ResultSet rs = stmt.executeQuery(query);
+			rs.next();
 			workingDir = rs.getString(1);
 		} catch (Exception e) {
 			log.error("Exception: " + e);
