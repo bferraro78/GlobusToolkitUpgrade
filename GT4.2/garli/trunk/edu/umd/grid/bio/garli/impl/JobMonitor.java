@@ -46,14 +46,11 @@ class JobMonitor extends GSBLService {
 
 	private GARLIArguments myBean = null;
 	private Object[] jobIDs = null;
+	private Object[] gramISs = null;
 	private BufferedReader br = null;
 	private String rwd = "";
 	private String cwd = "";
 	private String[] status;
-
-	private String hostname = "arginine.umiacs.umd.edu";  // Set for testing purposes.
-	private String port = "59280";  // Hard coded for testing purposes.
-	private String jobDir = "16506011838205659016/4637920321498756531/";  // Hard coded for testing purposes.
 
 	public static void main(String[] args) {
 		JobMonitor jm = new JobMonitor();
@@ -134,73 +131,49 @@ class JobMonitor extends GSBLService {
 	 */
 	public void checkJobStatus(int i) {
 		try {
-			//job = new GSBLJob(rwd);
-			//myJob = new GSBLJobManager(job);
-			//myJob.checkJobStatus(update_interval, update_max);
-
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 			String globusLocation = (String) env.get("GSBL_CONFIG_DIR");
 			Runtime r = Runtime.getRuntime();
 			File stateFile = new File(rwd + "last_known_status.txt");
 			stateFile.delete();
-			Process proc = r.exec(globusLocation + "/check_job_state.pl "
-					+ rwd + " " + hostname + " " + port + " " + jobDir);
-			int elapsedTime = 0;
+			stateFile.createNewFile();
+			BufferedWriter bw = new BufferedWriter(new FileWriter(stateFile));
+			String jobState = (String) env.get("globusrun -status "
+					+ (String) getGramID((String) jobIDs[i]) + " 2>&1");
+			bw.write(jobState);
+			bw.close();
 
-			while (!stateFile.exists()) {
-				try {
-					Thread.sleep(3000);
-				} catch (Exception e) {
-					log.error("Exception while sleeping during job state check: "
-							+ e);
-				}
-				elapsedTime += 3;
-
-				if (elapsedTime > 30) {
-					log.error("State check did not produce a state file (and might be hung), destroying state check process... .");
-					proc.destroy();
-					break;
-				}
-			}
-			if (stateFile.exists()) {
-				BufferedReader br = new BufferedReader(
-						new FileReader(stateFile));
-				String jobState = null;
-				jobState = br.readLine();
-				br.close();
-
-				if (jobState != null) {
-					if (jobState.equals("Idle")) {
-						log.debug("Updating job status: 1 for " + rwd);
-						// Update the status of this job in the database (1 =
-						// idle).
-						GSBLService.updateDBStatus("1", rwd, update_interval,
-								update_max);
-					} else if (jobState.equals("Running")) {
-						log.debug("Updating job status: 2 for " + rwd);
-						// Update the status of this job in the database (2 =
-						// running).
-						GSBLService.updateDBStatus("2", rwd, update_interval,
-								update_max);
-					} else if (jobState.equals("Finished")) {
-						log.debug("Updating job status: 4 for " + rwd);
-						// Update the status of this job in the database (4 =
-						// finished).
-						GSBLService.updateDBStatus("4", rwd, update_interval,
-								update_max);
-					} else if (jobState.equals("Failed")) {
-						log.debug("Updating job status: 5 for " + rwd);
-						// Update the status of this job in the database (5 =
-						// failed).
-						GSBLService.updateDBStatus("5", rwd, update_interval,
-								update_max);
-					} else {
-						log.debug("jobState for " + rwd + " is: " + jobState);
-					}
+			if (jobState != null) {
+				if (jobState.contains("PENDING")) {
+					log.debug("Updating job status: 1 for " + rwd);
+					// Update the status of this job in the database (1 =
+					// idle).
+					GSBLService.updateDBStatus("1", rwd, update_interval,
+							update_max);
+				} else if (jobState.contains("ACTIVE")) {
+					log.debug("Updating job status: 2 for " + rwd);
+					// Update the status of this job in the database (2 =
+					// running).
+					GSBLService.updateDBStatus("2", rwd, update_interval,
+							update_max);
+				} else if (jobState.contains("DONE")) {
+					log.debug("Updating job status: 4 for " + rwd);
+					// Update the status of this job in the database (4 =
+					// finished).
+					GSBLService.updateDBStatus("4", rwd, update_interval,
+							update_max);
+				} else if (jobState.contains("FAILED")) {
+					log.debug("Updating job status: 5 for " + rwd);
+					// Update the status of this job in the database (5 =
+					// failed).
+					GSBLService.updateDBStatus("5", rwd, update_interval,
+							update_max);
 				} else {
-					log.debug("jobState is null!");
+					log.debug("jobState for " + rwd + " is: " + jobState);
 				}
+			} else {
+				log.debug("jobState is null!");
 			}
 		} catch (Exception e) {
 			log.error("Exception: " + e);
@@ -247,6 +220,7 @@ class JobMonitor extends GSBLService {
 	}
 
 	private void transferFiles(int i) {
+		/*
 		Properties env = new Properties();
 		String home = (String) env.get("HOME");
 
@@ -256,5 +230,6 @@ class JobMonitor extends GSBLService {
 
 		// Transfer job folder and its contents.
 		GSBLUtils.executeCommand(globusUrlCopyCmd);
+		*/
 	}
 }

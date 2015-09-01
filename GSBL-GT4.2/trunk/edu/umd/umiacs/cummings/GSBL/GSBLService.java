@@ -904,8 +904,6 @@ public class GSBLService {
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
 
-		System.out.println("Database: " + db);
-
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
 					.newInstance();
@@ -955,6 +953,40 @@ public class GSBLService {
 		}
 
 		return jobIDs.toArray();
+	}
+
+	public static Object getGramID(String uniqueID) {
+		Connection connection = null;
+		Object gramID = null;
+		String db = findDB();
+
+		try {
+			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
+					.newInstance();
+			DriverManager.registerDriver(driver);
+
+			connection = DriverManager.getConnection(db);
+			Statement stmt = connection.createStatement();
+
+			String query = ("SELECT gram_id FROM job WHERE unique_id = '"
+					+ uniqueID + "'");
+
+			ResultSet rs = stmt.executeQuery(query);
+			gramID = rs.getString(1);
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+			log.error(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e) {
+				log.error(e.getMessage());
+			}
+		}
+		return gramID;
 	}
 
 	/* There is now a copy of this function in GSBLUtils - classes should be
