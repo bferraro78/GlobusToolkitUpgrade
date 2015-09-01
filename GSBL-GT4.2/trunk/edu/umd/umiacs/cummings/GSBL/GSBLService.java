@@ -346,7 +346,7 @@ public class GSBLService {
 			String job_id, String arguments, String scheduler,
 			String resource, String arch_os, String cpus, String replicates,
 			String runtime_estimate, String runtime_estimate_recent,
-			String searchreps, String bootstrapreps) {
+			String searchreps, String bootstrapreps, Object gramID, String myWorkingDir, String hostname) {
 
 		// Changed parameter "workingDir" to "job_id".
 		log.debug("job id is: " + job_id);
@@ -392,7 +392,7 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
+				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gramID, myWorkingDir, hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
 						+ "VALUES ('"
 						+ dateStr + "',"
 						+ id + ",'"
@@ -406,6 +406,9 @@ public class GSBLService {
 						+ os + "','"
 						+ cpus + "','"
 						+ replicates + "','"
+						+ gramID + "','"
+						+ myWorkingDir + "','"
+						+ hostname + "','"
 						+ runtime_estimate + "','"
 						+ runtime_estimate_recent + "','"
 						+ searchreps + "','"

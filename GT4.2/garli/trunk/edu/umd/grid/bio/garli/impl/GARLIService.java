@@ -502,6 +502,10 @@ public class GARLIService extends GSBLService {
 			myJob.submit();
 			*/
 
+			/* gets gramID and hostname for DB call*/
+			Object gramID = getGramID(unique_id);
+			String hostname = (String) env.get("HOSTNAME");
+
 			// Add this job entry to the database.
 			addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
 					unique_id, argumentString, scheduler, resource, arch_os,
@@ -509,7 +513,8 @@ public class GARLIService extends GSBLService {
 					(new Integer(runtime_estimate_seconds).toString()),
 					(new Integer(runtime_estimate_seconds_recent).toString()),
 					(new Integer(searchreps).toString()),
-					(new Integer(bootstrapreps).toString()));
+					(new Integer(bootstrapreps).toString()),
+					gramID, myWorkingDir, hostname);
 			 
 		} catch (Exception e) {
 			log.error("Could not create GSBL job " + e);
