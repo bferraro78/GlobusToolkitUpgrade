@@ -204,9 +204,7 @@ class JobMonitor extends GSBLService {
 			if (up_or_down.equals("UP")) {
 				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
 				try {
-					br = new BufferedReader(new FileReader(rwd + "cwd.txt"));
-					cwd = br.readLine();
-					br.close();
+					cwd = (String) getWorkingDir((String) jobIDs[i]);
 				} catch (Exception e) {
 					log.error("Exception: " + e);
 				}
@@ -220,13 +218,11 @@ class JobMonitor extends GSBLService {
 	}
 
 	private void transferFiles(int i) {
-		/*
-		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://" + workingDir
-				+ jobIDs[i] + "/ gsiftp://" + hostname + "/" + rwd);
+		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://" + rwd
+				+ " gsiftp://" + getHostname((String) jobIDs[i]) + "/" + cwd);
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Transfer job folder and its contents.
 		GSBLUtils.executeCommand(globusUrlCopyCmd);
-		*/
 	}
 }
