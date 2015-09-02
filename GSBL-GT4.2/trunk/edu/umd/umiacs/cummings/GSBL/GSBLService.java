@@ -392,7 +392,7 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gram_id, working_dir, hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
+				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gram_id, client_working_dir, client_hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
 						+ "VALUES ('"
 						+ dateStr + "',"
 						+ id + ",'"
@@ -1006,7 +1006,7 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			String query = ("SELECT hostname FROM job WHERE unique_id = '"
+			String query = ("SELECT client_hostname FROM job WHERE unique_id = '"
 					+ uniqueID + "'");
 
 			ResultSet rs = stmt.executeQuery(query);
@@ -1041,7 +1041,7 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			String query = ("SELECT working_dir FROM job WHERE unique_id = '"
+			String query = ("SELECT client_working_dir FROM job WHERE unique_id = '"
 					+ uniqueID + "'");
 
 			ResultSet rs = stmt.executeQuery(query);

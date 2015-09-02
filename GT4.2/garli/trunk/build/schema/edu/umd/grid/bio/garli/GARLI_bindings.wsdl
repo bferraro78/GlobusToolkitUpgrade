@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService/bindings" xmlns:porttype="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService/bindings" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:porttype="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:import namespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" location="GARLI_flattened.wsdl"/>
   <wsdl:binding name="GARLIPortTypeSOAPBinding" type="porttype:GARLIPortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>

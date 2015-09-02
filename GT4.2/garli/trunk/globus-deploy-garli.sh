@@ -1,5 +1,5 @@
 #!/bin/bash
-cd $GLOBUS_LOCATION
+cd $GSBL_CONFIG_DIR
 cd -
 globus-stop-container-detached
 globus-undeploy-gar edu_umd_grid_bio_garli

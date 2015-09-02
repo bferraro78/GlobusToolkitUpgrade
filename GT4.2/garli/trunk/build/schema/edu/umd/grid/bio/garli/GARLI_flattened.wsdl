@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gsbl="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLService.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:import namespace="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLService.wsdl" location="/fs/mikeproj/grid/www/cummings/GSBL/GT42GSBLService.wsdl"/>
-  <wsdl:types>
+<definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor" xmlns:gsbl="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLService.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLService.wsdl" location="/fs/mikeproj/grid/www/cummings/GSBL/GT42GSBLService.wsdl"/>
+  <types>
     <xsd:schema targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 			<!-- Argument Bean -->
 			<xsd:complexType name="GARLIArguments">
@@ -82,21 +82,21 @@
 			<xsd:element name="runService" type="tns:GARLIArguments"/>
 			<xsd:element name="runServiceResponse" type="xsd:boolean"/>
 		</xsd:schema>
-  </wsdl:types>
-  <wsdl:message name="RunServiceInputMessage">
-    <wsdl:part name="parameters" element="tns:runService"/>
-  </wsdl:message>
-  <wsdl:message name="RunServiceOutputMessage">
-    <wsdl:part name="parameters" element="tns:runServiceResponse"/>
-  </wsdl:message>
-  <wsdl:portType name="GARLIPortType">
-    <wsdl:operation name="runService">
-      <wsdl:input message="tns:RunServiceInputMessage"/>
-      <wsdl:output message="tns:RunServiceOutputMessage"/>
-    </wsdl:operation>
-    <wsdl:operation name="createWorkingDir">
-      <wsdl:input message="gsbl:CreateWorkingDirInputMessage"/>
-      <wsdl:output message="gsbl:CreateWorkingDirOutputMessage"/>
-    </wsdl:operation>
-  </wsdl:portType>
-</wsdl:definitions>
+  </types>
+  <message name="RunServiceInputMessage">
+    <part name="parameters" element="tns:runService"/>
+  </message>
+  <message name="RunServiceOutputMessage">
+    <part name="parameters" element="tns:runServiceResponse"/>
+  </message>
+  <portType name="GARLIPortType">
+    <operation name="runService">
+      <input message="tns:RunServiceInputMessage"/>
+      <output message="tns:RunServiceOutputMessage"/>
+    </operation>
+    <operation name="createWorkingDir">
+      <input message="gsbl:CreateWorkingDirInputMessage"/>
+      <output message="gsbl:CreateWorkingDirOutputMessage"/>
+    </operation>
+  </portType>
+</definitions>

@@ -80,9 +80,9 @@ schema.local:   Directory where our schema files are located.
 	
 	
 	<!-- Directory where GT4 is installed --> 
-	<!-- Note that the buildfile requires an environment variable GLOBUS_LOCATION
+	<!-- Note that the buildfile requires an environment variable GSBL_CONFIG_DIR
 	     pointing to that directory -->
-	<property name="globus.location" location="${env.GLOBUS_LOCATION}" />
+	<property name="globus.location" location="${env.GSBL_CONFIG_DIR}" />
 	
 		
 		
@@ -306,7 +306,7 @@ schema.local:   Directory where our schema files are located.
 		<javac srcdir="${stubs.src}" destdir="${stubs.dest}" debug="${java.debug}">
 			<include name="**/*.java" />
 			<classpath>
-				<fileset dir="/molehomes/gt4admin/newVersions">
+				<fileset dir="/home/gt6admin/newVersions">
 					<include name="*.jar" />
 				</fileset>
 			</classpath>
@@ -322,7 +322,7 @@ schema.local:   Directory where our schema files are located.
 		<javac srcdir="${src.dir}" includes="${package.dir}/impl/**,${package.dir}/clients/**,${package.dir}/shared/**" destdir="${build.dest}" debug="${java.debug}" deprecation="${deprecation}">
 			<classpath>
 				<pathelement location="${stubs.dest}" />
-				<fileset dir="/molehomes/gt4admin/newVersions">
+				<fileset dir="/home/gt6admin/newVersions">
 					<include name="*.jar" />
       				</fileset>
 			</classpath>

@@ -159,16 +159,16 @@ TARGET=""
 DEBUG=0
 DRYRUN=0
 
-# Check for GLOBUS_LOCATION
+# Check for GSBL_CONFIG_DIR
 
-if [ -z "${GLOBUS_LOCATION}" ]; then
-    echo "ERROR: environment variable GLOBUS_LOCATION not defined."
+if [ -z "${GSBL_CONFIG_DIR}" ]; then
+    echo "ERROR: environment variable GSBL_CONFIG_DIR not defined."
 	echo "Run $0 -h for help."
     exit $FAILURE
 fi
 
-if [ ! -d "${GLOBUS_LOCATION}" ]; then
-    echo "ERROR: invalid GLOBUS_LOCATION set: $GLOBUS_LOCATION"
+if [ ! -d "${GSBL_CONFIG_DIR}" ]; then
+    echo "ERROR: invalid GSBL_CONFIG_DIR set: $GSBL_CONFIG_DIR"
    	echo "Run $0 -h for help."
     exit $FAILURE
 fi

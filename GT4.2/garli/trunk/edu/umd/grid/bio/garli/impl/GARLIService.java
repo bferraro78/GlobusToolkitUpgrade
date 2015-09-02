@@ -493,7 +493,7 @@ public class GARLIService extends GSBLService {
 			System.out.println("Globusrun Command: " + globus_command);
 
 			// Executes a globusrun command.
-			String globusRunOutput = GSBLUtils.executeCommandReturnOutput(globus_command);
+			String globusRunOutput = GSBLUtils.executeCommandReturnOutput(globus_command + " 2>&1");
 			System.out.println("OUTPUT START: " + globusRunOutput + " OUTPUT END");
 
 			// COMMENTED OUT FOR TESTING PURPOSES
