@@ -8,13 +8,13 @@
 package edu.umd.umiacs.cummings.GSBL.GT42GSBLFactoryService_wsdl;
 
 public class CreateResourceResponse  implements java.io.Serializable {
-    private org.w3.www._2005._08.addressing.EndpointReferenceType endpointReference;
+    private org.globus.axis.message.addressing.EndpointReferenceType endpointReference;
 
     public CreateResourceResponse() {
     }
 
     public CreateResourceResponse(
-           org.w3.www._2005._08.addressing.EndpointReferenceType endpointReference) {
+           org.globus.axis.message.addressing.EndpointReferenceType endpointReference) {
            this.endpointReference = endpointReference;
     }
 
@@ -24,7 +24,7 @@ public class CreateResourceResponse  implements java.io.Serializable {
      * 
      * @return endpointReference
      */
-    public org.w3.www._2005._08.addressing.EndpointReferenceType getEndpointReference() {
+    public org.globus.axis.message.addressing.EndpointReferenceType getEndpointReference() {
         return endpointReference;
     }
 
@@ -34,7 +34,7 @@ public class CreateResourceResponse  implements java.io.Serializable {
      * 
      * @param endpointReference
      */
-    public void setEndpointReference(org.w3.www._2005._08.addressing.EndpointReferenceType endpointReference) {
+    public void setEndpointReference(org.globus.axis.message.addressing.EndpointReferenceType endpointReference) {
         this.endpointReference = endpointReference;
     }
 

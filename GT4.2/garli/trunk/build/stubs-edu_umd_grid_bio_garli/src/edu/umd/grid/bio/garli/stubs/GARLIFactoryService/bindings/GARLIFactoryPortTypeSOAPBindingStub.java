@@ -81,84 +81,84 @@ public class GARLIFactoryPortTypeSOAPBindingStub extends org.apache.axis.client.
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "AttributedQNameType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.AttributedQNameType.class;
+            cls = org.globus.axis.message.addressing.AttributedQNameType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "AttributedUnsignedLongType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.AttributedUnsignedLongType.class;
+            cls = org.globus.axis.message.addressing.AttributedUnsignedLongType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "AttributedURIType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.AttributedURIType.class;
+            cls = org.globus.axis.message.addressing.AttributedURIType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "EndpointReferenceType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.EndpointReferenceType.class;
+            cls = org.globus.axis.message.addressing.EndpointReferenceType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "FaultCodesOpenEnumType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.FaultCodesOpenEnumType.class;
+            cls = org.globus.axis.message.addressing.FaultCodesOpenEnumType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "FaultCodesType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.FaultCodesType.class;
+            cls = org.globus.axis.message.addressing.FaultCodesType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "MetadataType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.MetadataType.class;
+            cls = org.globus.axis.message.addressing.MetadataType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "ProblemActionType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.ProblemActionType.class;
+            cls = org.globus.axis.message.addressing.ProblemActionType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "ReferenceParametersType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.ReferenceParametersType.class;
+            cls = org.globus.axis.message.addressing.ReferenceParametersType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "RelatesToType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.RelatesToType.class;
+            cls = org.globus.axis.message.addressing.RelatesToType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "RelationshipType");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.RelationshipType.class;
+            cls = org.globus.axis.message.addressing.RelationshipType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("http://www.w3.org/2005/08/addressing", "RelationshipTypeOpenEnum");
             cachedSerQNames.add(qName);
-            cls = org.w3.www._2005._08.addressing.RelationshipTypeOpenEnum.class;
+            cls = org.globus.axis.message.addressing.RelationshipTypeOpenEnum.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(org.apache.axis.encoding.ser.BaseSerializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleSerializerFactory.class, cls, qName));
             cachedDeserFactories.add(org.apache.axis.encoding.ser.BaseDeserializerFactory.createFactory(org.apache.axis.encoding.ser.SimpleDeserializerFactory.class, cls, qName));
