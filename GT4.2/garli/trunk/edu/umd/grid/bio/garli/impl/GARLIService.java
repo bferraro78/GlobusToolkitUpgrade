@@ -493,8 +493,8 @@ public class GARLIService extends GSBLService {
 			System.out.println("Globusrun Command: " + globus_command);
 
 			// Executes a globusrun command.
-			String globusRunOutput = GSBLUtils.executeCommandReturnOutput(globus_command + " 2>&1");
-			System.out.println("OUTPUT START: " + globusRunOutput + " OUTPUT END");
+			String globusRunOutput = GSBLUtils.executeCommandReturnOutput(globus_command);
+			System.out.println(globusRunOutput);
 
 			// COMMENTED OUT FOR TESTING PURPOSES
 			/* 
@@ -504,7 +504,10 @@ public class GARLIService extends GSBLService {
 			*/
 
 			/* Get gramID and hostname for DB call. */
-			String gramID = globusRunOutput.substring(globusRunOutput.lastIndexOf("\n"));
+			String gramID = globusRunOutput
+				.substring(globusRunOutput.indexOf("http"));
+			gramID = gramID.substring(0, gramID.indexOf("\n"));
+
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 			String hostname = (String) env.get("HOSTNAME");

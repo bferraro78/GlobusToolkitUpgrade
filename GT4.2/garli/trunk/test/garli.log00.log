@@ -1,5 +1,6 @@
-random seed = 411703
+Bootstrap rep 1 (of 1) 
+random seed = 451668
 gen	best_like	time	optPrecision
-0	-31391.31301	6	0.5
-Score after final optimization: -21812.66949
-Final	-21812.66949	350	0.01
+0	-762.4468916	0	0.5
+Score after final optimization: -752.9628049
+Final	-752.9628049	30	0.01

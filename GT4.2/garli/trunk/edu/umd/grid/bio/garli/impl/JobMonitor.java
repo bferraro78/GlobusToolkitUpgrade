@@ -139,8 +139,8 @@ class JobMonitor extends GSBLService {
 			stateFile.delete();
 			stateFile.createNewFile();
 			BufferedWriter bw = new BufferedWriter(new FileWriter(stateFile));
-			String jobState = (String) env.get("globusrun -status "
-					+ (String) getGramID((String) jobIDs[i]) + " 2>&1");
+			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
+				+ (String) getGramID((String) jobIDs[i]) + " 2>&1");
 			bw.write(jobState);
 			bw.close();
 
@@ -177,8 +177,8 @@ class JobMonitor extends GSBLService {
 			}
 		} catch (Exception e) {
 			log.error("Exception: " + e);
-			System.out.println("Job failed.");
-			updateDBStatus("5", rwd, update_interval, update_max);  // Set job to failed if unable to refresh job state.
+			//System.out.println("Job failed.");
+			//updateDBStatus("5", rwd, update_interval, update_max);  // Set job to failed if unable to refresh job state.
 		}
 	}
 
@@ -191,6 +191,7 @@ class JobMonitor extends GSBLService {
 		jobIDs = getJobList(getName(), status, 0);  // Get finished.
 		
 		for (int i = 0; i < jobIDs.length; i++) {
+/*
 			// First make sure the grid is up!
 			String up_or_down = "UP";
 			try {
@@ -202,27 +203,46 @@ class JobMonitor extends GSBLService {
 			}
 
 			if (up_or_down.equals("UP")) {
-				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
-				try {
-					cwd = (String) getWorkingDir((String) jobIDs[i]);
-				} catch (Exception e) {
-					log.error("Exception: " + e);
-				}
-				myBean = ((GARLIArguments) getArguments(rwd));  // Set bean.
+*/
+			rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
+			try {
+				cwd = (String) getWorkingDir((String) jobIDs[i]);
+			} catch (Exception e) {
+				log.error("Exception: " + e);
+			}
+			//myBean = ((GARLIArguments) getArguments(rwd));  // Set bean.
 
-				transferFiles(i);
+			transferFiles(i);
+/*
 			} else {
 				log.debug("The grid is down, skipping file retrieve... .");
 			}
+*/
 		}
 	}
 
 	private void transferFiles(int i) {
-		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://" + rwd
-				+ " gsiftp://" + getHostname((String) jobIDs[i]) + "/" + cwd);
+		String home = "";
+		try {
+			Properties env = new Properties();
+			env.load(Runtime.getRuntime().exec("env").getInputStream());
+			home = (String) env.get("HOME");
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+		}
+		String hostname = (String) getHostname((String) jobIDs[i]);
+		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://"
+			+ home + "/" + jobIDs[i] + "/ gsiftp://" + hostname
+			+ cwd);
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Transfer job folder and its contents.
-		GSBLUtils.executeCommand(globusUrlCopyCmd);
+		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
+
+		// Submit cleanup job.
+		String globusrunCmd = ("globusrun -r " + hostname
+			+ " '&(file_clean_up = " + jobIDs[i] + "/)'");
+		System.out.println("Globusrun command: " + globusrunCmd);
+		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
 	}
 }
