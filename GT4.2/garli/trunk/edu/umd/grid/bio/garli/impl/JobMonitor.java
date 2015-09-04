@@ -234,7 +234,7 @@ class JobMonitor extends GSBLService {
 		String hostname = (String) getHostname((String) jobIDs[i]);
 		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://"
 			+ home + "/" + jobIDs[i] + "/ gsiftp://" + hostname
-			+ cwd);
+			+ cwd + jobIDs[i] + "/");
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Transfer job folder and its contents.
@@ -246,8 +246,9 @@ class JobMonitor extends GSBLService {
 		*/
 		
 		// Instead of file clean up, we just use rm -rf to get rid of JobID directory
-		String globusrunCmd = ("globusrun -r " + hostname                                                                                               
-				       + " '&(executable = /usr/bin/rm)" + " (arguments = " + "-rf " + cwd +  jobIDs[i] + "/)'"); 
+		String globusrunCmd = ("globusrun -r " + hostname
+			+ " '&(executable = /usr/bin/rm) (arguments = -rf "
+			+ home + "/" + jobIDs[i] + "/)'");
 
 		System.out.println("Globusrun command: " + globusrunCmd);
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
