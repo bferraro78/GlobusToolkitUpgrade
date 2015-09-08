@@ -89,9 +89,6 @@ class JobMonitor extends GSBLService {
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
-
-		System.out.println("Update interval: " + update_interval);
-		System.out.println("Update max: " + update_max);
 	}
 
 	// The main loop periodically updates the status of jobs that were known to be idle or running.
@@ -104,8 +101,6 @@ class JobMonitor extends GSBLService {
 			status[0] = "1";
 			status[1] = "2";
 			jobIDs = getJobList(getName(), status, timeCounter);  // Get the status of idle and running jobs that are due to be checked.
-
-			System.out.println("Number of jobs: " + jobIDs.length);
 
 			for (int i = 0; i < jobIDs.length; i++) {
 				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
@@ -255,5 +250,10 @@ class JobMonitor extends GSBLService {
      		System.out.println("Globusrun command: " + globusrunCmd);
 	       
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
+
+		log.debug("Updating job status: 10 for " + rwd);
+		// Update the status of this job in the database.
+		GSBLService.updateDBStatus("10", rwd, update_interval,
+			update_max);
 	}
 }

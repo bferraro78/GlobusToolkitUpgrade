@@ -49,6 +49,8 @@ public class GSBLService {
 	 */
 	final static protected String workingDirBase = "test/";
 
+	static protected String home = "";
+
 	/**
 	 * This will be our service name, e.g., "Ssearch34".
 	 */
@@ -61,6 +63,14 @@ public class GSBLService {
 	 */
 	public GSBLService(String name) {
 		this.name = name;
+
+		try {
+			Properties env = new Properties();
+			env.load(Runtime.getRuntime().exec("env").getInputStream());
+			home = (String) env.get("HOME");
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+		}
 
 		if (log.isDebugEnabled()) {
 			log.debug("Created a new GSBLService with name: " + name + ".");
@@ -933,7 +943,7 @@ public class GSBLService {
 			File jobFileFolder = null;
 			while (rs.next()) {
 				jobID = rs.getString(1);
-				jobFolder = (workingDirBase + jobID);
+				jobFolder = (home + "/" + jobID);
 				jobFileFolder = new File(jobFolder);
 				if (jobFileFolder.exists()) {  /* Double check that the job
 						hasn't been cleaned up yet. */
