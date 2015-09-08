@@ -239,18 +239,21 @@ class JobMonitor extends GSBLService {
 
 		// Transfer job folder and its contents.
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
-		// Submit cleanup job.
+		// Submit cleanup job. Both option work manually, only OPT 2. works when
+		// calling JobMonitor.class
+
+		// OPT 1. WITH globusrun Command
 		/*
-		String globusrunCmd = ("globusrun -r " + hostname
-			+ " '&(file_clean_up = " + jobIDs[i] + "/)'");
-		*/
-		
 		// Instead of file clean up, we just use rm -rf to get rid of JobID directory
 		String globusrunCmd = ("globusrun -r " + hostname
 			+ " '&(executable = /usr/bin/rm) (arguments = -rf "
 			+ home + "/" + jobIDs[i] + "/)'");
+		*/
 
-		System.out.println("Globusrun command: " + globusrunCmd);
+		// OPT 2. WITH SHELL SCRIPT COMMAND 
+		String globusrunCmd = ("rm -rf " + home + "/" + jobIDs[i] + "/");
+     		System.out.println("Globusrun command: " + globusrunCmd);
+	       
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
 	}
 }
