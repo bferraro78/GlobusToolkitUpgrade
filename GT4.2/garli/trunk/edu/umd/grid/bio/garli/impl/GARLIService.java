@@ -503,10 +503,12 @@ public class GARLIService extends GSBLService {
 			myJob.submit();
 			*/
 
+
 			/* Get gramID and hostname for DB call. */
 			String gramID = globusRunOutput
 				.substring(globusRunOutput.indexOf("http"));
 			gramID = gramID.substring(0, gramID.indexOf("\n"));
+
 
 			Properties env = new Properties();
 			env.load(Runtime.getRuntime().exec("env").getInputStream());

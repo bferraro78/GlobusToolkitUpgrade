@@ -234,22 +234,31 @@ class JobMonitor extends GSBLService {
 
 		// Transfer job folder and its contents.
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
-		// Submit cleanup job. Both option work manually, only OPT 2. works when
-		// calling JobMonitor.class
+		
+		// Submit cleanup job. Both option work manually, only OPT 2. works when calling JobMonitor.class
+
 
 		// OPT 1. WITH globusrun Command
-		/*
 		// Instead of file clean up, we just use rm -rf to get rid of JobID directory
-		String globusrunCmd = ("globusrun -r " + hostname
-			+ " '&(executable = /usr/bin/rm) (arguments = -rf "
+		String globusrunCmd = ("globusrun -r " + hostname);
+		PrintWriter pw = new PrintWriter(
+			new FileWriter((workingDir + "CleanUp-rslString" + unique_id), true), true);
+			pw.println(" '&(executable = /usr/bin/rm) (arguments = -rf "
 			+ home + "/" + jobIDs[i] + "/)'");
-		*/
+			pw.close();
 
-		// OPT 2. WITH SHELL SCRIPT COMMAND 
+		globusrunCmd += "CleanUp-rslString";
+
+		// OPT 2. WITH SHELL COMMAND
+		/* 
 		String globusrunCmd = ("rm -rf " + home + "/" + jobIDs[i] + "/");
      		System.out.println("Globusrun command: " + globusrunCmd);
-	       
-		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
+		*/
+		
+
+		
+		String globusCleanupCommand = GSBLUtils.executeCommandReturnOutput(globusrunCmd);
+		System.out.println(globusCleanupCommand);
 
 		log.debug("Updating job status: 10 for " + rwd);
 		// Update the status of this job in the database.
