@@ -503,19 +503,24 @@ public class GARLIService extends GSBLService {
 			myJob.submit();
 			*/
 
+			String gramID = "";
 
 			/* Get gramID and hostname for DB call. */
-			String gramID = globusRunOutput
-				.substring(globusRunOutput.indexOf("http"));
-			gramID = gramID.substring(0, gramID.indexOf("\n"));
+			try {
+				gramID = globusRunOutput
+					.substring(globusRunOutput.indexOf("http"));
+				gramID = gramID.substring(0, gramID.indexOf("\n"));
+			} catch (Exception e) {
+				System.out.println("Could not extract GRAM ID. Job did not execute properly. Server not running?");
+			}
 
+			if (!gramID.equals("")) {
+				Properties env = new Properties();
+				env.load(Runtime.getRuntime().exec("env").getInputStream());
+				String hostname = (String) env.get("HOSTNAME");
 
-			Properties env = new Properties();
-			env.load(Runtime.getRuntime().exec("env").getInputStream());
-			String hostname = (String) env.get("HOSTNAME");
-
-			// Add this job entry to the database.
-			addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
+				// Add this job entry to the database.
+				addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
 					unique_id, argumentString, scheduler, resource, arch_os,
 					job.getCPUs(), job.getReplicates(),
 					(new Integer(runtime_estimate_seconds).toString()),
@@ -523,7 +528,7 @@ public class GARLIService extends GSBLService {
 					(new Integer(searchreps).toString()),
 					(new Integer(bootstrapreps).toString()),
 					gramID, myWorkingDir, hostname);
-			 
+			}
 		} catch (Exception e) {
 			log.error("Could not create GSBL job " + e);
 		}

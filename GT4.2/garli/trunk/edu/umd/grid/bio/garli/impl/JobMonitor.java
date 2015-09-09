@@ -137,7 +137,7 @@ class JobMonitor extends GSBLService {
 			stateFile.createNewFile();
 			BufferedWriter bw = new BufferedWriter(new FileWriter(stateFile));
 			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
-				+ (String) getGramID((String) jobIDs[i]) + " 2>&1");
+				+ (String) getGramID((String) jobIDs[i]));
 			bw.write(jobState);
 			bw.close();
 
@@ -236,34 +236,23 @@ class JobMonitor extends GSBLService {
 		// Transfer job folder and its contents.
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
 		
-		// Submit cleanup job. Both option work manually, only OPT 2. works when calling JobMonitor.class
-
-
-		// OPT 1. WITH globusrun Command
-		// Instead of file clean up, we just use rm -rf to get rid of JobID directory
+		// Instead of file clean up, we just use rm -rf to get rid of JobID directory.
 		String globusrunCmd = ("globusrun -r " + hostname);
 
-       try {
-		PrintWriter pw = new PrintWriter(new FileWriter(("CleanUp-rslString"), true), true);
-			pw.println("'&(executable = /usr/bin/rm) (arguments = -rf "
-			+ home + "/" + jobIDs[i] + "/)'");
+		try {
+			PrintWriter pw = new PrintWriter(
+				new FileWriter("CleanUp-rslString", true), true);
+			pw.println("&(executable = /usr/bin/rm) (arguments = -rf "
+				+ home + "/" + jobIDs[i] + "/)");
 			pw.close();
-	} catch (java.io.IOException e) {
-	    log.error(e.getMessage());
-	}
-
+		} catch (java.io.IOException e) {
+			log.error(e.getMessage());
+		}
 
 		globusrunCmd += " -f CleanUp-rslString";
 
-		// OPT 2. WITH SHELL COMMAND
-		/* 
-		String globusrunCmd = ("rm -rf " + home + "/" + jobIDs[i] + "/");
-     		*/
-
 		System.out.println("Globusrun command: " + globusrunCmd);
-	       
-		String globusCleanupCommand = GSBLUtils.executeCommandReturnOutput(globusrunCmd);
-		System.out.println(globusCleanupCommand);
+		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
 
 		log.debug("Updating job status: 10 for " + rwd);
 		// Update the status of this job in the database.
