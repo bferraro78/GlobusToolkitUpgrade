@@ -18,6 +18,7 @@ import org.apache.commons.logging.LogFactory;
 
 import java.io.*;
 import java.util.*;
+import java.net.*;
 
 // For garbage collection.
 import java.lang.System;
@@ -241,22 +242,26 @@ class JobMonitor extends GSBLService {
 		// OPT 1. WITH globusrun Command
 		// Instead of file clean up, we just use rm -rf to get rid of JobID directory
 		String globusrunCmd = ("globusrun -r " + hostname);
-		PrintWriter pw = new PrintWriter(
-			new FileWriter((workingDir + "CleanUp-rslString" + unique_id), true), true);
-			pw.println(" '&(executable = /usr/bin/rm) (arguments = -rf "
+
+       try {
+		PrintWriter pw = new PrintWriter(new FileWriter(("CleanUp-rslString"), true), true);
+			pw.println("'&(executable = /usr/bin/rm) (arguments = -rf "
 			+ home + "/" + jobIDs[i] + "/)'");
 			pw.close();
+	} catch (java.io.IOException e) {
+	    log.error(e.getMessage());
+	}
 
-		globusrunCmd += "CleanUp-rslString";
+
+		globusrunCmd += " -f CleanUp-rslString";
 
 		// OPT 2. WITH SHELL COMMAND
 		/* 
 		String globusrunCmd = ("rm -rf " + home + "/" + jobIDs[i] + "/");
-     		System.out.println("Globusrun command: " + globusrunCmd);
-		*/
-		
+     		*/
 
-		
+		System.out.println("Globusrun command: " + globusrunCmd);
+	       
 		String globusCleanupCommand = GSBLUtils.executeCommandReturnOutput(globusrunCmd);
 		System.out.println(globusCleanupCommand);
 
