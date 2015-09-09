@@ -237,9 +237,10 @@ class JobMonitor extends GSBLService {
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
 		
 		// Instead of file clean up, we just use rm -rf to get rid of JobID directory.
+		String fileName = ("cleanupRslString" + jobIDs[i]);
+		File cleanupRsl = new File(fileName);
 		try {
-			FileWriter fw = new FileWriter(
-				new File("cleanUp-rslString-" + jobIDs[i]), false);
+			FileWriter fw = new FileWriter(cleanupRsl);
 			fw.write("&(executable = /usr/bin/rm) (arguments = -rf "
 				+ home + "/" + jobIDs[i] + "/)");
 			fw.close();
@@ -248,7 +249,7 @@ class JobMonitor extends GSBLService {
 		}
 
 		String globusrunCmd = ("globusrun -r " + hostname
-			+ "/jobmanager-fork -f CleanUp-rslString");
+			+ "/jobmanager-fork -f " + fileName);
 
 		System.out.println("Globusrun command: " + globusrunCmd);
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
@@ -257,5 +258,7 @@ class JobMonitor extends GSBLService {
 		// Update the status of this job in the database.
 		GSBLService.updateDBStatus("10", rwd, update_interval,
 			update_max);
+
+		cleanupRsl.delete();
 	}
 }
