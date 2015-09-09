@@ -237,19 +237,18 @@ class JobMonitor extends GSBLService {
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
 		
 		// Instead of file clean up, we just use rm -rf to get rid of JobID directory.
-		String globusrunCmd = ("globusrun -r " + hostname);
-
 		try {
-			PrintWriter pw = new PrintWriter(
-				new FileWriter("CleanUp-rslString", true), true);
-			pw.println("&(executable = /usr/bin/rm) (arguments = -rf "
+			FileWriter fw = new FileWriter(
+				new File("cleanUp-rslString-" + jobIDs[i]), false);
+			fw.write("&(executable = /usr/bin/rm) (arguments = -rf "
 				+ home + "/" + jobIDs[i] + "/)");
-			pw.close();
+			fw.close();
 		} catch (java.io.IOException e) {
 			log.error(e.getMessage());
 		}
 
-		globusrunCmd += " -f CleanUp-rslString";
+		String globusrunCmd = ("globusrun -r " + hostname
+			+ "/jobmanager-fork -f CleanUp-rslString");
 
 		System.out.println("Globusrun command: " + globusrunCmd);
 		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
