@@ -46,9 +46,11 @@ class JobMonitor extends GSBLService {
 	static protected int update_interval = 300000;  // Default is 5 minutes.
 	static protected int update_max = 4800000;  // Default is 80 minutes.
 
+	static protected String home = "";
+	static protected String globusLocation = "";
+
 	private GARLIArguments myBean = null;
 	private Object[] jobIDs = null;
-	private Object[] gramISs = null;
 	private BufferedReader br = null;
 	private String rwd = "";
 	private String cwd = "";
@@ -87,6 +89,11 @@ class JobMonitor extends GSBLService {
 				.substring(0, spaceIndex));
 			update_max = Integer.parseInt(update_interval_string
 				.substring(spaceIndex + 1));
+
+			Properties env = new Properties();
+			env.load(Runtime.getRuntime().exec("env").getInputStream());
+			home = (String) env.get("HOME");
+			globusLocation = (String) env.get("GSBL_CONFIG_DIR");
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 		}
@@ -128,18 +135,13 @@ class JobMonitor extends GSBLService {
 	 */
 	public void checkJobStatus(int i) {
 		try {
-			Properties env = new Properties();
-			env.load(Runtime.getRuntime().exec("env").getInputStream());
-			String globusLocation = (String) env.get("GSBL_CONFIG_DIR");
-			Runtime r = Runtime.getRuntime();
 			File stateFile = new File(rwd + "last_known_status.txt");
-			stateFile.delete();
-			stateFile.createNewFile();
-			BufferedWriter bw = new BufferedWriter(new FileWriter(stateFile));
+			FileWriter fw = new FileWriter(new File(rwd +
+				"last_known_status.txt"), false);
 			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
 				+ (String) getGramID((String) jobIDs[i]));
-			bw.write(jobState);
-			bw.close();
+			fw.write(jobState);
+			fw.close();
 
 			if (jobState != null) {
 				if (jobState.contains("PENDING")) {
@@ -219,14 +221,6 @@ class JobMonitor extends GSBLService {
 	}
 
 	private void transferFiles(int i) {
-		String home = "";
-		try {
-			Properties env = new Properties();
-			env.load(Runtime.getRuntime().exec("env").getInputStream());
-			home = (String) env.get("HOME");
-		} catch (Exception e) {
-			log.error("Exception: " + e);
-		}
 		String hostname = (String) getHostname((String) jobIDs[i]);
 		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://"
 			+ home + "/" + jobIDs[i] + "/ gsiftp://" + hostname
@@ -248,7 +242,7 @@ class JobMonitor extends GSBLService {
 			log.error(e.getMessage());
 		}
 
-		String globusrunCmd = ("globusrun -r " + hostname
+		String globusrunCmd = ("globusrun -batch -r " + hostname
 			+ "/jobmanager-fork -f " + fileName);
 
 		System.out.println("Globusrun command: " + globusrunCmd);
@@ -258,7 +252,8 @@ class JobMonitor extends GSBLService {
 		// Update the status of this job in the database.
 		GSBLService.updateDBStatus("10", rwd, update_interval,
 			update_max);
-
+/*
 		cleanupRsl.delete();
+*/
 	}
 }
