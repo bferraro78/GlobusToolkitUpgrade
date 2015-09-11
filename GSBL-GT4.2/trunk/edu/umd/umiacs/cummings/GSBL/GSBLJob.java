@@ -6,7 +6,7 @@ package edu.umd.umiacs.cummings.GSBL;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import org.globus.exec.client.GramJob;
+//import org.globus.exec.client.GramJob;
 //import org.globus.axis.message.addressing.EndpointReferenceType;
 
 import java.io.File;
@@ -79,7 +79,7 @@ public class GSBLJob {
 	/**
 	 * The underlying Globus GramJob.
 	 */
-	private GramJob myJob = null;
+//	private GramJob myJob = null;
 
 	private BuildRSL r = null;
 
@@ -230,7 +230,7 @@ public class GSBLJob {
 	 *            Remote working directory, i.e., staging directory on the
 	 *            server.
 	 */
-	public GSBLJob(String rwd) {
+/*	public GSBLJob(String rwd) {
 		myJob = new GramJob();
 		try {
 			// myJob.setEndpoint(jobEPR);
@@ -253,16 +253,16 @@ public class GSBLJob {
 			log.error("Exception is: " + e);
 		}
 	}
-
+*/
 	/**
 	 * Get the underlying GramJob.
 	 * 
 	 * @return the GramJob.
 	 */
-	public GramJob getJob() {
+/*	public GramJob getJob() {
 		return myJob;
 	}
-
+*/
 	/**
 	 * Get the scheduler.
 	 * 

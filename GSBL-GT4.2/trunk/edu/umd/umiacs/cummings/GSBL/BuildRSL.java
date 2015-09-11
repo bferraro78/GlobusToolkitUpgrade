@@ -28,7 +28,7 @@ public class BuildRSL {
 	/**
 	 * Logger.
 	 */
-	static Log log = LogFactory.getLog(RSLxml.class.getName());
+	static Log log = LogFactory.getLog(BuildRSL.class.getName());
 
 	/**
 	 * The RSL string.
