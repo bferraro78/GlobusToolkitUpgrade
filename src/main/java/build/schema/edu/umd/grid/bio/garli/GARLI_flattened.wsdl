@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor" xmlns:gsbl="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLService.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLService.wsdl" location="/fs/mikeproj/grid/www/cummings/GSBL/GT42GSBLService.wsdl"/>
+  <types>
+    <xsd:schema targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<!-- Argument Bean -->
+			<xsd:complexType name="GARLIArguments">
+				<xsd:all>
+	                                <xsd:element name="replicates" nillable="true" type="xsd:int"/>		
+			<xsd:element name="ratematrix" nillable="true" type="xsd:string"/>
+			<xsd:element name="outputphyliptree" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="randnniweight" nillable="true" type="xsd:double"/>
+			<xsd:element name="ofprefix" nillable="true" type="xsd:string"/>
+			<xsd:element name="limsprweight" nillable="true" type="xsd:double"/>
+			<xsd:element name="numratecats" nillable="true" type="xsd:int"/>
+			<xsd:element name="uniqueswapbias" nillable="true" type="xsd:double"/>
+			<xsd:element name="treerejectionthreshold" nillable="true" type="xsd:int"/>
+			<xsd:element name="numtaxa" nillable="true" type="xsd:string"/>
+			<xsd:element name="modelsdata" nillable="true" type="xsd:string"/>
+			<xsd:element name="startoptprec" nillable="true" type="xsd:double"/>
+			<xsd:element name="optimizeinputonly" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="refinestart" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="subsetspecificrates" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="topoweight" nillable="true" type="xsd:double"/>
+			<xsd:element name="constraintfile" nillable="true" type="xsd:string"/>
+			<xsd:element name="replicates" nillable="true" type="xsd:int"/>
+			<xsd:element name="nindivs" nillable="true" type="xsd:int"/>
+			<xsd:element name="streefname_userdata" nillable="true" type="xsd:string"/>
+			<xsd:element name="profilingjob" nillable="true" type="xsd:int"/>
+			<xsd:element name="analysistype" nillable="true" type="xsd:string"/>
+			<xsd:element name="distanceswapbias" nillable="true" type="xsd:double"/>
+			<xsd:element name="brlenweight" nillable="true" type="xsd:double"/>
+			<xsd:element name="minoptprec" nillable="true" type="xsd:double"/>
+			<xsd:element name="modweight" nillable="true" type="xsd:double"/>
+			<xsd:element name="outgroup" nillable="true" type="xsd:string"/>
+			<xsd:element name="numberofprecreductions" nillable="true" type="xsd:int"/>
+			<xsd:element name="selectionintensity" nillable="true" type="xsd:double"/>
+			<xsd:element name="outputsitelikelihoods" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="limsprrange" nillable="true" type="xsd:int"/>
+			<xsd:element name="collapsebranches" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="geneticcode" nillable="true" type="xsd:string"/>
+			<xsd:element name="configFile" nillable="true" type="xsd:string"/>
+			<xsd:element name="gammashapebrlen" nillable="true" type="xsd:int"/>
+			<xsd:element name="searchreps" nillable="true" type="xsd:int"/>
+			<xsd:element name="randsprweight" nillable="true" type="xsd:double"/>
+			<xsd:element name="novalidate" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="partitionsdata" nillable="true" type="xsd:string"/>
+			<xsd:element name="inferinternalstateprobs" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="streefname" nillable="true" type="xsd:string"/>
+			<xsd:element name="linkmodels" nillable="true" type="xsd:boolean"/>
+			<xsd:element name="uniquepatterns" nillable="true" type="xsd:string"/>
+			<xsd:element name="invariantsites" nillable="true" type="xsd:string"/>
+			<xsd:element name="datafname" nillable="true" type="xsd:string"/>
+			<xsd:element name="actualmemory" nillable="true" type="xsd:string"/>
+			<xsd:element name="ratehetmodel" nillable="true" type="xsd:string"/>
+			<xsd:element name="resampleproportion" nillable="true" type="xsd:double"/>
+			<xsd:element name="statefrequencies" nillable="true" type="xsd:string"/>
+			<xsd:element name="meanbrlenmuts" nillable="true" type="xsd:int"/>
+			<xsd:element name="jobname" nillable="true" type="xsd:string"/>
+			<xsd:element name="gammashapemodel" nillable="true" type="xsd:int"/>
+			<xsd:element name="datatype" nillable="true" type="xsd:string"/>
+			<xsd:element name="attachmentspertaxon" nillable="true" type="xsd:int"/>
+
+
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="sharedFiles" type="xsd:string"/>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="perJobArguments" type="xsd:string"/>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="perJobFiles" type="xsd:string"/>
+					<xsd:element name="symlinks" type="xsd:string"/>
+
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="inputFiles" type="xsd:string"/>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="outputFiles" type="xsd:string"/>
+					<xsd:element name="owner" type="xsd:string"/>
+					<xsd:element name="schedulerOverride" nillable="true" type="xsd:string"/>
+					<xsd:element name="appName" type="xsd:string"/>
+					<xsd:element name="jobName" type="xsd:string"/>
+					<xsd:element name="jobID" type="xsd:string"/>
+                                        <xsd:element name="workingDir" type="xsd:string"/>
+				</xsd:all>
+			</xsd:complexType>
+
+			<!-- REQUESTS AND RESPONSES -->
+			<xsd:element name="runService" type="tns:GARLIArguments"/>
+			<xsd:element name="runServiceResponse" type="xsd:boolean"/>
+		</xsd:schema>
+  </types>
+  <message name="RunServiceInputMessage">
+    <part name="parameters" element="tns:runService"/>
+  </message>
+  <message name="RunServiceOutputMessage">
+    <part name="parameters" element="tns:runServiceResponse"/>
+  </message>
+  <portType name="GARLIPortType">
+    <operation name="runService">
+      <input message="tns:RunServiceInputMessage"/>
+      <output message="tns:RunServiceOutputMessage"/>
+    </operation>
+    <operation name="createWorkingDir">
+      <input message="gsbl:CreateWorkingDirInputMessage"/>
+      <output message="gsbl:CreateWorkingDirOutputMessage"/>
+    </operation>
+  </portType>
+</definitions>

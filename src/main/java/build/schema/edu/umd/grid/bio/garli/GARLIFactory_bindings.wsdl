@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="GARLIFactoryService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService/bindings" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:porttype="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:import namespace="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService" location="GARLIFactory_flattened.wsdl"/>
+  <wsdl:binding name="GARLIFactoryPortTypeSOAPBinding" type="porttype:GARLIFactoryPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createResource">
+      <soap:operation soapAction="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService/GARLIFactoryPortType/createResourceRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

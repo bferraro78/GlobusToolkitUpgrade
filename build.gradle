@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+dependencies {
+	compile files('/home/gt6admin/GT6Upgrade/GSBL/build/libs/GSBL.jar')
+	compile files('/home/gt6admin/newVersions/axis-1.4.jar')
+	compile files('/home/gt6admin/newVersions/commons-logging-1.2.jar')
+	compile files('/home/gt6admin/newVersions/globus-addressing-1.0.jar')
+	compile files('/home/gt6admin/newVersions/jaxrpc-api-1.1.jar')
+	compile files('/home/gt6admin/newVersions/jdom-2.0.6.jar')
+}

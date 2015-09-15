@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="GARLIFactoryService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlpp="http://www.globus.org/namespaces/2004/10/WSDLPreprocessor" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:gsbl="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLFactoryService.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://cummings.umiacs.umd.edu/GSBL/GT42GSBLFactoryService.wsdl" location="/fs/mikeproj/grid/www/cummings/GSBL/GT42GSBLFactoryService.wsdl"/>
+  <types>
+    <xsd:schema targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService" xmlns:tns="http://www.umd.edu/namespaces/grid/bio/GARLIFactoryService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.w3.org/2005/08/addressing" schemaLocation="/fs/mikeproj/grid/www/cummings/ws/addressing/ws-addr.xsd"/>
+        </xsd:schema>
+  </types>
+  <portType name="GARLIFactoryPortType">
+    <operation name="createResource">
+      <input message="gsbl:CreateResourceRequest"/>
+      <output message="gsbl:CreateResourceResponse"/>
+    </operation>
+  </portType>
+</definitions>
