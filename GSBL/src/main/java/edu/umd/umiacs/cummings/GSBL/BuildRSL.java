@@ -43,7 +43,7 @@ public class BuildRSL {
 	/**
 	 * For RLS queries.
 	 */
-	private RLSManager rlsmanager = null;  // Might not be needed?
+//	private RLSManager rlsmanager = null;  // Might not be needed?
 
 	/**
 	 * Job submission variables.
@@ -126,7 +126,7 @@ public class BuildRSL {
 			String myRequirements, String myExtraRSL, String myUnique_id) {
 
 		// Initialize RLS manager.
-		rlsmanager = new RLSManager();
+//		rlsmanager = new RLSManager();
 
 		// Initialize mappings-to-add.
 		mappingsToAdd = new ArrayList<String>();

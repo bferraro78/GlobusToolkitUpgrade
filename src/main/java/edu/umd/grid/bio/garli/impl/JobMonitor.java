@@ -26,7 +26,7 @@ import java.lang.System;
 // Stub classes.
 //import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
 
-import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
+import edu.umd.grid.bio.garli.GARLIArguments;
 
 class JobMonitor extends GSBLService {
 
@@ -136,8 +136,8 @@ class JobMonitor extends GSBLService {
 	 */
 	public void checkJobStatus(int i) {
 		try {
-			File stateFile = new File((String) getWorkingDir((String)
-				jobIDs[i]) + "/last_known_status.txt");
+			File stateFile = new File((String) getWorkingDir((String) jobIDs[i])
+				+ "/" + jobIDs[i] + "/last_known_status.txt");
 			FileWriter fw = new FileWriter(stateFile, false);
 			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
 				+ (String) getGramID((String) jobIDs[i]));

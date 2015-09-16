@@ -12,7 +12,7 @@ import org.apache.commons.logging.LogFactory;
 import java.util.Properties;
 
 // Stub classes.
-import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
+import edu.umd.grid.bio.garli.GARLIArguments;
 import edu.umd.grid.bio.garli.shared.Base64Coder;
 
 /**

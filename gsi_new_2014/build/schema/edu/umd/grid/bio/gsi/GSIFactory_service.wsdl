@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="GSIFactoryService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GSIFactoryService/service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:binding="http://www.umd.edu/namespaces/grid/bio/GSIFactoryService/bindings" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:import namespace="http://www.umd.edu/namespaces/grid/bio/GSIFactoryService/bindings" location="GSIFactory_bindings.wsdl"/>
-  <wsdl:service name="GSIFactoryService">
-    <wsdl:port name="GSIFactoryPortTypePort" binding="binding:GSIFactoryPortTypeSOAPBinding">
-      <soap:address location="http://localhost:8080/wsrf/services/"/>
-    </wsdl:port>
-  </wsdl:service>
-</wsdl:definitions>

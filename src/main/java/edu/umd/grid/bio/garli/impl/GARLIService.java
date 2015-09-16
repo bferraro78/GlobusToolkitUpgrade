@@ -28,7 +28,7 @@ import java.lang.System;
 //import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
 
 // Java Bean class
-import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
+import edu.umd.grid.bio.garli.GARLIArguments;
 
 // Place service specific imports here between the protection comments.
 // BEGIN PROTECT: ServiceImports
