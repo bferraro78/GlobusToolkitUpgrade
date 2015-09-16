@@ -1,9 +1,0 @@
-http\://www.umd.edu/namespaces/grid/bio/LAMARCService=edu.umd.grid.bio.lamarc.stubs.LAMARCService
-http\://www.umd.edu/namespaces/grid/bio/LAMARCService/bindings=edu.umd.grid.bio.lamarc.stubs.LAMARCService.bindings
-http\://www.umd.edu/namespaces/grid/bio/LAMARCService/service=edu.umd.grid.bio.lamarc.stubs.LAMARC.service
-
-http\://www.umd.edu/namespaces/grid/bio/LAMARCFactoryService=edu.umd.grid.bio.lamarc.stubs.LAMARCFactoryService
-http\://www.umd.edu/namespaces/grid/bio/LAMARCFactoryService/bindings=edu.umd.grid.bio.lamarc.stubs.LAMARCFactoryService.bindings
-http\://www.umd.edu/namespaces/grid/bio/LAMARCFactoryService/service=edu.umd.grid.bio.lamarc.stubs.LAMARCFactory.service
-
-

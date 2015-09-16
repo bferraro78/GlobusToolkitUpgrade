@@ -1,2 +1,0 @@
-"Run_Number","Score","Cost","Planning_Units","Boundary_Length","Connectivity_Total","Connectivity_In","Connectivity_Edge","Connectivity_Out","Connectivity_In_Fraction","Penalty","Shortfall","Missing_Values"
-1,132.000000,112.000000,112,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,20.000000,18.000000,18

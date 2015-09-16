@@ -14,8 +14,8 @@ import edu.umd.umiacs.cummings.GSBL.GSBLPropertiesManager;
 
 // Stub classes.
 import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
-import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
-import edu.umd.grid.bio.garli.stubs.GARLIFactory.service.GARLIFactoryServiceAddressingLocator;
+//import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
+//import edu.umd.grid.bio.garli.stubs.GARLIFactory.service.GARLIFactoryServiceAddressingLocator;
 
 // For getting environment variables.
 import java.util.Properties;

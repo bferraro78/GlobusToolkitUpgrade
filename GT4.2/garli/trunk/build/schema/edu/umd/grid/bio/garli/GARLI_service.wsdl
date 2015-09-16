@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="GARLIService" targetNamespace="http://www.umd.edu/namespaces/grid/bio/GARLIService/service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:binding="http://www.umd.edu/namespaces/grid/bio/GARLIService/bindings" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-  <wsdl:import namespace="http://www.umd.edu/namespaces/grid/bio/GARLIService/bindings" location="GARLI_bindings.wsdl"/>
-  <wsdl:service name="GARLIService">
-    <wsdl:port name="GARLIPortTypePort" binding="binding:GARLIPortTypeSOAPBinding">
-      <soap:address location="http://localhost:8080/wsrf/services/"/>
-    </wsdl:port>
-  </wsdl:service>
-</wsdl:definitions>

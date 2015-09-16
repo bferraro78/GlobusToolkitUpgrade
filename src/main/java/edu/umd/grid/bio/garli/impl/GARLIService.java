@@ -25,7 +25,9 @@ import java.util.*;
 import java.lang.System;
 
 // Stub classes.
-import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
+//import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
+
+// Java Bean class
 import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
 
 // Place service specific imports here between the protection comments.

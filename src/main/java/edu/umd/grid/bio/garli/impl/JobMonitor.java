@@ -24,7 +24,8 @@ import java.net.*;
 import java.lang.System;
 
 // Stub classes.
-import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
+//import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
+
 import edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments;
 
 class JobMonitor extends GSBLService {
