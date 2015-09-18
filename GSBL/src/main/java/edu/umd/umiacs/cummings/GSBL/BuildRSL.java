@@ -405,9 +405,11 @@ public class BuildRSL {
 
 		// Add remote resource directory.
 		document.append("\n  (directory = $(SERVER)");
+/*
 		if (reps > 1) {
-			document.append("/").append(unique_id).append(".output");
+			document.append(unique_id).append(".output");
 		}
+*/
 		document.append(")");
 
 		// Add arguments tag to RSL from arguments string.
@@ -565,11 +567,30 @@ public class BuildRSL {
 		}
 
 		// Create job directory if it doesn't exist.
-		File dir = new File(workingDir + "/" + unique_id + "/");
+		File dir = new File(workingDir + "/" + unique_id);
 		try {
 			dir.mkdir();
 		} catch (Exception e) {
 			log.error("Exception: " + e);
+		}
+
+		/* If reps > 1, create an 'output' folder in our working directory and fill
+		 * it with sub-job folders. */
+		if (reps > 1) {
+			File outputDir = new File(dir.getPath() + "/" + unique_id + ".output");
+
+			System.out.println("Output Dir");
+
+			try {
+				outputDir.mkdir();
+				File tempJobDir = null;
+				for (int i = 0; i < reps; i++) {
+					tempJobDir = new File(outputDir.getPath() + "/job" + i);
+					tempJobDir.mkdir();
+				}
+			} catch (Exception e) {
+				log.error("Exception: " + e);
+			}
 		}
 
 		// Make symlinks into job folder.

@@ -164,8 +164,8 @@ public class GSBLClient {
 			if (reps > 1) {
 				/* If reps > 1, create an 'output' folder in our working
 				directory and fill it with sub-job folders. */
-				File outputDir =
-						new File(myWorkingDir + unique_id + ".output/");
+				File outputDir = new File(myWorkingDir
+					+ unique_id + "/" + unique_id + ".output/");
 				
 				System.out.println("Output Dir");
 
@@ -173,8 +173,9 @@ public class GSBLClient {
 					outputDir.mkdir();
 					File tempJobDir = null;
 					for (int i = 0; i < reps; i++) {
-						tempJobDir = new File(myWorkingDir + unique_id
-								+ ".output/job" + i + "/");
+						tempJobDir = new File(myWorkingDir
+							+ unique_id + "/" + unique_id
+							+ ".output/job" + i + "/");
 						tempJobDir.mkdir();
 					}
 				} catch (Exception e) {
@@ -187,6 +188,8 @@ public class GSBLClient {
 		}
 		return true;
 	}
+
+	
 
 
 	/**

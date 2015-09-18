@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.7.0_85" class="java.beans.XMLDecoder">
- <object class="edu.umd.grid.bio.garli.stubs.GARLIService.GARLIArguments">
+ <object class="edu.umd.grid.bio.garli.GARLIArguments">
   <void property="actualmemory">
    <string>1</string>
   </void>
@@ -17,7 +17,7 @@
    <string>estimate</string>
   </void>
   <void property="jobID">
-   <string>9431165270.06349566180260136</string>
+   <string>5473002440.9699479930615338</string>
   </void>
   <void property="jobName">
    <string>test</string>

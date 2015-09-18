@@ -14,8 +14,6 @@ import edu.umd.umiacs.cummings.GSBL.GSBLPropertiesManager;
 
 // Stub classes.
 import edu.umd.grid.bio.garli.GARLIArguments;
-//import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
-//import edu.umd.grid.bio.garli.stubs.GARLIFactory.service.GARLIFactoryServiceAddressingLocator;
 
 // For getting environment variables.
 import java.util.Properties;
@@ -74,8 +72,7 @@ public class GARLISubmitClient extends GSBLClient {
 		 * properties. */
 		GARLIArguments myBean = new GARLIArguments();
 		try {
-			GSBLPropertiesManager GPM =
-					new GSBLPropertiesManager(propertiesFile);
+			GSBLPropertiesManager GPM = new GSBLPropertiesManager(propertiesFile);
 			GPM.updateJavaBean(myBean);
 		} catch (Exception e) {
 			System.exit(1);
@@ -102,8 +99,7 @@ public class GARLISubmitClient extends GSBLClient {
 	/**
 	 * Constructor.
 	 */
-	public GARLISubmitClient(GARLIArguments myBean)
-			throws Exception {
+	public GARLISubmitClient(GARLIArguments myBean) throws Exception {
 		super("GARLI");
 		this.myBean = myBean;
 	}
@@ -138,8 +134,7 @@ public class GARLISubmitClient extends GSBLClient {
 	
 		/* If replicates > 1, then will created a output and populate it with
 		 * sub-job folders within /export/work/drupal/user_files/admin/job# */
-		createWorkingDir(jobID + "@--" + cwd
-				+ "@--" + hostname + "@--" + reps);
+		createWorkingDir(jobID + "@--" + cwd + "@--" + hostname + "@--" + reps);
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
 		ArrayList<String[]> perJobFiles = new ArrayList<String[]>();
@@ -159,8 +154,7 @@ public class GARLISubmitClient extends GSBLClient {
 		if ((configFile == "") || (configFile == null)) {  /* We will build a
 				configuration file from the args passed in. */
 			buildConfig = true;
-		} else if ((confFileNames = parseDirectory(configFile, replica))
-				== null) {  // Single job or homogeneous batch.
+		} else if ((confFileNames = parseDirectory(configFile, replica)) == null) {  // Single job or homogeneous batch.
 
 		} else {  // Heterogeneous job batch.
 			perJobArguments.add("configFile");
@@ -246,8 +240,8 @@ public class GARLISubmitClient extends GSBLClient {
 		// Check for scheduler override.
 		File scheduler_override = new File("scheduler_override");
 		if (scheduler_override.exists()) {
-			BufferedReader br =
-					new BufferedReader(new FileReader(scheduler_override));
+			BufferedReader br = new BufferedReader(new FileReader(
+						scheduler_override));
 			myBean.setSchedulerOverride(br.readLine());
 			br.close();
 		}
@@ -265,9 +259,5 @@ public class GARLISubmitClient extends GSBLClient {
 		GARLIService garli_service = new GARLIService(myBean);
 
 		System.out.println("Job submitted with ID: " + jobID);
-
-		// Destroy the service instance. - NO NEED FOR THIS ANYMORE. We do not create service instance.
-		//this.destroy();
-
 	}  // End execute.
 }  // End class.
