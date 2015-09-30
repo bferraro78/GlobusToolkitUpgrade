@@ -405,11 +405,11 @@ public class BuildRSL {
 
 		// Add remote resource directory.
 		document.append("\n  (directory = $(SERVER)");
-/*
+
 		if (reps > 1) {
 			document.append(unique_id).append(".output");
 		}
-*/
+
 		document.append(")");
 
 		// Add arguments tag to RSL from arguments string.
@@ -485,7 +485,7 @@ public class BuildRSL {
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 				document.append("\n                  (transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
-					document.append(sharedFiles.get(i));
+					document.append("$(SERVER)").append(sharedFiles.get(i));
 					if (i != (sharedFiles.size() - 1)) {
 						document.append(",");
 					}
