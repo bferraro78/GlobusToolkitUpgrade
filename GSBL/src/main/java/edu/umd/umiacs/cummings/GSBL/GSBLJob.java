@@ -125,6 +125,9 @@ public class GSBLJob {
 			ArrayList<String[]> perjob_files, String[] output_files,
 			String requirements, String extraRSL, String unique_id) throws Exception {
 
+		// TRY/CATCH BLOCK should be put in for new BuildRSL in case of 
+		// Globus-url-copy failing
+
 		r = new BuildRSL(executable, arguments, scheduler, resource, arch_os,
 				runtime_estimate, shared_files, perjob_files, output_files,
 				workingDir, requirements, extraRSL, unique_id);

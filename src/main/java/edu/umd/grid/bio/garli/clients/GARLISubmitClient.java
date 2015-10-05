@@ -114,6 +114,7 @@ public class GARLISubmitClient extends GSBLClient {
 		env.load(Runtime.getRuntime().exec("env").getInputStream());
 		String cwd = (String)env.get("PWD");
 		String hostname = (String)env.get("HOSTNAME");
+
 		//String gl = (String)env.get("GSBL_CONFIG_DIR");
 
 		//System.out.println("CWD: " + cwd);
@@ -133,7 +134,7 @@ public class GARLISubmitClient extends GSBLClient {
 		}
 	
 		/* If replicates > 1, then will created a output and populate it with
-		 * sub-job folders within /export/work/drupal/user_files/admin/job# */
+		 * sub-job folders within /home/gt6admin/GT6Upgrade/src/main/java/test/job# */
 		createWorkingDir(jobID + "@--" + cwd + "@--" + hostname + "@--" + reps);
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
@@ -210,7 +211,7 @@ public class GARLISubmitClient extends GSBLClient {
 		myBean.setPerJobArguments(perJobArguments.toArray(myPerJobArguments));
 
 		/* Sets the working directory for specific job as
-		 * /export/work/drupal/user_files/admin/job#/ */
+		 * /home/gt6admin/GT6Upgrade/src/main/java/test/job#/ */
 		String workingDir = cwd + "/";
 
 		/* Sets bean's "sharedFiles" with shared files used by all instances

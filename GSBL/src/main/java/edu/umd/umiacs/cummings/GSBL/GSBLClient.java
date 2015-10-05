@@ -44,6 +44,8 @@ public class GSBLClient {
 	 * A writable directory under which our temporary directories will be
 	 * created.
 	 */
+
+	// NO LONGER THE CWD
 	final static protected String workingDirBase = "/export/grid_files/";
 
 	/**
@@ -61,7 +63,7 @@ public class GSBLClient {
 	// Endpoint reference for our instance.
 	//protected EndpointReferenceType instanceEPR = null;
 
-	// The resource ID should be unique.
+	// The jobID should be unique.
 	protected String jobID = null;
 
 	// The logger.
