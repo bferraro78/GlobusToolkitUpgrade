@@ -1,4 +1,3 @@
-
 /**
  * @author Adam Bazinet
  * @author Ben Ferraro
@@ -22,9 +21,6 @@ import java.net.*;
 
 // For garbage collection.
 import java.lang.System;
-
-// Stub classes.
-//import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
 
 import edu.umd.grid.bio.garli.GARLIArguments;
 
@@ -78,10 +74,6 @@ class JobMonitor extends GSBLService {
 	// Load things from config files. We only want to do this once.
 	static {
 		try {
-/*
-			container_status_location = GSBLUtils
-				.getConfigElement("container_status.location");
-*/
 			String update_interval_string = GSBLUtils
 				.getConfigElement("update_interval");
 			// Split interval string into min and max.
@@ -136,39 +128,31 @@ class JobMonitor extends GSBLService {
 	 */
 	public void checkJobStatus(int i) {
 		try {
-			File stateFile = new File((String) getWorkingDir((String) jobIDs[i])
-				+ "/" + jobIDs[i] + "/last_known_status.txt");
+			File stateFile = new File((String) getWorkingDir((String) jobIDs[i]) + "/"
+					+ jobIDs[i] + "/last_known_status.txt");
 			FileWriter fw = new FileWriter(stateFile, false);
 			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
-				+ (String) getGramID((String) jobIDs[i]));
+					+ (String) getGramID((String) jobIDs[i]));
 			fw.write(jobState);
 			fw.close();
 
 			if (jobState != null) {
 				if (jobState.contains("PENDING")) {
 					log.debug("Updating job status: 1 for " + rwd);
-					// Update the status of this job in the database (1 =
-					// idle).
-					GSBLService.updateDBStatus("1", rwd, update_interval,
-							update_max);
+					// Update the status of this job in the database (1 = idle).
+					GSBLService.updateDBStatus("1", rwd, update_interval, update_max);
 				} else if (jobState.contains("ACTIVE")) {
 					log.debug("Updating job status: 2 for " + rwd);
-					// Update the status of this job in the database (2 =
-					// running).
-					GSBLService.updateDBStatus("2", rwd, update_interval,
-							update_max);
+					// Update the status of this job in the database (2 = running).
+					GSBLService.updateDBStatus("2", rwd, update_interval, update_max);
 				} else if (jobState.contains("DONE")) {
 					log.debug("Updating job status: 4 for " + rwd);
-					// Update the status of this job in the database (4 =
-					// finished).
-					GSBLService.updateDBStatus("4", rwd, update_interval,
-							update_max);
+					// Update the status of this job in the database (4 = finished).
+					GSBLService.updateDBStatus("4", rwd, update_interval, update_max);
 				} else if (jobState.contains("FAILED")) {
 					log.debug("Updating job status: 5 for " + rwd);
-					// Update the status of this job in the database (5 =
-					// failed).
-					GSBLService.updateDBStatus("5", rwd, update_interval,
-							update_max);
+					// Update the status of this job in the database (5 = failed).
+					GSBLService.updateDBStatus("5", rwd, update_interval, update_max);
 				} else {
 					log.debug("jobState for " + rwd + " is: " + jobState);
 				}
@@ -223,38 +207,44 @@ class JobMonitor extends GSBLService {
 
 	private void transferFiles(int i) {
 		String hostname = (String) getHostname((String) jobIDs[i]);
-		String globusUrlCopyCmd = ("globus-url-copy -cd -r file://"
-			+ home + "/" + jobIDs[i] + "/ gsiftp://" + hostname
-			+ cwd + jobIDs[i] + "/");
+		String globusUrlCopyCmd = ("globus-url-copy -cd -q -r file://" + home + "/"
+				+ jobIDs[i] + "/ gsiftp://" + hostname + cwd + jobIDs[i] + "/");
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Transfer job folder and its contents.
-		System.out.println(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
-		
-		// Instead of file clean up, we just use rm -rf to get rid of JobID directory.
-		String fileName = ("cleanupRslString" + jobIDs[i]);
-		File cleanupRsl = new File(fileName);
-		try {
-			FileWriter fw = new FileWriter(cleanupRsl);
-			fw.write("&(executable = /usr/bin/rm) (arguments = -rf "
-				+ home + "/" + jobIDs[i] + "/)");
-			fw.close();
-		} catch (java.io.IOException e) {
-			log.error(e.getMessage());
-		}
+		String output = GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd);
 
-		String globusrunCmd = ("globusrun -batch -r " + hostname
-			+ "/jobmanager-fork -f " + fileName);
+		if (!output.equals("")) {  // If command produced output, something failed.
+			System.out.print(output);
 
-		System.out.println("Globusrun command: " + globusrunCmd);
-		System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
-
-		log.debug("Updating job status: 10 for " + rwd);
-		// Update the status of this job in the database.
-		GSBLService.updateDBStatus("10", rwd, update_interval,
-			update_max);
+			log.debug("Updating job status: 11 for " + rwd);
+			// Update the status of this job in the database.
+			GSBLService.updateDBStatus("11", rwd, update_interval, update_max);
+		} else {
+			// Instead of file clean up, we just use rm -rf to get rid of JobID directory.
+			String fileName = ("cleanupRslString" + jobIDs[i]);
+			File cleanupRsl = new File(fileName);
+			try {
+				FileWriter fw = new FileWriter(cleanupRsl);
+				fw.write("&(executable = /usr/bin/rm) (arguments = -rf " + home + "/"
+						+ jobIDs[i] + "/)");
+				fw.close();
+			} catch (java.io.IOException e) {
+				log.error(e.getMessage());
+			}
+			
+			String globusrunCmd = ("globusrun -batch -r " + hostname
+					+ "/jobmanager-fork -f " + fileName);
+			
+			System.out.println("Globusrun command: " + globusrunCmd);
+			System.out.println(GSBLUtils.executeCommandReturnOutput(globusrunCmd));
+			
+			log.debug("Updating job status: 10 for " + rwd);
+			// Update the status of this job in the database.
+			GSBLService.updateDBStatus("10", rwd, update_interval, update_max);
 /*
-		cleanupRsl.delete();
+			cleanupRsl.delete();
 */
+		}
 	}
 }

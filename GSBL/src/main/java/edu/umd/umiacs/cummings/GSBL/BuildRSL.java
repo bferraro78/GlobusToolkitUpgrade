@@ -394,9 +394,10 @@ public class BuildRSL {
 
 		// START RSL STRING.
 		// Add RSL substitutions.
-		document.append("& (rsl_substitution = (CLIENT ")
-			.append(hostname).append(workingDir).append(")");
-		document.append("\n                      (SERVER $(HOME)/")  // Changed from "$(GLOBUS_SCRATCH_DIR)" for testing.
+		document.append("& (rsl_substitution = (CLIENT ").append(hostname)
+			.append(workingDir).append(")");
+		// Changed from "$(GLOBUS_SCRATCH_DIR)" for testing.
+		document.append("\n                      (SERVER $(HOME)/")
 			.append(unique_id).append("/)");
 		document.append(")");  // End RSL substitution.
 
@@ -436,7 +437,7 @@ public class BuildRSL {
 			document.append("\n  ").append(stdin);
 		}
 
-		/* Sets the stdout/stderr in RSL to remote resource directory. */
+		// Sets the stdout/stderr in RSL to remote resource directory.
 		document.append("\n  (stdout = $(SERVER)").append("stdout)");
 		document.append("\n  (stderr = $(SERVER)").append("stderr)");
 
@@ -447,20 +448,18 @@ public class BuildRSL {
 			document.append("\n  (count = ").append(cpus).append(")");
 		}
 
-		if (job_type.equals("mpi")) {  /* If job_type equals mpi, specify this
-				explicitly. */
+		if (job_type.equals("mpi")) {
+			// If job_type equals mpi, specify this explicitly.
 			document.append("\n  (jobtype = mpi)");
-		} else if (reps == 1) {  /* Specify single job explicitly (holding off
-				on multiple because I don't know about Condor implications). */
+		} else if (reps == 1) {
+			// Specify single job explicitly (holding off on multiple because I don't
+			// know about Condor implications).
 			document.append("\n  (jobtype = single)");
 		}
 
-		/*
-		 * If this is a Condor job with checkpointing enabled, add the jobtype
-		 * attribute with value 'condor'. Due to poor Globus coding, this
-		 * element must go after the stderr attribute for the RSL to be parsed
-		 * correctly.
-		 */
+		// If this is a Condor job with checkpointing enabled, add the jobtype
+		// attribute with value 'condor'. Due to poor Globus coding, this element
+		// must go after the stderr attribute for the RSL to be parsed correctly.
 		if ((executable.length() > 4)
 				&& (executable.substring(executable.length() - 4))
 						.equals("ckpt") && resource.equals("Condor")) {
@@ -490,8 +489,8 @@ public class BuildRSL {
 						document.append(",");
 					}
 				}
-				/* Add hack to transfer one_proc_driver_CLFSCONDOR.r if we're
-				 * running on a WINDOWS machine under Condor... . */
+				// Add hack to transfer one_proc_driver_CLFSCONDOR.r if we're running
+				// on a WINDOWS machine under Condor... .
 				if (executable.equals("setR.bat")) {
 					document.append(",one_proc_driver_CLFSCONDOR.r");
 				}
@@ -574,8 +573,8 @@ public class BuildRSL {
 			log.error("Exception: " + e);
 		}
 
-		/* If reps > 1, create an 'output' folder in our working directory and fill
-		 * it with sub-job folders. */
+		// If reps > 1, create an 'output' folder in our working directory and fill
+		// it with sub-job folders.
 		if (reps > 1) {
 			File outputDir = new File(dir.getPath() + "/" + unique_id + ".output");
 
@@ -596,24 +595,28 @@ public class BuildRSL {
 		// Make symlinks into job folder.
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 			for (String f : sharedFiles) {
-				String symlinkCommand = ("ln -s " + workingDir + f
-						+ " " + workingDir + unique_id + "/" + f);
+				String symlinkCommand = ("ln -s " + workingDir + f + " " + workingDir
+						+ unique_id + "/" + f);
 				GSBLUtils.executeCommand(symlinkCommand);
 			}
 		}
 
 		String home = (String) env.get("HOME");
 
-		String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://"
-			+ hostname + workingDir + unique_id + "/ file://"
-			+ home + "/" + unique_id + "/";
+		String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://" + hostname
+			+ workingDir + unique_id + "/ file://" + home + "/" + unique_id + "/";
 
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
 		// Tranfer job folder and its contents.
-		System.out.print(GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd));
+		String output = GSBLUtils.executeCommandReturnOutput(globusUrlCopyCmd);
 
-		/*
+		if (!output.equals("")) {  // If any output is produced, something failed.
+			System.out.print(output);
+
+			System.exit(0);  // Abort job submission if globus-url-copy fails.
+		}
+/*
 		document.append("\n  (file_stage_in =");
 
 		// Create the empty directory if it doesn't exist.
@@ -637,21 +640,19 @@ public class BuildRSL {
 
 		
 		// Stages in perJobFiles.
-		//if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
-		//	for (int i = 0; i < perJobFiles.size(); i++) {
-		//		String[] tempcouples = perJobFiles.get(i);
-		//		for (int j = 0; j < tempcouples.length; j++) {
-		//			document.append(" (gsiftp://$(CLIENT)")
-		//				.append(tempcouples[j]).append(" $(SERVER)")
-		//				.append(tempcouples[j]).append(")");
-		//		}
-		//	}
-		//}
+		if ((perJobFiles != null) && (perJobFiles.size() > 0)) {
+			for (int i = 0; i < perJobFiles.size(); i++) {
+				String[] tempcouples = perJobFiles.get(i);
+				for (int j = 0; j < tempcouples.length; j++) {
+					document.append("\n                   (gsiftp://$(CLIENT)")
+						.append(tempcouples[j]).append(" $(SERVER)")
+						.append(tempcouples[j]).append(")");
+				}
+			}
+		}
 		
-
 		document.append(")");  // End file stage in.
 		
-
 		// Begin file stage out.
 		// If reps > 1, transfer back the entire output sub-directory.
 		if (reps > 1) {
@@ -683,7 +684,7 @@ public class BuildRSL {
 
 		// File cleanup.
 		document.append("\n  (file_clean_up = file://$(SERVER))");
-		*/
+*/
 	}  // End createRSL.
 
 	private void transferOutputFiles() {

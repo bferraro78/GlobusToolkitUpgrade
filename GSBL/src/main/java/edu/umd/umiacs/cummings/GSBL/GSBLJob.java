@@ -6,9 +6,6 @@ package edu.umd.umiacs.cummings.GSBL;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-//import org.globus.exec.client.GramJob;
-//import org.globus.axis.message.addressing.EndpointReferenceType;
-
 import java.io.File;
 import java.util.ArrayList;
 
@@ -136,10 +133,10 @@ public class GSBLJob {
 
 		// write any mappings to our working directory (something like
 		// "/export/grid_files/[job_id]/").
-	//	r.writeMappingsToAdd(); 
+//		r.writeMappingsToAdd(); 
 
 		// Instantiate the GramJob.
-	//	myJob = new GramJob(r.getXML());
+//		myJob = new GramJob(r.getXML());
 
 		// Fill in the number of cpus and job replicates.
 		cpus = r.getCPUs();

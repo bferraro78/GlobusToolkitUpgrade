@@ -7,7 +7,6 @@ package edu.umd.grid.bio.garli.impl;
 
 // GSBL classes.
 import edu.umd.umiacs.cummings.GSBL.BeanToArguments;
-//import edu.umd.umiacs.cummings.GSBL.GSBLJobManager;
 import edu.umd.umiacs.cummings.GSBL.GSBLService;
 import edu.umd.umiacs.cummings.GSBL.GSBLRuntimeConfiguration;
 import edu.umd.umiacs.cummings.GSBL.GSBLJob;
@@ -23,9 +22,6 @@ import java.util.*;
 
 // For garbage collection.
 import java.lang.System;
-
-// Stub classes.
-//import edu.umd.grid.bio.garli.stubs.GARLI.service.GARLIServiceAddressingLocator;
 
 // Java Bean class
 import edu.umd.grid.bio.garli.GARLIArguments;
@@ -87,7 +83,6 @@ public class GARLIService extends GSBLService {
 	 */
 	private String serviceName = "GARLI";
 
-
 	public GARLIService(GARLIArguments myBean) throws Exception {
 		super("GARLI");
 		runService(myBean);
@@ -120,12 +115,10 @@ public class GARLIService extends GSBLService {
 			runtimeConfig = new GSBLRuntimeConfiguration(globusLocation
 					+ "/service_configurations/GARLI.runtime.xml");
 			runtime_estimates_location = globusLocation + "/runtime_estimates/";
-
-			/*
+/*
 			container_status_location =
 					GSBLUtils.getConfigElement("container_status.location");
-			*/
-
+*/
 			update_interval_string =
 					GSBLUtils.getConfigElement("update_interval");
 			// Split interval string into min and max.
@@ -153,8 +146,7 @@ public class GARLIService extends GSBLService {
 
 		// Create symlinks.
 		// (Might not need because no symlinks are set in "GARLISubmitClient.java".)
-		if ((myBean.getSymlinks() != null)
-				&& !myBean.getSymlinks().equals("")) {
+		if ((myBean.getSymlinks() != null) && !myBean.getSymlinks().equals("")) {
 			makeSymlinks(myBean.getSymlinks());
 		}
 
@@ -199,8 +191,7 @@ public class GARLIService extends GSBLService {
 
 		String argumentString = null;
 		try {
-			BeanToArguments BTA =
-					new BeanToArguments(argumentDescription);
+			BeanToArguments BTA = new BeanToArguments(argumentDescription);
 			argumentString = BTA.getArgumentStringFromBean(myBean);
 		} catch (Exception e) {
 			log.error("Exception: " + e);
@@ -216,10 +207,8 @@ public class GARLIService extends GSBLService {
 			log.error("Exception setting replicates: " + e);
 		}
 
-		int runtime_estimate_seconds = -1;  /* -1 means we don't have an
-				estimate. */
-		int runtime_estimate_seconds_recent = -1;  /* -1 means we don't have an
-				estimate. */
+		int runtime_estimate_seconds = -1;  // -1 means we don't have an estimate.
+		int runtime_estimate_seconds_recent = -1;  // -1 means we don't have an estimate.
 		int searchreps = -1;
 		int bootstrapreps = -1;
 
@@ -276,16 +265,16 @@ public class GARLIService extends GSBLService {
 			String workingDir = runtime_estimates_location + executable + "/";
 
 			// Formulate command.
-			String command = workingDir + "estimate_" + executable
-					+ "_runtime.pl " + unique_id + " " + unique_patterns + " "
-					+ num_taxa + " " + actual_mem + " ";
+			String command = workingDir + "estimate_" + executable + "_runtime.pl "
+				+ unique_id + " " + unique_patterns + " " + num_taxa + " "
+				+ actual_mem + " ";
 			String command2 = workingDir + "estimate_" + executable
-					+ "_runtime_recent.pl " + unique_id + " " + unique_patterns
-					+ " " + num_taxa + " " + actual_mem + " ";
+				+ "_runtime_recent.pl " + unique_id + " " + unique_patterns + " "
+				+ num_taxa + " " + actual_mem + " ";
 
 			String datatype = myBean.getDatatype();
-			ArrayList<String> distinctDatatype =
-					GSBLUtils.returnDistinctGarliValues("datatype");
+			ArrayList<String> distinctDatatype = GSBLUtils
+				.returnDistinctGarliValues("datatype");
 			if (datatype == null) {
 				datatype = "nucleotide";
 			} else if (!distinctDatatype.contains(datatype)) {
@@ -293,44 +282,42 @@ public class GARLIService extends GSBLService {
 			}
 
 			String ratematrix = myBean.getRatematrix();
-			ArrayList<String> distinctRateMatrix =
-					GSBLUtils.returnDistinctGarliValues("ratematrix");
-			if ((ratematrix == null)
-					|| !distinctRateMatrix.contains(ratematrix)) {  /* Either
-					not supplied or we haven't seen it before ... use default
-					value. */
+			ArrayList<String> distinctRateMatrix = GSBLUtils
+				.returnDistinctGarliValues("ratematrix");
+			if ((ratematrix == null) || !distinctRateMatrix.contains(ratematrix)) {
+				// Either not supplied or we haven't seen it before ... use default
+				// value.
 				if (datatype.equals("nucleotide")) {
 					ratematrix = "6rate";
 				} else if (datatype.equals("aminoacid")) {
-					ratematrix = "dayhoff";  /* I'm picking this default since
-							GARLI doesn't give one. */
+					// I'm picking this default since GARLI doesn't give one.
+					ratematrix = "dayhoff";
 				} else {  // Must be a codon model.
 					ratematrix = "2rate";
 				}
 			}
 
 			String statefrequencies = myBean.getStatefrequencies();
-			ArrayList<String> distinctStateFrequencies =
-					GSBLUtils.returnDistinctGarliValues("statefrequencies");
+			ArrayList<String> distinctStateFrequencies = GSBLUtils
+				.returnDistinctGarliValues("statefrequencies");
 			if ((statefrequencies == null)
 					|| (!distinctStateFrequencies.contains(statefrequencies))) {
-				/* Either not supplied or we haven't seen it before ... use
-					default value. */
+				// Either not supplied or we haven't seen it before ... use default
+				// value.
 				if (datatype.equals("nucleotide")) {
 					statefrequencies = "estimate";
 				} else if (datatype.equals("aminoacid")) {
-					statefrequencies = "dayhoff";  /* I'm picking this default
-							since GARLI doesn't give one. */
+					// I'm picking this default since GARLI doesn't give one.
+					statefrequencies = "dayhoff";
 				} else {  // Must be a codon model.
 					statefrequencies = "empirical";
 				}
 			}
 
 			String ratehetmodel = myBean.getRatehetmodel();
-			if (ratehetmodel == null) {  /* Rate heterogeneity model was not
-					supplied, use default value. */
-				if (datatype.equals("nucleotide")
-						|| datatype.equals("aminoacid")) {
+			if (ratehetmodel == null) {
+				// Rate heterogeneity model was not supplied, use default value.
+				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
 					ratehetmodel = "gamma";
 				} else {  // Must be a codon model.
 					ratehetmodel = "none";
@@ -338,10 +325,9 @@ public class GARLIService extends GSBLService {
 			}
 
 			String numratecats = (myBean.getNumratecats()).toString();
-			if (numratecats == null) {  /* Number of rate categories was not
-					supplied, use default value. */
-				if (datatype.equals("nucleotide")
-						|| datatype.equals("aminoacid")) {
+			if (numratecats == null) {
+				// Number of rate categories was not supplied, use default value.
+				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
 					numratecats = "4";
 				} else {  // Must be a codon model.
 					numratecats = "1";
@@ -349,22 +335,19 @@ public class GARLIService extends GSBLService {
 			}
 
 			String invariantsites = myBean.getInvariantsites();
-			if (invariantsites == null) {  /* Invariantsites was not supplied,
-					use default value. */
-				if (datatype.equals("nucleotide")
-						|| datatype.equals("aminoacid")) {
+			if (invariantsites == null) {
+				// Invariantsites was not supplied, use default value.
+				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
 					invariantsites = "estimate";
 				} else {  // Must be a codon model.
 					invariantsites = "none";
 				}
 			}
 
-			command += (datatype + " " + ratematrix + " " + statefrequencies
-					+ " " + ratehetmodel + " " + numratecats + " "
-					+ invariantsites);
-			command2 += (datatype + " " + ratematrix + " " + statefrequencies
-					+ " " + ratehetmodel + " " + numratecats + " "
-					+ invariantsites);
+			command += (datatype + " " + ratematrix + " " + statefrequencies + " "
+					+ ratehetmodel + " " + numratecats + " " + invariantsites);
+			command2 += (datatype + " " + ratematrix + " " + statefrequencies + " "
+					+ ratehetmodel + " " + numratecats + " " + invariantsites);
 
 			log.debug("command is: " + command);
 			log.debug("command2 is: " + command2);
@@ -376,23 +359,19 @@ public class GARLIService extends GSBLService {
 					.executeCommandReturnOneLine(command2, workingDir, true);
 
 			log.debug("GARLI runtime estimate is: " + runtime_estimate);
-			log.debug("GARLI recent runtime estimate is: "
-					+ runtime_estimate_recent);
+			log.debug("GARLI recent runtime estimate is: " + runtime_estimate_recent);
 
-			if (!runtime_estimate.equals("")
-					&& !runtime_estimate.equals("-1")) {
+			if (!runtime_estimate.equals("") && !runtime_estimate.equals("-1")) {
 				runtime_estimate_seconds = Integer.parseInt(runtime_estimate);
 			}
 
 			if (!runtime_estimate_recent.equals("")
 					&& !runtime_estimate_recent.equals("-1")) {
-				runtime_estimate_seconds_recent =
-						Integer.parseInt(runtime_estimate_recent);
+				runtime_estimate_seconds_recent = Integer
+					.parseInt(runtime_estimate_recent);
 			}
 
-			/* Scale runtime estimate linearly based on searchreps and
-			 * bootstrapreps.
-			 */
+			// Scale runtime estimate linearly based on searchreps and bootstrapreps.
 			searchreps = Integer.valueOf(gp.getSearchreps());
 			bootstrapreps = Integer.valueOf(gp.getBootstrapreplicates());
 
@@ -404,8 +383,7 @@ public class GARLIService extends GSBLService {
 			}
 		}
 
-		/* Redo argument string - remove all arguments except for config file
-		 * name. */
+		// Redo argument string - remove all arguments except for config file name.
 		argumentString = ("\"" + myBean.getConfigFile() + "\"");
 
 		// Prepend replicates to the argument string.
@@ -426,8 +404,7 @@ public class GARLIService extends GSBLService {
 			String csv = getArgument("configFile", perJobFiles, i);
 			log.debug("CSV: " + csv + "i: " + i);
 			log.debug("Config File from bean: " + myBean.getConfigFile());
-			int first = argumentString.indexOf("\"" + myBean.getConfigFile()
-					+ "\"");
+			int first = argumentString.indexOf("\"" + myBean.getConfigFile() + "\"");
 			int last = (first + myBean.getConfigFile().length() + 1);
 			String beginning = argumentString.substring(0,first);
 			if (last == -1) {
@@ -462,14 +439,12 @@ public class GARLIService extends GSBLService {
 				scheduler = chunks[2];
 			}
 
-			GSBLJob job = new GSBLJob(executable, argumentString, scheduler,
-					resource, arch_os, myWorkingDir,
-					runtime_estimate_seconds_recent, sharedFiles, perJobFiles,
-					output_files, requirements, extraRSL, unique_id);
+			GSBLJob job = new GSBLJob(executable, argumentString, scheduler, resource,
+					arch_os, myWorkingDir, runtime_estimate_seconds_recent, sharedFiles,
+					perJobFiles, output_files, requirements, extraRSL, unique_id);
 
 			if (scheduler.equals("matchmaking")) {
-				scheduler = job.getScheduler();  /* These values could have
-						changed! */
+				scheduler = job.getScheduler();  // These values could have changed!
 				resource = job.getResource();
 				arch_os = job.getArch_os();
 			}
@@ -499,11 +474,11 @@ public class GARLIService extends GSBLService {
 			System.out.println(globusRunOutput);
 
 			// COMMENTED OUT FOR TESTING PURPOSES
-			/* 
+/* 
 			GSBLJobManager myJob = new GSBLJobManager(job, scheduler, resource);
 			// This is a non-blocking call.
 			myJob.submit();
-			*/
+*/
 
 			String gramID = "";
 
@@ -513,24 +488,25 @@ public class GARLIService extends GSBLService {
 					.substring(globusRunOutput.indexOf("http"));
 				gramID = gramID.substring(0, gramID.indexOf("\n"));
 			} catch (Exception e) {
-				System.out.println("Could not extract GRAM ID. Job did not execute properly. Server not running?");
+				System.out.println("Could not extract GRAM ID. Job did not execute properly.");
+				return false;
 			}
 
-			if (!gramID.equals("")) {
-				Properties env = new Properties();
-				env.load(Runtime.getRuntime().exec("env").getInputStream());
-				String hostname = (String) env.get("HOSTNAME");
+//			if (!gramID.equals("")) {
+			Properties env = new Properties();
+			env.load(Runtime.getRuntime().exec("env").getInputStream());
+			String hostname = (String) env.get("HOSTNAME");
 
-				// Add this job entry to the database.
-				addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
+			// Add this job entry to the database.
+			addToDB(myBean.getOwner(), myBean.getAppName(), myBean.getJobName(),
 					unique_id, argumentString, scheduler, resource, arch_os,
 					job.getCPUs(), job.getReplicates(),
 					(new Integer(runtime_estimate_seconds).toString()),
 					(new Integer(runtime_estimate_seconds_recent).toString()),
 					(new Integer(searchreps).toString()),
-					(new Integer(bootstrapreps).toString()),
-					gramID, myWorkingDir, hostname);
-			}
+					(new Integer(bootstrapreps).toString()), gramID, myWorkingDir,
+					hostname);
+//			}
 		} catch (Exception e) {
 			log.error("Could not create GSBL job " + e);
 		}

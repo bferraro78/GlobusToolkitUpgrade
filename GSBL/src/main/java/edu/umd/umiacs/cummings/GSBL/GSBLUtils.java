@@ -137,8 +137,10 @@ public class GSBLUtils {
 		Process proc = null;
 		StringBuilder output = new StringBuilder();
 		try {
-			Runtime r = Runtime.getRuntime();
-			proc = r.exec(command);
+//			Runtime r = Runtime.getRuntime();
+//			proc = r.exec(command);
+			proc = new ProcessBuilder(command.split(" ")).redirectErrorStream(true).start();
+//			int exitVal = proc.waitFor();
 			int exitVal = proc.waitFor();
 			if (exitVal == 0) {
 				log.debug(command + " was successful!");
@@ -147,8 +149,7 @@ public class GSBLUtils {
 			}
 			String line = "";
 			InputStream stdout = proc.getInputStream();
-			InputStreamReader isr = new InputStreamReader(stdout);
-			BufferedReader br = new BufferedReader(isr);
+			BufferedReader br = new BufferedReader(new InputStreamReader(stdout));
 			while ((line = br.readLine()) != null) {
 				output.append(line).append("\n");
 			}
