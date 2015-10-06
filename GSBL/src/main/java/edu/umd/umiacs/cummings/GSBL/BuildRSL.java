@@ -603,7 +603,7 @@ public class BuildRSL {
 
 		String home = (String) env.get("HOME");
 
-		String globusUrlCopyCmd = "globus-url-copy -cd -r gsiftp://" + hostname
+		String globusUrlCopyCmd = "globus-url-copy -cd -q -r gsiftp://" + hostname
 			+ workingDir + unique_id + "/ file://" + home + "/" + unique_id + "/";
 
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
