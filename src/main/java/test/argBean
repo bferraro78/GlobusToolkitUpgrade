@@ -17,7 +17,7 @@
    <string>estimate</string>
   </void>
   <void property="jobID">
-   <string>4752854000.5219206219438648</string>
+   <string>1969549150.8368652284500773</string>
   </void>
   <void property="jobName">
    <string>test</string>
@@ -55,6 +55,9 @@
   </void>
   <void property="ratematrix">
    <string>6rate</string>
+  </void>
+  <void property="replicates">
+   <int>10</int>
   </void>
   <void property="schedulerOverride">
    <string>Condor INTEL_LINUX https://128.8.141.68:8443/wsrf/services/ManagedJobFactoryService</string>

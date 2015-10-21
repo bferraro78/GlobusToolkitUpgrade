@@ -58,8 +58,8 @@ public class GARLISubmitClient extends GSBLClient {
 	 * client, and executes it.
 	 */
 	public static void main(String[] args) {
-		/* Checks to see how many command line arguments are included.
-		 * Two are needed (job properties file and a job name). */
+		// Checks to see how many command line arguments are included. Two are
+		// needed (job properties file and a job name).
 		if (args.length != 2) {
 			System.err.println("Requires 2 arguments: properties file, and job name.");
 			System.exit(1);
@@ -68,8 +68,8 @@ public class GARLISubmitClient extends GSBLClient {
 		String propertiesFile = args[0];
 		jobname = args[1];
 
-		/* Creates a bean, reads properties file, and updates bean with job
-		 * properties. */
+		// Creates a bean, reads properties file, and updates bean with job
+		// properties.
 		GARLIArguments myBean = new GARLIArguments();
 		try {
 			GSBLPropertiesManager GPM = new GSBLPropertiesManager(propertiesFile);
@@ -80,7 +80,7 @@ public class GARLISubmitClient extends GSBLClient {
 
 		System.out.println("Creating GARLI job.");
 
-		/* Aquires new Service Instance and initializes jobID. */
+		// Aquires new Service Instance and initializes jobID.
 		GARLISubmitClient client = null;
 		try {
 			client = new GARLISubmitClient(myBean);
@@ -88,13 +88,13 @@ public class GARLISubmitClient extends GSBLClient {
 			System.exit(1);
 		}
 
-		/* Run the client. */
+		// Run the client.
 		try {
 			client.execute();
 		} catch (Exception e) {
 			log.error("Error executing Grid service: " + e);
 		}
-	}  // End main function.
+	}
 
 	/**
 	 * Constructor.
@@ -108,19 +108,18 @@ public class GARLISubmitClient extends GSBLClient {
 		// Get a unique job id.
 		jobID = super.getJobID();
 
-		/* Store the directory the client submitted from as well as the
-		 * hostname. */
+		// Store the directory the client submitted from as well as the hostname.
 		Properties env = new Properties();
 		env.load(Runtime.getRuntime().exec("env").getInputStream());
-		String cwd = (String)env.get("PWD");
-		String hostname = (String)env.get("HOSTNAME");
+		String cwd = (String) env.get("PWD");
+		String hostname = (String) env.get("HOSTNAME");
+/*
+		String gl = (String) env.get("GSBL_CONFIG_DIR");
 
-		//String gl = (String)env.get("GSBL_CONFIG_DIR");
-
-		//System.out.println("CWD: " + cwd);
-		//System.out.println("Hostname: " + hostname);
-		//System.out.println("GSBL_CONFIG_DIR" + gl);
-
+		System.out.println("CWD: " + cwd);
+		System.out.println("Hostname: " + hostname);
+		System.out.println("GSBL_CONFIG_DIR" + gl);
+*/
 		// Create a working directory on the service side.
 		Integer replicates = myBean.getReplicates();
 		String reps = "";
@@ -133,8 +132,8 @@ public class GARLISubmitClient extends GSBLClient {
 			replica = replicates.intValue();
 		}
 	
-		/* If replicates > 1, then will created a output and populate it with
-		 * sub-job folders within /home/gt6admin/GT6Upgrade/src/main/java/test/job# */
+		// If replicates > 1, then will created a output and populate it with sub-
+		// job folders within /home/gt6admin/GT6Upgrade/src/main/java/test/job#
 		createWorkingDir(jobID + "@--" + cwd + "@--" + hostname + "@--" + reps);
 
 		ArrayList<String> sharedFiles = new ArrayList<String>();
@@ -152,17 +151,18 @@ public class GARLISubmitClient extends GSBLClient {
 		boolean buildConfig = false;
 		String configFile = myBean.getConfigFile();
 
-		if ((configFile == "") || (configFile == null)) {  /* We will build a
-				configuration file from the args passed in. */
+		if ((configFile == "") || (configFile == null)) {
+			// We will build a configuration file from the args passed in.
 			buildConfig = true;
-		} else if ((confFileNames = parseDirectory(configFile, replica)) == null) {  // Single job or homogeneous batch.
-
-		} else {  // Heterogeneous job batch.
+		} else if ((confFileNames = parseDirectory(configFile, replica)) == null) {
+			// Single job or homogeneous batch.
+		} else {
+			// Heterogeneous job batch.
 			perJobArguments.add("configFile");
 			perJobFiles.add(confFileNames);
 		}
 		
-		/* Check if we need to validate conifg file. */
+		// Check if we need to validate conifg file.
 		boolean doValidate = true;
 		if (myBean.getNovalidate() != null) {
 			if ((myBean.getNovalidate()).booleanValue() == true) {
@@ -170,8 +170,8 @@ public class GARLISubmitClient extends GSBLClient {
 			}
 		}
 
-		/* Builds, validates, and parses config file (parse puts input/output
-		 * files into a vector, but first parse() creates the output files). */
+		// Builds, validates, and parses config file (parse puts input/output files
+		// into a vector, but first parse() creates the output files).
 		GARLIParser gp = null;
 		try {
 			gp = new GARLIParser(myBean, cwd, buildConfig, doValidate, true);
@@ -179,7 +179,7 @@ public class GARLISubmitClient extends GSBLClient {
 			System.out.println("Unknown exception occurred while invoking the GARLI parser "
 					+ e);
 		}
-		/* Specifies memory restriction in garliconf file. */
+		// Specifies memory restriction in garliconf file.
 		String avail_mem = gp.getAvailMem();
 		if (avail_mem == null) {
 			log.error("Please specify \"available memory\" in the GARLI config file\n");
@@ -196,10 +196,12 @@ public class GARLISubmitClient extends GSBLClient {
 			myBean.setActualmemory(actual_memory);
 		}
 
-		/* Sets configuration file name to bean. */
-		// myBean.setConfigFile(gp.getConfigFileName());  /* Now this should no longer be set to a directory. */
+		// Sets configuration file name to bean.
+//		myBean.setConfigFile(gp.getConfigFileName());
+		// Now it should no longer be set to a directory.
 
-		sharedFiles.addAll(gp.getInputFiles());  /* gp.getInputFiles() currently only returns shared files. */
+		// gp.getInputFiles() currently only returns shared files.
+		sharedFiles.addAll(gp.getInputFiles());
 
 		String[] output_files = gp.getOutputFiles();   
 		myBean.setOutputFiles(output_files);
@@ -210,12 +212,12 @@ public class GARLISubmitClient extends GSBLClient {
 		myPerJobArguments = new String[perJobArguments.size()];
 		myBean.setPerJobArguments(perJobArguments.toArray(myPerJobArguments));
 
-		/* Sets the working directory for specific job as
-		 * /home/gt6admin/GT6Upgrade/src/main/java/test/job#/ */
+		// Sets the working directory for specific job as
+		// /home/gt6admin/GT6Upgrade/src/main/java/test/job#/
 		String workingDir = cwd + "/";
 
-		/* Sets bean's "sharedFiles" with shared files used by all instances
-		 * submitted. */
+		// Sets bean's "sharedFiles" with shared files used by all instances
+		// submitted.
 		allSharedFiles = new String[sharedFiles.size()];
 		myBean.setSharedFiles(sharedFiles.toArray(allSharedFiles));
 
@@ -226,8 +228,7 @@ public class GARLISubmitClient extends GSBLClient {
 			String filenames = "";
 			for (int j = 0; j < tempcouples.length; j++) {
 				if (j < (tempcouples.length - 1)) {
-					// Add the ':' couple delimiter.
-					filenames += (tempcouples[j] + ":");
+					filenames += (tempcouples[j] + ":");  // Add the ':' couple delimeter.
 				} else {
 					filenames += tempcouples[j];
 				}
@@ -235,7 +236,7 @@ public class GARLISubmitClient extends GSBLClient {
 			allPerJobFiles[i] = filenames;
 		}
 
-		/* Sets bean's perjob files. */
+		// Sets bean's perjob files.
 		myBean.setPerJobFiles(allPerJobFiles);
 
 		// Check for scheduler override.
@@ -251,14 +252,15 @@ public class GARLISubmitClient extends GSBLClient {
 		myBean.setAppName(new String("GARLI"));
 		myBean.setOwner(System.getProperty("user.name"));
 		myBean.setJobName(jobname);
-		myBean.setJobID(jobID); // added jobID to bean so we can access jobID on service side
+		// Added jobID to bean so we can access it on the service side.
+		myBean.setJobID(jobID);
 		myBean.setWorkingDir(workingDir);
 
 		System.out.println("Submitting job.");
 
-		/* Call to runService(). */
+		// Call to runService().
 		GARLIService garli_service = new GARLIService(myBean);
 
 		System.out.println("Job submitted with ID: " + jobID);
-	}  // End execute.
-}  // End class.
+	}
+}

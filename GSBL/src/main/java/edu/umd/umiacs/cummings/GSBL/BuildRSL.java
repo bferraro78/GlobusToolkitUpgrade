@@ -138,7 +138,7 @@ public class BuildRSL {
 			log.error("Exception: " + e);
 		}
 
-		// env.get("GLOBUS_LOCATION") will evaluate to "" if undefined.
+		// env.get("GSBL_CONFIG_DIR") will evaluate to "" if undefined.
 		globusLocation = (String) env.get("GSBL_CONFIG_DIR");
 
 		executable = myExecutable;
@@ -615,7 +615,7 @@ public class BuildRSL {
 		if (!output.equals("")) {  // If any output is produced, something failed.
 			System.out.print(output);
 
-			System.exit(0);  // Abort job submission if globus-url-copy fails.
+			System.exit(1);  // Abort job submission if globus-url-copy fails.
 		}
 /*
 		document.append("\n  (file_stage_in =");
@@ -686,7 +686,7 @@ public class BuildRSL {
 		// File cleanup.
 		document.append("\n  (file_clean_up = file://$(SERVER))");
 */
-	}  // End createRSL.
+	}
 
 	private void transferOutputFiles() {
 		if ((output_files != null) && (output_files.length > 0)) {

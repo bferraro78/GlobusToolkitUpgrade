@@ -24,17 +24,16 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Class to convert an arguments bean to a command-line arguments string. Uses
- * the XML description of the service's arguments to map bean fields to argument
- * flags.
+ * the XML description of the service's arguments to map bean fields to
+ * argument flags.
  */
 
 public class BeanToArguments {
 
-	/**
-	 * The namespace of the client description XML documents.
+	/** The namespace of the client description XML documents.
 	 */
-	static private Namespace tns = Namespace
-			.getNamespace("http://cummings.umiacs.umd.edu/GSBL/service_description");
+	static private Namespace tns =
+		Namespace.getNamespace("http://cummings.umiacs.umd.edu/GSBL/service_description");
 
 	/**
 	 * A map containing records for every option, both flag and non-flag.
@@ -55,7 +54,7 @@ public class BeanToArguments {
 	 * Initialize a BeanToArguments converter.
 	 * 
 	 * @param descriptionFileName
-	 * 				The name of the XML file describing the arguments.
+	 *				The name of the XML file describing the arguments.
 	 * @throws IOEXception
 	 * 				If the description file could not be opened.
 	 * @throws JDOMException
@@ -63,12 +62,12 @@ public class BeanToArguments {
 	 * @throws ClassNotFoundException
 	 * 				If the XML parser could not be initialized.
 	 */
-	public BeanToArguments(String descriptionFileName)
-			throws JDOMException, IOException, ClassNotFoundException {
+	public BeanToArguments(String descriptionFileName) throws JDOMException,
+				 IOException, ClassNotFoundException {
 
 		// Setup an XML reader to parse the description file.
-		SAXBuilder builder =
-				new SAXBuilder("org.apache.xerces.parsers.SAXParser", true);
+		SAXBuilder builder = new SAXBuilder("org.apache.xerces.parsers.SAXParser",
+				true);
 		builder.setFeature("http://apache.org/xml/features/validation/schema",
 				true);
 
@@ -88,9 +87,8 @@ public class BeanToArguments {
 		argumentRecords = new HashMap();
 		nonFlagArguments = new HashMap();
 
-		/* Ok, now that we've parsed the XML document, we can create an internal
-		 * representation of the arguments.
-		 */
+		// Ok, now that we've parsed the XML document, we can create an internal
+		// representation of the arguments.
 		processArgumentDescription(doc);
 	}
 
@@ -99,11 +97,11 @@ public class BeanToArguments {
 	 * representation of it.
 	 * 
 	 * @param document
-	 *            A JDOM document representing the XML description file.
+	 *				A JDOM document representing the XML description file.
 	 */
 
-	private void processArgumentDescription(Document document)
-			throws ClassNotFoundException, JDOMException {
+	private void processArgumentDescription(Document document) throws
+		ClassNotFoundException, JDOMException {
 		// We use XPath to retrieve all the argument elements.
 		// tns: in XPath query specifies the GSBL/client namespace.
 		XPath xp;
@@ -112,8 +110,7 @@ public class BeanToArguments {
 			xp = XPath.newInstance("//tns:argument");
 			arguments = xp.selectNodes(document.getRootElement());
 		} catch (JDOMException je) {
-			log.error("Error executing XPath query to retrieve arguments: "
-					+ je);
+			log.error("Error executing XPath query to retrieve arguments: " + je);
 			throw je;
 		}
 		Iterator I = arguments.iterator();
@@ -127,10 +124,8 @@ public class BeanToArguments {
 			ArgumentRecord info = new ArgumentRecord(flag, type);
 			argumentRecords.put(key, info);
 
-			/* If this is a non-flag argument, record it in the
-			 * "nonFlagArguments" map. We'll use this later to iterate over the
-			 * non-flag arguments.
-			 */
+			// If this is a non-flag argument, record it in the "nonFlagArguments"
+			// map. We'll use this later to iterate over the non-flag arguments.
 			if (flag.matches("arg[0-9]+")) {
 				nonFlagArguments.put(flag, key);
 			}
@@ -155,15 +150,14 @@ public class BeanToArguments {
 	 * @return the command-line arguments as a String.
 	 */
 	public String getArgumentStringFromBean(Serializable bean)
-			throws NoSuchMethodException, IllegalAccessException,
-					InvocationTargetException, Exception {
+		throws NoSuchMethodException, IllegalAccessException,
+										InvocationTargetException, Exception {
 		Iterator keyIter = argumentRecords.keySet().iterator();
 		String argumentStr = "";
 
-		/* For each possible argument, we want to check if this particular bean
-		 * has a value for the argument. If it does, then we'll add the necessary
-		 * text to the argument string.
-		 */
+		// For each possible argument, we want to check if this particular bean has
+		// a value for the argument. If it does, then we'll add the necessary text
+		// to the argument string.
 		while (keyIter.hasNext()) {
 			String key = (String) keyIter.next();
 			String flag = getFlagForArgument(key);
@@ -175,9 +169,8 @@ public class BeanToArguments {
 			}
 			Object beanValue = getBeanValue(bean, key);
 
-			/* If the bean has a value for this argument, we go ahead and look
-			 * up the argument flag.
-			 */
+			// If the bean has a value for this argument, we go ahead and look up the
+			// argument flag.
 			if (beanValue != null) {
 				String dashes;
 				if (flag.length() == 1) {
@@ -189,18 +182,15 @@ public class BeanToArguments {
 					throw new Exception("Flag has fewer than one character.");
 				}
 
-				/* If the argument takes a value, then we add the flag and the
-				 * value to the argument string.
-				 */
+				// If the argument takes a value, then we add the flag and the value to
+				// the argument string.
 				if (argumentTakesValue(key)) {
 					argumentStr += dashes + flag + " \"" + beanValue + "\" ";
 				}
 
-				/* On the other hand, if it doesn't take a value, then we add the
-				 * flag to the argument string iff the bean value is "true". We
-				 * know it will be a Boolean object, so the cast should never
-				 * fail.
-				 */
+				// On the other hand, if it doesn't take a value, then we add the flag
+				// to the argument string iff the bean value is "true". We know it will
+				// be a Boolean object, so the cast should never fail.
 				else {
 					Boolean value = (Boolean) beanValue;
 					if (value.equals(Boolean.TRUE)) {
@@ -210,9 +200,8 @@ public class BeanToArguments {
 			}
 		}
 
-		/* Now, for each of the non-flag arguments, we add it to the argument
-		 * string.
-		 */
+		// Now, for each of the non-flag arguments, we add it to the argument
+		// string.
 		int i = 0;
 		String key = null;
 		while ((key = (String) nonFlagArguments.get("arg" + i)) != null) {
@@ -246,12 +235,11 @@ public class BeanToArguments {
 	 * @return the value of the key.
 	 */
 	protected Object getBeanValue(Serializable bean, String key)
-			throws NoSuchMethodException, IllegalAccessException,
-					SecurityException, InvocationTargetException {
+		throws NoSuchMethodException, IllegalAccessException, SecurityException,
+										InvocationTargetException {
 		// First, we need the name of the get method for the given key (ew).
-		String getMethodName = "get"
-				+ new String(new Character(Character.toUpperCase(key.charAt(0)))
-				+ key.substring(1));
+		String getMethodName = "get" + new String(
+				new Character(Character.toUpperCase(key.charAt(0))) + key.substring(1));
 
 		// Now, we need a Method object corresponding to this method.
 		Class beanClass = bean.getClass();
@@ -277,8 +265,8 @@ public class BeanToArguments {
 			log.error("Illegal access to method " + getMethodName + ": " + iie);
 			throw iie;
 		} catch (InvocationTargetException ite) {
-			log.error("InvocationTarget exception calling " + getMethodName
-					+ ": " + ite);
+			log.error("InvocationTarget exception calling " + getMethodName + ": "
+					+ ite);
 			throw ite;
 		}
 		return retval;
@@ -290,7 +278,7 @@ public class BeanToArguments {
 	 * O (resp output-file).
 	 * 
 	 * @param key
-	 * 				The key of interest
+	 * 				The key of interest.
 	 * @throws Exception
 	 * 				if the key was unrecognized.
 	 * @return the command-line flag as a String.
@@ -330,7 +318,6 @@ public class BeanToArguments {
 		BeanToArguments B2A = new BeanToArguments(args[0]);
 		System.out.println(B2A.getArgumentStringFromBean(MSB));
 	}
-
 }
 
 /**
@@ -373,10 +360,10 @@ class MySampleBean implements Serializable {
 }
 
 /**
- * Structure for storing information about an argument. Stores twhe flag
+ * Structure for storing information about an argument. Stores the flag
  * corresponding to the argument, whether or not the flag takes a value (e.g.,
- * -x foo or just -x), and the type of the value it takes (will be null if there
- * is no value).
+ * -x foo or just -x), and the type of the value it takes (will be null if
+ *  there is no value).
  */
 class ArgumentRecord {
 	String flag;

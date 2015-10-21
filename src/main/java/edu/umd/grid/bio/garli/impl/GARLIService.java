@@ -61,11 +61,6 @@ public class GARLIService extends GSBLService {
 	static protected String runtime_estimates_location = null;
 
 	/**
-	 * container_status location.
-	 */
-	static protected String container_status_location = null;
-
-	/**
 	 * Update interval - how frequently the service checks on the status of its
 	 * jobs.
 	 */
@@ -86,23 +81,6 @@ public class GARLIService extends GSBLService {
 	public GARLIService(GARLIArguments myBean) throws Exception {
 		super("GARLI");
 		runService(myBean);
-/*
-		try {
-			if (runtimeConfig == null) {
-				log.error("Runtime configuration for GARLI is unavailable.");
-				System.exit(1);
-			}
-
-			// Start the monitoring thread.
-			MonitorJobs monitorJobs = new MonitorJobs();
-			Thread t = new Thread(monitorJobs);
-			t.setPriority(Thread.NORM_PRIORITY);
-			t.start();
-		} catch(Exception e) {
-			log.error("Exception: " + e);
-			e.printStackTrace();
-		}
-*/
 	}
 
 	// Load things from config files. We only want to do this once.
@@ -115,20 +93,14 @@ public class GARLIService extends GSBLService {
 			runtimeConfig = new GSBLRuntimeConfiguration(globusLocation
 					+ "/service_configurations/GARLI.runtime.xml");
 			runtime_estimates_location = globusLocation + "/runtime_estimates/";
-/*
-			container_status_location =
-					GSBLUtils.getConfigElement("container_status.location");
-*/
-			update_interval_string =
-					GSBLUtils.getConfigElement("update_interval");
+			update_interval_string = GSBLUtils.getConfigElement("update_interval");
 			// Split interval string into min and max.
-			update_interval = Integer.parseInt(update_interval_string
-					.substring(0, update_interval_string.indexOf(" ")));
-			update_max = Integer.parseInt(update_interval_string
-					.substring(update_interval_string.indexOf(" ") + 1));
+			update_interval = Integer.parseInt(update_interval_string.substring(0,
+						update_interval_string.indexOf(" ")));
+			update_max = Integer.parseInt(update_interval_string.substring(
+						update_interval_string.indexOf(" ") + 1));
 		       
 			drupalUpdateURL = GSBLUtils.getConfigElement("drupal_update_url");
-
 		} catch (Exception e) {
 			log.error("Error loading config file information for GARLI: " + e);
 		}
@@ -144,8 +116,8 @@ public class GARLIService extends GSBLService {
 		this.myBean = myBean;
 		String unique_id = null;
 
-		// Create symlinks.
-		// (Might not need because no symlinks are set in "GARLISubmitClient.java".)
+		// Create symlinks. (Might not need because no symlinks are set in
+		// "GARLISubmitClient.java".)
 		if ((myBean.getSymlinks() != null) && !myBean.getSymlinks().equals("")) {
 			makeSymlinks(myBean.getSymlinks());
 		}
@@ -155,14 +127,14 @@ public class GARLIService extends GSBLService {
 			tempSharedFiles = new String[0];
 		}
 		ArrayList<String> sharedFiles =
-				new ArrayList<String>(Arrays.asList(tempSharedFiles));
+			new ArrayList<String>(Arrays.asList(tempSharedFiles));
 
 		String[] tempPerJobArguments = myBean.getPerJobArguments();
 		if (tempPerJobArguments == null) {
 			tempPerJobArguments = new String[0];
 		}
 		ArrayList<String> perJobArguments =
-				new ArrayList<String>(Arrays.asList(tempPerJobArguments));
+			new ArrayList<String>(Arrays.asList(tempPerJobArguments));
 
 		String[] tempPerJobFiles = myBean.getPerJobFiles();
 
@@ -266,15 +238,15 @@ public class GARLIService extends GSBLService {
 
 			// Formulate command.
 			String command = workingDir + "estimate_" + executable + "_runtime.pl "
-				+ unique_id + " " + unique_patterns + " " + num_taxa + " "
-				+ actual_mem + " ";
+				+ unique_id + " " + unique_patterns + " " + num_taxa + " " + actual_mem
+				+ " ";
 			String command2 = workingDir + "estimate_" + executable
 				+ "_runtime_recent.pl " + unique_id + " " + unique_patterns + " "
 				+ num_taxa + " " + actual_mem + " ";
 
 			String datatype = myBean.getDatatype();
-			ArrayList<String> distinctDatatype = GSBLUtils
-				.returnDistinctGarliValues("datatype");
+			ArrayList<String> distinctDatatype =
+				GSBLUtils.returnDistinctGarliValues("datatype");
 			if (datatype == null) {
 				datatype = "nucleotide";
 			} else if (!distinctDatatype.contains(datatype)) {
@@ -282,8 +254,8 @@ public class GARLIService extends GSBLService {
 			}
 
 			String ratematrix = myBean.getRatematrix();
-			ArrayList<String> distinctRateMatrix = GSBLUtils
-				.returnDistinctGarliValues("ratematrix");
+			ArrayList<String> distinctRateMatrix =
+				GSBLUtils.returnDistinctGarliValues("ratematrix");
 			if ((ratematrix == null) || !distinctRateMatrix.contains(ratematrix)) {
 				// Either not supplied or we haven't seen it before ... use default
 				// value.
@@ -292,16 +264,17 @@ public class GARLIService extends GSBLService {
 				} else if (datatype.equals("aminoacid")) {
 					// I'm picking this default since GARLI doesn't give one.
 					ratematrix = "dayhoff";
-				} else {  // Must be a codon model.
+				} else {
+					// Must be a codon model.
 					ratematrix = "2rate";
 				}
 			}
 
 			String statefrequencies = myBean.getStatefrequencies();
-			ArrayList<String> distinctStateFrequencies = GSBLUtils
-				.returnDistinctGarliValues("statefrequencies");
-			if ((statefrequencies == null)
-					|| (!distinctStateFrequencies.contains(statefrequencies))) {
+			ArrayList<String> distinctStateFrequencies =
+				GSBLUtils.returnDistinctGarliValues("statefrequencies");
+			if ((statefrequencies == null) ||
+					(!distinctStateFrequencies.contains(statefrequencies))) {
 				// Either not supplied or we haven't seen it before ... use default
 				// value.
 				if (datatype.equals("nucleotide")) {
@@ -309,7 +282,8 @@ public class GARLIService extends GSBLService {
 				} else if (datatype.equals("aminoacid")) {
 					// I'm picking this default since GARLI doesn't give one.
 					statefrequencies = "dayhoff";
-				} else {  // Must be a codon model.
+				} else {
+					// Must be a codon model.
 					statefrequencies = "empirical";
 				}
 			}
@@ -319,7 +293,8 @@ public class GARLIService extends GSBLService {
 				// Rate heterogeneity model was not supplied, use default value.
 				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
 					ratehetmodel = "gamma";
-				} else {  // Must be a codon model.
+				} else {
+					// Must be a codon model.
 					ratehetmodel = "none";
 				}
 			}
@@ -329,7 +304,8 @@ public class GARLIService extends GSBLService {
 				// Number of rate categories was not supplied, use default value.
 				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
 					numratecats = "4";
-				} else {  // Must be a codon model.
+				} else {
+					// Must be a codon model.
 					numratecats = "1";
 				}
 			}
@@ -339,24 +315,25 @@ public class GARLIService extends GSBLService {
 				// Invariantsites was not supplied, use default value.
 				if (datatype.equals("nucleotide") || datatype.equals("aminoacid")) {
 					invariantsites = "estimate";
-				} else {  // Must be a codon model.
+				} else {
+					// Must be a codon model.
 					invariantsites = "none";
 				}
 			}
 
-			command += (datatype + " " + ratematrix + " " + statefrequencies + " "
-					+ ratehetmodel + " " + numratecats + " " + invariantsites);
-			command2 += (datatype + " " + ratematrix + " " + statefrequencies + " "
-					+ ratehetmodel + " " + numratecats + " " + invariantsites);
+			command += (datatype + " " + ratematrix + " " + statefrequencies + " " +
+					ratehetmodel + " " + numratecats + " " + invariantsites);
+			command2 += (datatype + " " + ratematrix + " " + statefrequencies + " " +
+					ratehetmodel + " " + numratecats + " " + invariantsites);
 
 			log.debug("command is: " + command);
 			log.debug("command2 is: " + command2);
 
 			// Execute command and get output (the runtime estimate).
-			runtime_estimate = GSBLUtils
-					.executeCommandReturnOneLine(command, workingDir, true);
-			runtime_estimate_recent = GSBLUtils
-					.executeCommandReturnOneLine(command2, workingDir, true);
+			runtime_estimate = GSBLUtils.executeCommandReturnOneLine(command,
+					workingDir, true);
+			runtime_estimate_recent = GSBLUtils.executeCommandReturnOneLine(command2,
+					workingDir, true);
 
 			log.debug("GARLI runtime estimate is: " + runtime_estimate);
 			log.debug("GARLI recent runtime estimate is: " + runtime_estimate_recent);
@@ -365,10 +342,10 @@ public class GARLIService extends GSBLService {
 				runtime_estimate_seconds = Integer.parseInt(runtime_estimate);
 			}
 
-			if (!runtime_estimate_recent.equals("")
-					&& !runtime_estimate_recent.equals("-1")) {
-				runtime_estimate_seconds_recent = Integer
-					.parseInt(runtime_estimate_recent);
+			if (!runtime_estimate_recent.equals("") &&
+					!runtime_estimate_recent.equals("-1")) {
+				runtime_estimate_seconds_recent =
+					Integer.parseInt(runtime_estimate_recent);
 			}
 
 			// Scale runtime estimate linearly based on searchreps and bootstrapreps.
@@ -387,7 +364,7 @@ public class GARLIService extends GSBLService {
 		argumentString = ("\"" + myBean.getConfigFile() + "\"");
 
 		// Prepend replicates to the argument string.
-		if(replicates != null) {
+		if (replicates != null) {
 			argumentString = ("--replicates \"" + replicates.toString() + "\" "
 					+ argumentString);
 		}
@@ -406,7 +383,7 @@ public class GARLIService extends GSBLService {
 			log.debug("Config File from bean: " + myBean.getConfigFile());
 			int first = argumentString.indexOf("\"" + myBean.getConfigFile() + "\"");
 			int last = (first + myBean.getConfigFile().length() + 1);
-			String beginning = argumentString.substring(0,first);
+			String beginning = argumentString.substring(0, first);
 			if (last == -1) {
 				argumentString = (beginning + " " + csv);
 			} else {
@@ -428,8 +405,8 @@ public class GARLIService extends GSBLService {
 		// ----- ----- ----- END YOUR CODE ----- ----- ----- //
 
 		try {
-			if ((myBean.getSchedulerOverride() != null)
-					&& !(myBean.getSchedulerOverride().equals(""))) {
+			if ((myBean.getSchedulerOverride() != null) &&
+					!(myBean.getSchedulerOverride().equals(""))) {
 				String[] chunks = myBean.getSchedulerOverride().split(" ", 3);
 				log.debug("SCHEDULER OVERRIDE: resource is: " + chunks[0]);
 				resource = chunks[0];
@@ -439,12 +416,14 @@ public class GARLIService extends GSBLService {
 				scheduler = chunks[2];
 			}
 
-			GSBLJob job = new GSBLJob(executable, argumentString, scheduler, resource,
-					arch_os, myWorkingDir, runtime_estimate_seconds_recent, sharedFiles,
-					perJobFiles, output_files, requirements, extraRSL, unique_id);
+			GSBLJob job = new GSBLJob(executable, argumentString, scheduler,
+					resource, arch_os, myWorkingDir, runtime_estimate_seconds_recent,
+					sharedFiles, perJobFiles, output_files, requirements, extraRSL,
+					unique_id);
 
 			if (scheduler.equals("matchmaking")) {
-				scheduler = job.getScheduler();  // These values could have changed!
+				// These values could have changed!
+				scheduler = job.getScheduler();
 				resource = job.getResource();
 				arch_os = job.getArch_os();
 			}
@@ -470,7 +449,8 @@ public class GARLIService extends GSBLService {
 			System.out.println("Globusrun Command: " + globus_command);
 
 			// Executes a globusrun command.
-			String globusRunOutput = GSBLUtils.executeCommandReturnOutput(globus_command);
+			String globusRunOutput =
+				GSBLUtils.executeCommandReturnOutput(globus_command);
 			System.out.println(globusRunOutput);
 
 			// COMMENTED OUT FOR TESTING PURPOSES
@@ -479,13 +459,11 @@ public class GARLIService extends GSBLService {
 			// This is a non-blocking call.
 			myJob.submit();
 */
-
 			String gramID = "";
 
-			/* Get gramID and hostname for DB call. */
+			// Get gramID and hostname for DB call.
 			try {
-				gramID = globusRunOutput
-					.substring(globusRunOutput.indexOf("http"));
+				gramID = globusRunOutput.substring(globusRunOutput.indexOf("http"));
 				gramID = gramID.substring(0, gramID.indexOf("\n"));
 			} catch (Exception e) {
 				System.out.println("Could not extract GRAM ID. Job did not execute properly.");
@@ -511,6 +489,5 @@ public class GARLIService extends GSBLService {
 			log.error("Could not create GSBL job " + e);
 		}
 		return true;
-	}  // End runService().
-}  // End GARLIService class.
-
+	}
+}
