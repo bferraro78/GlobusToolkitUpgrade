@@ -402,7 +402,7 @@ public class BuildRSL {
 		document.append(")");  // End RSL substitution.
 
 		// Add executable.
-		document.append("\n  (executable = /fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64)");
+		document.append("\n  (executable = garli)");
 
 		// Add remote resource directory.
 		document.append("\n  (directory = $(SERVER)");
@@ -535,7 +535,7 @@ public class BuildRSL {
 
 			if (!max_memory.equals("")) {
 				doIndent = true;
-				document.append("(max_memory ").append(max_memory)
+				document.append("(maxMemory ").append(max_memory)
 					.append(")");
 			}
 			if (runtime_estimate_seconds != -1) {

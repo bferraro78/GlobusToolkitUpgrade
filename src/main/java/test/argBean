@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_85" class="java.beans.XMLDecoder">
+<java version="1.7.0_91" class="java.beans.XMLDecoder">
  <object class="edu.umd.grid.bio.garli.GARLIArguments">
   <void property="actualmemory">
    <string>1</string>
@@ -17,7 +17,7 @@
    <string>estimate</string>
   </void>
   <void property="jobID">
-   <string>1969549150.8368652284500773</string>
+   <string>4550776330.30694914523804684</string>
   </void>
   <void property="jobName">
    <string>test</string>
@@ -56,11 +56,8 @@
   <void property="ratematrix">
    <string>6rate</string>
   </void>
-  <void property="replicates">
-   <int>10</int>
-  </void>
   <void property="schedulerOverride">
-   <string>Condor INTEL_LINUX https://128.8.141.68:8443/wsrf/services/ManagedJobFactoryService</string>
+   <string>BOINC INTEL_LINUX https://128.8.141.68:8443/wsrf/services/ManagedJobFactoryService</string>
   </void>
   <void property="sharedFiles">
    <array class="java.lang.String" length="2">
