@@ -40,7 +40,8 @@ $create_work = "$project_dir/bin/create_work";
 $cancel = "$project_dir/bin/cancel_job";	
 
 # Poll is deprecated.
-$poll = "/$project_dir/bin/get_assim_state";  # Changed from get_state --> get_assim_state JTK
+#$poll = "/$project_dir/bin/get_assim_state";  # Changed from get_state --> get_assim_state JTK
+$poll = "/home/gt6admin/SEG/getBoincJobStatus";
 
 $boinc_download_dir = "$project_dir/download/";
 $boinc_upload_dir = "$project_dir/upload/";
@@ -93,7 +94,7 @@ sub submit {
 	$description->save("/tmp/boinc_jm_desc");
 
 
-	my $unique_id = $description->uniqid();  # Changed from directory --> uniqid JTK
+	my $unique_id = $description->directory();
 	if ($unique_id =~ /(.*\/)/) {
 		$scratch_dir = $1;
 		if ($scratch_dir =~ /(.*\/).*\..*/) {
@@ -356,30 +357,16 @@ sub submit {
 			# Also include the GARLI screen log from the previous workunit.
 			push(@stagein_with_checkpoint, "garli.screen.log");
 		
-			if ($args eq "") { # Makes sure $args[0] is not empty -- BRF
-			    print LOG"garli args is EMPTY\n";
-			    $wu_filename = $self->write_wu_template($description, "",
+			$wu_filename = $self->write_wu_template($description, @$args[0],
 					\@stagein_with_checkpoint, 0);
-			} else {
-			    print LOG"garli args is NOT EMPTY\n";
-			    $wu_filename = $self->write_wu_template($description, @$args[0],
-								\@stagein_with_checkpoint, 0);
-			}
 
 			print LOG "Wrote WU template to $wu_filename\n";
 			# Write an additional workunit template with <no_delete/> tags, for use
 			# with _main workunits.
 			$wu_filename = ($wu_ru_path . "/wu." . $unique_id
 					. "_with_checkpoint_files_no_delete");
-			if ($args eq "") { # Makes sure $args[0] is not empty -- BRF 
-			    print LOG "garli args (no delete) is EMPTY\n";
-			    $wu_filename = $self->write_wu_template($description, "",
+			$wu_filename = $self->write_wu_template($description, @$args[0],
 					\@stagein_with_checkpoint, 1);
-			} else {
-			    print LOG "garli args (no delete) is NOT EMPTY\n";
-			    $wu_filename = $self->write_wu_template($description, @$args[0],
-								    \@stagein_with_checkpoint, 1);
-			}
 			print LOG "Wrote WU template to $wu_filename\n";
 
 			# Write a result unit template that expects checkpoint files as output
@@ -479,7 +466,7 @@ sub add_wu_name_db {
 
 	$dbh = DBI->connect($db, $grid_user, $grid_pass, {RaiseError => 1});
 
-	my $wu_id = $description->uniqid;
+	my $wu_id = $description->directory();
 	$wu_id =~ s/.*\///;
 	$wu_id =~ s/.output//;
 
@@ -824,7 +811,7 @@ sub create_work {
 			$cpu_bound, $cpu_est, $mem_bound, $disk_bound, $boinc_files, $batch,
 			$perjob_boinc_files) = @_;
 
-	print LOG "The boinc files are: $boinc_files\n";
+	print LOG "The boinc files are: @$boinc_files\n";  # JTK - Changed to array.
 
 	my $file_str = join(" ", @$boinc_files);
 
@@ -1056,10 +1043,10 @@ foreach my \$output_file_staged_in (\@output_files_staged_in) {
 	chomp(\$download_hier_location);
 
 	# Now, copy the file from the upload directory to the download directory.
-	my \$retval = `cp \$upload_hier_location \$download_hier_location`;
+	my \$retval = `cp -f \$upload_hier_location \$download_hier_location`;
 	unless ((\$? >> 8) == 0) {
 		# Copy failed -- save error message.
-		`echo "attempted cp \$upload_hier_location \$download_hier_location" > /tmp/copy_failed`;
+		`echo "attempted cp -f \$upload_hier_location \$download_hier_location" > /tmp/copy_failed`;
 		`echo "error: \$?" >> /tmp/copy_failed`;
 		`echo "retval: \$retval" >> /tmp/copy_failed`;
 	}
@@ -1236,10 +1223,10 @@ foreach my \$output_file_staged_in (\@output_files_staged_in) {
 	chomp(\$download_hier_location);
 
 	# Now, copy the file from the upload directory to the download directory.
-	my \$retval = `cp \$upload_hier_location \$download_hier_location`;
+	my \$retval = `cp -f \$upload_hier_location \$download_hier_location`;
 	unless ((\$? >> 8) == 0) {
 		# Copy failed -- save error message.
-		`echo "attempted cp \$upload_hier_location \$download_hier_location" > /tmp/copy_failed`;
+		`echo "attempted cp -f \$upload_hier_location \$download_hier_location" > /tmp/copy_failed`;
 		`echo "error: \$?" >> /tmp/copy_failed`;
 		`echo "retval: \$retval" >> /tmp/copy_failed`;
 	}
@@ -1460,7 +1447,7 @@ EOF
 
 		# This loop writes lines to the script that cause it to copy those files
 		# that need to be staged out from the BOINC upload directory to the
-		# locations where the Globus stage out code will expect to find them.
+		# locations /where the Globus stage out code will expect to find them.
 		# _0 and _1 are boinc_stdout and boinc_stderr, respectively, and we skip
 		# over these.
 		my $i = 5;
@@ -1574,6 +1561,8 @@ sub copy_files_to_boinc {
 	my ($description, $files, $uniqid, $workphasedivision) = @_;
 	my $i = 1;	# File 0 is boinc_stdin.
 	my @boinc_files;
+	my $job_dir = $description->directory();  # JTK -- Get job dir for symlinks.
+	$job_dir =~ s/\/([^\/]*)output//gs;  # JTK -- Get rid of "{unique_id}.output".
 
 	print LOG "type 1: ${uniqid}\n";
 
@@ -1597,8 +1586,9 @@ sub copy_files_to_boinc {
 		# Substitute for ${GSBL_CONFIG_DIR}, if necessary.
 		$file =~ s/\$\{GSBL_CONFIG_DIR\}/$scratch_dir/g;
 
-		my $ret = `ln -s $file $hier_location 2>&1`;
-		print LOG "ln -s $file $hier_location\n";
+		# JTK -- Added "$job_dir/" to source file path.
+		my $ret = `ln -s $job_dir/$file $hier_location 2>&1`;
+		print LOG "ln -s $job_dir/$file $hier_location\n";
 		# stderr is being redirected; not sure if this will fire now.
 		unless (($? >> 8) == 0) {
 			# Link failed -- delete any links we've already made and error out.
@@ -1619,8 +1609,9 @@ sub copy_files_to_boinc {
 				my $restartconf = ($file . "_restart");
 				$hier_location =
 						`cd $project_dir && ./bin/dir_hier_path ${uniqid}_restart`;
-				$ret = `ln -s $restartconf $hier_location 2>&1`;
-				print LOG "ln -s $restartconf $hier_location\n";
+				# JTK -- Added "$job_dir/" to source file path.
+				$ret = `ln -s $job_dir/$restartconf $hier_location 2>&1`;
+				print LOG "ln -s $job_dir/$restartconf $hier_location\n";
 				# stderr is being redirected; not sure if this will fire now.
 				unless (($? >> 8) == 0) {
 					# Link failed -- delete any links we've already made and error out.
@@ -1643,6 +1634,7 @@ sub copy_files_to_boinc {
 sub copy_perjob_files_to_boinc {
 	my ($description, $files, $unique_id, $i, $batch) = @_;
 	my @perjob_boinc_files;
+	my $job_dir = $description->directory();  # JTK -- Get job dir for symlinks.
 
 	my $pwd = `pwd`;
 	print LOG "PWD: $pwd\n";
@@ -1661,8 +1653,9 @@ sub copy_perjob_files_to_boinc {
 			# Substitute for ${GSBL_CONFIG_DIR}, if necessary.
 			$file =~ s/\$\{GSBL_CONFIG_DIR\}/$scratch_dir/g;
 
-			my $ret = `ln -s $file $hier_location 2>&1`;
-			print LOG "ln -s $file $hier_location\n";
+			# JTK -- Added "$job_dir/" to source file path.
+			my $ret = `ln -s $job_dir/$file $hier_location 2>&1`;
+			print LOG "ln -s $job_dir/$file $hier_location\n";
 			# stderr is being redirected; not sure if this will fire now.
 			unless (($? >> 8) == 0) {
 				# Link failed -- delete any links we've already made and error out.
@@ -1803,11 +1796,22 @@ sub get_perjob_files {
 sub get_stagein_files {
 	my $description = shift || die "No description passed to get_stagein_files";
 
-	my $file = $description->boincsubmit(); 
-
-
+	# JTK -- Have to search through boincsubmit for transfer_input_files.
+	my @submit_attrs = $description->boincsubmit();
+	if (!defined($submit_attrs[0])) {
+		return;
+	}
+	my $file;
+	foreach my $tuple (@submit_attrs) {
+		if (!ref($tuple) || (scalar(@$tuple) != 2)) {
+			return Globus::GRAM::Error::RSL_SCHEDULER_SPECIFIC();
+		}
+		if ($tuple->[0] eq "transfer_input_files") {
+			$file = $tuple->[1];
+		}
+	}
+#	my $file = $description->transfer_input_files();
 	print LOG "input files: $file\n";
-
 	my @stagein = split(",", $file);
 	foreach my $pair(@stagein) {
 		print LOG "pair: $pair\n";
@@ -1819,7 +1823,21 @@ sub get_stagein_files {
 sub get_stageout_files {
 	my $description = shift || die "No description passed to get_stageout_files";
 
-	my $file = $description->transfer_output_files();
+	# JTK -- Have to search through boincsubmit for transfer_output_files.
+	my @submit_attrs = $description->boincsubmit();
+	if (!defined($submit_attrs[0])) {
+		return;
+	}
+	my $file;
+	foreach my $tuple (@submit_attrs) {
+		if (!ref($tuple) || (scalar(@$tuple) != 2)) {
+			return Globus::GRAM::Error::RSL_SCHEDULER_SPECIFIC();
+		}
+		if ($tuple->[0] eq "transfer_output_files") {
+			$file = $tuple->[1];
+		}
+	}
+#	my $file = $description->transfer_output_files();
 	print LOG "output files: $file\n";
 	my @stageout = split(",", $file);
 	foreach my $pair(@stageout) {
@@ -1964,26 +1982,26 @@ sub poll {
 
 	chomp ($pollval = `$poll $job_id`);
 	unless (($? >> 8) == 0) {
-		`echo "was polling $job_id" > /tmp/poll.err`;
+		`echo "Was polling $job_id" >> /tmp/poll.err`;  # JTK -- Append instead.
 		# Non-zero exit code.
 		return Globus::GRAM::Error::INVALID_SCRIPT_REPLY();
 	}
 
-	if ($pollval =~ /1/) {
-		`echo "\n[$job_id]PENDING" >/tmp/poll.err`;
+	if ($pollval =~ /STATUS: 1/) {
+		`echo "\n[$job_id]PENDING" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::PENDING};
-	} elsif ($pollval =~ /2/) {
-		`echo "\n[$job_id]ACTIVE" >/tmp/poll.err`;
+	} elsif ($pollval =~ /STATUS: 2/) {
+		`echo "\n[$job_id]ACTIVE" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::ACTIVE};
-	} elsif ($pollval =~ /3/) {
-		`echo "\nD[$job_id]ONE" >/tmp/poll.err`;
+	} elsif ($pollval =~ /STATUS: 3/) {
+		`echo "\n[$job_id]DONE" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::DONE};
-	} elsif ($pollval =~ /4/) {
-		`echo "\nF[$job_id]AILED" >/tmp/poll.err`;
+	} elsif ($pollval =~ /STATUS: 4/) {
+		`echo "\n[$job_id]FAILED" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::FAILED,
 				ERROR => Globus::GRAM::Error::SYSTEM_CANCELLED()->value};
 	} else {
-		`echo "\nUNKNOWN REPONSE" >/tmp/poll.err`;
+		`echo "\n[$job_id] UNKNOWN RESPONSE: $pollval" >> /tmp/poll.err`;  # JTK -- Append instead.
 		$self->log("BOINC poll returned an unknown response. Telling JM to ignore this poll.");
 		return {};
 	}

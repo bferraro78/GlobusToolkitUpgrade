@@ -351,8 +351,7 @@ public class BuildRSL {
 				if (runtime_estimate_seconds == -1) {
 					command += "-1";
 				} else {
-					command +=
-							(new Integer(runtime_estimate_seconds)).toString();
+					command += (new Integer(runtime_estimate_seconds)).toString();
 				}
 
 				Process proc = r.exec(command);
@@ -398,30 +397,33 @@ public class BuildRSL {
 			.append(workingDir).append(")");
 		// Changed from "$(GLOBUS_SCRATCH_DIR)" for testing.
 		document.append("\n                      (SERVER $(HOME)/")
-			.append(unique_id).append("/)");
-		document.append(")");  // End RSL substitution.
+			.append(unique_id).append(")");
+		document.append(")");
 
 		// Add executable.
-		document.append("\n  (executable = garli)");
+		document.append("\n  (executable = ");
+
+		if (resource.equals("BOINC")) {
+			document.append("garli");
+		} else {
+			document.append("/fs/mikeproj/sw/RedHat9-32/bin/Garli-2.1_64");
+		}
+		document.append(")");
 
 		// Add remote resource directory.
 		document.append("\n  (directory = $(SERVER)");
 
 		if (reps > 1) {
-			document.append(unique_id).append(".output");
+			document.append("/").append(unique_id).append(".output");
 		}
-
 		document.append(")");
 
 		// Add arguments tag to RSL from arguments string.
 		if (arguments.length != 0) {
-			document.append("\n  (arguments = ");
+			document.append("\n  (arguments =");
 			for (int i = 0; i < arguments.length; i++) {
 				if (!arguments[i].equals("")) {
-					document.append("\"").append(arguments[i]).append("\"");
-					if (i != (arguments.length - 1)) {
-						document.append(" ");
-					}
+					document.append(" \"").append(arguments[i]).append("\"");
 				}
 			}
 			document.append(")");
@@ -438,8 +440,8 @@ public class BuildRSL {
 		}
 
 		// Sets the stdout/stderr in RSL to remote resource directory.
-		document.append("\n  (stdout = $(SERVER)").append("stdout)");
-		document.append("\n  (stderr = $(SERVER)").append("stderr)");
+		document.append("\n  (stdout = $(SERVER)/").append("stdout)");
+		document.append("\n  (stderr = $(SERVER)/").append("stderr)");
 
 		// Add count element for multiple, mpi, and multiple mpi.
 		if ((reps > 1) && job_type.equals("single")) {
@@ -461,8 +463,8 @@ public class BuildRSL {
 		// attribute with value 'condor'. Due to poor Globus coding, this element
 		// must go after the stderr attribute for the RSL to be parsed correctly.
 		if ((executable.length() > 4)
-				&& (executable.substring(executable.length() - 4))
-						.equals("ckpt") && resource.equals("Condor")) {
+				&& (executable.substring(executable.length() - 4)).equals("ckpt")
+				&& resource.equals("Condor")) {
 			document.append("\n  (jobtype = condor)");
 		}
 
@@ -484,7 +486,7 @@ public class BuildRSL {
 			if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 				document.append("\n                  (transfer_input_files ");
 				for (int i = 0; i < sharedFiles.size(); i++) {
-					document.append("$(SERVER)").append(sharedFiles.get(i));
+					document.append("$(SERVER)/").append(sharedFiles.get(i));
 					if (i != (sharedFiles.size() - 1)) {
 						document.append(",");
 					}
@@ -634,7 +636,7 @@ public class BuildRSL {
 		if ((sharedFiles != null) && (sharedFiles.size() > 0)) {
 			for (int i = 0; i < sharedFiles.size(); i++) {
 				document.append("\n                   (gsiftp://$(CLIENT)")
-					.append(sharedFiles.get(i)).append(" $(SERVER)")
+					.append(sharedFiles.get(i)).append(" $(SERVER)/")
 					.append(sharedFiles.get(i)).append(")");
 			}
 		}
@@ -646,7 +648,7 @@ public class BuildRSL {
 				String[] tempcouples = perJobFiles.get(i);
 				for (int j = 0; j < tempcouples.length; j++) {
 					document.append("\n                   (gsiftp://$(CLIENT)")
-						.append(tempcouples[j]).append(" $(SERVER)")
+						.append(tempcouples[j]).append(" $(SERVER)/")
 						.append(tempcouples[j]).append(")");
 				}
 			}
@@ -659,23 +661,23 @@ public class BuildRSL {
 		if (reps > 1) {
 			if ((output_files != null) && (output_files.length > 0)) {
 				// Stage outputFiles.
-				document.append("\n  (file_stage_out = (file://$(SERVER)")
+				document.append("\n  (file_stage_out = (file://$(SERVER)/")
 					.append(unique_id).append(".output/")
 					.append(" gsiftp://$(CLIENT)").append(unique_id)
 					.append(".output/))");
 			}
 		} else {
 			// Add file staging directives for stdout and stderr.
-			document.append("\n  (file_stage_out = (file://$(SERVER)")
+			document.append("\n  (file_stage_out = (file://$(SERVER)/")
 				.append("stdout gsiftp://$(CLIENT)")
-				.append("stdout)\n                    (file://$(SERVER)")
+				.append("stdout)\n                    (file://$(SERVER)/")
 				.append("stderr gsiftp://$(CLIENT)")
 				.append("stderr)");
 
 			// Add file staging directives for output files.
 			if ((output_files != null) && (output_files.length > 0)) {
 				for (int i = 0; i < output_files.length; i++) {
-					document.append("\n                    (file://$(SERVER)")
+					document.append("\n                    (file://$(SERVER)/")
 						.append(output_files[i]).append(" gsiftp://$(CLIENT)")
 						.append(output_files[i]).append(")");
 				}
