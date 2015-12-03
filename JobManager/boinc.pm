@@ -41,7 +41,7 @@ $cancel = "$project_dir/bin/cancel_job";
 
 # Poll is deprecated.
 #$poll = "/$project_dir/bin/get_assim_state";  # Changed from get_state --> get_assim_state JTK
-$poll = "/home/gt6admin/SEG/getBoincJobStatus";
+$poll = "/home/gt6admin/GT6Upgrade/SEG/getBoincJobStatus";
 
 $boinc_download_dir = "$project_dir/download/";
 $boinc_upload_dir = "$project_dir/upload/";
@@ -343,6 +343,9 @@ sub submit {
 	# Adding the ability to specify a custom workunit name (for use with phased
 	# GARLI analyses).
 	my $workunit_name = $unique_id;
+
+
+
 
 	if ($boinc_app eq "garli") {
 		if ($workphasedivision == 1) {
@@ -1004,7 +1007,7 @@ if (\$canonical_resultname =~ /.*_([0-9]*)/) {
 # Debugging.
 `echo "canonical_resultid: \$canonical_resultid  canonical_resultname: \$canonical_resultname  canonical_resultnumber: \$canonical_resultnumber" > /tmp/canonical_result_info`;
 
-# Stage in the checkpoint files and garli.screen.log from the _initial WU these
+# Stage in the checkpoint files and garli.screen.log from the _initial WU. These
 # should be the last four output files (args 3 through n are output files).
 my \$arglength = \@ARGV;
 my \@output_files_staged_in = ();
@@ -1363,11 +1366,11 @@ my \$sth;
 if (\$bid > 0) {
 	my \$findstringinitial = (\"*\" . \$job_id . \"_initial.\" . \$bid . \"*\");
 	my \$findstringmain = (\"*\" . \$job_id . \"_main_*.\" . \$bid . \"*\");
-	`find /fs/mikedata/threonine/work/boinc5/upload -name \"\$findstringinitial\" -exec rm -f \\{\\} \\\\;`;
-	`find /fs/mikedata/threonine/work/boinc5/upload -name \"\$findstringmain\" -exec rm -f \\{\\} \\\\;`;
+	`find $boinc_upload_dir -name \"\$findstringinitial\" -exec rm -f \\{\\} \\\\;`;
+	`find $boinc_upload_dir -name \"\$findstringmain\" -exec rm -f \\{\\} \\\\;`;
 } else {
-	`find /fs/mikedata/threonine/work/boinc5/upload -name \"*\$job_id*_initial*\" -exec rm -f \\{\\} \\\\;`;
-	`find /fs/mikedata/threonine/work/boinc5/upload -name \"*\$job_id*_main_*\" -exec rm -f \\{\\} \\\\;`;
+	`find $boinc_upload_dir -name \"*\$job_id*_initial*\" -exec rm -f \\{\\} \\\\;`;
+	`find $boinc_upload_dir -name \"*\$job_id*_main_*\" -exec rm -f \\{\\} \\\\;`;
 }
 
 # Update credit totals in the grid database.
@@ -1903,13 +1906,13 @@ sub handle_start_xml {
 sub handle_char_xml {
 	my ($expat, $str) = @_;
 	if ($temp_tag eq 'db_host') {
-		$db_host .= $str;
+		$db_host = $str;
 	} elsif ($temp_tag eq 'db_user') {
-		$db_user .= $str;
+		$db_user = $str;
 	} elsif ($temp_tag eq 'db_passwd') {
-		$db_pass .= $str;
+		$db_pass = $str;
 	} elsif ($temp_tag eq 'db_name') {
-		$db_name .= $str;
+		$db_name = $str;
 	}
 }
 

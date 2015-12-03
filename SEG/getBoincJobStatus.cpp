@@ -15,9 +15,6 @@
 
 // Std includes.
 #include <stdio.h>
-//#include <stdlib.h>
-//#include <unistd.h>
-//#include <string.h>
 #include <math.h>
 // MySQL and C++ std includes.
 #include <mysql.h>
@@ -26,7 +23,6 @@
 // XML includes.
 #include <libxml/xmlmemory.h>
 #include <libxml/parser.h>
-//#include <time.h>
 
 // Borrowed from boinc_db.h.
 #define RESULT_SERVER_STATE_INACTIVE   	1
@@ -62,9 +58,8 @@ int getWorkunitState(int, int, int);
 bool findStatus(vector<int>, int);
 int countStatus(vector<int>, int);
 
-MYSQL *mySqlBoincDb;  // BOINC MySQL db.
-MYSQL *mySqlGridDb;  // Grid MySQL db.
-FILE *fp;  // File pointer for debugging log.
+MYSQL *mySqlDbBoinc, *mySqlDbGrid;  // BOINC and Grid MySQL databases.
+FILE *logFile;  // File pointer for debugging log.
 char *host, *user, *pass, *db;  // BOINC db information.
 
 int parseBoincDbInfo(void) {
@@ -72,24 +67,24 @@ int parseBoincDbInfo(void) {
 	char const *boincLoc = "/fs/mikedata/arginine/work/boinc_projects";//getenv("BOINC_LOCATION");  // JTK: Was returning (NULL).
 	char configFile[128];
 	sprintf(configFile, "%s/config.xml", boincLoc);
-	fprintf(fp, "File: %s\n", configFile);
+	fprintf(logFile, "File: %s\n", configFile);
 	// Open up the config file for parsing.
 	xmlDocPtr doc = xmlParseFile(configFile);
 	if (doc == NULL) {
-		fprintf(fp, "ERROR: Unable to parse config.xml\n");
+		fprintf(logFile, "ERROR: Unable to parse config.xml\n");
 		return 1;
 	}
 	// Set the cur pointer.
 	xmlNodePtr cur = xmlDocGetRootElement(doc);
 	if (cur == NULL) {
-		fprintf(fp, "ERROR: config.xml looks to be empty!\n");
+		fprintf(logFile, "ERROR: config.xml looks to be empty!\n");
 		return 1;
 	}
 
 	// Make sure root node is <boinc>.
 	if (xmlStrcmp(cur->name, (const xmlChar *)"boinc")) {
-		fprintf(fp, "ERROR: root node is not <boinc>\n");
-		fprintf(fp, "It is: %s\n", (char *)cur->name);
+		fprintf(logFile, "ERROR: root node is not <boinc>\n");
+		fprintf(logFile, "It is: %s\n", (char *)cur->name);
 		return 1;
 	}
 
@@ -110,7 +105,7 @@ int parseBoincDbInfo(void) {
 					sscanf(host, "%s", host);	 // Trim off white space.
 				} else if (!xmlStrcmp(cur2->name, (const xmlChar *)"db_user")) {
 					user = (char *)xmlNodeListGetString(doc, cur2->xmlChildrenNode, 1);
-					sscanf(user, "%s",user);
+					sscanf(user, "%s", user);
 				} else if (!xmlStrcmp(cur2->name, (const xmlChar *)"db_passwd")) {
 					pass = (char *)xmlNodeListGetString(doc, cur2->xmlChildrenNode, 1);
 					sscanf(pass, "%s", pass);
@@ -128,20 +123,20 @@ int parseBoincDbInfo(void) {
 }
 
 int connectToDbs(void) {
-	fp = fopen("/tmp/boinc_SEG_debug.log", "w");
-	fprintf(fp, "Entered db connect function\n");
+	logFile = fopen("/tmp/boinc_SEG_debug.log", "w");
+	fprintf(logFile, "Entered db connect function\n");
 
 	// Get BOINC database info from XML file.
 	if (parseBoincDbInfo()) {
-		fprintf(fp, "Error parsing xml file\n");
+		fprintf(logFile, "Error parsing xml file\n");
 		return 1;
 	}
-	mySqlBoincDb = mysql_init(NULL);
+	mySqlDbBoinc = mysql_init(NULL);
 	// Connect to the BOINC database.
-	if (!(mysql_real_connect(mySqlBoincDb, host, user, pass, db, 0, NULL, 0))) {
-		fprintf(fp, "Error connecting to boinc db\n");
-		fprintf(fp, "%s\n", mysql_error(mySqlBoincDb));
-		fflush(fp);
+	if (!(mysql_real_connect(mySqlDbBoinc, host, user, pass, db, 0, NULL, 0))) {
+		fprintf(logFile, "Error connecting to boinc db\n");
+		fprintf(logFile, "%s\n", mysql_error(mySqlDbBoinc));
+		fflush(logFile);
 		return 1;
 	}
 
@@ -149,12 +144,12 @@ int connectToDbs(void) {
 	// $GSBL_CONFIG_DIR and use it to open the db.location file.
 	// Changed from $GLOBUS_LOCATION -- BRF
 	char const *gridLoc = "/opt/gsbl-config";//getenv("GSBL_CONFIG_DIR");  // JTK: Was returning (NULL).
-	fprintf(fp, "%s\n", gridLoc);
+	fprintf(logFile, "%s\n", gridLoc);
 	char buf[128];
 	sprintf(buf, "%s/service_configurations/db.location", gridLoc);
 	FILE *grid = fopen(buf, "r");
 	if (grid == NULL) {
-		fprintf(fp, "Error loading grid db file\n");
+		fprintf(logFile, "Error loading grid db file\n");
 		return 1;
 	}
 
@@ -171,27 +166,24 @@ int connectToDbs(void) {
 
 	fclose(grid);
 
-	mySqlGridDb = mysql_init(NULL);
+	mySqlDbGrid = mysql_init(NULL);
 	// Connect to the grid database.
-	if (!mysql_real_connect(mySqlGridDb, gridHost, gridUser, gridPass, gridDb, 0,
+	if (!mysql_real_connect(mySqlDbGrid, gridHost, gridUser, gridPass, gridDb, 0,
 				NULL, 0)) {
-		fprintf(fp, "Error connecting to grid db\n");
-		fprintf(fp, "%s\n", mysql_error(mySqlGridDb));
+		fprintf(logFile, "Error connecting to grid db\n");
+		fprintf(logFile, "%s\n", mysql_error(mySqlDbGrid));
 		return 1;
 	}
 	return 0;
 }
 
 /**
- * Finds a single job within the grid database for BOINC, and returns its
- * status.
+ * Finds a single job within the grid database for BOINC, and prints its status.
  */
 int main(int argc, char **argv) {
 	string uniqueId = argv[1];
-  MYSQL_RES *jobResult;
-	MYSQL_RES *workunitResult;
-  MYSQL_ROW jobRow;
-	MYSQL_ROW workunitRow;
+  MYSQL_RES *jobResult, *workunitResult;
+  MYSQL_ROW jobRow, workunitRow;
 
 	// Connect to both the BOINC and grid databases.
 	if (connectToDbs()) {
@@ -201,14 +193,14 @@ int main(int argc, char **argv) {
 		string buf = ("SELECT replicates FROM job WHERE unique_id='" + uniqueId
 				+ "'");
 
-		if (mysql_query(mySqlGridDb, buf.c_str())) {
-			fprintf(fp, "Error in query: %s\n", mysql_error(mySqlGridDb));
+		if (mysql_query(mySqlDbGrid, buf.c_str())) {
+			fprintf(logFile, "Error in query: %s\n", mysql_error(mySqlDbGrid));
 		}
 
-		if (!(jobResult = mysql_store_result(mySqlGridDb))) {
-			fprintf(fp, "Error in store: %s\n", mysql_error(mySqlGridDb));
+		if (!(jobResult = mysql_store_result(mySqlDbGrid))) {
+			fprintf(logFile, "Error in store: %s\n", mysql_error(mySqlDbGrid));
 		}
-		fflush(fp);
+		fflush(logFile);
 
 		if (jobRow = mysql_fetch_row(jobResult)) {
 			int replicates = atoi(jobRow[0]);
@@ -222,14 +214,14 @@ int main(int argc, char **argv) {
 				mysql_free_result(jobResult);
 
 				// Debugging.
-				fprintf(fp, "String: %s\n", holder.c_str());
-				fflush(fp);
-				if (mysql_query(mySqlBoincDb, holder.c_str())) {
-					fprintf(fp, "%s\n", mysql_error(mySqlBoincDb));
+				fprintf(logFile, "String: %s\n", holder.c_str());
+				fflush(logFile);
+				if (mysql_query(mySqlDbBoinc, holder.c_str())) {
+					fprintf(logFile, "%s\n", mysql_error(mySqlDbBoinc));
 				}
-				workunitResult = mysql_store_result(mySqlBoincDb);
+				workunitResult = mysql_store_result(mySqlDbBoinc);
 				if (workunitResult == NULL) {
-					fprintf(fp, "Workunit result is null!\n");
+					fprintf(logFile, "Workunit result is null!\n");
 				}
 
 				// Get the status.
@@ -241,7 +233,7 @@ int main(int argc, char **argv) {
 				} else {
 					printf("Error: Could not find job in the BOINC database.\n");
 				}
-				fflush(fp);
+				fflush(logFile);
 				mysql_free_result(workunitResult);
 			} else if (replicates > 1) {  // Batch job.
 				// Get all that are similar to our entry in job.
@@ -258,21 +250,28 @@ int main(int argc, char **argv) {
 						+ uniqueId + "\%'");
 
 				// CODE FOR THE FIRST QUERY
-				fprintf(fp, "Query 1: %s\n", holder.c_str());
-				fflush(fp);
-				if (mysql_query(mySqlBoincDb, holder.c_str())) {
-					fprintf(fp, "Error: %s\n", mysql_error(mySqlBoincDb));
+				fprintf(logFile, "Query 1: %s\n", holder.c_str());
+				fflush(logFile);
+				if (mysql_query(mySqlDbBoinc, holder.c_str())) {
+					fprintf(logFile, "Query for Final_Workunit Error: %s\n",
+							mysql_error(mySqlDbBoinc));
 				}
 
-				if ((workunitResult = mysql_store_result(mySqlBoincDb)) == NULL) {
-					fprintf(fp, "Error: %s\n", mysql_error(mySqlBoincDb));
+				if ((workunitResult = mysql_store_result(mySqlDbBoinc)) == NULL) {
+					fprintf(logFile, "No Result for Final_Workunit Error: %s\n",
+							mysql_error(mySqlDbBoinc));
 				}
+
 				vector<int> batch;
 				while ((workunitRow = mysql_fetch_row(workunitResult)) != NULL) {
 					int status = getWorkunitState(atoi(workunitRow[0]),
 							atoi(workunitRow[2]), atoi(workunitRow[3]));
-					fprintf(fp, "batch: status of %s is %d\n", workunitRow[0], status);
-					fflush(fp);
+					fprintf(logFile, "batch: status of %s is %d\n", workunitRow[0],
+							status);
+// DEBUG -- BRF
+fprintf(logFile, "WorkUnitRow2: of %s\n", workunitRow[2]);
+fprintf(logFile, "WorkUnitRow3: of %s\n", workunitRow[3]);
+					fflush(logFile);
 					// If there wasn't an error, add it to the vector.
 					// ALB 11-29-14: Not sure you ever want to generate an event if status
 					// is 0.
@@ -283,21 +282,25 @@ int main(int argc, char **argv) {
 				mysql_free_result(workunitResult);
 
 				// CODE FOR THE SECOND QUERY.
-				fprintf(fp, "Query 2: %s\n", holder2.c_str());
-				fflush(fp);
-				if (mysql_query(mySqlBoincDb, holder2.c_str())) {
-					fprintf(fp, "Error: %s\n", mysql_error(mySqlBoincDb));
+				fprintf(logFile, "Query 2: %s\n", holder2.c_str());
+				fflush(logFile);
+				if (mysql_query(mySqlDbBoinc, holder2.c_str())) {
+					fprintf(logFile, "Query for Whole Workunit Error: %s\n",
+							mysql_error(mySqlDbBoinc));
 				}
 
-				if ((workunitResult = mysql_store_result(mySqlBoincDb)) == NULL) {
-					fprintf(fp, "Error: %s\n", mysql_error(mySqlBoincDb));
+				if ((workunitResult = mysql_store_result(mySqlDbBoinc)) == NULL) {
+					fprintf(logFile, "No Result for Whole Workunit Error: %s\n",
+							mysql_error(mySqlDbBoinc));
 				}
+
 				vector<int> batch2;
 				while ((workunitRow = mysql_fetch_row(workunitResult)) != NULL) {
 					int status = getWorkunitState(atoi(workunitRow[0]),
 							atoi(workunitRow[2]), atoi(workunitRow[3]));
-					fprintf(fp, "batch: status of %s is %d\n", workunitRow[0], status);
-					fflush(fp);
+					fprintf(logFile, "batch: status of %s is %d\n", workunitRow[0],
+							status);
+					fflush(logFile);
 					// If there wasn't an error, add it to the vector.
 					// ALB 11-29-14: Not sure you ever want to generate an event if
 					// status is 0.
@@ -317,9 +320,9 @@ int main(int argc, char **argv) {
 						// than or equal to the number of replicates; in the case of
 						// _final workunits, not all _final workunits may have been
 						// created yet.
-						fprintf(fp, "batch.size(): %d  replicates: %d\n", batch.size(),
+						fprintf(logFile, "batch.size(): %d  replicates: %d\n", batch.size(),
 								replicates);
-						fflush(fp);
+						fflush(logFile);
 						if (countStatus(batch, DONE) >= replicates) {
 							printf("STATUS: %d\n", DONE);
 						}
@@ -339,7 +342,7 @@ int main(int argc, char **argv) {
 						printf("STATUS: %d\n", PENDING);
 					}
 				}
-				fflush(fp);
+				fflush(logFile);
 				mysql_free_result(jobResult);
 			}
 		} else {
@@ -385,7 +388,7 @@ int getWorkunitState(int id, int assimState, int errorMask) {
 	MYSQL_RES *result;
 	MYSQL_ROW row;
 	int status = 0;
-//	fprintf(fp, "Received id: %d\n", id);
+//fprintf(logFile, "Received id: %d\n", id);
 	// Check to see if the state is already known from the WU.
 	if (errorMask != 0) {
 		// Job failed.
@@ -398,31 +401,33 @@ int getWorkunitState(int id, int assimState, int errorMask) {
 		char buf[256];
 		sprintf(buf, "SELECT server_state,outcome FROM result WHERE workunitid=%d",
 				id);
-		fprintf(fp, "String: %s\n", buf);
-		fflush(fp);
-		if (mysql_query(mySqlBoincDb, buf)) {
-			fprintf(fp, "Query Error: %s\n", mysql_error(mySqlBoincDb));
+		fprintf(logFile, "String: %s\n", buf);
+		fflush(logFile);
+		if (mysql_query(mySqlDbBoinc, buf)) {
+			fprintf(logFile, "Query Error: %s\n", mysql_error(mySqlDbBoinc));
 			return -1;
 		}
 //		fprintf(fp, "About to store and compare results\n");
-		if (!(result = mysql_store_result(mySqlBoincDb))) {
-			fprintf(fp, "Store Error: %s\n", mysql_error(mySqlBoincDb));
+		if (!(result = mysql_store_result(mySqlDbBoinc))) {
+			fprintf(logFile, "Store Error: %s\n", mysql_error(mySqlDbBoinc));
 			return -1;
 		}
 		while ((row = mysql_fetch_row(result)) != NULL) {
 			int serverState = atoi(row[0]);
 			int outcome = atoi(row[1]);
-			fprintf(fp, "Received state: %d and outcome: %d\n", serverState, outcome);
+			fprintf(logFile, "Received state: %d and outcome: %d\n", serverState,
+					outcome);
 			if ((serverState == RESULT_SERVER_STATE_IN_PROGRESS)
 					|| (serverState == RESULT_SERVER_STATE_OVER)) {
 				// It's active.
 				status = 2;
 				break;
-/*			} else if ((serverState == RESULT_SERVER_STATE_OVER)
+/*
+			} else if ((serverState == RESULT_SERVER_STATE_OVER)
 					&& (outcome == RESULT_OUTCOME_CLIENT_ERROR)
 					&& (status != 1)) {
-				// This result failed, but there could be more that are active let's just
-				// use the workunit error mask for the time being, this particular
+				// This result failed, but there could be more that are active let's
+				// just use the workunit error mask for the time being, this particular
 				// mechanism might be overzealous.
 //				status = 4;
 */
@@ -433,7 +438,5 @@ int getWorkunitState(int id, int assimState, int errorMask) {
 		}
 		mysql_free_result(result);
 	}
-
-//	mysql_free_result(result);
 	return status;
 }
