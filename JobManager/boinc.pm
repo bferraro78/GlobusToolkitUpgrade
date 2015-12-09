@@ -1985,26 +1985,26 @@ sub poll {
 
 	chomp ($pollval = `$poll $job_id`);
 	unless (($? >> 8) == 0) {
-		`echo "Was polling $job_id" >> /tmp/poll.err`;  # JTK -- Append instead.
+		`echo "Was polling $job_id\n" >> /tmp/poll.err`;  # JTK -- Append instead.
 		# Non-zero exit code.
 		return Globus::GRAM::Error::INVALID_SCRIPT_REPLY();
 	}
 
 	if ($pollval =~ /STATUS: 1/) {
-		`echo "\n[$job_id]PENDING" >> /tmp/poll.err`;  # JTK -- Append instead.
+		`echo "[$job_id]PENDING\n" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::PENDING};
 	} elsif ($pollval =~ /STATUS: 2/) {
-		`echo "\n[$job_id]ACTIVE" >> /tmp/poll.err`;  # JTK -- Append instead.
+		`echo "[$job_id]ACTIVE\n" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::ACTIVE};
 	} elsif ($pollval =~ /STATUS: 3/) {
-		`echo "\n[$job_id]DONE" >> /tmp/poll.err`;  # JTK -- Append instead.
+		`echo "[$job_id]DONE\n" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::DONE};
 	} elsif ($pollval =~ /STATUS: 4/) {
-		`echo "\n[$job_id]FAILED" >> /tmp/poll.err`;  # JTK -- Append instead.
+		`echo "[$job_id]FAILED\n" >> /tmp/poll.err`;  # JTK -- Append instead.
 		return {JOB_STATE => Globus::GRAM::JobState::FAILED,
 				ERROR => Globus::GRAM::Error::SYSTEM_CANCELLED()->value};
 	} else {
-		`echo "\n[$job_id] UNKNOWN RESPONSE: $pollval" >> /tmp/poll.err`;  # JTK -- Append instead.
+		`echo "[$job_id]UNKNOWN RESPONSE: $pollval\n" >> /tmp/poll.err`;  # JTK -- Append instead.
 		$self->log("BOINC poll returned an unknown response. Telling JM to ignore this poll.");
 		return {};
 	}

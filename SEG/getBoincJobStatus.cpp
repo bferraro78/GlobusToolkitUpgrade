@@ -229,7 +229,21 @@ int main(int argc, char **argv) {
 					int status = getWorkunitState(atoi(workunitRow[0]),
 							atoi(workunitRow[2]), atoi(workunitRow[3]));
 
-					printf("STATUS: %d\n", status);
+					string workunitName (workunitRow[1]);
+					std::size_t initialFound = workunitName.find(string("_initial"));
+					std::size_t mainFound = workunitName.find(string("_main"));
+
+					if (status > 0) {
+						// Do not set to "DONE" if initial or main workunit.
+						if (status == DONE) {
+							if ((initialFound == std::string::npos)
+									&& (mainFound == std::string::npos)) {
+								printf("STATUS: %d\n", status);
+							}
+						} else {
+							printf("STATUS: %d\n", status);
+						}
+					}
 				} else {
 					printf("Error: Could not find job in the BOINC database.\n");
 				}
@@ -253,25 +267,20 @@ int main(int argc, char **argv) {
 				fprintf(logFile, "Query 1: %s\n", holder.c_str());
 				fflush(logFile);
 				if (mysql_query(mySqlDbBoinc, holder.c_str())) {
-					fprintf(logFile, "Query for Final_Workunit Error: %s\n",
-							mysql_error(mySqlDbBoinc));
+					fprintf(logFile, "Error: %s\n", mysql_error(mySqlDbBoinc));
 				}
 
 				if ((workunitResult = mysql_store_result(mySqlDbBoinc)) == NULL) {
-					fprintf(logFile, "No Result for Final_Workunit Error: %s\n",
-							mysql_error(mySqlDbBoinc));
+					fprintf(logFile, "Error: %s\n", mysql_error(mySqlDbBoinc));
 				}
 
 				vector<int> batch;
 				while ((workunitRow = mysql_fetch_row(workunitResult)) != NULL) {
 					int status = getWorkunitState(atoi(workunitRow[0]),
 							atoi(workunitRow[2]), atoi(workunitRow[3]));
-					fprintf(logFile, "batch: status of %s is %d\n", workunitRow[0],
-							status);
-// DEBUG -- BRF
-fprintf(logFile, "WorkUnitRow2: of %s\n", workunitRow[2]);
-fprintf(logFile, "WorkUnitRow3: of %s\n", workunitRow[3]);
-					fflush(logFile);
+//					fprintf(logFile, "batch: status of %s is %d\n", workunitRow[0],
+//							status);
+//					fflush(logFile);
 					// If there wasn't an error, add it to the vector.
 					// ALB 11-29-14: Not sure you ever want to generate an event if status
 					// is 0.
@@ -285,22 +294,20 @@ fprintf(logFile, "WorkUnitRow3: of %s\n", workunitRow[3]);
 				fprintf(logFile, "Query 2: %s\n", holder2.c_str());
 				fflush(logFile);
 				if (mysql_query(mySqlDbBoinc, holder2.c_str())) {
-					fprintf(logFile, "Query for Whole Workunit Error: %s\n",
-							mysql_error(mySqlDbBoinc));
+					fprintf(logFile, "Error: %s\n", mysql_error(mySqlDbBoinc));
 				}
 
 				if ((workunitResult = mysql_store_result(mySqlDbBoinc)) == NULL) {
-					fprintf(logFile, "No Result for Whole Workunit Error: %s\n",
-							mysql_error(mySqlDbBoinc));
+					fprintf(logFile, "Error: %s\n", mysql_error(mySqlDbBoinc));
 				}
 
 				vector<int> batch2;
 				while ((workunitRow = mysql_fetch_row(workunitResult)) != NULL) {
 					int status = getWorkunitState(atoi(workunitRow[0]),
 							atoi(workunitRow[2]), atoi(workunitRow[3]));
-					fprintf(logFile, "batch: status of %s is %d\n", workunitRow[0],
-							status);
-					fflush(logFile);
+//					fprintf(logFile, "batch: status of %s is %d\n", workunitRow[0],
+//							status);
+//					fflush(logFile);
 					// If there wasn't an error, add it to the vector.
 					// ALB 11-29-14: Not sure you ever want to generate an event if
 					// status is 0.
@@ -316,7 +323,7 @@ fprintf(logFile, "WorkUnitRow3: of %s\n", workunitRow[3]);
 				// first, and increasing the number of failures that can be tolerated.
 				if (batch2.size() > 0) {
 					if (findStatus(batch, DONE)) {
-						// Only return DONE if the number of workunits complete is greater
+						// Only print DONE if the number of workunits complete is greater
 						// than or equal to the number of replicates; in the case of
 						// _final workunits, not all _final workunits may have been
 						// created yet.
@@ -327,7 +334,7 @@ fprintf(logFile, "WorkUnitRow3: of %s\n", workunitRow[3]);
 							printf("STATUS: %d\n", DONE);
 						}
 					} else if (findStatus(batch2, FAILED)) {
-						// Only return FAILED if the number of failed workunits is greater
+						// Only print FAILED if the number of failed workunits is greater
 						// than the number of extra workunits we have submitted.
 						// Using floor to be conservative.
 						// 0.8, below, represents oversubmission of 125%; this should be
@@ -388,7 +395,7 @@ int getWorkunitState(int id, int assimState, int errorMask) {
 	MYSQL_RES *result;
 	MYSQL_ROW row;
 	int status = 0;
-//fprintf(logFile, "Received id: %d\n", id);
+//	fprintf(logFile, "Received id: %d\n", id);
 	// Check to see if the state is already known from the WU.
 	if (errorMask != 0) {
 		// Job failed.
@@ -407,7 +414,7 @@ int getWorkunitState(int id, int assimState, int errorMask) {
 			fprintf(logFile, "Query Error: %s\n", mysql_error(mySqlDbBoinc));
 			return -1;
 		}
-//		fprintf(fp, "About to store and compare results\n");
+//		fprintf(logFile, "About to store and compare results\n");
 		if (!(result = mysql_store_result(mySqlDbBoinc))) {
 			fprintf(logFile, "Store Error: %s\n", mysql_error(mySqlDbBoinc));
 			return -1;
