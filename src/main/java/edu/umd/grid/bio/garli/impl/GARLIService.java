@@ -429,7 +429,9 @@ public class GARLIService extends GSBLService {
 			}
 
 			// The globusrun command to execute.
-			String globus_command = ("globusrun -batch -r " + job.getHost());
+			// Grabs hostname from scheduler now (either from scheduler_override OR GARLI.runtime.xml)
+			String globus_command = ("globusrun -batch -r " + scheduler); 
+			//job.getHost());
 
 			// Add job manager.
 			if (resource.equals("Condor")) {
