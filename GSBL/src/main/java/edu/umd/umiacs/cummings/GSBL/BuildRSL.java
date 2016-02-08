@@ -122,8 +122,8 @@ public class BuildRSL {
 	public BuildRSL(String myExecutable, String myArguments, String myScheduler,
 			String myResource, String myArchOs, int myRuntimeEstimate,
 			ArrayList<String> sharedlist, ArrayList<String[]> perjoblist,
-			String[] myOutput_files, String myWorkingDir,
-			String myRequirements, String myExtraRSL, String myUnique_id) {
+			String[] myOutput_files, String myWorkingDir, String myRequirements,
+			String myExtraRSL, String myUnique_id) {
 
 		// Initialize RLS manager.
 //		rlsmanager = new RLSManager();
@@ -145,29 +145,25 @@ public class BuildRSL {
 
 		// Hacks for replicates, mpi, and mem.
 		if (myArguments.matches(".*--replicates \"[0-9]+\" .*")) {
-			replicates = myArguments.substring((myArguments
-					.indexOf("replicates") + 11), myArguments.indexOf(" ",
-							(myArguments.indexOf("replicates") + 11)));
+			replicates = myArguments.substring(myArguments.indexOf("replicates") + 11,
+					myArguments.indexOf(" ", (myArguments.indexOf("replicates") + 11)));
 			log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
 			// Remove the replicates argument.
-			myArguments = myArguments.replaceFirst("--replicates \"[0-9]+\" ",
-					"");
+			myArguments = myArguments.replaceFirst("--replicates \"[0-9]+\" ", "");
 		}
 		if (myArguments.matches(".*-replicates \"[0-9]+\" .*")) {
 			// This block mainly for the IM grid service.
-			replicates = myArguments.substring((myArguments
-					.indexOf("replicates") + 11), myArguments.indexOf(" ",
-							(myArguments.indexOf("replicates") + 11)));
+			replicates = myArguments.substring(myArguments.indexOf("replicates") + 11,
+					myArguments.indexOf(" ", (myArguments.indexOf("replicates") + 11)));
 			log.debug("Number of replicates is: " + replicates);
 			// Strip the quotes off the replicates value.
 			replicates = replicates.substring(1, (replicates.length() - 1));
 			reps = Integer.parseInt(replicates);
 			// Remove the replicates argument.
-			myArguments = myArguments.replaceFirst("-replicates \"[0-9]+\" ",
-					"");
+			myArguments = myArguments.replaceFirst("-replicates \"[0-9]+\" ", "");
 		}
 		if (myArguments.matches(".*--mpi \"[0-9]+\" .*")) {
 			cpus = myArguments.substring((myArguments.indexOf("mpi") + 4),
@@ -189,8 +185,7 @@ public class BuildRSL {
 		if (myArguments.matches(".*--mem \"[0-9]+\" .*")) {
 			max_memory = myArguments.substring((myArguments.indexOf("mem") + 4),
 					myArguments.indexOf(" ", (myArguments.indexOf("mem") + 4)));
-			log.debug("Maximum memory has been specified! memory: "
-					+ max_memory);
+			log.debug("Maximum memory has been specified! memory: " + max_memory);
 			// Strip the quotes off the mem value.
 			max_memory = max_memory.substring(1, (max_memory.length() - 1));
 			max_mem = new Integer(max_memory);
@@ -222,8 +217,8 @@ public class BuildRSL {
 		for (int i = 0; i < tempArguments.length; i++) {
 			if (tempArguments[i].indexOf("\"") >= 0) {
 				tempArguments[i] = (tempArguments[i].substring(0,
-						tempArguments[i].indexOf("\"")) + tempArguments[i]
-						.substring(tempArguments[i].indexOf("\"") + 1));
+							tempArguments[i].indexOf("\""))
+						+ tempArguments[i].substring(tempArguments[i].indexOf("\"") + 1));
 				i--;
 			}
 		}
@@ -237,7 +232,7 @@ public class BuildRSL {
 					&& (tempArg.lastIndexOf("/") != (tempArg.length() - 1))) {
 				// It's possible we have path information to strip off.
 				String putativeFileName =
-						tempArg.substring(tempArg.lastIndexOf("/") + 1);
+					tempArg.substring(tempArg.lastIndexOf("/") + 1);
 				// Now search shared and per-job input files for this string.
 				boolean found_match = false;
 				for (int i = 0; i < sharedlist.size(); i++) {
@@ -324,7 +319,7 @@ public class BuildRSL {
 	}
 
 	public void createRSL() {
-		hostname = (String) env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		hostname = scheduler; // (String) env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
 		host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
@@ -340,8 +335,8 @@ public class BuildRSL {
 					log.error("Exception: " + e);
 				}
 
-				String command = (globusLocation + "/get_resource.pl "
-						+ executable + " " + job_type + " ");
+				String command = (globusLocation + "/get_resource.pl " + executable
+						+ " " + job_type + " ");
 				if (max_memory.equals("")) {
 					command += "0 ";
 				} else {
@@ -474,11 +469,12 @@ public class BuildRSL {
 
 			// Adding memory maximum for what used to be only GARLI.
 			if (!max_memory.equals("")) {
-				document.append("(min_memory ").append(max_memory)
-					.append(")");
+				document.append("(min_memory ").append(max_memory).append(")");
 			}
-			document.append("\n                  (architecture ").append(architecture).append(")");
-			document.append("\n                  (operating_system ").append(os).append(")");
+			document.append("\n                  (architecture ").append(architecture)
+				.append(")");
+			document.append("\n                  (operating_system ").append(os)
+				.append(")");
 			document.append("\n                  (should_transfer_files YES)");
 			document.append("\n                  (when_to_transfer_output ON_EXIT)");
 
@@ -501,8 +497,8 @@ public class BuildRSL {
 			transferOutputFiles();
 
 			document.append("\n                  (stream_output False)");
-			document.append("\n                  (stream_error False))");  // End condorsubmit.
-
+			document.append("\n                  (stream_error False))");
+			// End condorsubmit.
 		} else if (resource.equals("PBS") || resource.equals("SGE")) {
 			// Do pbssubmit and/or sgesubmit or equivalent(s) exist?
 			document.append("\n  (").append(resource.toLowerCase())
@@ -580,8 +576,6 @@ public class BuildRSL {
 		if (reps > 1) {
 			File outputDir = new File(dir.getPath() + "/" + unique_id + ".output");
 
-			System.out.println("Output Dir");
-
 			try {
 				outputDir.mkdir();
 				File tempJobDir = null;
@@ -606,7 +600,7 @@ public class BuildRSL {
 		String home = (String) env.get("HOME");
 
 		String globusUrlCopyCmd = "globus-url-copy -cd -q -r -rst gsiftp://"
-			+ hostname + workingDir + unique_id + "/ file://" + home + "/"
+			+ hostname + workingDir + unique_id + "/ gsiftp://" + home + "/"
 			+ unique_id + "/";
 
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
