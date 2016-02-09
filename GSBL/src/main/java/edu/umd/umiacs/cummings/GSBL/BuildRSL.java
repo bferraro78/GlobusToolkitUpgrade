@@ -202,7 +202,7 @@ public class BuildRSL {
 					&& !tempArguments[i].matches(".*\".*\".*")) {
 				for (int j = (i + 1); j < tempArguments.length; j++) {
 					if (tempArguments[j].matches(".*\".*")) {
-						for (int k = i + 1; k <= j; k++) {
+						for (int k = (i + 1); k <= j; k++) {
 							tempArguments[i] += (" " + tempArguments[k]);
 							tempArguments[k] = "";
 						}
@@ -216,8 +216,8 @@ public class BuildRSL {
 		// Go through the arguments array and remove quotes.
 		for (int i = 0; i < tempArguments.length; i++) {
 			if (tempArguments[i].indexOf("\"") >= 0) {
-				tempArguments[i] = (tempArguments[i].substring(0,
-							tempArguments[i].indexOf("\""))
+				tempArguments[i] =
+					(tempArguments[i].substring(0, tempArguments[i].indexOf("\""))
 						+ tempArguments[i].substring(tempArguments[i].indexOf("\"") + 1));
 				i--;
 			}
@@ -277,7 +277,7 @@ public class BuildRSL {
 		log.debug("runtime estimate is: "
 				+ (new Integer(runtime_estimate_seconds)).toString());
 
-		workingDir = myWorkingDir;  /* /export/work/drupal/user_files/admin/job# */
+		workingDir = myWorkingDir;
 
 		extraRSL = myExtraRSL;
 		if ((extraRSL != null) && (extraRSL != "")) {
@@ -319,7 +319,7 @@ public class BuildRSL {
 	}
 
 	public void createRSL() {
-		hostname = scheduler; // (String) env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
+		hostname = (String) env.get("HOSTNAME");  // ex.) asparagine.umiacs.umd.edu
 		host = hostname.substring(0, hostname.indexOf("."));  // ex.) asparagine
 		boolean stageIn = false;
 
@@ -600,8 +600,8 @@ public class BuildRSL {
 		String home = (String) env.get("HOME");
 
 		String globusUrlCopyCmd = "globus-url-copy -cd -q -r -rst gsiftp://"
-			+ hostname + workingDir + unique_id + "/ gsiftp://" + home + "/"
-			+ unique_id + "/";
+			+ hostname + workingDir + unique_id + "/ gsiftp://" + scheduler + home
+			+ "/" + unique_id + "/";
 
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
 
