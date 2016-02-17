@@ -756,6 +756,8 @@ public class GSBLService {
 			query += (") and update_delay <= " + timecounter);
 
 			ResultSet rs = stmt.executeQuery(query);
+			/* RELIY ON ONLY DATABASE QUERY, MUST REMOVE OTHER JOBS NOT FINISHED YET */
+
 			String jobID = "";
 			String jobFolder = "";
 			File jobFileFolder = null;
