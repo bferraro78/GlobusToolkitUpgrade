@@ -856,6 +856,41 @@ public class GSBLService {
 		return hostname;
 	}
 
+	public static Object getSchedulerName(String uniqueID) {
+		Object scheduler = null;
+		Connection connection = null;
+		String db = findDB();
+
+		try {
+			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
+					.newInstance();
+			DriverManager.registerDriver(driver);
+
+			connection = DriverManager.getConnection(db);
+			Statement stmt = connection.createStatement();
+
+			String query = ("SELECT scheduler FROM job WHERE unique_id = '"
+					+ uniqueID + "'");
+
+			ResultSet rs = stmt.executeQuery(query);
+			rs.next();
+			scheduler = rs.getString(1);
+		} catch (Exception e) {
+			log.error("Exception: " + e);
+			log.error(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (Exception e) {
+				log.error(e.getMessage());
+			}
+		}
+		return scheduler;
+	}
+
 	public static Object getWorkingDir(String uniqueID) {
 		Object workingDir = null;
 		Connection connection = null;

@@ -51,6 +51,7 @@ class JobMonitor extends GSBLService {
 	private BufferedReader br = null;
 	private String rwd = "";
 	private String cwd = "";
+	private String scheduler = "";
 	private String[] status;
 
 	public static void main(String[] args) {
@@ -133,6 +134,9 @@ class JobMonitor extends GSBLService {
 			FileWriter fw = new FileWriter(stateFile, false);
 			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
 					+ (String) getGramID((String) jobIDs[i]));
+
+
+
 			fw.write(jobState);
 			fw.close();
 
@@ -207,6 +211,10 @@ class JobMonitor extends GSBLService {
 
 	private void transferFiles(int i) {
 		String hostname = (String) getHostname((String) jobIDs[i]);
+
+		// ADDED 2/17/16
+		scheduler = GSBLService.getSchedulerName(jobIDs[i]);
+
 		String globusUrlCopyCmd = ("globus-url-copy -cd -q -r -rst file://" + home
 				+ "/" + jobIDs[i] + "/ gsiftp://" + hostname + cwd + jobIDs[i] + "/");
 		System.out.println("Globus-url-copy command: " + globusUrlCopyCmd);
