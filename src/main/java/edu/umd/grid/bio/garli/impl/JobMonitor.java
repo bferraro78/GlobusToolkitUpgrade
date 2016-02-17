@@ -51,7 +51,6 @@ class JobMonitor extends GSBLService {
 	private BufferedReader br = null;
 	private String rwd = "";
 	private String cwd = "";
-	private String scheduler = "";
 	private String[] status;
 
 	public static void main(String[] args) {
@@ -102,10 +101,17 @@ class JobMonitor extends GSBLService {
 			status = new String[2];
 			status[0] = "1";
 			status[1] = "2";
+			
+			System.out.println("NAME:" + getName() + "\n");
+
 			jobIDs = getJobList(getName(), status, timeCounter);  // Get the status of idle and running jobs that are due to be checked.
+
+			System.out.println("LENGTH: " + jobIDs.length + "\n");
 
 			for (int i = 0; i < jobIDs.length; i++) {
 				rwd = (getWorkingDirBase() + ((String) jobIDs[i]) + "/");
+				System.out.println("rwd" + rwd + "\n");
+				
 				checkJobStatus(i);  // Set bean.
 			}
 			checkFinished();
@@ -131,6 +137,9 @@ class JobMonitor extends GSBLService {
 		try {
 			File stateFile = new File((String) getWorkingDir((String) jobIDs[i]) + "/"
 					+ jobIDs[i] + "/last_known_status.txt");
+
+			System.out.println("State File:" + stateFile + "\n");
+
 			FileWriter fw = new FileWriter(stateFile, false);
 			String jobState = GSBLUtils.executeCommandReturnOutput("globusrun -status "
 					+ (String) getGramID((String) jobIDs[i]));
@@ -213,7 +222,7 @@ class JobMonitor extends GSBLService {
 		String hostname = (String) getHostname((String) jobIDs[i]);
 
 		// ADDED 2/17/16
-		scheduler = GSBLService.getSchedulerName(jobIDs[i]);
+		String scheduler = (String) GSBLService.getSchedulerName((String) jobIDs[i]);
 
 		String globusUrlCopyCmd = ("globus-url-copy -cd -q -r -rst file://" + home
 				+ "/" + jobIDs[i] + "/ gsiftp://" + hostname + cwd + jobIDs[i] + "/");
