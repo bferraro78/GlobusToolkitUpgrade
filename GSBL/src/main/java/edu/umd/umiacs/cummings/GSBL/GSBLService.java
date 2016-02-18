@@ -27,10 +27,6 @@ import java.util.Calendar;
 import java.util.Vector;
 import java.sql.*;
 
-//import org.globus.wsrf.ResourceContext;
-//import org.globus.wsrf.encoding.ObjectSerializer;
-//import org.globus.axis.message.addressing.EndpointReferenceType;
-//import org.globus.wsrf.encoding.ObjectDeserializer;
 import org.xml.sax.InputSource;
 
 /**
@@ -99,7 +95,6 @@ public class GSBLService {
 			System.err.println("working dir is: " + workingDir);
 			log.error("Exception: " + e);
 		}
-
 		return myBean;
 	}
 
@@ -109,8 +104,7 @@ public class GSBLService {
 	public synchronized void setArguments(Object argBean, String myWorkingDir) {
 		try {
 			// Create output stream.
-			FileOutputStream fos =
-					new FileOutputStream(myWorkingDir + "argBean");
+			FileOutputStream fos = new FileOutputStream(myWorkingDir + "argBean");
 
 			// Create XML encoder.
 			XMLEncoder xenc = new XMLEncoder(fos);
@@ -131,8 +125,7 @@ public class GSBLService {
 		if (argfile.length() < 1000) {  // Probably didn't work, so retry.
 			try {
 				// Create output stream.
-				FileOutputStream fos =
-						new FileOutputStream(myWorkingDir + "argBean");
+				FileOutputStream fos = new FileOutputStream(myWorkingDir + "argBean");
 
 				// Create XML encoder.
 				XMLEncoder xenc = new XMLEncoder(fos);
@@ -171,10 +164,10 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String job_id, String arguments, String scheduler,
-			String resource, String arch_os, String cpus, String replicates,
-			String runtime_estimate, String runtime_estimate_recent,
-			String searchreps, String bootstrapreps, Object gramID, String myWorkingDir, String hostname) {
+			String job_id, String arguments, String scheduler, String resource,
+			String arch_os, String cpus, String replicates, String runtime_estimate,
+			String runtime_estimate_recent, String searchreps, String bootstrapreps,
+			Object gramID, String myWorkingDir, String hostname) {
 
 		// Changed parameter "workingDir" to "job_id".
 		log.debug("job id is: " + job_id);
@@ -192,14 +185,14 @@ public class GSBLService {
 		int min = cal.get(Calendar.MINUTE);
 		int sec = cal.get(Calendar.SECOND);
 
-		String dateStr = yr + "-" + month + "-" + day + " " + hour + ":" + min
-				+ ":" + sec;
+		String dateStr = (yr + "-" + month + "-" + day + " " + hour + ":" + min
+				+ ":" + sec);
 
 		Connection connection = null;
 
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
-		// log.debug("db is: " + db);
+//		log.debug("db is: " + db);
 
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
@@ -209,9 +202,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			log.debug("jobname is: " + jobname);
 			Statement stmt = connection.createStatement();
-			ResultSet rs =
-					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
-							+ user + "' LIMIT 1");
+			ResultSet rs = stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
+					+ user + "' LIMIT 1");
 
 			int id = -1;
 			while (rs.next()) {
@@ -220,34 +212,20 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gram_id, client_working_dir, client_hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
-						+ "VALUES ('"
-						+ dateStr + "',"
-						+ id + ",'"
-						+ job_id + "','"
-						+ app + "','"
-						+ jobname + "','"
-						+ arguments + "','"
-						+ scheduler + "','"
-						+ resource + "','"
-						+ architecture + "','"
-						+ os + "','"
-						+ cpus + "','"
-						+ replicates + "','"
-						+ gramID + "','"
-						+ myWorkingDir + "','"
-						+ hostname + "','"
-						+ runtime_estimate + "','"
-						+ runtime_estimate_recent + "','"
-						+ searchreps + "','"
-						+ bootstrapreps + "')";
+				String query = ("INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, gram_id, client_working_dir, client_hostname, runtime_estimate, runtime_estimate_recent, searchreps, bootstrapreps) "
+						+ "VALUES ('" + dateStr + "'," + id + ",'" + job_id + "','" + app
+						+ "','" + jobname + "','" + arguments + "','" + scheduler + "','"
+						+ resource + "','" + architecture + "','" + os + "','" + cpus
+						+ "','" + replicates + "','" + gramID + "','" + myWorkingDir + "','"
+						+ hostname + "','" + runtime_estimate + "','"
+						+ runtime_estimate_recent + "','" + searchreps + "','"
+						+ bootstrapreps + "')");
 				log.debug("Query string is: " + query);
 				int ret = stmt.executeUpdate(query);
 				log.debug("Inserted job!");
 			} else {
 				log.error("Unknown user, job not added to database!");
 			}
-
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 			log.error(e.getMessage());
@@ -267,9 +245,9 @@ public class GSBLService {
 	 * Add a job that has been successfully submited to to our database.
 	 */
 	public synchronized void addToDB(String user, String app, String jobname,
-			String job_id, String arguments, String scheduler,
-			String resource, String arch_os, String cpus, String replicates,
-			String runtime_estimate, String searchreps, String bootstrapreps) {
+			String job_id, String arguments, String scheduler, String resource,
+			String arch_os, String cpus, String replicates, String runtime_estimate,
+			String searchreps, String bootstrapreps) {
 
 		// Changed parameter "workingDir" to "job_id".
 		log.debug("job id is: " + job_id);
@@ -287,14 +265,14 @@ public class GSBLService {
 		int min = cal.get(Calendar.MINUTE);
 		int sec = cal.get(Calendar.SECOND);
 
-		String dateStr = yr + "-" + month + "-" + day + " " + hour + ":" + min
-				+ ":" + sec;
+		String dateStr = (yr + "-" + month + "-" + day + " " + hour + ":" + min
+				+ ":" + sec);
 
 		Connection connection = null;
 
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
-		// log.debug("db is: " + db);
+//		log.debug("db is: " + db);
 
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
@@ -304,9 +282,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			log.debug("jobname is: " + jobname);
 			Statement stmt = connection.createStatement();
-			ResultSet rs =
-					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
-							+ user + "' LIMIT 1");
+			ResultSet rs = stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
+					+ user + "' LIMIT 1");
 			int id = -1;
 			while (rs.next()) {
 				id = rs.getInt(1);
@@ -314,30 +291,18 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, runtime_estimate, searchreps, bootstrapreps) "
-						+ "VALUES ('"
-						+ dateStr + "',"
-						+ id + ",'"
-						+ job_id + "','"
-						+ app + "','"
-						+ jobname + "','"
-						+ arguments	+ "','"
-						+ scheduler	+ "','"
-						+ resource + "','"
-						+ architecture + "','"
-						+ os + "','"
-						+ cpus + "','"
-						+ replicates + "','"
-						+ runtime_estimate + "','"
-						+ searchreps + "','"
-						+ bootstrapreps + "')";
+				String query = ("INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, runtime_estimate, searchreps, bootstrapreps) "
+						+ "VALUES ('" + dateStr + "'," + id + ",'" + job_id + "','" + app
+						+ "','" + jobname + "','" + arguments	+ "','" + scheduler	+ "','"
+						+ resource + "','" + architecture + "','" + os + "','" + cpus
+						+ "','" + replicates + "','" + runtime_estimate + "','" + searchreps
+						+ "','" + bootstrapreps + "')");
 				log.debug("Query string is: " + query);
 				int ret = stmt.executeUpdate(query);
 				log.debug("Inserted job!");
 			} else {
 				log.error("Unknown user, job not added to database!");
 			}
-
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 			log.error(e.getMessage());
@@ -377,14 +342,14 @@ public class GSBLService {
 		int min = cal.get(Calendar.MINUTE);
 		int sec = cal.get(Calendar.SECOND);
 
-		String dateStr = yr + "-" + month + "-" + day + " " + hour + ":" + min
-				+ ":" + sec;
+		String dateStr = (yr + "-" + month + "-" + day + " " + hour + ":" + min
+				+ ":" + sec);
 
 		Connection connection = null;
 
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
-		// log.debug("db is: " + db);
+//		log.debug("db is: " + db);
 
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
@@ -394,9 +359,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			log.debug("jobname is: " + jobname);
 			Statement stmt = connection.createStatement();
-			ResultSet rs =
-					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
-							+ user + "' LIMIT 1");
+			ResultSet rs = stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
+					+ user + "' LIMIT 1");
 
 			int id = -1;
 			while (rs.next()) {
@@ -405,21 +369,11 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, runtime_estimate) "
-						+ "VALUES ('"
-						+ dateStr + "',"
-						+ id + ",'"
-						+ job_id + "','"
-						+ app + "','"
-						+ jobname + "','"
-						+ arguments + "','"
-						+ scheduler + "','"
-						+ resource + "','"
-						+ architecture + "','"
-						+ os + "','"
-						+ cpus + "','"
-						+ replicates + "','"
-						+ runtime_estimate + "')";
+				String query = ("INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates, runtime_estimate) "
+						+ "VALUES ('" + dateStr + "'," + id + ",'" + job_id + "','" + app
+						+ "','" + jobname + "','" + arguments + "','" + scheduler + "','"
+						+ resource + "','" + architecture + "','" + os + "','" + cpus
+						+ "','" + replicates + "','" + runtime_estimate + "')");
 				log.debug("Query string is: " + query);
 				int ret = stmt.executeUpdate(query);
 				log.debug("Inserted job!");
@@ -465,14 +419,14 @@ public class GSBLService {
 		int min = cal.get(Calendar.MINUTE);
 		int sec = cal.get(Calendar.SECOND);
 
-		String dateStr = yr + "-" + month + "-" + day + " " + hour + ":" + min
-				+ ":" + sec;
+		String dateStr = (yr + "-" + month + "-" + day + " " + hour + ":" + min
+				+ ":" + sec);
 
 		Connection connection = null;
 
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
-		// log.debug("db is: " + db);
+//		log.debug("db is: " + db);
 
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
@@ -482,9 +436,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			log.debug("jobname is: " + jobname);
 			Statement stmt = connection.createStatement();
-			ResultSet rs =
-					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
-							+ user + "' LIMIT 1");
+			ResultSet rs = stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
+					+ user + "' LIMIT 1");
 			int id = -1;
 			while (rs.next()) {
 				id = rs.getInt(1);
@@ -492,20 +445,11 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates) "
-						+ "VALUES ('"
-						+ dateStr + "',"
-						+ id + ",'"
-						+ job_id + "','"
-						+ app + "','"
-						+ jobname + "','"
-						+ arguments + "','"
-						+ scheduler	+ "','"
-						+ resource + "','"
-						+ architecture + "','"
-						+ os + "','"
-						+ cpus + "','"
-						+ replicates + "')";
+				String query = ("INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os, cpus, replicates) "
+						+ "VALUES ('" + dateStr + "'," + id + ",'" + job_id + "','" + app
+						+ "','" + jobname + "','" + arguments + "','" + scheduler	+ "','"
+						+ resource + "','" + architecture + "','" + os + "','" + cpus
+						+ "','" + replicates + "')");
 				log.debug("Query string is: " + query);
 				int ret = stmt.executeUpdate(query);
 				log.debug("Inserted job!");
@@ -551,14 +495,14 @@ public class GSBLService {
 		int min = cal.get(Calendar.MINUTE);
 		int sec = cal.get(Calendar.SECOND);
 
-		String dateStr = yr + "-" + month + "-" + day + " " + hour + ":" + min
-				+ ":" + sec;
+		String dateStr = (yr + "-" + month + "-" + day + " " + hour + ":" + min
+				+ ":" + sec);
 
 		Connection connection = null;
 
 		// Open up db.location file and find out who we should be talking to.
 		String db = findDB();
-		// log.debug("db is: " + db);
+//		log.debug("db is: " + db);
 
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
@@ -568,9 +512,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			log.debug("jobname is: " + jobname);
 			Statement stmt = connection.createStatement();
-			ResultSet rs =
-					stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
-							+ user + "' LIMIT 1");
+			ResultSet rs = stmt.executeQuery("SELECT id FROM user WHERE user_name = '"
+					+ user + "' LIMIT 1");
 			int id = -1;
 			while (rs.next()) {
 				id = rs.getInt(1);
@@ -578,18 +521,10 @@ public class GSBLService {
 
 			if (id != -1) {
 				log.debug("About to insert job!");
-				String query = "INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os) "
-						+ "VALUES ('"
-						+ dateStr + "',"
-						+ id + ",'"
-						+ job_id + "','"
-						+ app + "','"
-						+ jobname + "','"
-						+ arguments + "','"
-						+ scheduler + "','"
-						+ resource + "','"
-						+ architecture + "','"
-						+ os + "')";
+				String query = ("INSERT INTO job (submitted_time, user_id, unique_id, app, job_name, args, scheduler, resource, arch, os) "
+						+ "VALUES ('" + dateStr + "'," + id + ",'" + job_id + "','" + app
+						+ "','" + jobname + "','" + arguments + "','" + scheduler + "','"
+						+ resource + "','" + architecture + "','" + os + "')");
 				log.debug("Query string is: " + query);
 				int ret = stmt.executeUpdate(query);
 				log.debug("Inserted job!");
@@ -628,10 +563,10 @@ public class GSBLService {
 		int min = cal.get(Calendar.MINUTE);
 		int sec = cal.get(Calendar.SECOND);
 
-		String dateStr = yr + "-" + month + "-" + day + " " + hour + ":" + min
-				+ ":" + sec;
+		String dateStr = (yr + "-" + month + "-" + day + " " + hour + ":" + min
+				+ ":" + sec);
 
-		// log.debug("updating job status: " + status + " at: " + dateStr);
+//		log.debug("updating job status: " + status + " at: " + dateStr);
 
 		// First get the unique id from the working directory.
 		String[] workingChunks = workingDir.split("/");
@@ -650,20 +585,17 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			/* 4 is "finished", 5 is "failed", 10 is
-			 * "files successfully retrieved", and 11 is
-			 * "files NOT successfully retrieved" (but they're all "end" states,
-			 * so update the finish_time in addition to the status).
-			 */
+			// 4 is "finished", 5 is "failed", 10 is "files successfully retrieved",
+			// and 11 is "files NOT successfully retrieved" (but they're all "end"
+			// states, so update the finish_time in addition to the status).
 			int ret;
 			if (status.equals("4") || status.equals("5") || status.equals("10")
 					|| status.equals("11")) {
 				ret = stmt.executeUpdate("UPDATE job SET status = " + status
 						+ ", finish_time = '" + dateStr
-						+ "', update_delay = 0 WHERE unique_id = '" + unique_id
-						+ "'");
-			} else if (status.equals("2")) {  /* 2 is "running", so update
-					start_time if it is "0000-00-00 00:00:00". */
+						+ "', update_delay = 0 WHERE unique_id = '" + unique_id + "'");
+			} else if (status.equals("2")) {
+				// 2 is "running", so update start_time if it is "0000-00-00 00:00:00".
 				ResultSet rs = stmt
 						.executeQuery("SELECT start_time, update_delay FROM job WHERE unique_id = '"
 								+ unique_id + "'");
@@ -675,20 +607,17 @@ public class GSBLService {
 						update_delay = (update_delay * 2);
 					}
 					if (rs.getTimestamp("start_time") == null) {
-						ret = stmt.executeUpdate("UPDATE job SET status = "
-								+ status + ", start_time = '" + dateStr
-								+ "', update_delay = " + update_delay
-								+ " WHERE unique_id = '" + unique_id + "'");
+						ret = stmt.executeUpdate("UPDATE job SET status = " + status
+								+ ", start_time = '" + dateStr + "', update_delay = "
+								+ update_delay + " WHERE unique_id = '" + unique_id + "'");
 					} else {
-						/* log.debug("timestamp is: "
-								+ (rs.getTimestamp("start_time")).toString()); */
-						ret = stmt.executeUpdate("UPDATE job SET status = "
-								+ status + ", update_delay = " + update_delay
-								+ " WHERE unique_id = '" + unique_id + "'");
+						ret = stmt.executeUpdate("UPDATE job SET status = " + status
+								+ ", update_delay = " + update_delay + " WHERE unique_id = '"
+								+ unique_id + "'");
 					}
 				}
-			} else if (status.equals("1")) {  /* 1 is "idle", so update
-					"update_delay". */
+			} else if (status.equals("1")) {
+				// 1 is "idle", so update "update_delay".
 				ResultSet rs = stmt
 						.executeQuery("SELECT update_delay FROM job WHERE unique_id = '"
 								+ unique_id + "'");
@@ -699,9 +628,9 @@ public class GSBLService {
 					} else if ((update_delay * 2) <= update_max) {
 						update_delay = (update_delay * 2);
 					}
-					ret = stmt.executeUpdate("UPDATE job SET status = "
-							+ status + ", update_delay = " + update_delay
-							+ " WHERE unique_id = '" + unique_id + "'");
+					ret = stmt.executeUpdate("UPDATE job SET status = " + status
+							+ ", update_delay = " + update_delay + " WHERE unique_id = '"
+							+ unique_id + "'");
 				}
 			} else {
 				ret = stmt.executeUpdate("UPDATE job SET status = " + status
@@ -743,8 +672,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			String query = ("SELECT unique_id FROM job WHERE app = '"
-					+ serviceName + "' and (status = ");
+			String query = ("SELECT unique_id FROM job WHERE app = '" + serviceName
+					+ "' and (status = ");
 
 			for (int i = 0; i < status.length; i++) {
 				String myStatus = status[i];
@@ -756,21 +685,21 @@ public class GSBLService {
 			query += (") and update_delay <= " + timecounter);
 
 			ResultSet rs = stmt.executeQuery(query);
-			/* RELIY ON ONLY DATABASE QUERY, MUST REMOVE OTHER JOBS NOT FINISHED YET */
+			// Rely only on database query, must remove other jobs not finished yet.
 
 			String jobID = "";
 			String jobFolder = "";
 			File jobFileFolder = null;
 			while (rs.next()) {
 				jobID = rs.getString(1);
-				jobFolder = (home + "/" + jobID);
+				// Job folder on scheduler.
+				jobFolder = (String) getSchedulerName(jobID) + ":" + home + "/" + jobID;
 				jobFileFolder = new File(jobFolder);
-				if (jobFileFolder.exists()) {  /* Double check that the job
-						hasn't been cleaned up yet. */
+				// Double check that the job hasn't been cleaned up yet.
+				if (jobFileFolder.exists()) {
 					jobIDs.add(jobID);
 				}
 			}
-
 		} catch (Exception e) {
 			log.error("Exception: " + e);
 			log.error(e.getMessage());
@@ -784,7 +713,6 @@ public class GSBLService {
 				log.error(e.getMessage());
 			}
 		}
-
 		return jobIDs.toArray();
 	}
 
@@ -795,14 +723,14 @@ public class GSBLService {
 
 		try {
 			Driver driver = (Driver) Class.forName("com.mysql.jdbc.Driver")
-					.newInstance();
+				.newInstance();
 			DriverManager.registerDriver(driver);
 
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			String query = ("SELECT gram_id FROM job WHERE unique_id = '"
-					+ uniqueID + "'");
+			String query = ("SELECT gram_id FROM job WHERE unique_id = '" + uniqueID
+					+ "'");
 
 			ResultSet rs = stmt.executeQuery(query);
 			rs.next();
@@ -871,8 +799,8 @@ public class GSBLService {
 			connection = DriverManager.getConnection(db);
 			Statement stmt = connection.createStatement();
 
-			String query = ("SELECT scheduler FROM job WHERE unique_id = '"
-					+ uniqueID + "'");
+			String query = ("SELECT scheduler FROM job WHERE unique_id = '" + uniqueID
+					+ "'");
 
 			ResultSet rs = stmt.executeQuery(query);
 			rs.next();
@@ -945,16 +873,15 @@ public class GSBLService {
 			env.load(Runtime.getRuntime().exec("env").getInputStream());
 			String globusLocation = (String) env.get("GSBL_CONFIG_DIR");
 			BufferedReader br = new BufferedReader(new FileReader(new File(
-					globusLocation + "/service_configurations/db.location")));
+							globusLocation + "/service_configurations/db.location")));
 
 			String serv = br.readLine();
 			String user = br.readLine();
 			String pass = br.readLine();
 			String db = "GT6_dev";
 
-			ret = "jdbc:mysql://" + serv + "/" + db + "?user=" + user
-					+ "&password=" + pass
-					+ "&zeroDateTimeBehavior=convertToNull";
+			ret = "jdbc:mysql://" + serv + "/" + db + "?user=" + user + "&password="
+				+ pass + "&zeroDateTimeBehavior=convertToNull";
 			br.close();
 
 		} catch (IOException e) {
@@ -981,10 +908,10 @@ public class GSBLService {
 		String[] files = perJobFiles.get(index);
 		for (int i = 0; i < files.length; i++) {
 			String aFile = files[i].substring(files[i].lastIndexOf('/') + 1);
-			if (i == files.length - 1) {
+			if (i == (files.length - 1)) {
 				argumentString += aFile;
 			} else {
-				argumentString += aFile + ",";
+				argumentString += (aFile + ",");
 			}
 		}
 		return argumentString;
@@ -1005,8 +932,7 @@ public class GSBLService {
 					Process proc = r.exec("ln -s " + target + " " + linkname);
 					int exitVal = proc.waitFor();
 					if (exitVal == 0) {
-						log.debug("ln -s " + target + " " + linkname
-								+ " was successful!");
+						log.debug("ln -s " + target + " " + linkname + " was successful!");
 					} else {
 						log.error("ln -s " + target + " " + linkname
 								+ " was NOT successful!");
